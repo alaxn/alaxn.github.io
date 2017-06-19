@@ -131,7 +131,7 @@
     
     <entry>
       <title><![CDATA[Chrome 常用插件]]></title>
-      <url>/2016/07/17/chrome-e5-b8-b8-e7-94-a8-e6-8f-92-e4-bb-b6/</url>
+      <url>/2016/07/17/Chrome%20%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/</url>
       <content type="html"><![CDATA[<h3 id="转自：http-whuhzx-com-blog"><a href="#转自：http-whuhzx-com-blog" class="headerlink" title="转自：http://whuhzx.com/blog/"></a><em>转自：<a href="http://whuhzx.com/blog/" target="_blank" rel="external">http://whuhzx.com/blog/</a></em></h3><h3 id="Adblock"><a href="#Adblock" class="headerlink" title="Adblock"></a><a href="https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom" target="_blank" rel="external">Adblock</a></h3><p>屏蔽互联网上各种恼人的广告。对于自己喜欢的网站，可以设置白名单。对于强迫症患者，只要稍懂html，就可以自定义规则，屏蔽掉网页上任何自己不想看到的东西。</p>
 <h3 id="chrome下载管理器"><a href="#chrome下载管理器" class="headerlink" title="chrome下载管理器"></a><a href="https://chrome.google.com/webstore/detail/chrono-download-manager/mciiogijehkdemklbdcbfkefimifhecn" target="_blank" rel="external">chrome下载管理器</a></h3><p>替代chrome原生的下载界面，并增强了相关功能。此外，还可以探测所访问页面的所有资源，包括图片、文档、css文件、js文件。提供一键下载。特别是当需要在下载某页面的多个文档时，一键下载特别方便。</p>
 <h3 id="Nimbus-Screenshot-and-Screencast"><a href="#Nimbus-Screenshot-and-Screencast" class="headerlink" title="Nimbus Screenshot and Screencast"></a><a href="https://chrome.google.com/webstore/detail/nimbus-screenshot-and-scr/bpconcjcammlapcogcnnelfmaeghhagj" target="_blank" rel="external">Nimbus Screenshot and Screencast</a></h3><p>优秀的网页截图工具。支持多种截图方式，特别是能够支持在页面中进行自定义的滚动截屏。截图后可对图片进行编辑，并以png和jpeg格式输出。</p>
@@ -211,7 +211,7 @@
     
     <entry>
       <title><![CDATA[VIA声卡在Win10下外放及耳机无法自动切换]]></title>
-      <url>/2015/10/05/via-e5-a3-b0-e5-8d-a1-e5-9c-a8win10-e4-b8-8b-e5-a4-96-e6-94-be-e5-8f-8a-e8-80-b3-e6-9c-ba-e6-97-a0-e6-b3-95-e8-87-aa-e5-8a-a8-e5-88-87-e6-8d-a2/</url>
+      <url>/2015/10/05/VIA%E5%A3%B0%E5%8D%A1%E5%9C%A8Win10%E4%B8%8B%E5%A4%96%E6%94%BE%E5%8F%8A%E8%80%B3%E6%9C%BA%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E5%88%87%E6%8D%A2/</url>
       <content type="html"><![CDATA[<p>最近对VIA和Win10这个Bug有点厌烦了，于是就谷歌起来，想要解决这个问题。</p>
 <p>网络上普遍有两种做法：</p>
 <ol>
@@ -246,59 +246,6 @@
             <tag> win10 </tag>
             
             <tag> 声卡 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[LNMP环境下WordPress程序伪静态解决方案]]></title>
-      <url>/2015/10/03/lnmp-e7-8e-af-e5-a2-83-e4-b8-8bwordpress-e7-a8-8b-e5-ba-8f-e4-bc-aa-e9-9d-99-e6-80-81-e8-a7-a3-e5-86-b3-e6-96-b9-e6-a1-88/</url>
-      <content type="html"><![CDATA[<p>最近尝试用vps搭建服务器，使用了Lnmp一键工具作为安装web服务的软件。</p>
-<p>在测试wordpress 的时候发现伪静态插件和lnmp自带的wordpress.conf文件冲突，导致nginx错误无法启动，后懒得调试，自己重新搭建，却发现伪静态出现了问题。在搜罗网上关于wordpress伪静态的解决方案测试后，发现有些网站的教程不是特别完整，故整合汇编了此文，供一些菜鸟使用。</p>
-<p>————————————————————————————————分割线</p>
-<p>直接贴出解决方法。声明：我的测试环境是Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-48-generic x86_64)，使用Lnmp1.2。</p>
-<p>1.检查wordpress.conf的文件是否有问题，正常应该如下（或者直接修改成如下）：</p>
-<p>vi /usr/local/nginx/conf/wordpress.conf</p>
-<hr>
-<p>location / { if (-d $request_filename){ rewrite ^/(.<em>)([^/])$ /$1$2/ permanent; }<br>if (-f $request_filename/index.html){ rewrite (.</em>) $1/index.html break; }<br>if (-f $request_filename/index.php){ rewrite (.<em>) $1/index.php; }<br>if (!-f $request_filename){ rewrite (.</em>) /index.php; }}</p>
-<hr>
-<p>&nbsp;</p>
-<p>2.检查虚拟主机（vhost）下的文件：</p>
-<p>vi /usr/local/nginx/conf/vhost/www.alaxn.ml.conf(www.alaxn.ml修改成自己网站的配置文件名称，如果不知道，也可以使用cd /usr/local/nginx/conf/vhost/ 进入该目录后 dir 列出所有文件，寻找需要修改的文件)</p>
-<p>vi打开后应该会看到类似代码：</p>
-<hr>
-<p>server {<br>listen 80;<br>server_name www.laozuo.org;<br>index index.html index.php;<br><strong>include wordpress.conf;</strong></p>
-<p>……（省略下文内容）</p>
-<hr>
-<p>如果没有“<strong>include wordpress.conf</strong>”，请自行添加进去后保存退出。</p>
-<p>&nbsp;</p>
-<p>3.重启Lnmp：lnmp restart，观察是否可以重启成功。</p>
-<p>————————————————————————————————分割线</p>
-<p>若还出现其他问题，请自行寻找错误代码或特征谷歌。关于代码原理可以参考下文文章。</p>
-<p>&nbsp;</p>
-<p>参考文章：</p>
-<p>LNMP环境中WordPress程序伪静态解决方案           <a href="http://www.laozuo.org/490.html" target="_blank" rel="external">http://www.laozuo.org/490.html</a></p>
-<p>修复军哥lnmp一键安装wordpress伪静态规则错误  <a href="http://www.wpmee.com/lnmp-1-0-wordpress-err/" target="_blank" rel="external">http://www.wpmee.com/lnmp-1-0-wordpress-err/</a></p>
-<p>&nbsp;</p>
-]]></content>
-      
-        <categories>
-            
-            <category> All Post </category>
-            
-            <category> MachineWorld </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Lnmp </tag>
-            
-            <tag> VPS </tag>
-            
-            <tag> Wordpress </tag>
             
         </tags>
         
@@ -1177,7 +1124,7 @@
     
     <entry>
       <title><![CDATA[N55光驱位换HDD硬盘]]></title>
-      <url>/2014/02/13/n55-e5-85-89-e9-a9-b1-e4-bd-8d-e6-8d-a2hdd-e7-a1-ac-e7-9b-98/</url>
+      <url>/2014/02/13/N55%E5%85%89%E9%A9%B1%E4%BD%8D%E6%8D%A2HDD%E7%A1%AC%E7%9B%98/</url>
       <content type="html"><![CDATA[<p>先来个大合照，已拆了键盘。<br><img src="http://r.photo.store.qq.com/psb?/V121MZ1S4Srv3a/w2gBfIVPSHbdG82p.RGDnmQ.2mQmI1nuaZXlJFNWMXU!/o/dKVEgo5ZCAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wAOAAkAGKwQBAA8!&amp;t=5&amp;su=1145132433&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></p>
 <p>开后盖，拆原有机械硬盘。<br><img src="http://r.photo.store.qq.com/psb?/V121MZ1S4Srv3a/B7g24Oy*3V8Oi.QJO0P1yJ4ab27D*fRhY*BVcaj67.4!/o/dAqC3Y3oBwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wAOAAkAGKwQBAA8!&amp;t=5&amp;su=181054785&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></p>
 <p>装到光驱位，测试成功。<br><img src="http://r.photo.store.qq.com/psb?/V121MZ1S4Srv3a/Y4dVWt48Jy3hqLjw9ok.FNSOXElXlIxL5i3XbfM0zNY!/o/dCP8tI9hBwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wAOAAkAGKwQBAA8!&amp;t=5&amp;su=1183192289&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></p>
@@ -1198,7 +1145,7 @@
     
     <entry>
       <title><![CDATA[OS X Mavericks折腾记]]></title>
-      <url>/2014/01/17/os-x-mavericks-e6-8a-98-e8-85-be-e8-ae-b0/</url>
+      <url>/2014/01/17/OS%20X%20Mavericks%E6%8A%98%E8%85%BE%E8%AE%B0/</url>
       <content type="html"><![CDATA[<p>寒假第一篇日志给黑苹果。</p>
 <p><a href="http://alaxn.esy.es/wp-content/uploads/2014/01/QQphoto.jpeg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2014/01/QQphoto.jpeg" alt="OSX_startup"></a></p>
 <p><a href="http://alaxn.esy.es/wp-content/uploads/2014/01/QQphoto.png" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2014/01/QQphoto.png" alt="OSX10.9_screenshot"></a></p>
@@ -1394,18 +1341,16 @@
     
     <entry>
       <title><![CDATA[QQ木马札记]]></title>
-      <url>/2013/09/28/qq-e6-9c-a8-e9-a9-ac-e6-9c-ad-e8-ae-b0/</url>
+      <url>/2013/09/28/QQ%E6%9C%A8%E9%A9%AC%E6%9C%AD%E8%AE%B0/</url>
       <content type="html"><![CDATA[<p>中午，邮箱中收到一封名为大学补学金文档(1) 的邮箱<br><img src="http://b164.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/wXSWhme6kVfEr9OTJTHMYOebS8r7VcIF2sZEvC17mAg!/b/dFmJxmHMJQAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=eAT8AAAAAAABAKc!&amp;t=5&amp;su=0159016257&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>看着挺有趣的，就下载下来看看。</p>
 <p><img src="http://b166.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/VdsdUN7tk0RDdILGiIWzoQGtNPd3vavu7aWJWG5Vcd0!/b/dEI.82I0IwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAO0AQAAAAABALE!&amp;t=5&amp;su=024146545&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></p>
 <p>第一感觉就是不对劲，为啥是exe格式的呢？    这年头学校都高级得这样？什么东西都自己开发程序了？<br>而且为啥压缩格式是7z，这么节省资源？干起环保事业了？</p>
 <p>但是强大的好奇心让我解压后打开了。。。</p>
 <p>双击了一次，没有反应？ 再双击一次。。。<br>还是没有反应。</p>
 <p>过了一会，点点QQ的界面，突然出现了一个腾讯QQ重新登录框</p>
-<div><img src="/2013/09/28/qq-e6-9c-a8-e9-a9-ac-e6-9c-ad-e8-ae-b0/null" alt="本地图片，请重新上传"></div><br><img src="http://b166.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/xWlVF*PKT4Y3XNnyUzJcJf*tNazri.Pa6SPsEvdC0Bk!/b/dE9b*2IaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IgHdAAAAAAABANk!&amp;t=5&amp;su=095386081&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><br>折腾了下这个窗口，感觉怎么好像有点卡，而且看起来不美观啊。。。<br>突然想了想，为啥莫名其妙就出现这东西呢？我一直都很规矩的呀~<em>~<br>心里开始有底了。<br><br>打开任务管理器，看到 学生补助金.exe优雅地在最后一行默默地站着。<br><img src="http://b164.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/TuvzK5YYDCcQm5GIMJkoBQZi*70dM6OJQwuTZGN53Lc!/b/dDgVyGH3IwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wwG1AAAAAAABAFA!&amp;t=5&amp;su=096402753&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><div>一切都明白了，八成这就是个盗QQ号的木马。。。</div><br><div></div><br><div><br><div>果断结束进程<br><img src="http://b166.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/xWlVF*PKT4Y3XNnyUzJcJf*tNazri.Pa6SPsEvdC0Bk!/b/dE9b*2IaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IgHdAAAAAAABANk!&amp;t=5&amp;su=095386081&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>框框一下就不见了，更加验证了我的猜想。<br><br>那么接下来就来看看这个传说中的“学生补奖金”吧。<br><br>首先我用7z打开来看了下。<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/AS3isTRkrzUbG28G4NiqCDJpS5iyRpTLRTGO*OgELsE!/b/dHioyWFyIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMUAgAAAAABABI!&amp;t=5&amp;su=052615857&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>感觉应该没有加过壳，经验不足额、、、<br>接着用PEiD规规矩矩地查了下。。。<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/2LPS3YWvz9DuQYdxDKChDRte237K8B2jI5J2gVci9pM!/b/dK8fy2HOJAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=pgEfAQAAAAABAJ4!&amp;t=5&amp;su=089607217&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>这个壳，(⊙o⊙)…，第一次见到的。。。<br>So，找找手头有的工具，发现似乎没有可以脱的工具。<br>果断上百度。。。<br>先找找有没 有工具，没有结果，孩子找到别人手脱的过程。<br>唉，自己动手学习学习了。。。<br><br>于是，借鉴 <a href="http://www.52pojie.cn/thread-49406-1-1.html" target="_blank" rel="external">http://www.52pojie.cn/thread-49406-1-1.html</a> 自己开始折腾了。<br>学习他，打开OD，找到ESP<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/OpbnEo6XZas.9AsqHRFxLz*vgnKxPW4Q5U7gTb4qXtw!/b/dLS6zGF5JQAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=0159455585&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>设置断点后，F9进入<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/ZiXKLLseIV1zGtVOuBqyyNqnoFVCU*KVXsuGprSeh6c!/b/dIcpy2HaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=072708481&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>一路F8 那个忐忑啊@</div></div></em>@ 。<br>终于，看到了光明。<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/AblHysyo4Kz8lkWmXXKgwjuFrfhU3*ABUwQT.bH6F7w!/b/dIL*LmTrCwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=088094609&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>004EAE9A  - FFE0            jmp eax                                  ; 学生补学.00454435  /这里飞向光明之巅（荣耀属于<a href="http://www.52pojie.cn/space-uid-335.html" target="_blank" rel="external">mycsy</a> ）<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/vUQG6Lf0woKda*opTPMYxe*s0XQV67.sk*0FZdpwYWc!/b/dB4WMmQEDAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=08310817&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>找到了OEP    尝试脱壳<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/0PTvqXh8JLFuUCTZMYmP6IqQ9UynZnCc*YP8H3I.yKI!/b/dAd3J2R8DAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=TgK9AQAAAAABANc!&amp;t=5&amp;su=0111914417&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>唉，虽然输入表好几个无效，无法运行，不管了。。。<br><br>再次查壳验证<br><img src="http://b166.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/DMtw5v2yh2ebeMFcvSp1tjVPvJ3qddVBB0mClsecWrg!/b/dEJT.WLyIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=pgEfAQAAAAABAJ4!&amp;t=5&amp;su=0246979361&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>应该是脱壳成功了。。。<br><br>接着载入OD，查看字符串，希望可以一些信息。<br><img src="http://b165.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/zeLAQ*nS*UE4FXRPjkq22zDQ2XwClLPl0uXDpysCp48!/b/dM24YGLPIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=097915969&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>耐下心来，好好一个一个看。。。晕+<em>+<br><br>看来程序是通过跑到<a href="http://check.ptlogin2.qq.com/" target="_blank" rel="external">http://check.ptlogin2.qq.com</a>验证密码的正误，还会拉去验证码，这样说来，是不是只有密码正确QQ的账号密码才会被发送到指定的地址？<br><div><br>再看到一条字符：</div><br>超级字串参考, 条目 137<br><div> 地址=004040CD</div><br><div> 反汇编=push UnPack</div></em>.00478C84<br><div> 文本字串=The 0411558 file is missingn_C<br><br>0411558 是什么？   记得刚开始的压缩文件吗？  就在其中。。。<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/l1SXwtMD40g2Ei6LD0r6edWeSh1e1.PiSYwL4fthbnA!/b/dOD1l2P1DAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAO0AQAAAAABALE!&amp;t=5&amp;su=0233961409&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></div><br><div><br>果断万能的记事本打开它<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/Y4ni.QeugAU947VZz2HlDqMqDvQ7HSygJHZOVWO17oc!/b/dE9OjWNpDAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAPaAQAAAAABAN8!&amp;t=5&amp;su=070237137&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>这个是脚本吧？。。。<br><br>尝试打开<a href="http://ueryrtew.gwrewt.net/fe86dsdb/find.asp?QQNumber=074419977&amp;QQPassWord=074419887" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/find.asp?QQNumber=074419977&amp;QQPassWord=074419887</a><br>网页一片空白，没有回显<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/knMiP3Vu6XPbxPwuslTaE5HHhU3d.v.klAZm.2vA.yU!/b/dE0PmGN3CwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOnAQAAAAABAKI!&amp;t=5&amp;su=0218858465&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>再次刷新，结果一样。<br>于是猜想是不是上传QQ账号和密码的地址呢？<br><br>尝试打开<br><a href="http://ueryrtew.gwrewt.net/fe86dsdb/find.asp" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/find.asp</a>     空白网页<br><a href="http://ueryrtew.gwrewt.net/fe86dsdb/" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/</a>                  登陆界面<br><a href="http://ueryrtew.gwrewt.net/" target="_blank" rel="external">http://ueryrtew.gwrewt.net</a>            拒绝访问<br><a href="http://gwrewt.net/" target="_blank" rel="external">http://gwrewt.net</a>  无法打开<br><img src="http://b165.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/VnScZfZIWtMM*rrpTpxnjp4b*WWCv4g8E96v80q87ms!/b/dGybXWJoIAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOnAQAAAAABAKI!&amp;t=5&amp;su=0141235793&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>难道这就是传说中的后台？<br>试了下admin admin   确实，没有这么白痴，无法进入。。。<br><br>再次搜索程序字符串，找不到关于这个网页的任何有用信息。 看来程序应该没有直接调用什么东西去访问这个网站，估计就是通过调用0411558这个脚本来访问这个网站的。这样做的目的，我猜想是为了躲避杀毒软件的主动防御，行为检测。<br>想到这，上virscan.org 查一下它看看。。。<br><img src="http://b168.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/9r5WJqFiwYkYHrEoNm2mW5K4bkbGDOxXpOP2SAAgD9s!/b/dDtcJGTnCgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=CwNTAgAAAAABAH4!&amp;t=5&amp;su=0145940593&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>厉害啊，国内估计就一个NOD32可以报毒了。。。<br>根据扫描的结果，其实真正意义讲只有三个杀毒怀疑它是木马或病毒、后门。。。<br><br>顺便查了下IP<br><img src="http://b164.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/Uudq8L7lue.qY9F9mWiLp3tu4ahUUpyjG53o2s1UewU!/b/dNHNz2FmJQAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=AwSJAAAAAAABAKk!&amp;t=5&amp;su=0184756001&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><br>下一步还能够干什么呢。。。郁闷(⊙o⊙)…</div><br>]]></content>
+<div><img src="/2013/09/28/QQ木马札记/null" alt="本地图片，请重新上传"></div><br><img src="http://b166.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/xWlVF*PKT4Y3XNnyUzJcJf*tNazri.Pa6SPsEvdC0Bk!/b/dE9b*2IaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IgHdAAAAAAABANk!&amp;t=5&amp;su=095386081&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><br>折腾了下这个窗口，感觉怎么好像有点卡，而且看起来不美观啊。。。<br>突然想了想，为啥莫名其妙就出现这东西呢？我一直都很规矩的呀~<em>~<br>心里开始有底了。<br><br>打开任务管理器，看到 学生补助金.exe优雅地在最后一行默默地站着。<br><img src="http://b164.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/TuvzK5YYDCcQm5GIMJkoBQZi*70dM6OJQwuTZGN53Lc!/b/dDgVyGH3IwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wwG1AAAAAAABAFA!&amp;t=5&amp;su=096402753&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><div>一切都明白了，八成这就是个盗QQ号的木马。。。</div><br><div></div><br><div><br><div>果断结束进程<br><img src="http://b166.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/xWlVF*PKT4Y3XNnyUzJcJf*tNazri.Pa6SPsEvdC0Bk!/b/dE9b*2IaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IgHdAAAAAAABANk!&amp;t=5&amp;su=095386081&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>框框一下就不见了，更加验证了我的猜想。<br><br>那么接下来就来看看这个传说中的“学生补奖金”吧。<br><br>首先我用7z打开来看了下。<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/AS3isTRkrzUbG28G4NiqCDJpS5iyRpTLRTGO*OgELsE!/b/dHioyWFyIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMUAgAAAAABABI!&amp;t=5&amp;su=052615857&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>感觉应该没有加过壳，经验不足额、、、<br>接着用PEiD规规矩矩地查了下。。。<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/2LPS3YWvz9DuQYdxDKChDRte237K8B2jI5J2gVci9pM!/b/dK8fy2HOJAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=pgEfAQAAAAABAJ4!&amp;t=5&amp;su=089607217&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>这个壳，(⊙o⊙)…，第一次见到的。。。<br>So，找找手头有的工具，发现似乎没有可以脱的工具。<br>果断上百度。。。<br>先找找有没 有工具，没有结果，孩子找到别人手脱的过程。<br>唉，自己动手学习学习了。。。<br><br>于是，借鉴 <a href="http://www.52pojie.cn/thread-49406-1-1.html" target="_blank" rel="external">http://www.52pojie.cn/thread-49406-1-1.html</a> 自己开始折腾了。<br>学习他，打开OD，找到ESP<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/OpbnEo6XZas.9AsqHRFxLz*vgnKxPW4Q5U7gTb4qXtw!/b/dLS6zGF5JQAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=0159455585&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>设置断点后，F9进入<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/ZiXKLLseIV1zGtVOuBqyyNqnoFVCU*KVXsuGprSeh6c!/b/dIcpy2HaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=072708481&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>一路F8 那个忐忑啊@</div></div></em>@ 。<br>终于，看到了光明。<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/AblHysyo4Kz8lkWmXXKgwjuFrfhU3*ABUwQT.bH6F7w!/b/dIL*LmTrCwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=088094609&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>004EAE9A  - FFE0            jmp eax                                  ; 学生补学.00454435  /这里飞向光明之巅（荣耀属于<a href="http://www.52pojie.cn/space-uid-335.html" target="_blank" rel="external">mycsy</a> ）<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/vUQG6Lf0woKda*opTPMYxe*s0XQV67.sk*0FZdpwYWc!/b/dB4WMmQEDAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=08310817&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>找到了OEP    尝试脱壳<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/0PTvqXh8JLFuUCTZMYmP6IqQ9UynZnCc*YP8H3I.yKI!/b/dAd3J2R8DAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=TgK9AQAAAAABANc!&amp;t=5&amp;su=0111914417&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>唉，虽然输入表好几个无效，无法运行，不管了。。。<br><br>再次查壳验证<br><img src="http://b166.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/DMtw5v2yh2ebeMFcvSp1tjVPvJ3qddVBB0mClsecWrg!/b/dEJT.WLyIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=pgEfAQAAAAABAJ4!&amp;t=5&amp;su=0246979361&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>应该是脱壳成功了。。。<br><br>接着载入OD，查看字符串，希望可以一些信息。<br><img src="http://b165.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/zeLAQ*nS*UE4FXRPjkq22zDQ2XwClLPl0uXDpysCp48!/b/dM24YGLPIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=097915969&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>耐下心来，好好一个一个看。。。晕+<em>+<br><br>看来程序是通过跑到<a href="http://check.ptlogin2.qq.com/" target="_blank" rel="external">http://check.ptlogin2.qq.com</a>验证密码的正误，还会拉去验证码，这样说来，是不是只有密码正确QQ的账号密码才会被发送到指定的地址？<br><div><br>再看到一条字符：</div><br>超级字串参考, 条目 137<br><div> 地址=004040CD</div><br><div> 反汇编=push UnPack</div></em>.00478C84<br><div> 文本字串=The 0411558 file is missingn_C<br><br>0411558 是什么？   记得刚开始的压缩文件吗？  就在其中。。。<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/l1SXwtMD40g2Ei6LD0r6edWeSh1e1.PiSYwL4fthbnA!/b/dOD1l2P1DAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAO0AQAAAAABALE!&amp;t=5&amp;su=0233961409&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></div><br><div><br>果断万能的记事本打开它<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/Y4ni.QeugAU947VZz2HlDqMqDvQ7HSygJHZOVWO17oc!/b/dE9OjWNpDAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAPaAQAAAAABAN8!&amp;t=5&amp;su=070237137&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>这个是脚本吧？。。。<br><br>尝试打开<a href="http://ueryrtew.gwrewt.net/fe86dsdb/find.asp?QQNumber=074419977&amp;QQPassWord=074419887" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/find.asp?QQNumber=074419977&amp;QQPassWord=074419887</a><br>网页一片空白，没有回显<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/knMiP3Vu6XPbxPwuslTaE5HHhU3d.v.klAZm.2vA.yU!/b/dE0PmGN3CwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOnAQAAAAABAKI!&amp;t=5&amp;su=0218858465&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>再次刷新，结果一样。<br>于是猜想是不是上传QQ账号和密码的地址呢？<br><br>尝试打开<br><a href="http://ueryrtew.gwrewt.net/fe86dsdb/find.asp" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/find.asp</a>     空白网页<br><a href="http://ueryrtew.gwrewt.net/fe86dsdb/" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/</a>                  登陆界面<br><a href="http://ueryrtew.gwrewt.net/" target="_blank" rel="external">http://ueryrtew.gwrewt.net</a>            拒绝访问<br><a href="http://gwrewt.net/" target="_blank" rel="external">http://gwrewt.net</a>  无法打开<br><img src="http://b165.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/VnScZfZIWtMM*rrpTpxnjp4b*WWCv4g8E96v80q87ms!/b/dGybXWJoIAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOnAQAAAAABAKI!&amp;t=5&amp;su=0141235793&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>难道这就是传说中的后台？<br>试了下admin admin   确实，没有这么白痴，无法进入。。。<br><br>再次搜索程序字符串，找不到关于这个网页的任何有用信息。 看来程序应该没有直接调用什么东西去访问这个网站，估计就是通过调用0411558这个脚本来访问这个网站的。这样做的目的，我猜想是为了躲避杀毒软件的主动防御，行为检测。<br>想到这，上virscan.org 查一下它看看。。。<br><img src="http://b168.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/9r5WJqFiwYkYHrEoNm2mW5K4bkbGDOxXpOP2SAAgD9s!/b/dDtcJGTnCgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=CwNTAgAAAAABAH4!&amp;t=5&amp;su=0145940593&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>厉害啊，国内估计就一个NOD32可以报毒了。。。<br>根据扫描的结果，其实真正意义讲只有三个杀毒怀疑它是木马或病毒、后门。。。<br><br>顺便查了下IP<br><img src="http://b164.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/Uudq8L7lue.qY9F9mWiLp3tu4ahUUpyjG53o2s1UewU!/b/dNHNz2FmJQAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=AwSJAAAAAAABAKk!&amp;t=5&amp;su=0184756001&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><br>下一步还能够干什么呢。。。郁闷(⊙o⊙)…</div><br>]]></content>
       
         <categories>
-            
-            <category> All Post </category>
             
             <category> MachineWorld </category>
             
@@ -1424,7 +1369,7 @@
     
     <entry>
       <title><![CDATA[ATP-小句子大思考]]></title>
-      <url>/2013/09/26/atp-e5-b0-8f-e5-8f-a5-e5-ad-90-e5-a4-a7-e6-80-9d-e8-80-83/</url>
+      <url>/2013/09/26/ATP-%E5%B0%8F%E5%8F%A5%E5%AD%90%E5%A4%A7%E6%80%9D%E8%80%83/</url>
       <content type="html"><![CDATA[<p>Great hopes make great man.<a target="_blank" name="_GoBack"></a></p>
 <p>享受过程，不问结果。</p>
 <p>让自己与众不同。</p>
