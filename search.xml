@@ -3,15 +3,6 @@
   
     
     <entry>
-      <title></title>
-      <url>/2017/06/19/test1/</url>
-      <content type="html"><![CDATA[<p>#test</p>
-<h2 id="test1"><a href="#test1" class="headerlink" title="test1"></a>test1</h2>]]></content>
-      
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[hello-new-world   //在此处添加你的标题。]]></title>
       <url>/2017/06/17/hello-new-world/</url>
       <content type="html"><![CDATA[<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p>test content.</p>
