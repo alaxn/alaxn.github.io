@@ -3,6 +3,137 @@
   
     
     <entry>
+      <title><![CDATA[gulp设置中遇到的过的那些问题]]></title>
+      <url>/2017/06/20/gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<h1 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h1><p><pre><code><br>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</code></pre></p>
+<p>events.js:160<br>      throw er; // Unhandled ‘error’ event<br>      ^<br>GulpUglifyError: unable to minify JavaScript<br>    at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)<br>    at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash_createHybrid.js:87:15)<br>    at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)<br>    at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)<br>    at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:172:10)<br>    at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:160:12)<br>    at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:335:12)<br>    at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:321:5)<br>    at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:248:11)<br>    at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib_stream_readable.js:623:24)<br>PS C:\Users\alex\apflora&gt;<br></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
+      <url>/2017/06/20/Markdown%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</url>
+      <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="##语法##"></a>##语法##</h2><blockquote>
+<p>转载来自<a href="http://itmyhome.com/markdown/" target="_blank" rel="external">http://itmyhome.com/markdown/</a></p>
+</blockquote>
+<p>这部分内容列出了 John Gruber 定义的 Markdown 语法，包括：</p>
+<ol>
+<li>段落与换行</li>
+<li>标题</li>
+<li>引用</li>
+<li>列表</li>
+<li>代码</li>
+<li>分隔线</li>
+<li>超链接</li>
+<li>图像</li>
+<li>强调</li>
+<li>字符转义</li>
+</ol>
+<p><strong>####段落与换行####</strong></p>
+<ol>
+<li><p>段落的前后必须是空行：</p>
+<p>空行指的是行内什么都没有，或者只有空白符（空格或制表符）</p>
+<p>相邻两行文本，如果中间没有空行 会显示在一行中（换行符被转换为空格）、</p>
+</li>
+<li><p>如果需要在段落内加入换行（<br>）：</p>
+<p>可以在前一行的末尾加入至少两个空格<br>然后换行写其它的文字</p>
+</li>
+<li><p>Markdown 中的多数区块都需要在两个空行之间.</p>
+</li>
+</ol>
+<p>##<strong>标题</strong>##</p>
+<h2 id="1-Setext-形式"><a href="#1-Setext-形式" class="headerlink" title="1. Setext 形式"></a><strong>1. Setext 形式</strong></h2><pre><code>H1
+====
+H2
+----
+</code></pre><h2 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h2><hr>
+<h2 id="H2"><a href="#H2" class="headerlink" title="####H2"></a>####H2</h2><blockquote>
+<p>= 和 - 的数量是没有限制的。通常的做法是使其和标题文本的长度相同，这样看起来比较舒服。或者可以像我一样，用四个 - 或 =。<br>Setext 形式只支持 h1 和 h2 两种标题。</p>
+</blockquote>
+<h1 id="2-atx-形式"><a href="#2-atx-形式" class="headerlink" title="2. atx 形式"></a><strong>2. atx 形式</strong></h1><p>① 可以用对称的 # 包括文本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">####H4####</div><div class="line"></div><div class="line">#####H5#####</div></pre></td></tr></table></figure></p>
+<p>####H4</p>
+<p>#####H5</p>
+<p>② 也可以只在左边使用 #：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">####H4</div><div class="line"></div><div class="line">#####H5</div></pre></td></tr></table></figure></p>
+<p>H4</p>
+<p>H5</p>
+<p>③ 成对的 # 左侧和只在左边使用的 # 左侧都不可以有任何空白，但其内侧可以使用空白。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> ###左侧使用了空格###</div><div class="line"></div><div class="line">#### 内侧使用了空格</div></pre></td></tr></table></figure>
+<p>####左侧使用了空格####</p>
+<p>内侧使用了空格</p>
+<blockquote>
+<p>在这一点上，可能各种 Markdown 的实现会有不同的结果，不过仍然需要我们遵守语法规则。</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> Markdown </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo-设置Disqus评论]]></title>
+      <url>/2017/06/20/Hexo-%E8%AE%BE%E7%BD%AEDisqus%E8%AF%84%E8%AE%BA/</url>
+      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
+<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
+<blockquote>
+<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
+</blockquote>
+<p>####<strong>Disqus使用说明</strong></p>
+<ol>
+<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
+</li>
+<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/hexo-setting-disqus-step2.png" alt="enter image description here"></p>
+</li>
+<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
+</li>
+<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
+</li>
+<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
+</li>
+</ol>
+<p><pre><code><br>disqus:<br>  enable: ture                # 开启disqus<br>  shortname: your shortname   # 你刚注册的disqus用户名<br>  count: false                # 开启评论数量显示<br></code>&lt;/ pre&gt; </pre></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[hello-new-world   //在此处添加你的标题。]]></title>
       <url>/2017/06/17/hello-new-world/</url>
       <content type="html"><![CDATA[<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><p>test content.</p>
@@ -237,6 +368,59 @@
             <tag> win10 </tag>
             
             <tag> 声卡 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[LNMP环境下WordPress程序伪静态解决方案]]></title>
+      <url>/2015/10/03/LNMP%E7%8E%AF%E5%A2%83%E4%B8%8BWordPress%E7%A8%8B%E5%BA%8F%E4%BC%AA%E9%9D%99%E6%80%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+      <content type="html"><![CDATA[<p>最近尝试用vps搭建服务器，使用了Lnmp一键工具作为安装web服务的软件。</p>
+<p>在测试wordpress 的时候发现伪静态插件和lnmp自带的wordpress.conf文件冲突，导致nginx错误无法启动，后懒得调试，自己重新搭建，却发现伪静态出现了问题。在搜罗网上关于wordpress伪静态的解决方案测试后，发现有些网站的教程不是特别完整，故整合汇编了此文，供一些菜鸟使用。</p>
+<p>————————————————————————————————分割线</p>
+<p>直接贴出解决方法。声明：我的测试环境是Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-48-generic x86_64)，使用Lnmp1.2。</p>
+<p>1.检查wordpress.conf的文件是否有问题，正常应该如下（或者直接修改成如下）：</p>
+<p>vi /usr/local/nginx/conf/wordpress.conf</p>
+<hr>
+<p>location / { if (-d $request_filename){ rewrite ^/(.<em>)([^/])$ /$1$2/ permanent; }<br>if (-f $request_filename/index.html){ rewrite (.</em>) $1/index.html break; }<br>if (-f $request_filename/index.php){ rewrite (.<em>) $1/index.php; }<br>if (!-f $request_filename){ rewrite (.</em>) /index.php; }}</p>
+<hr>
+<p>&nbsp;</p>
+<p>2.检查虚拟主机（vhost）下的文件：</p>
+<p>vi /usr/local/nginx/conf/vhost/www.alaxn.ml.conf(www.alaxn.ml修改成自己网站的配置文件名称，如果不知道，也可以使用cd /usr/local/nginx/conf/vhost/ 进入该目录后 dir 列出所有文件，寻找需要修改的文件)</p>
+<p>vi打开后应该会看到类似代码：</p>
+<hr>
+<p>server {<br>listen 80;<br>server_name www.laozuo.org;<br>index index.html index.php;<br><strong>include wordpress.conf;</strong></p>
+<p>……（省略下文内容）</p>
+<hr>
+<p>如果没有“<strong>include wordpress.conf</strong>”，请自行添加进去后保存退出。</p>
+<p>&nbsp;</p>
+<p>3.重启Lnmp：lnmp restart，观察是否可以重启成功。</p>
+<p>————————————————————————————————分割线</p>
+<p>若还出现其他问题，请自行寻找错误代码或特征谷歌。关于代码原理可以参考下文文章。</p>
+<p>&nbsp;</p>
+<p>参考文章：</p>
+<p>LNMP环境中WordPress程序伪静态解决方案           <a href="http://www.laozuo.org/490.html" target="_blank" rel="external">http://www.laozuo.org/490.html</a></p>
+<p>修复军哥lnmp一键安装wordpress伪静态规则错误  <a href="http://www.wpmee.com/lnmp-1-0-wordpress-err/" target="_blank" rel="external">http://www.wpmee.com/lnmp-1-0-wordpress-err/</a></p>
+<p>&nbsp;</p>
+]]></content>
+      
+        <categories>
+            
+            <category> All Post </category>
+            
+            <category> MachineWorld </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Lnmp </tag>
+            
+            <tag> VPS </tag>
+            
+            <tag> Wordpress </tag>
             
         </tags>
         
@@ -519,9 +703,9 @@
         
         <tags>
             
-            <tag> NUS </tag>
-            
             <tag> Singapore </tag>
+            
+            <tag> NUS </tag>
             
         </tags>
         
@@ -925,9 +1109,9 @@
         
         <tags>
             
-            <tag> Singapore </tag>
-            
             <tag> Lee Kuan Yew </tag>
+            
+            <tag> Singapore </tag>
             
         </tags>
         
