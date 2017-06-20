@@ -1521,13 +1521,6 @@ pre .javascript .function {
 .fancybox-close:hover {
   border: none;
 }
-.post-copyright {
-  margin: 2em 0 0;
-  padding: 0.5em 1em;
-  border-left: 3px solid #ff1700;
-  background-color: #f9f9f9;
-  list-style: none;
-}
 .sidebar {
   position: fixed;
   right: 0;
@@ -1685,7 +1678,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #b3ff90;
+  background: #41740d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2668,4 +2661,20 @@ embed {
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
+}
+code {
+  color: #fc6423;
+  background: #fbf7f8;
+  margin: 2px;
+}
+.highlight,
+pre {
+  margin: 5px 0;
+  padding: 5px;
+  border-radius: 3px;
+}
+.highlight,
+code,
+pre {
+  border: 1px solid #d6d6d6;
 }
