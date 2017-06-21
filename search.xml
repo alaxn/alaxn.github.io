@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title><![CDATA[����FATAL Cannot read property 'code' of undefined]]></title>
+      <url>/2017/06/20/%E8%A7%A3%E5%86%B3%20FATAL%20Cannot%20read%20property%20'code'%20of%20undefined/</url>
+      <content type="html"><![CDATA[<p>����gulpʱ�����ֱ������󡣴����Ĵ������£�</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FATAL Cannot read property &apos;code&apos; of undefined</div></pre></td></tr></table></figure>
+<p>���μ�������ʱ����</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Nexo-为Next主题添加文章阅读量统计功能]]></title>
       <url>/2017/06/20/Nexo-%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD/</url>
       <content type="html"><![CDATA[<p>NexT主题目前已经合并这个Feature，因此如果你使用的是NexT主题，可以直接使用不用修改主题模版而直接在_config.yml中配置即可。</p>
@@ -49,11 +72,124 @@
     </entry>
     
     <entry>
-      <title><![CDATA[����FATAL Cannot read property 'code' of undefined.md]]></title>
-      <url>/2017/06/20/%E8%A7%A3%E5%86%B3%20FATAL%20Cannot%20read%20property%20'code'%20of%20undefined/</url>
-      <content type="html"><![CDATA[<p>����gulpʱ�����ֱ������󡣴����Ĵ������£�</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FATAL Cannot read property &apos;code&apos; of undefined</div></pre></td></tr></table></figure>
-<p>���μ�������ʱ����</p>
+      <title><![CDATA[Hexo-algolia������װ������]]></title>
+      <url>/2017/06/20/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h2 id="j��"><a href="#j��" class="headerlink" title="ǰ��"></a>ǰ��</h2><p>�Ѿ���װ��Hexo��˳�����뼰������</p>
+<p>##��װ##</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save hexo-algolia</div></pre></td></tr></table></figure>
+<p>##����<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>����</p>
+<ol>
+<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">ע��algolia</a></li>
+</ol>
+<blockquote>
+<p>algolia����ʹ��github�͹ȸ��˺�ֱ�ӵ�¼��</p>
+</blockquote>
+<ol>
+<li>����Indices���½�Index</li>
+<li>����API Keys����¼����������ֵ��</li>
+</ol>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Application ID</div><div class="line">Search-Only API Key</div><div class="line">Admin API Key</div></pre></td></tr></table></figure>
+</code></pre><ol>
+<li><p>��API Keysҳ���л���All API Keys�����½�һ��Key����ѡ��ͼ��ʾ��Ȩ�ޣ�����¼��API key��ֵ��</p>
+<blockquote>
+<p>���ڸ��º���algoliaΪ�˰�ȫԭ������Ҫ�½�һ��ר�õ�Key�ύ�������ݿ��ģ������������ύʧ�ܵ�������</p>
+</blockquote>
+</li>
+</ol>
+<img title="Create" alt="Create" class="class1 class2" src="http://bucket_name.qiniudn.com/qnpictures/images/Hexo-algolia������װ������/Create?imageView2/2/w/600">
+<p>##����վ������</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo, algolia </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
+      <url>/2017/06/20/Markdown%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</url>
+      <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="##语法##"></a>##语法##</h2><blockquote>
+<p>转载来自<a href="http://itmyhome.com/markdown/" target="_blank" rel="external">http://itmyhome.com/markdown/</a></p>
+</blockquote>
+<p>这部分内容列出了 John Gruber 定义的 Markdown 语法，包括：</p>
+<ol>
+<li>段落与换行</li>
+<li>标题</li>
+<li>引用</li>
+<li>列表</li>
+<li>代码</li>
+<li>分隔线</li>
+<li>超链接</li>
+<li>图像</li>
+<li>强调</li>
+<li>字符转义</li>
+</ol>
+<p><strong>####段落与换行####</strong></p>
+<ol>
+<li><p>段落的前后必须是空行：</p>
+<p>空行指的是行内什么都没有，或者只有空白符（空格或制表符）</p>
+<p>相邻两行文本，如果中间没有空行 会显示在一行中（换行符被转换为空格）、</p>
+</li>
+<li><p>如果需要在段落内加入换行（<br>）：</p>
+<p>可以在前一行的末尾加入至少两个空格<br>然后换行写其它的文字</p>
+</li>
+<li><p>Markdown 中的多数区块都需要在两个空行之间.</p>
+</li>
+</ol>
+<p>##<strong>标题</strong>##</p>
+<h2 id="1-Setext-形式"><a href="#1-Setext-形式" class="headerlink" title="1. Setext 形式"></a><strong>1. Setext 形式</strong></h2><pre><code>H1
+====
+H2
+----
+</code></pre><h2 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h2><hr>
+<h2 id="H2"><a href="#H2" class="headerlink" title="####H2"></a>####H2</h2><blockquote>
+<p>= 和 - 的数量是没有限制的。通常的做法是使其和标题文本的长度相同，这样看起来比较舒服。或者可以像我一样，用四个 - 或 =。<br>Setext 形式只支持 h1 和 h2 两种标题。</p>
+</blockquote>
+<h2 id="2-atx-形式"><a href="#2-atx-形式" class="headerlink" title="2. atx 形式"></a><strong>2. atx 形式</strong></h2><p>① 可以用对称的 # 包括文本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">####H4####</div><div class="line"></div><div class="line">#####H5#####</div></pre></td></tr></table></figure></p>
+<p>####H4</p>
+<p>#####H5</p>
+<p>② 也可以只在左边使用 #：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">####H4</div><div class="line"></div><div class="line">#####H5</div></pre></td></tr></table></figure></p>
+<p>H4</p>
+<p>H5</p>
+<p>③ 成对的 # 左侧和只在左边使用的 # 左侧都不可以有任何空白，但其内侧可以使用空白。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> ###左侧使用了空格###</div><div class="line"></div><div class="line">#### 内侧使用了空格</div></pre></td></tr></table></figure>
+<p>####左侧使用了空格####</p>
+<p>内侧使用了空格</p>
+<blockquote>
+<p>在这一点上，可能各种 Markdown 的实现会有不同的结果，不过仍然需要我们遵守语法规则。</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> Markdown </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[gulp设置中遇到的过的那些问题]]></title>
+      <url>/2017/06/20/gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<h1 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h1><p><pre><code><br>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</code></pre></p>
+<p>events.js:160<br>      throw er; // Unhandled ‘error’ event<br>      ^<br>GulpUglifyError: unable to minify JavaScript<br>    at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)<br>    at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash_createHybrid.js:87:15)<br>    at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)<br>    at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)<br>    at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:172:10)<br>    at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:160:12)<br>    at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:335:12)<br>    at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:321:5)<br>    at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:248:11)<br>    at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib_stream_readable.js:623:24)<br>PS C:\Users\alex\apflora&gt;<br></p>
 ]]></content>
       
         <categories>
@@ -105,142 +241,6 @@
         <tags>
             
             <tag> Hexo </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[gulp设置中遇到的过的那些问题]]></title>
-      <url>/2017/06/20/gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
-      <content type="html"><![CDATA[<h1 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h1><p><pre><code><br>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</code></pre></p>
-<p>events.js:160<br>      throw er; // Unhandled ‘error’ event<br>      ^<br>GulpUglifyError: unable to minify JavaScript<br>    at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)<br>    at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash_createHybrid.js:87:15)<br>    at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)<br>    at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)<br>    at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:172:10)<br>    at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:160:12)<br>    at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:335:12)<br>    at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:321:5)<br>    at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:248:11)<br>    at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib_stream_readable.js:623:24)<br>PS C:\Users\alex\apflora&gt;<br></p>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
-      <url>/2017/06/20/Markdown%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</url>
-      <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="##语法##"></a>##语法##</h2><blockquote>
-<p>转载来自<a href="http://itmyhome.com/markdown/" target="_blank" rel="external">http://itmyhome.com/markdown/</a></p>
-</blockquote>
-<p>这部分内容列出了 John Gruber 定义的 Markdown 语法，包括：</p>
-<ol>
-<li>段落与换行</li>
-<li>标题</li>
-<li>引用</li>
-<li>列表</li>
-<li>代码</li>
-<li>分隔线</li>
-<li>超链接</li>
-<li>图像</li>
-<li>强调</li>
-<li>字符转义</li>
-</ol>
-<p><strong>####段落与换行####</strong></p>
-<ol>
-<li><p>段落的前后必须是空行：</p>
-<p>空行指的是行内什么都没有，或者只有空白符（空格或制表符）</p>
-<p>相邻两行文本，如果中间没有空行 会显示在一行中（换行符被转换为空格）、</p>
-</li>
-<li><p>如果需要在段落内加入换行（<br>）：</p>
-<p>可以在前一行的末尾加入至少两个空格<br>然后换行写其它的文字</p>
-</li>
-<li><p>Markdown 中的多数区块都需要在两个空行之间.</p>
-</li>
-</ol>
-<p>##<strong>标题</strong>##</p>
-<h2 id="1-Setext-形式"><a href="#1-Setext-形式" class="headerlink" title="1. Setext 形式"></a><strong>1. Setext 形式</strong></h2><pre><code>H1
-====
-H2
-----
-</code></pre><h2 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h2><hr>
-<h2 id="H2"><a href="#H2" class="headerlink" title="####H2"></a>####H2</h2><blockquote>
-<p>= 和 - 的数量是没有限制的。通常的做法是使其和标题文本的长度相同，这样看起来比较舒服。或者可以像我一样，用四个 - 或 =。<br>Setext 形式只支持 h1 和 h2 两种标题。</p>
-</blockquote>
-<h1 id="2-atx-形式"><a href="#2-atx-形式" class="headerlink" title="2. atx 形式"></a><strong>2. atx 形式</strong></h1><p>① 可以用对称的 # 包括文本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">####H4####</div><div class="line"></div><div class="line">#####H5#####</div></pre></td></tr></table></figure></p>
-<p>####H4</p>
-<p>#####H5</p>
-<p>② 也可以只在左边使用 #：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">####H4</div><div class="line"></div><div class="line">#####H5</div></pre></td></tr></table></figure></p>
-<p>H4</p>
-<p>H5</p>
-<p>③ 成对的 # 左侧和只在左边使用的 # 左侧都不可以有任何空白，但其内侧可以使用空白。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> ###左侧使用了空格###</div><div class="line"></div><div class="line">#### 内侧使用了空格</div></pre></td></tr></table></figure>
-<p>####左侧使用了空格####</p>
-<p>内侧使用了空格</p>
-<blockquote>
-<p>在这一点上，可能各种 Markdown 的实现会有不同的结果，不过仍然需要我们遵守语法规则。</p>
-</blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> Markdown </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Markdown </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hexo-algolia������װ������]]></title>
-      <url>/2017/06/20/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</url>
-      <content type="html"><![CDATA[<h2 id="j��"><a href="#j��" class="headerlink" title="ǰ��"></a>ǰ��</h2><p>�Ѿ���װ��Hexo��˳�����뼰������</p>
-<p>##��װ##</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save hexo-algolia</div></pre></td></tr></table></figure>
-<p>##����<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>����</p>
-<ol>
-<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">ע��algolia</a></li>
-</ol>
-<blockquote>
-<p>algolia����ʹ��github�͹ȸ��˺�ֱ�ӵ�¼��</p>
-</blockquote>
-<ol>
-<li>����Indices���½�Index</li>
-<li>����API Keys����¼����������ֵ��</li>
-</ol>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Application ID</div><div class="line">Search-Only API Key</div><div class="line">Admin API Key</div></pre></td></tr></table></figure>
-</code></pre><ol>
-<li><p>��API Keysҳ���л���All API Keys�����½�һ��Key����ѡ��ͼ��ʾ��Ȩ�ޣ�����¼��API key��ֵ��</p>
-<blockquote>
-<p>���ڸ��º���algoliaΪ�˰�ȫԭ������Ҫ�½�һ��ר�õ�Key�ύ�������ݿ��ģ������������ύʧ�ܵ�������</p>
-</blockquote>
-</li>
-</ol>
-<img title="Create" alt="Create" class="class1 class2" src="http://bucket_name.qiniudn.com/qnpictures/images/Hexo-algolia������װ������/Create?imageView2/2/w/600">
-<p>##����վ������</p>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo, algolia </tag>
             
         </tags>
         
@@ -412,8 +412,6 @@ H2
 ]]></content>
       
         <categories>
-            
-            <category> All Post </category>
             
             <category> MachineWorld </category>
             
@@ -596,11 +594,7 @@ H2
       
         <categories>
             
-            <category> All Post </category>
-            
             <category> MachineWorld </category>
-            
-            <category> 流年淡思 </category>
             
         </categories>
         
@@ -665,6 +659,39 @@ H2
         <tags>
             
             <tag> Singapore </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo-gulp配置]]></title>
+      <url>/2015/05/02/Hexo-gulp%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<p>##安装gulp及相关插件</p>
+<p>这里主要女装以下插件：<br>CSS 压缩：gulp-clean-css<br>JS 压缩：gulp-uglify<br>HTML 压缩：gulp-htmlmin，gulp-htmlclean<br>图片压缩：gulp-imagemin</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install gulp -g</div><div class="line">npm npm install gulp-clean-css gulp-uglify gulp-htmlmin gulp-imagemin gulp-htmlclean gulp --save</div></pre></td></tr></table></figure>
+<p>安装完后打开hexo目录中的package.json文件，检查是否安装了以上插件</p>
+<p>##配置gulpfile.js</p>
+<p>在Hexo根目录中新建文件gulpfile.js，复制以下文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">var gulp = require(&apos;gulp&apos;);</div><div class="line">    minifycss = require(&apos;gulp-clean-css&apos;);</div><div class="line">    uglify = require(&apos;gulp-uglify&apos;);</div><div class="line">    htmlmin = require(&apos;gulp-htmlmin&apos;);</div><div class="line">    htmlclean = require(&apos;gulp-htmlclean&apos;);</div><div class="line">    imagemin = require(&apos;gulp-imagemin&apos;);</div><div class="line">// 压缩 public 目录内 css</div><div class="line">gulp.task(&apos;minify-css&apos;, function() &#123;</div><div class="line">    return gulp.src(&apos;./public/**/*.css&apos;)</div><div class="line">        .pipe(minifycss(&#123;</div><div class="line">           advanced: true,//类型：Boolean 默认：true [是否开启高级优化（合并选择器等）]</div><div class="line">           compatibility: &apos;ie7&apos;,//保留ie7及以下兼容写法 类型：String 默认：&apos;&apos;or&apos;*&apos; [启用兼容模式； &apos;ie7&apos;：IE7兼容模式，&apos;ie8&apos;：IE8兼容模式，&apos;*&apos;：IE9+兼容模式]</div><div class="line">           keepBreaks: true,//类型：Boolean 默认：false [是否保留换行]</div><div class="line">           keepSpecialComments: &apos;*&apos;</div><div class="line">           //保留所有特殊前缀 当你用autoprefixer生成的浏览器前缀，如果不加这个参数，有可能将会删除你的部分前缀</div><div class="line">        &#125;))</div><div class="line">        .pipe(gulp.dest(&apos;./public&apos;));</div><div class="line">&#125;);</div><div class="line">// 压缩 public 目录内 html</div><div class="line">gulp.task(&apos;minify-html&apos;, function() &#123;</div><div class="line">  return gulp.src(&apos;./public/**/*.html&apos;)</div><div class="line">    .pipe(htmlclean())</div><div class="line">    .pipe(htmlmin(&#123;</div><div class="line">        removeComments: true,//清除 HTML 注释</div><div class="line">        collapseWhitespace: true,//压缩 HTML</div><div class="line">        collapseBooleanAttributes: true,//省略布尔属性的值 &lt;input checked=&quot;true&quot;/&gt; ==&gt; &lt;input /&gt;</div><div class="line">        removeEmptyAttributes: true,//删除所有空格作属性值 &lt;input id=&quot;&quot; /&gt; ==&gt; &lt;input /&gt;</div><div class="line">        removeScriptTypeAttributes: true,//删除 &lt;script&gt; 的 type=&quot;text/javascript&quot;</div><div class="line">        removeStyleLinkTypeAttributes: true,//删除 &lt;style&gt; 和 &lt;link&gt; 的 type=&quot;text/css&quot;</div><div class="line">        minifyJS: true,//压缩页面 JS</div><div class="line">        minifyCSS: true//压缩页面 CSS</div><div class="line">    &#125;))</div><div class="line">    .pipe(gulp.dest(&apos;./public&apos;))</div><div class="line">&#125;);</div><div class="line">// 压缩 public/js 目录内 js</div><div class="line">gulp.task(&apos;minify-js&apos;, function() &#123;</div><div class="line">    return gulp.src(&apos;./public/**/*.js&apos;)</div><div class="line">        .pipe(uglify())</div><div class="line">        .pipe(gulp.dest(&apos;./public&apos;));</div><div class="line">&#125;);</div><div class="line">// 压缩 public 目录内图片</div><div class="line">gulp.task(&apos;minify-images&apos;, function() &#123;</div><div class="line">    gulp.src(&apos;./public/**/*.*&apos;)</div><div class="line">        .pipe(imagemin(&#123;</div><div class="line">           optimizationLevel: 5, //类型：Number  默认：3  取值范围：0-7（优化等级）</div><div class="line">           progressive: true, //类型：Boolean 默认：false 无损压缩jpg图片+</div><div class="line">           interlaced: false, //类型：Boolean 默认：false 隔行扫描gif进行渲染</div><div class="line">           multipass: false, //类型：Boolean 默认：false 多次优化svg直到完全优化</div><div class="line">        &#125;))</div><div class="line">        .pipe(gulp.dest(&apos;./public&apos;));</div><div class="line">&#125;);</div><div class="line">// 执行 gulp 命令时执行的任务</div><div class="line">gulp.task(&apos;default&apos;, [</div><div class="line">    &apos;minify-html&apos;,&apos;minify-css&apos;,&apos;minify-js&apos;,&apos;minify-images&apos;</div><div class="line">]);</div></pre></td></tr></table></figure>
+<p>##编译</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">gulp</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+<p>进行测试。</p>
+<p>##参考<br><a href="https://www.liuxinggang.com/2016-12-08-hexo%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E8%A1%A5%E5%85%85/" target="_blank" rel="external">hexo性能优化补充</a><br><a href="http://www.ydcss.com/archives/18" target="_blank" rel="external">gulp详细入门教程</a><br><a href="https://clearsky.me/hexo-gulp-compress.html" target="_blank" rel="external">使用 gulp 压缩 hexo 静态资源</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> gulp </tag>
             
         </tags>
         
@@ -1417,8 +1444,6 @@ H2
       
         <categories>
             
-            <category> All Post </category>
-            
             <category> MachineWorld </category>
             
         </categories>
@@ -1707,30 +1732,6 @@ H2
 ]]></content>
       
         <categories>
-            
-            <category> 流年淡思 </category>
-            
-        </categories>
-        
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[仙剑四，再次的感动]]></title>
-      <url>/2012/03/21/pal4-moving/</url>
-      <content type="html"><![CDATA[<p>这个星期，英语演讲突发想象，打算介绍仙剑，所以重新到仙剑四吧闲游了一番。。。</p>
-<p>又勾起了一些初一时一些回忆。</p>
-<p>因为一个人，使得我对仙剑四有了更多的感触和感动。就此，初一时的我有点近乎疯狂的追起了仙剑四。。。</p>
-<p>往者不可追，来者犹可惜。</p>
-<p>废话不多讲，直接贴上星期四网上看的帖子。  2007 相遇感动。。。</p>
-<p><a href="http://tieba.baidu.com/p/1091612167" target="_blank" rel="external">http://tieba.baidu.com/p/1091612167</a></p>
-<p><img src="http://imgsrc.baidu.com/forum/pic/item/811e0155371d16933bc7639e.jpg" alt=""><br><img src="http://imgsrc.baidu.com/forum/pic/item/efeada62470755a6838b137a.jpg" alt=""><br><img src="http://imgsrc.baidu.com/forum/pic/item/ab424e64b37a8f78b9998f2a.jpg" alt=""><br><img src="http://imgsrc.baidu.com/forum/pic/item/38850485c087317010df9b05.jpg" alt=""><br><img src="http://imgsrc.baidu.com/forum/pic/item/8cb6ff79d0793a3c35a80f2d.jpg" alt=""><br><img src="http://imgsrc.baidu.com/forum/pic/item/b15f6a8b4544f181a044dfec.jpg" alt=""><img src="http://imgsrc.baidu.com/forum/pic/item/2b1adf5deb08905f728da58e.jpg" alt=""><br><img src="http://imgsrc.baidu.com/forum/pic/item/a0be5026fc122cb12c73b361.jpg" alt=""><br><img src="http://imgsrc.baidu.com/forum/pic/item/045a7d89a7c0bb9853da4b70.jpg" alt=""><br><img src="http://imgsrc.baidu.com/forum/pic/item/accc2d6a766a4881a1cc2b20.jpg" alt=""><br><img src="http://imgsrc.baidu.com/forum/pic/item/7906b75c3b7bab4d708b6509.jpg" alt=""></p>
-<p><img src="http://imgsrc.baidu.com/forum/pic/item/252baae398f2e65618d81fc4.jpg" alt=""><br><img src="http://imgsrc.baidu.com/forum/pic/item/e78f1db00b66508d2e2e21df.jpg" alt=""><br><img src="http://imgsrc.baidu.com/forum/pic/item/06f5ed889b9ae15da08bb7a1.jpg" alt=""><br><img src="http://imgsrc.baidu.com/forum/pic/item/e83badb3af9f2d6aadafd582.jpg" alt=""></p>
-]]></content>
-      
-        <categories>
-            
-            <category> All Post </category>
             
             <category> 流年淡思 </category>
             
