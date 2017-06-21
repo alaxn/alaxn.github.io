@@ -1122,6 +1122,13 @@ pre .javascript .function {
   -o-transform: rotate(30deg);
   transform: rotate(30deg);
 }
+.post-body p a {
+  color: #0593d3;
+  border-bottom: none;
+}
+.post-body p a:hover {
+  color: #0477ab;
+}
 .posts-expand {
   padding-top: 40px;
 }
@@ -1678,7 +1685,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0a39ff;
+  background: #62b3ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2596,7 +2603,7 @@ pre .javascript .function {
 }
 embed {
   display: block;
-  margin: 0px auto 25px auto;
+  margin: 0px auto 28px auto;
 }
 .custom-logo .site-meta-headline {
   text-align: center;
