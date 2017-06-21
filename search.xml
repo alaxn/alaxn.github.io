@@ -3,6 +3,75 @@
   
     
     <entry>
+      <title><![CDATA[Nexo-为Next主题添加文章阅读量统计功能]]></title>
+      <url>/2017/06/20/Nexo-%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD/</url>
+      <content type="html"><![CDATA[<p>NexT主题目前已经合并这个Feature，因此如果你使用的是NexT主题，可以直接使用不用修改主题模版而直接在_config.yml中配置即可。</p>
+<p>##配置[LeanCloud]</p>
+<p>在注册完成LeanCloud帐号并验证邮箱之后，我们就可以登录我们的LeanCloud帐号，进行一番配置之后拿到AppID以及AppKey这两个参数即可正常使用文章阅读量统计的功能了。</p>
+<p>##创建应用</p>
+<p>我们新建一个应用来专门进行博客的访问统计的数据操作。首先，打开控制台，如下图所示：</p>
+<p>在出现的界面点击创建应用：</p>
+<p>在接下来的页面，新建的应用名称我们可以随意输入，即便是输入的不满意我们后续也是可以更改的:</p>
+<p>新建一个应用。创建完成之后我们点击新创建的应用的名字来进行该应用的参数配置：</p>
+<p>在应用的数据配置界面，左侧下划线开头的都是系统预定义好的表，为了便于区分我们新建一张表来保存我们的数据。点击左侧右上角的齿轮图标，新建Class：<br>在弹出的选项中选择创建Class来新建Class用来专门保存我们博客的文章访问量等数据:<br>点击创建Class之后，理论上来说名字可以随意取名，只要你交互代码做相应的更改即可，但是为了保证我们前面对NexT主题的修改兼容，此处的新建Class名字必须为Counter:</p>
+<p>由于LeanCloud升级了默认的ACL权限，如果你想避免后续因为权限的问题导致次数统计显示不正常，建议在此处选择无限制。</p>
+<p>创建完成之后，左侧数据栏应该会多出一栏名为Counter的栏目，这个时候我们点击顶部的设置，切换到test应用的操作界面:<br>在弹出的界面中，选择左侧的应用Key选项，即可发现我们创建应用的AppID以及AppKey，有了它，我们就有权限能够通过主题中配置好的Javascript代码与这个应用的Counter表进行数据存取操作了:</p>
+<p>复制AppID以及AppKey并在NexT主题的_config.yml文件中我们相应的位置填入即可，正确配置之后文件内容像这个样子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">leancloud_visitors:</div><div class="line">  enable: true</div><div class="line">  app_id: joaeuuc4hsqudUUwx4gIvGF6-gzGzoHsz</div><div class="line">  app_key: E9UJsJpw1omCHuS22PdSpKoh</div></pre></td></tr></table></figure>
+<p>这个时候重新生成部署Hexo博客，应该就可以正常使用文章阅读量统计的功能了。需要特别说明的是：记录文章访问量的唯一标识符是文章的发布日期以及文章的标题，因此请确保这两个数值组合的唯一性，如果你更改了这两个数值，会造成文章阅读数值的清零重计。</p>
+<p>##后台管理</p>
+<p>当你配置部分完成之后，初始的文章统计量显示为0，但是这个时候我们LeanCloud对应的应用的Counter表中并没有相应的记录，只是单纯的显示为0而已，当博客文章在配置好阅读量统计服务之后第一次打开时，便会自动向服务器发送数据来创建一条数据，该数据会被记录在对应的应用的Counter表中。</p>
+<p>我们可以修改其中的time字段的数值来达到修改某一篇文章的访问量的目的（博客文章访问量快递提升人气的装逼利器）。双击具体的数值，修改之后回车即可保存。</p>
+<p>url字段被当作唯一ID来使用，因此如果你不知道带来的后果的话请不要修改。<br>title字段显示的是博客文章的标题，用于后台管理的时候区分文章之用，没有什么实际作用。<br>其他字段皆为自动生成，具体作用请查阅LeanCloud官方文档，如果你不知道有什么作用请不要随意修改。<br>Web安全</p>
+<p>因为AppID以及AppKey是暴露在外的，因此如果一些别用用心之人知道了之后用于其它目的是得不偿失的，为了确保只用于我们自己的博客，建议开启Web安全选项，这样就只能通过我们自己的域名才有权访问后台的数据了，可以进一步提升安全性。</p>
+<p>选择应用的设置的安全中心选项卡:</p>
+<p>进入安全中心</p>
+<p>在Web 安全域名中填入我们自己的博客域名，来确保数据调用的安全:</p>
+<p>##修改_config.yml文件</p>
+<p><a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud" target="_blank" rel="external">https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Next </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[���� FATAL Cannot read property 'code' of undefined.md]]></title>
+      <url>/2017/06/20/%E8%A7%A3%E5%86%B3%20FATAL%20Cannot%20read%20property%20'code'%20of%20undefined/</url>
+      <content type="html"><![CDATA[<p>����gulpʱ�����ֱ������󡣴����Ĵ������£�</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">FATAL Cannot read property &apos;code&apos; of undefined</div></pre></td></tr></table></figure>
+<p>���μ�������ʱ����</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hexo-设置Disqus评论]]></title>
       <url>/2017/06/20/Hexo-%E8%AE%BE%E7%BD%AEDisqus%E8%AF%84%E8%AE%BA/</url>
       <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
@@ -36,50 +105,6 @@
         <tags>
             
             <tag> Hexo </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hexo-algolia������װ������]]></title>
-      <url>/2017/06/20/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</url>
-      <content type="html"><![CDATA[<h2 id="j��"><a href="#j��" class="headerlink" title="ǰ��"></a>ǰ��</h2><p>�Ѿ���װ��Hexo��˳�����뼰������</p>
-<p>##��װ##</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save hexo-algolia</div></pre></td></tr></table></figure>
-<p>##����<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>����</p>
-<ol>
-<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">ע��algolia</a></li>
-</ol>
-<blockquote>
-<p>algolia����ʹ��github�͹ȸ��˺�ֱ�ӵ�¼��</p>
-</blockquote>
-<ol>
-<li>����Indices���½�Index</li>
-<li>����API Keys����¼����������ֵ��</li>
-</ol>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Application ID</div><div class="line">Search-Only API Key</div><div class="line">Admin API Key</div></pre></td></tr></table></figure>
-</code></pre><ol>
-<li><p>��API Keysҳ���л���All API Keys�����½�һ��Key����ѡ��ͼ��ʾ��Ȩ�ޣ�����¼��API key��ֵ��</p>
-<blockquote>
-<p>���ڸ��º���algoliaΪ�˰�ȫԭ������Ҫ�½�һ��ר�õ�Key�ύ�������ݿ��ģ������������ύʧ�ܵ�������</p>
-</blockquote>
-</li>
-</ol>
-<img title="Create" alt="Create" class="class1 class2" src="http://bucket_name.qiniudn.com/qnpictures/images/Hexo-algolia������װ������/Create?imageView2/2/w/600">
-<p>##����վ������</p>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo, algolia </tag>
             
         </tags>
         
@@ -172,6 +197,50 @@ H2
         <tags>
             
             <tag> Markdown </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo-algolia������װ������]]></title>
+      <url>/2017/06/20/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h2 id="j��"><a href="#j��" class="headerlink" title="ǰ��"></a>ǰ��</h2><p>�Ѿ���װ��Hexo��˳�����뼰������</p>
+<p>##��װ##</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save hexo-algolia</div></pre></td></tr></table></figure>
+<p>##����<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>����</p>
+<ol>
+<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">ע��algolia</a></li>
+</ol>
+<blockquote>
+<p>algolia����ʹ��github�͹ȸ��˺�ֱ�ӵ�¼��</p>
+</blockquote>
+<ol>
+<li>����Indices���½�Index</li>
+<li>����API Keys����¼����������ֵ��</li>
+</ol>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Application ID</div><div class="line">Search-Only API Key</div><div class="line">Admin API Key</div></pre></td></tr></table></figure>
+</code></pre><ol>
+<li><p>��API Keysҳ���л���All API Keys�����½�һ��Key����ѡ��ͼ��ʾ��Ȩ�ޣ�����¼��API key��ֵ��</p>
+<blockquote>
+<p>���ڸ��º���algoliaΪ�˰�ȫԭ������Ҫ�½�һ��ר�õ�Key�ύ�������ݿ��ģ������������ύʧ�ܵ�������</p>
+</blockquote>
+</li>
+</ol>
+<img title="Create" alt="Create" class="class1 class2" src="http://bucket_name.qiniudn.com/qnpictures/images/Hexo-algolia������װ������/Create?imageView2/2/w/600">
+<p>##����վ������</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo, algolia </tag>
             
         </tags>
         
@@ -451,8 +520,6 @@ H2
       
         <categories>
             
-            <category> All Post </category>
-            
             <category> MachineWorld </category>
             
         </categories>
@@ -653,8 +720,6 @@ H2
       
         <categories>
             
-            <category> All Post </category>
-            
             <category> 流年淡思 </category>
             
         </categories>
@@ -719,8 +784,6 @@ H2
       
         <categories>
             
-            <category> All Post </category>
-            
             <category> PhotoSlide </category>
             
         </categories>
@@ -769,12 +832,16 @@ H2
       
         <categories>
             
-            <category> All Post </category>
-            
             <category> PhotoSlide </category>
             
         </categories>
         
+        
+        <tags>
+            
+            <tag> Singapore </tag>
+            
+        </tags>
         
     </entry>
     
@@ -1175,8 +1242,6 @@ H2
       
         <categories>
             
-            <category> All Post </category>
-            
             <category> PhotoSlide </category>
             
         </categories>
@@ -1520,8 +1585,6 @@ H2
 ]]></content>
       
         <categories>
-            
-            <category> All Post </category>
             
             <category> 流年淡思 </category>
             
