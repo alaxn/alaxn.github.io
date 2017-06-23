@@ -226,6 +226,29 @@
     </entry>
     
     <entry>
+      <title><![CDATA[gulp设置中遇到的过的那些问题]]></title>
+      <url>/2017/06/20/gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<a id="more"></a>
+<h1 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h1><p><pre><code><br>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</code></pre></p>
+<p>events.js:160<br>      throw er; // Unhandled ‘error’ event<br>      ^<br>GulpUglifyError: unable to minify JavaScript<br>    at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)<br>    at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash_createHybrid.js:87:15)<br>    at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)<br>    at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)<br>    at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:172:10)<br>    at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:160:12)<br>    at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:335:12)<br>    at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:321:5)<br>    at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:248:11)<br>    at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib_stream_readable.js:623:24)<br>PS C:\Users\alex\apflora&gt;<br></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
       <url>/2017/06/20/Markdown%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</url>
       <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
@@ -288,29 +311,6 @@ H2
         <tags>
             
             <tag> Markdown </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[gulp设置中遇到的过的那些问题]]></title>
-      <url>/2017/06/20/gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
-      <content type="html"><![CDATA[<a id="more"></a>
-<h1 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h1><p><pre><code><br>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</code></pre></p>
-<p>events.js:160<br>      throw er; // Unhandled ‘error’ event<br>      ^<br>GulpUglifyError: unable to minify JavaScript<br>    at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)<br>    at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash_createHybrid.js:87:15)<br>    at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)<br>    at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)<br>    at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:172:10)<br>    at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:160:12)<br>    at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:335:12)<br>    at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:321:5)<br>    at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:248:11)<br>    at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib_stream_readable.js:623:24)<br>PS C:\Users\alex\apflora&gt;<br></p>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
             
         </tags>
         
@@ -889,9 +889,9 @@ H2
         
         <tags>
             
-            <tag> NUS </tag>
-            
             <tag> Singapore </tag>
+            
+            <tag> NUS </tag>
             
         </tags>
         
