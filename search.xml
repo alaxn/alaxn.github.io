@@ -4,12 +4,12 @@
     
     <entry>
       <title><![CDATA[hexo-搭建教程]]></title>
-      <url>/2017/06/21/hexo-%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
+      <url>/2017/06/21/Hexo-%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
       <content type="html"><![CDATA[<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><ul>
 <li>安装Node.js</li>
 <li>安装git</li>
 </ul>
-<h6 id="检查安装结果"><a href="#检查安装结果" class="headerlink" title="检查安装结果"></a>检查安装结果</h6><p>同时按下Win和R，打开运行窗口，输入cmd，回车运行。</p>
+<h3 id="检查安装结果"><a href="#检查安装结果" class="headerlink" title="检查安装结果"></a>检查安装结果</h3><p>同时按下Win和R，打开运行窗口，输入cmd，回车运行。</p>
 <p>输入</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">node -v</div><div class="line">npm -v</div><div class="line">git --version</div></pre></td></tr></table></figure>
 <p>如果返回版本号则说明安装成功，如果没有返回版本号，则需要重新安装或排查原因。</p>
@@ -19,11 +19,11 @@
 </blockquote>
 <a id="more"></a>
 <h2 id="配置github"><a href="#配置github" class="headerlink" title="配置github"></a>配置github</h2><p><strong>如果已经拥有github账号，直接跳过</strong></p>
-<h6 id="创建代码库"><a href="#创建代码库" class="headerlink" title="创建代码库"></a>创建代码库</h6><p>Repository name 填写your name.github.io。</p>
+<h3 id="创建代码库"><a href="#创建代码库" class="headerlink" title="创建代码库"></a>创建代码库</h3><p>Repository name 填写your name.github.io。</p>
 <blockquote>
 <p>注意，your name 需要是注册账号名，填写其他则无法生效。</p>
 </blockquote>
-<h6 id="开启gh-pages功能"><a href="#开启gh-pages功能" class="headerlink" title="开启gh-pages功能"></a>开启gh-pages功能</h6><p>点击界面右侧的Settings，，向下拖动，找到见GitHub Pages，点击Automatic page generator。</p>
+<h3 id="开启gh-pages功能"><a href="#开启gh-pages功能" class="headerlink" title="开启gh-pages功能"></a>开启gh-pages功能</h3><p>点击界面右侧的Settings，，向下拖动，找到见GitHub Pages，点击Automatic page generator。</p>
 <h2 id="配置hexo"><a href="#配置hexo" class="headerlink" title="配置hexo"></a>配置hexo</h2><p>在自己认为合适的地方创建一个文件夹，然后在文件夹空白处按住Shift+鼠标右键，然后点击在此处打开命令行窗口。（同样要记住啦，下文中会使用在当前目录打开命令行来代指上述的操作）</p>
 <p>在命令行中输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure>
@@ -51,7 +51,7 @@
 <p>完成后打开浏览器，输入your name.github.io，检测上传结果。</p>
 <hr>
 <h2 id="添加文章及页面"><a href="#添加文章及页面" class="headerlink" title="添加文章及页面"></a>添加文章及页面</h2><ul>
-<li>方法一</li>
+<li><strong>方法一</strong></li>
 </ul>
 <p>在命令行输入 ：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post your-post-name</div></pre></td></tr></table></figure>
@@ -61,6 +61,14 @@
 <p>正文在此信息下方写入，格式可参照Markdown的语法。</p>
 <p>完成后保存，并在命令行输入：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+<p>即可编译发布。</p>
+<ul>
+<li><strong>方法二</strong><br>直接在source/_post目录中创建md文档，打开进行编辑。</li>
+</ul>
+<blockquote>
+<p>此处注意要保证创建的文档所使用的编码是UTF-8，否则可能会出现乱码的情况。</p>
+</blockquote>
+<p>编辑完成后在命令行输入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
 <p>即可编译发布。</p>
 <h2 id="diy-hexo"><a href="#diy-hexo" class="headerlink" title="diy hexo"></a>diy hexo</h2><p>修改全局配置文件</p>
 <p>配置文件详细说明可参照<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">Hexo官方文档</a></p>
@@ -72,10 +80,10 @@
     
     <entry>
       <title><![CDATA[hexo-不蒜子添加访客统计]]></title>
-      <url>/2017/06/21/hexo-%E4%B8%8D%E8%92%9C%E5%AD%90%E6%B7%BB%E5%8A%A0%E8%AE%BF%E5%AE%A2%E7%BB%9F%E8%AE%A1/</url>
+      <url>/2017/06/21/Hexo-%E4%B8%8D%E8%92%9C%E5%AD%90%E6%B7%BB%E5%8A%A0%E8%AE%BF%E5%AE%A2%E7%BB%9F%E8%AE%A1/</url>
       <content type="html"><![CDATA[<p>参考<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="external">不蒜子教程</a></p>
 <p>其实就是一个操作，在使用的themes/layout/_partial/footer.ejs底部加入这段脚本</p>
-<figure class="highlight plain"><figcaption><span>async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script async src=&quot;//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js&quot;&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
 <blockquote>
 <p>更多diy可以参考<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="external">不蒜子教程</a></p>
 </blockquote>
@@ -136,12 +144,30 @@
     </entry>
     
     <entry>
-      <title><![CDATA[gulp设置中遇到的过的那些问题]]></title>
-      <url>/2017/06/20/gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
-      <content type="html"><![CDATA[<a id="more"></a>
-<h1 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h1><p><pre><code><br>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</code></pre></p>
-<p>events.js:160<br>      throw er; // Unhandled ‘error’ event<br>      ^<br>GulpUglifyError: unable to minify JavaScript<br>    at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)<br>    at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash_createHybrid.js:87:15)<br>    at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)<br>    at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)<br>    at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:172:10)<br>    at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:160:12)<br>    at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:335:12)<br>    at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:321:5)<br>    at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:248:11)<br>    at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib_stream_readable.js:623:24)<br>PS C:\Users\alex\apflora&gt;<br></p>
-]]></content>
+      <title><![CDATA[Hexo-algolia搜索安装及设置]]></title>
+      <url>/2017/06/20/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save hexo-algolia</div></pre></td></tr></table></figure>
+<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
+<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
+</ol>
+<blockquote>
+<p>algolia可以使用github和谷歌账号直接登录。</p>
+</blockquote>
+<ol>
+<li>点击Indices，新建Index</li>
+<li>点击API Keys，记录下以下三个值：</li>
+</ol>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Application ID</div><div class="line">Search-Only API Key</div><div class="line">Admin API Key</div></pre></td></tr></table></figure>
+</code></pre><ol>
+<li><p>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。</p>
+<blockquote>
+<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
+</blockquote>
+</li>
+</ol>
+<img title="Create" alt="Create" class="class1 class2" src="http://bucket_name.qiniudn.com/qnpictures/images/Hexo-algolia搜索安装及设置/Create?imageView2/2/w/600">
+<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2>]]></content>
       
         <categories>
             
@@ -152,7 +178,9 @@
         
         <tags>
             
-            <tag> Hexo </tag>
+            <tag> Hexo, </tag>
+            
+            <tag> Algolia </tag>
             
         </tags>
         
@@ -198,30 +226,12 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo-algolia搜索安装及设置]]></title>
-      <url>/2017/06/20/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</url>
-      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install --save hexo-algolia</div></pre></td></tr></table></figure>
-<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
-<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
-</ol>
-<blockquote>
-<p>algolia可以使用github和谷歌账号直接登录。</p>
-</blockquote>
-<ol>
-<li>点击Indices，新建Index</li>
-<li>点击API Keys，记录下以下三个值：</li>
-</ol>
-<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Application ID</div><div class="line">Search-Only API Key</div><div class="line">Admin API Key</div></pre></td></tr></table></figure>
-</code></pre><ol>
-<li><p>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。</p>
-<blockquote>
-<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
-</blockquote>
-</li>
-</ol>
-<img title="Create" alt="Create" class="class1 class2" src="http://bucket_name.qiniudn.com/qnpictures/images/Hexo-algolia搜索安装及设置/Create?imageView2/2/w/600">
-<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2>]]></content>
+      <title><![CDATA[gulp设置中遇到的过的那些问题]]></title>
+      <url>/2017/06/20/gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<a id="more"></a>
+<h1 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h1><p><pre><code><br>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</code></pre></p>
+<p>events.js:160<br>      throw er; // Unhandled ‘error’ event<br>      ^<br>GulpUglifyError: unable to minify JavaScript<br>    at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)<br>    at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash_createHybrid.js:87:15)<br>    at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)<br>    at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)<br>    at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:172:10)<br>    at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:160:12)<br>    at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:335:12)<br>    at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:321:5)<br>    at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:248:11)<br>    at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib_stream_readable.js:623:24)<br>PS C:\Users\alex\apflora&gt;<br></p>
+]]></content>
       
         <categories>
             
@@ -232,7 +242,7 @@
         
         <tags>
             
-            <tag> Hexo, algolia </tag>
+            <tag> Hexo </tag>
             
         </tags>
         
@@ -377,8 +387,7 @@ H2
       <title><![CDATA[徐宝璜与梁启超新闻思想之比较]]></title>
       <url>/2016/07/17/%E5%BE%90%E5%AE%9D%E7%92%9C%E4%B8%8E%E6%A2%81%E5%90%AF%E8%B6%85%E6%96%B0%E9%97%BB%E6%80%9D%E6%83%B3%E4%B9%8B%E6%AF%94%E8%BE%83/</url>
       <content type="html"><![CDATA[<p>&nbsp;</p>
-<p><strong>一、徐宝璜成就概述</strong></p>
-<p>徐宝璜，江西九江人，是中国最早的新闻理论家和新闻教育家，在中国新闻史和新闻学史上享有盛名，被誉为“新闻界的开山祖” (徐宝璜, 1919)。1912北京大学毕业后，官费赴密歇根大学留学，期间修读了部分新闻课程。1916年回国后在北京《晨报》担任编辑，后任北大教授。1920年先后在民国大学、北平大学和朝阳大学任教。1930年为北大筹办新闻系，于同年6月1日病逝，年仅37岁 (双永清, 2000)。</p>
+<h2 id="一、徐宝璜成就概述"><a href="#一、徐宝璜成就概述" class="headerlink" title="一、徐宝璜成就概述"></a>一、徐宝璜成就概述</h2><p>徐宝璜，江西九江人，是中国最早的新闻理论家和新闻教育家，在中国新闻史和新闻学史上享有盛名，被誉为“新闻界的开山祖” (徐宝璜, 1919)。1912北京大学毕业后，官费赴密歇根大学留学，期间修读了部分新闻课程。1916年回国后在北京《晨报》担任编辑，后任北大教授。1920年先后在民国大学、北平大学和朝阳大学任教。1930年为北大筹办新闻系，于同年6月1日病逝，年仅37岁 (双永清, 2000)。</p>
 <a id="more"></a>
 <p>在中国的新闻史上，他拥有三个第一 (方汉奇, 2016)。即：</p>
 <p>（一）第一个在大学讲授新闻学课程。1918年徐宝璜在北大文科各系开设新闻学选修课。在此前，大学从未开讲新闻学课程。此外，他还是中国大学中的第一个新闻系主任，1923年任职于平民大学新闻系。</p>
@@ -390,33 +399,30 @@ H2
 <p>徐宝璜《新闻学》一书的出现，正式标志着新闻从“术”的领域拓展到“学”。而新闻也开始有了系统的定义和职能。</p>
 <p>本文主要讨论徐宝璜与梁启超在新闻思想上的异同，重点分析其新闻舆论的差别。</p>
 <p>&nbsp;</p>
-<p><strong>二、徐宝璜、梁启超新闻思想相同之处</strong></p>
-<p><strong>（一）强调报纸之用</strong></p>
-<p>徐宝璜认同蔡元培“凡是先有术而后有学”的观点，强调新闻是一种强有力的术 (向喆, 2009)。他认为报纸在教育发达的国家非常盛行，影响广泛，不看报纸的国民言论行动都会受到影响。且报纸的势力“驾乎学校教员、教堂牧师之上，视为社会教育最有力之机关，亦为公论之事实。 (徐宝璜, 1919 页 2)”</p>
+<h2 id="二、徐宝璜、梁启超新闻思想相同之处"><a href="#二、徐宝璜、梁启超新闻思想相同之处" class="headerlink" title="二、徐宝璜、梁启超新闻思想相同之处"></a>二、徐宝璜、梁启超新闻思想相同之处</h2><h3 id="（一）强调报纸之用"><a href="#（一）强调报纸之用" class="headerlink" title="（一）强调报纸之用"></a>（一）强调报纸之用</h3><p>徐宝璜认同蔡元培“凡是先有术而后有学”的观点，强调新闻是一种强有力的术 (向喆, 2009)。他认为报纸在教育发达的国家非常盛行，影响广泛，不看报纸的国民言论行动都会受到影响。且报纸的势力“驾乎学校教员、教堂牧师之上，视为社会教育最有力之机关，亦为公论之事实。 (徐宝璜, 1919 页 2)”</p>
 <p>而梁启超也在其《论报馆有益于国事》一文中分析强调了报纸的作用。</p>
 <p>古之学者，但凡儒者，必以国为家，安身立命，全在乎于“国”。梁所处之年代，乃清末国门稍开，国智刚启之时。时值甲午中日战争之后，国之困顿受侮，时人无不感同于心而愚蒙不知所措 (梁启超, 1896)。</p>
 <p>他认为。而弱的原因，是阻塞不通。上下不通、内外不通。上下不通，故内藏有奸狡之官吏，颠倒黑白，是非不分，朋比为奸。内外不通，故自恃天朝大国，守旧而积弱。而报馆能起到去塞求通的作用，是“报馆乃去塞求通的导端”。报纸是耳，是帮助国家、君主了解国内国外发生的事情，对当下形势环境了然于胸。</p>
 <p>当然，这里也需要注意，两者对于报纸重要性看法不同，这也是两者新闻思想的差异所在。</p>
-<p><strong>（二）强调真实性原则</strong></p>
+<p>###（二）强调真实性原则</p>
 <p>徐宝璜认为，“新闻须为事实，此理极明，无待解释，故凡凭空杜撰闭门捏造之消息，均非新闻。 (1919 页 10)”非真实，非新闻。</p>
 <p>而《访员应守之金科玉律》和《访员之资格》两节中也均强调了真实性原则——“访得新闻，访得所有之新闻，切勿视谣言为事实”、“新闻须为事实” (徐宝璜, 1919 页 44-45)。此两节是其为新闻从业人员所撰写的职业守则，可见其对真实性的重视程度。</p>
 <p>又如：“苟记载失实，无论其出于有意之造谣与播弄，抑出于无意之疏忽与传讹小之常足以使个人受莫大之损失与痛苦，大之足以贻毒社会，扰乱国家，此亦为不能掩饰之事实。 (徐宝璜, 1919 页 97)”此话来自《新闻社之组织》一节中，充分强调了非真实可能带来的后果。</p>
 <p>在《论报馆有益于国事》一文中，梁启超也分析了新闻报道不实的三个弊端：“记载琐故。采访异闻，非齐东之野言，即秘辛之杂事，闭门而造，信口以谈，无补时艰，徒伤风化，其弊一也；军情敌情，记载不实，仅凭市虎之口，罔惩夕鸡之嫌，甚乃揣摩众情，臆造诡悦，海外已成劫烬，纸上犹登捷书，荧惑听闻，贻误大局，其弊二也。”“或有译录稍广，言论足观，删汰秽芜，颇知体要，而借阐宗风，不出郑志，虽有断章取义之益，未免歌诗不类之憾，其弊五也。”他认为，在进行采访的时候，如果只是道听途说，只会有伤风化；如果对于军事情报，也只是听信谣言，甚至编造，只会迷惑大众，耽误了大局。而当引用他人言论时，不能随便随意断章取义采用。</p>
-<p><strong>（三）追求新闻的时效性</strong></p>
+<p>###（三）追求新闻的时效性</p>
 <p>徐宝璜在对新闻的定义是：新闻是多数阅者所注意的最近事实 (1919 页 10)。“最近”二字是其新闻价值之一。他认为，“新闻如同鲜鱼”，愈新鲜价值愈高，价值与发生及登载时间成反比 (1919 页 10)。</p>
 <p>梁启超也同样重视时效性。在《&lt;时报&gt;发刊例》中，他提出了办报的论说四条，纪事五条的要求。论说四条：“公”、“要”、“周”、“适”；纪事五条：“博”、“速”、“确”、“真”、“正”。其中“速”，就是要求纪事讲求时效性。“各处访事员，凡遇要事，必以电达，务供阅者先睹之快。” (梁启超, 1999 页 131-132)</p>
 <p>&nbsp;</p>
-<p>三、<strong>徐宝璜、梁启超新闻思想不同之处</strong></p>
-<p>梁启超首载于《时务报》创刊号的《论报馆有益于国事》阐述了其耳目喉舌论。</p>
+<h2 id="三、徐宝璜、梁启超新闻思想不同之处"><a href="#三、徐宝璜、梁启超新闻思想不同之处" class="headerlink" title="三、徐宝璜、梁启超新闻思想不同之处"></a>三、徐宝璜、梁启超新闻思想不同之处</h2><p>梁启超首载于《时务报》创刊号的《论报馆有益于国事》阐述了其耳目喉舌论。</p>
 <p>总一句话，以报去塞，通达上下内外，是以强国。报刊是国家和国民的“耳目喉舌”，是“去塞求通”、促使国家富强的重要工具。其耳目喉舌均是从国家和君主出发。这点明显表现出报纸的政治宣传作用。</p>
 <p>相比较来看，关于报纸舆论的阐述，两者有着根本性的区别。</p>
 <p>在其《新闻学》一书中，徐宝璜分为六个点对报纸的职能进行了阐述，分别是：供给新闻、代表舆论、创造舆论、灌输知识、倡导道德和振兴商业 (1919 页 4)。从字面上看，代表舆论和创造舆论与梁启超的说法并无二意。但实际上其“舆论”内涵有差异，分别体现在三个方面。</p>
-<p><strong>（一）受众不同</strong></p>
+<p>###（一）受众不同</p>
 <p>梁启超认为，报纸是耳目，是帮助君主和国家了解讯息的。而徐宝璜则认为新闻的第一职务是供给新闻。“以真正之新闻，供给社会，乃新闻纸之重要职务，亦于社会有极大关系。 (1919 页 4)”一个是为国家和君主提供讯息，一个是为大众提供讯息。</p>
-<p><strong>（二）舆论来源不同</strong></p>
+<p>###（二）舆论来源不同</p>
 <p>而喉舌，梁认为是国家和君主的喉舌，主张为国家和君主说话，将君主的各项措施和政策通过报纸传播下去，同时宣扬其中的益处，是国民欣然接受，实为通过报纸引导舆论。</p>
 <p>徐则认为，报纸是国民的喉舌，代表国民提出建议和要求。“昔则似仅代表国民而监督政府也，今则又应代表国民向政府有所建议或者要求。新闻纸欲尽代表舆论之职，其编辑应默查国民多数对于各重要事之舆论，取其正当者，著论立说，代为其发声 (1919 页 5)” 民众是其主要舆论意见来源。</p>
-<p><strong>（三）舆论目的不同</strong></p>
+<p>###（三）舆论目的不同</p>
 <p>舆论的来源不同决定了舆论目的的区别。</p>
 <p>在《论报馆有益于国事》一文中，梁启超所提出的“报纸之用”立场在国而非在民。</p>
 <p>梁启超所言报馆和报纸之用时，出发点是站在了“国”这个角度。从为国弱诊出病症，到开出良药，论述全不离国。这点决定了舆论的导向是目的是维护国家统治，宣传“维新”政策和思想。</p>
@@ -425,12 +431,11 @@ H2
 <p>梁启超的实践办报和自身政治身份决定了他对新闻、报纸的理解是一种“术”，通过这种术推动政治的改良。分析梁启超当时的政治背景和个人主张抱负，可以得出，梁启超是一个士人，一个满怀救国的改革派，一个稍涉西学的儒者。虽然梁启超思想可能比起其他士大夫阶层稍微开放，但骨子里还是逃不过本着西学中用的理念，希望在中国大兴报业，以报纸报馆开风气、立国体、出人才。这种特点使得他的新闻思想与政治紧密的联系在一起，强调报纸的实用性。</p>
 <p>而徐宝璜早期的美国新闻教育则令他产生了将新闻带入中国的想法。在机缘巧合之下，成为中国新闻第一人，从“学”出发定义新闻思想及新闻从业人员的职业规范。在为《新闻学》作序时蔡元培写道：“伯轩先生游学于北美时，对于兹学，至有兴会，归国以来，亦颇有心于本国之新闻事业。”也有学者考证到：“徐宝璜对密歇根大学当时的新闻课程与新闻教育项目是有所了解的，他也亲身体验到在美国，新闻已成为大学中的一种专门科目，大学开始承担起培养报纸工作者的任务，他把这样的认识、理念和新闻教育比较具体的形式和内容都带回了中国，带回了北大；在种种因缘际会下，开启了中国新闻教育和新闻学研究的新篇。 (周婷婷, 2008)”因此，徐宝璜的新闻思想更具有系统性，也更加理想化。他将新闻的功能和作用回归到新闻本位层面，对新闻本身进行纯理论的研究。</p>
 <p>&nbsp;</p>
-<p><strong>四、结论</strong></p>
-<p>无论是徐宝璜，还是梁启超，其新闻思想都包含着真实性和时效性原则，而对于报纸之“用”，两者的出发点则是截然不同。</p>
+<h2 id="四、结论"><a href="#四、结论" class="headerlink" title="四、结论"></a>四、结论</h2><p>无论是徐宝璜，还是梁启超，其新闻思想都包含着真实性和时效性原则，而对于报纸之“用”，两者的出发点则是截然不同。</p>
 <p>结合西方新闻主义，尝试提问：为什么会有新闻，新闻的作用是什么？。大部分人想到的答案可能是：让民众了解新近发生的事情，监督政府，充当社会良知。当然，这个答案，新闻也需要起到这些作用。但是，再追问下去，为什么民众需要？答案是新闻的产生起源于人们对信息的需求，起源于人们对自身所处的环境了解的需要以及表达自己诉求的愿望，基于这些需求，才会发展出当下的西报。</p>
 <p>从这一点考量梁启超的新闻思想，我们能够发现，其出发点和西方自由主义以及市场化报纸截然不同。其根本在于用报，而非宣言人之独立和自由。虽然其耳目喉舌之比喻中提及到“民”，但他并没有单纯从“民”出发论述报馆的作用。所以，梁启超之报纸，实际是论报馆报纸这术对中国政治的影响。换而言之，报馆之于国事有益是在于其撰写评议发行之作用，而非其内含西方新闻思想的源头。相较之下，徐宝璜则是对西方新闻主义的一脉继承和发展，将社会、公民作为报纸的服务对象，秉承新闻客观公正真实的原则，发展新闻事业，其报纸的六大职能观点（供给新闻、代表舆论、创造娱乐、灌输知识、提倡道德和振兴商业）对于今天的新闻工作仍有指导和借鉴的意义。</p>
 <p>&nbsp;</p>
-<h1 id="参考书目"><a href="#参考书目" class="headerlink" title="参考书目"></a>参考书目</h1><p><strong>陈力丹. 2004.</strong> 陈力丹自选集·新闻观念：从传统到现代. 上海 : 复旦大学出版社, 2004.</p>
+<h2 id="参考书目"><a href="#参考书目" class="headerlink" title="参考书目"></a>参考书目</h2><p><strong>陈力丹. 2004.</strong> 陈力丹自选集·新闻观念：从传统到现代. 上海 : 复旦大学出版社, 2004.</p>
 <p><strong>方汉奇. 2016.</strong> 纪念徐宝璜先生. 爱思想. [联机] 2016年5月7日. [引用日期: 2016年6月22日.]</p>
 <p><strong>梁启超. 1999.</strong> &lt;时报&gt;发刊词. [书籍作者] 张之华. 国新闻事业史文选. 北京 : 中国人民大学出版社, 1999.</p>
 <p><strong>—. 1896.</strong> 论报馆有益于国事 . 新浪博客. [联机] 1896年8月9日. [引用日期: 2016年6月21日.] <a href="http://blog.sina.com.cn/s/blog_14dfa20d50102vz4y.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_14dfa20d50102vz4y.html</a>.</p>
@@ -696,31 +701,6 @@ H2
     </entry>
     
     <entry>
-      <title><![CDATA[Marina Bay]]></title>
-      <url>/2015/05/02/marina-bay/</url>
-      <content type="html"><![CDATA[<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0199-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0199-1.jpg" alt=""></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0201-0-e1430573368405.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0201-0-765x1024.jpg" alt="IMG_0201-0.JPG"></a></p>
-<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0204.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0204.jpg" alt=""></a></p>
-<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0207-0.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0207-0.jpg" alt=""></a> <span style="line-height: 28px;"> </span><br><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0206-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0206-1.jpg" alt=""></a></p>
-<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0203-0.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0203-0.jpg" alt=""></a></p>
-<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0208-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0208-1.jpg" alt=""></a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> All Post </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Singapore </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Hexo-gulp配置]]></title>
       <url>/2015/05/02/Hexo-gulp%E9%85%8D%E7%BD%AE/</url>
       <content type="html"><![CDATA[<h2 id="安装gulp及相关插件"><a href="#安装gulp及相关插件" class="headerlink" title="安装gulp及相关插件"></a>安装gulp及相关插件</h2><p>这里主要女装以下插件：<br>CSS 压缩：gulp-clean-css<br>JS 压缩：gulp-uglify<br>HTML 压缩：gulp-htmlmin，gulp-htmlclean<br>图片压缩：gulp-imagemin</p>
@@ -745,6 +725,31 @@ H2
             <tag> Hexo </tag>
             
             <tag> gulp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Marina Bay]]></title>
+      <url>/2015/05/02/marina-bay/</url>
+      <content type="html"><![CDATA[<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0199-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0199-1.jpg" alt=""></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0201-0-e1430573368405.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0201-0-765x1024.jpg" alt="IMG_0201-0.JPG"></a></p>
+<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0204.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0204.jpg" alt=""></a></p>
+<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0207-0.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0207-0.jpg" alt=""></a> <span style="line-height: 28px;"> </span><br><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0206-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0206-1.jpg" alt=""></a></p>
+<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0203-0.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0203-0.jpg" alt=""></a></p>
+<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0208-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0208-1.jpg" alt=""></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> All Post </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Singapore </tag>
             
         </tags>
         
@@ -1107,6 +1112,27 @@ H2
             
         </categories>
         
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello world!]]></title>
+      <url>/2015/04/28/Hexo%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<p>$ hexo new “postName”  #新建文章<br>$ hexo new page “pageName” # 新建页面<br>$ hexo generate # 生成静态页面至public目录<br>$ hexo server # 开启预览访问端口(默认端口4000，’ctrl+c’关闭server)<br>$ hexo deploy # 项目部署<br>$ hexo help # 查看帮助<br>$ hexo version # 查看Hexo的版本</p>
+]]></content>
+      
+        <categories>
+            
+            <category> hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> hexo </tag>
+            
+        </tags>
         
     </entry>
     
