@@ -144,6 +144,45 @@
     </entry>
     
     <entry>
+      <title><![CDATA[Hexo-设置Disqus评论]]></title>
+      <url>/2017/06/20/Hexo%E8%AE%BE%E7%BD%AEDisqus%E8%AF%84%E8%AE%BA/</url>
+      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
+<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
+<blockquote>
+<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
+<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
+</li>
+<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/hexo-setting-disqus-step2.png" alt="enter image description here"></p>
+</li>
+<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
+</li>
+<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
+</li>
+<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
+</li>
+</ol>
+<p><pre><code><br>disqus:<br>  enable: ture                # 开启disqus<br>  shortname: your shortname   # 你刚注册的disqus用户名<br>  count: false                # 开启评论数量显示<br></code>&lt;/ pre&gt; </pre></p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
       <url>/2017/06/20/Markdown%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</url>
       <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
@@ -206,45 +245,6 @@ H2
         <tags>
             
             <tag> Markdown </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hexo-设置Disqus评论]]></title>
-      <url>/2017/06/20/Hexo%E8%AE%BE%E7%BD%AEDisqus%E8%AF%84%E8%AE%BA/</url>
-      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
-<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
-<blockquote>
-<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
-<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
-</li>
-<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/hexo-setting-disqus-step2.png" alt="enter image description here"></p>
-</li>
-<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
-</li>
-<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
-</li>
-<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
-</li>
-</ol>
-<p><pre><code><br>disqus:<br>  enable: ture                # 开启disqus<br>  shortname: your shortname   # 你刚注册的disqus用户名<br>  count: false                # 开启评论数量显示<br></code>&lt;/ pre&gt; </pre></p>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
             
         </tags>
         
@@ -701,6 +701,31 @@ H2
     </entry>
     
     <entry>
+      <title><![CDATA[Marina Bay]]></title>
+      <url>/2015/05/02/marina-bay/</url>
+      <content type="html"><![CDATA[<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0199-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0199-1.jpg" alt=""></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0201-0-e1430573368405.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0201-0-765x1024.jpg" alt="IMG_0201-0.JPG"></a></p>
+<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0204.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0204.jpg" alt=""></a></p>
+<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0207-0.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0207-0.jpg" alt=""></a> <span style="line-height: 28px;"> </span><br><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0206-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0206-1.jpg" alt=""></a></p>
+<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0203-0.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0203-0.jpg" alt=""></a></p>
+<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0208-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0208-1.jpg" alt=""></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> All Post </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Singapore </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hexo-gulp配置]]></title>
       <url>/2015/05/02/Hexo-gulp%E9%85%8D%E7%BD%AE/</url>
       <content type="html"><![CDATA[<h2 id="安装gulp及相关插件"><a href="#安装gulp及相关插件" class="headerlink" title="安装gulp及相关插件"></a>安装gulp及相关插件</h2><p>这里主要女装以下插件：<br>CSS 压缩：gulp-clean-css<br>JS 压缩：gulp-uglify<br>HTML 压缩：gulp-htmlmin，gulp-htmlclean<br>图片压缩：gulp-imagemin</p>
@@ -725,31 +750,6 @@ H2
             <tag> Hexo </tag>
             
             <tag> gulp </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Marina Bay]]></title>
-      <url>/2015/05/02/marina-bay/</url>
-      <content type="html"><![CDATA[<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0199-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0199-1.jpg" alt=""></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0201-0-e1430573368405.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0201-0-765x1024.jpg" alt="IMG_0201-0.JPG"></a></p>
-<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0204.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0204.jpg" alt=""></a></p>
-<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0207-0.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0207-0.jpg" alt=""></a> <span style="line-height: 28px;"> </span><br><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0206-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0206-1.jpg" alt=""></a></p>
-<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0203-0.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0203-0.jpg" alt=""></a></p>
-<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0208-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0208-1.jpg" alt=""></a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> All Post </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Singapore </tag>
             
         </tags>
         
@@ -889,9 +889,9 @@ H2
         
         <tags>
             
-            <tag> NUS </tag>
-            
             <tag> Singapore </tag>
+            
+            <tag> NUS </tag>
             
         </tags>
         
@@ -1218,9 +1218,9 @@ H2
         
         <tags>
             
-            <tag> Singapore </tag>
-            
             <tag> Lee Kuan Yew </tag>
+            
+            <tag> Singapore </tag>
             
         </tags>
         
