@@ -163,34 +163,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Gulp设置中遇到的过的那些问题]]></title>
-      <url>/2017/06/20/gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
-      <content type="html"><![CDATA[<a id="more"></a>
-<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><p><pre><code><br>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</code></pre></p>
-<p>events.js:160<br>      throw er; // Unhandled ‘error’ event<br>      ^<br>GulpUglifyError: unable to minify JavaScript<br>    at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)<br>    at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash_createHybrid.js:87:15)<br>    at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)<br>    at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)<br>    at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:172:10)<br>    at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:160:12)<br>    at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:335:12)<br>    at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:321:5)<br>    at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:248:11)<br>    at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib_stream_readable.js:623:24)<br>PS C:\Users\alex\apflora&gt;<br></p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>如遇到这个问题，可以检查gulpfile.js中调用的插件是否都成功安装，是否需要升级。特别留意安装后提示的警告（WARNING）</p>
-]]></content>
-      
-        <categories>
-            
-            <category> Hexo </category>
-            
-            <category> Gulp </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Gulp </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
       <url>/2017/06/20/Markdown%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</url>
       <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
@@ -337,6 +309,34 @@ Admin API Key
             <tag> Hexo </tag>
             
             <tag> Algolia </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Gulp设置中遇到的过的那些问题]]></title>
+      <url>/2017/06/20/gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<a id="more"></a>
+<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><p><pre><code><br>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</code></pre></p>
+<p>events.js:160<br>      throw er; // Unhandled ‘error’ event<br>      ^<br>GulpUglifyError: unable to minify JavaScript<br>    at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)<br>    at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash_createHybrid.js:87:15)<br>    at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)<br>    at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)<br>    at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:172:10)<br>    at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_transform.js:160:12)<br>    at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:335:12)<br>    at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:321:5)<br>    at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib_stream_writable.js:248:11)<br>    at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib_stream_readable.js:623:24)<br>PS C:\Users\alex\apflora&gt;<br></p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>如遇到这个问题，可以检查gulpfile.js中调用的插件是否都成功安装，是否需要升级。特别留意安装后提示的警告（WARNING）</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Hexo </category>
+            
+            <category> Gulp </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Gulp </tag>
             
         </tags>
         
@@ -874,9 +874,9 @@ Admin API Key
             
             <tag> Singapore </tag>
             
-            <tag> NewFreedom </tag>
-            
             <tag> 价值观 </tag>
+            
+            <tag> NewFreedom </tag>
             
         </tags>
         
@@ -1811,7 +1811,7 @@ Admin API Key
 <p>一位道学先生，最后为什么会沦落成一个千古罪人呢？事实的真相是我们所看到的历史那样吗？还是其中有了很多虚假或者夸张的成分呢？</p>
 <p>你我都不是那个时代的见证者，我们没有资格说出很有说服力的话语，我们仅仅能做的就是从别人所给出的言论以及当时的记载，来认识一个人，判断一个人。</p>
 <p>我并不想为他申辩什么，也无需申辩什么，过去的人与事，都已经是过去得一干二净，没有什么过不去的坎。只是在阅读林思云的那篇《真实的汪精卫》时，有了一些触动心弦的感受，想要拿出来分享一下。</p>
-<p>“<span style="font-family: 宋体;">胜者为王，败者为寇。</span><span style="font-family: Calibri;">”</span><span style="font-family: 宋体;">似乎是千古的真理，是因为他们的英明所以胜利了，所以他们是王者，还是他们胜利了，所以他们英明，所以他们理所应当成为一个主宰历史过去和未来的人呢？也许是因为</span>身为平民的我们很无知，目光很浅短，我们只能顾及我们自身的眼前的利益，却不能真正去看到事件的背后是什么。我们对很多事件的认知，都是从别人那直接获取结论的，因为那不必费神，拿来就有。历史书和别人如何说，事实便是那样，动机就是那样。我们只是传播的工具，根本不知道何谓真实，何谓虚假。</p>
+<p>“胜者为王，败者为寇。”似乎是千古的真理，是因为他们的英明所以胜利了，所以他们是王者，还是他们胜利了，所以他们英明，所以他们理所应当成为一个主宰历史过去和未来的人呢？也许是因为身为平民的我们很无知，目光很浅短，我们只能顾及我们自身的眼前的利益，却不能真正去看到事件的背后是什么。我们对很多事件的认知，都是从别人那直接获取结论的，因为那不必费神，拿来就有。历史书和别人如何说，事实便是那样，动机就是那样。我们只是传播的工具，根本不知道何谓真实，何谓虚假。</p>
 <p>汪精卫，一个共产党所厌恶的人，一个南京国民政府所讨厌的人，在他的政权失败后，注定就是一个失败者，他的历史只会由别人来书写，因为他的失败，他的一切行为都是失败的典范，他的一切荣耀和成就都化为乌有。无论在哪一方，汪精卫都是渺小的失败者，他就是一个失败者。许多年以后，孩子的印象中，他也就是一个渺小的可耻的失败者。</p>
 <p>历史在成为历史后，便变得十分的平面，所有的人与事，都有一个结论：它是好的还是坏的。马克思教导我们要辩证地看待事物。如此说来我们是不是也得辩证地看到他说的这句话的对错呢？人与事也不例外，它没有正确与错误之分，只有从什么方面去看的不同。也许汪精卫当时主和是错，可是几年的抗战过去了，不完全数据摆在面前，我们看到了多少人的牺牲。因为主和，汪精卫被激进分子开枪射中。难道我们没有一个疑问存在吗？当汉奸是不是为了自己呢？主战的发展，最后只会是平民和激进分子的斗争，号召主战的人，基本上是没有冲上前线的，并且主战还可以被冠以爱国者的身份，何等之荣耀。从这个角度分析，也许主和派所站的出发点更为中国着想。也许他们背负着成为千古罪人的骂名在危险地前行着，只是为了中国四万万人民的生命着想。</p>
 <p>汪精卫，是不是我们印象中的那么邪恶，还是如林觉云所写的那么光鲜，我们不得而知，也无法知道得非常准确，当这并不妨碍我们去分析去学习现已存在的这种问题：一俊遮百丑，一丑盖百俊。</p>
