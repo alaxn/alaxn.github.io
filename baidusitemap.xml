@@ -4,6 +4,199 @@
 
     
   <url>
+    <loc>http://yoursite.com/2014/10/30/%E9%80%8F%E8%BF%87Propagandizing%20%E7%9C%8B%E6%9C%9D%E9%B2%9C%E7%BA%AA%E5%BD%95%E7%89%87/</loc>
+    <lastmod>2017-06-30T16:01:40.100Z</lastmod>
+    <data>
+        <display>
+        <title>透过Propagandizing 看朝鲜纪录片</title>
+        <pubTime>2014-10-30T08:15:02.000Z</pubTime>
+        
+        <tag>价值观</tag>
+         
+        <tag>NewFreedom</tag>
+         
+         
+           
+             
+              <breadCrumb title="NewFreedom" url="http://yoursite.com/categories/NewFreedom/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/04/28/Hexo%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/</loc>
+    <lastmod>2017-06-30T16:01:03.089Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo常见命令</title>
+        <pubTime>2017-04-28T05:44:57.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="http://yoursite.com/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="http://yoursite.com/categories/MachineWorld/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/06/21/Hexo-%E4%B8%8D%E8%92%9C%E5%AD%90%E6%B7%BB%E5%8A%A0%E8%AE%BF%E5%AE%A2%E7%BB%9F%E8%AE%A1/</loc>
+    <lastmod>2017-06-30T16:00:59.061Z</lastmod>
+    <data>
+        <display>
+        <title>使用不蒜子为Hexo添加访客统计</title>
+        <pubTime>2017-06-21T09:30:10.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>不蒜子</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="http://yoursite.com/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="http://yoursite.com/categories/MachineWorld/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/05/02/Hexo-Gulp%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2017-06-30T16:00:52.652Z</lastmod>
+    <data>
+        <display>
+        <title>使用Gulp压缩Hexo</title>
+        <pubTime>2017-05-02T11:44:37.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Gulp</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="http://yoursite.com/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="http://yoursite.com/categories/MachineWorld/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/06/21/Hexo%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2017-06-30T16:00:42.019Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo搭建教程</title>
+        <pubTime>2017-06-21T10:13:39.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="http://yoursite.com/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="http://yoursite.com/categories/MachineWorld/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/06/20/Gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2017-06-30T16:00:02.276Z</lastmod>
+    <data>
+        <display>
+        <title>Gulp设置中遇到的过的那些问题</title>
+        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Gulp</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="http://yoursite.com/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="http://yoursite.com/categories/MachineWorld/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/06/20/Hexo-Algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</loc>
+    <lastmod>2017-06-30T15:59:40.674Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo-Algolia搜索安装及设置</title>
+        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Algolia</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="http://yoursite.com/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="http://yoursite.com/categories/MachineWorld/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://yoursite.com/2017/06/20/Hexo%E8%AE%BE%E7%BD%AEDisqus%E8%AF%84%E8%AE%BA/</loc>
+    <lastmod>2017-06-30T15:59:08.636Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo设置Disqus评论</title>
+        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Disqus</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="http://yoursite.com/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="http://yoursite.com/categories/MachineWorld/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2013/11/22/%E8%A1%94%E7%9F%B3%E6%88%90%E7%97%B4%E7%BB%9D%EF%BC%9F%E7%B2%BE%E5%8D%AB%EF%BC%9F%E6%B1%AA%E7%B2%BE%E5%8D%AB%EF%BC%81/</loc>
     <lastmod>2017-06-30T15:55:39.289Z</lastmod>
     <data>
@@ -17,53 +210,6 @@
            
              
               <breadCrumb title="流年淡思" url="http://yoursite.com/categories/%E6%B5%81%E5%B9%B4%E6%B7%A1%E6%80%9D/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/06/20/Hexo%E8%AE%BE%E7%BD%AEDisqus%E8%AF%84%E8%AE%BA/</loc>
-    <lastmod>2017-06-30T15:43:20.425Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo设置Disqus评论</title>
-        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Disqus</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
-          
-             
-              <breadCrumb title="MachineWorld" url="http://yoursite.com/categories/Hexo/MachineWorld/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/06/21/Hexo-%E4%B8%8D%E8%92%9C%E5%AD%90%E6%B7%BB%E5%8A%A0%E8%AE%BF%E5%AE%A2%E7%BB%9F%E8%AE%A1/</loc>
-    <lastmod>2017-06-30T15:39:21.043Z</lastmod>
-    <data>
-        <display>
-        <title>使用不蒜子为Hexo添加访客统计</title>
-        <pubTime>2017-06-21T09:30:10.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>不蒜子</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
           
         </display>
     </data>
@@ -132,29 +278,6 @@
            
              
               <breadCrumb title="流年淡思" url="http://yoursite.com/categories/%E6%B5%81%E5%B9%B4%E6%B7%A1%E6%80%9D/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2014/10/30/%E9%80%8F%E8%BF%87Propagandizing%20%E7%9C%8B%E6%9C%9D%E9%B2%9C%E7%BA%AA%E5%BD%95%E7%89%87/</loc>
-    <lastmod>2017-06-30T15:27:25.813Z</lastmod>
-    <data>
-        <display>
-        <title>透过Propagandizing 看朝鲜纪录片</title>
-        <pubTime>2014-10-30T08:15:02.000Z</pubTime>
-        
-        <tag>NewFreedom</tag>
-         
-         
-           
-             
-              <breadCrumb title="NewFreedom" url="http://yoursite.com/categories/NewFreedom/"/>
-          
-             
-              <breadCrumb title="价值观" url="http://yoursite.com/categories/NewFreedom/%E4%BB%B7%E5%80%BC%E8%A7%82/"/>
           
         </display>
     </data>
@@ -364,51 +487,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/04/28/Hexo%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/</loc>
-    <lastmod>2017-06-30T14:09:57.558Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo常见命令</title>
-        <pubTime>2017-04-28T05:44:57.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/05/02/Hexo-Gulp%E9%85%8D%E7%BD%AE/</loc>
-    <lastmod>2017-06-30T14:06:08.291Z</lastmod>
-    <data>
-        <display>
-        <title>使用Gulp压缩Hexo</title>
-        <pubTime>2017-05-02T11:44:37.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Gulp</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
-          
-             
-              <breadCrumb title="Gulp" url="http://yoursite.com/categories/Hexo/Gulp/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/05/13/Gulp%E7%AE%80%E4%BB%8B/</loc>
     <lastmod>2017-06-30T14:04:51.105Z</lastmod>
     <data>
@@ -452,53 +530,6 @@
 
     
   <url>
-    <loc>http://yoursite.com/2017/06/20/gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</loc>
-    <lastmod>2017-06-30T14:03:38.989Z</lastmod>
-    <data>
-        <display>
-        <title>Gulp设置中遇到的过的那些问题</title>
-        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Gulp</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
-          
-             
-              <breadCrumb title="Gulp" url="http://yoursite.com/categories/Hexo/Gulp/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/06/20/Hexo-Algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</loc>
-    <lastmod>2017-06-30T14:03:25.662Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo-Algolia搜索安装及设置</title>
-        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Algolia</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://yoursite.com/2017/06/20/Markdown%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</loc>
     <lastmod>2017-06-30T14:03:04.997Z</lastmod>
     <data>
@@ -512,26 +543,6 @@
            
              
               <breadCrumb title="Markdown" url="http://yoursite.com/categories/Markdown/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/06/21/Hexo%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2017-06-30T14:02:41.205Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo搭建教程</title>
-        <pubTime>2017-06-21T10:13:39.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="Hexo" url="http://yoursite.com/categories/Hexo/"/>
           
         </display>
     </data>
