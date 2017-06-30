@@ -4,6 +4,29 @@
 
     
   <url>
+    <loc>http://yoursite.com/2017/06/21/Hexo%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2017-06-30T16:55:52.441Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo搭建教程</title>
+        <pubTime>2017-06-21T10:13:39.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="http://yoursite.com/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="http://yoursite.com/categories/MachineWorld/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/2017/06/07/hello-world/</loc>
     <lastmod>2017-06-30T16:33:10.746Z</lastmod>
     <data>
@@ -134,29 +157,6 @@
         <tag>Hexo</tag>
          
         <tag>Gulp</tag>
-         
-         
-           
-             
-              <breadCrumb title="MachineWorld" url="http://yoursite.com/categories/MachineWorld/"/>
-          
-             
-              <breadCrumb title="Hexo" url="http://yoursite.com/categories/MachineWorld/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://yoursite.com/2017/06/21/Hexo%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2017-06-30T16:00:42.019Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo搭建教程</title>
-        <pubTime>2017-06-21T10:13:39.000Z</pubTime>
-        
-        <tag>Hexo</tag>
          
          
            
