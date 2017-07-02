@@ -235,54 +235,6 @@ H2
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
-      <url>/2017/06/20/Hexo-Algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</url>
-      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
-<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
-</ol>
-<blockquote>
-<p>algolia可以使用github和谷歌账号直接登录。</p>
-</blockquote>
-<ol>
-<li>点击Indices，新建Index</li>
-<li>点击API Keys，记录下以下三个值：</li>
-</ol>
-<pre><code>Application ID
-Search-Only API Key
-Admin API Key
-</code></pre><ol>
-<li>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。<blockquote>
-<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="http://orp61qolg.bkt.clouddn.com/images/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/Create%20a%20new%20API%20Key%20for%20search.png" alt="设置页面"></p>
-<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2><p>待续……</p>
-]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Algolia </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[解决设置Gulp中出现的Unable to minify JavaScript错误]]></title>
       <url>/2017/06/20/Gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
       <content type="html"><![CDATA[<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><a id="more"></a>
@@ -349,6 +301,54 @@ Admin API Key
             <tag> Hexo </tag>
             
             <tag> Disqus </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
+      <url>/2017/06/20/Hexo-Algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
+<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
+</ol>
+<blockquote>
+<p>algolia可以使用github和谷歌账号直接登录。</p>
+</blockquote>
+<ol>
+<li>点击Indices，新建Index</li>
+<li>点击API Keys，记录下以下三个值：</li>
+</ol>
+<pre><code>Application ID
+Search-Only API Key
+Admin API Key
+</code></pre><ol>
+<li>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。<blockquote>
+<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="http://orp61qolg.bkt.clouddn.com/images/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/Create%20a%20new%20API%20Key%20for%20search.png" alt="设置页面"></p>
+<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2><p>待续……</p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Algolia </tag>
             
         </tags>
         
@@ -896,9 +896,9 @@ Admin API Key
             
             <tag> Singapore </tag>
             
-            <tag> 价值观 </tag>
-            
             <tag> NewFreedom </tag>
+            
+            <tag> 价值观 </tag>
             
         </tags>
         
@@ -1540,9 +1540,9 @@ Admin API Key
         
         <tags>
             
-            <tag> 价值观 </tag>
-            
             <tag> NewFreedom </tag>
+            
+            <tag> 价值观 </tag>
             
         </tags>
         
