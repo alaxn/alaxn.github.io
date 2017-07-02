@@ -1793,7 +1793,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1c061b;
+  background: #fbf;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2949,6 +2949,11 @@ hr {
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
+}
+@media (max-width: 767px) {
+  .content-wrap {
+    background: #fff;
+  }
 }
 .btn {
   padding: 0 10px;
