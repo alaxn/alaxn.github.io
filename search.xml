@@ -201,6 +201,48 @@
     </entry>
     
     <entry>
+      <title><![CDATA[Hexo设置Disqus评论]]></title>
+      <url>/2017/06/20/Hexo%E8%AE%BE%E7%BD%AEDisqus%E8%AF%84%E8%AE%BA/</url>
+      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
+<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
+<blockquote>
+<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
+<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
+</li>
+<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
+</li>
+<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
+</li>
+<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
+</li>
+<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Disqus </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
       <url>/2017/06/20/Hexo-Algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</url>
       <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
@@ -313,48 +355,6 @@ H2
         <tags>
             
             <tag> Markdown </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hexo设置Disqus评论]]></title>
-      <url>/2017/06/20/Hexo%E8%AE%BE%E7%BD%AEDisqus%E8%AF%84%E8%AE%BA/</url>
-      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
-<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
-<blockquote>
-<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
-<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
-</li>
-<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
-</li>
-<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
-</li>
-<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
-</li>
-<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
-</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Disqus </tag>
             
         </tags>
         
