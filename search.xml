@@ -1,0 +1,2077 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+    
+    <entry>
+      <title><![CDATA[Hexo搭建教程]]></title>
+      <url>/2017/06/21/Hexo%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
+      <content type="html"><![CDATA[<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><ul>
+<li>安装Node.js</li>
+<li>安装git</li>
+</ul>
+<a id="more"></a>
+<h3 id="检查安装结果"><a href="#检查安装结果" class="headerlink" title="检查安装结果"></a>检查安装结果</h3><p>同时按下Win和R，打开运行窗口，输入cmd，回车运行。</p>
+<p>输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">node -v</div><div class="line">npm -v</div><div class="line">git --version</div></pre></td></tr></table></figure>
+<p>如果返回版本号则说明安装成功，如果没有返回版本号，则需要重新安装或排查原因。</p>
+<blockquote>
+<p>安装git时，可以同下图一样，选择Use Git from the Windows Command Prompt。</p>
+<p>这个选项可使cmd也可以调用git，而不需要在git bash中才能对git进行相关操作。</p>
+</blockquote>
+<h2 id="配置github"><a href="#配置github" class="headerlink" title="配置github"></a>配置github</h2><p><strong>如果已经拥有github账号，直接跳过</strong></p>
+<h3 id="创建代码库"><a href="#创建代码库" class="headerlink" title="创建代码库"></a>创建代码库</h3><p>Repository name 填写your name.github.io。</p>
+<blockquote>
+<p>注意，your name 需要是注册账号名，填写其他则无法生效。</p>
+</blockquote>
+<h3 id="开启gh-pages功能"><a href="#开启gh-pages功能" class="headerlink" title="开启gh-pages功能"></a>开启gh-pages功能</h3><p>点击界面右侧的Settings，，向下拖动，找到见GitHub Pages，点击Automatic page generator。</p>
+<h2 id="配置hexo"><a href="#配置hexo" class="headerlink" title="配置hexo"></a>配置hexo</h2><p>在自己认为合适的地方创建一个文件夹，然后在文件夹空白处按住Shift+鼠标右键，然后点击在此处打开命令行窗口。（同样要记住啦，下文中会使用在当前目录打开命令行来代指上述的操作）</p>
+<p>在命令行中输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-cli -g</div></pre></td></tr></table></figure>
+<p>安装成功时可能会出现WARN，可以直接忽略，不影响使用。</p>
+<p>在命令行中输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo --save</div></pre></td></tr></table></figure>
+<p>完成后再命令行输入</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo -v</div></pre></td></tr></table></figure>
+<p>如果返回版本号，则说明安装成功。</p>
+<h2 id="初始化hexo"><a href="#初始化hexo" class="headerlink" title="初始化hexo"></a>初始化hexo</h2><p>在命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo init</div><div class="line">npm install</div></pre></td></tr></table></figure>
+<h2 id="编译运行hexo"><a href="#编译运行hexo" class="headerlink" title="编译运行hexo"></a>编译运行hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo s</div></pre></td></tr></table></figure>
+<p>完成以上命令后会出现：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure>
+<p>在浏览器输入<a href="http://localhost:4000/即可看见编译完成的页面。" target="_blank" rel="external">http://localhost:4000/即可看见编译完成的页面。</a></p>
+<blockquote>
+<p>如果对于页面格式和其他功能没有要求，到这一步hexo就算配置就算完成了。</p>
+</blockquote>
+<h2 id="使用git发布到github"><a href="#使用git发布到github" class="headerlink" title="使用git发布到github"></a>使用git发布到github</h2><p>打开网站配置文件_config.yml，找到Deployment，按照如下修改：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: git@github.com:yourname/yourname.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<p>保存后，运行命令行，输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"yourname"</span></div><div class="line">git config --global user.email <span class="string">"youremail"</span></div></pre></td></tr></table></figure>
+<p>最后发布本地hexo到github</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo d</div></pre></td></tr></table></figure>
+<p>完成后打开浏览器，输入your name.github.io，检测上传结果。</p>
+<hr>
+<h2 id="添加文章及页面"><a href="#添加文章及页面" class="headerlink" title="添加文章及页面"></a>添加文章及页面</h2><ul>
+<li><strong>方法一</strong></li>
+</ul>
+<p>在命令行输入 ：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new post your-post-name</div></pre></td></tr></table></figure>
+<p>完成后在hexo/source/_post中找到同名字的md文档，打开即可修改。</p>
+<p>打开文档会看到类似如下的yml信息，可自行进行修改。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: hello-world   //在此处添加你的标题。</div><div class="line">date: 2014-11-7 08:55:29   //在此处输入你编辑这篇文章的时间。</div><div class="line">categories: <span class="built_in">test</span>   //在此处输入这篇文章的分类。</div><div class="line">tag: <span class="built_in">test</span>  //在此处输入这篇文章的标签。</div><div class="line">---</div></pre></td></tr></table></figure>
+<p>正文在此信息下方写入，格式可参照Markdown的语法。</p>
+<p>完成后保存，并在命令行输入：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+<p>即可编译发布。</p>
+<ul>
+<li><strong>方法二</strong><br>直接在source/_post目录中创建md文档，打开进行编辑。</li>
+</ul>
+<blockquote>
+<p>此处注意要保证创建的文档所使用的编码是UTF-8，否则可能会出现乱码的情况。</p>
+</blockquote>
+<p>编辑完成后在命令行输入：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
+<p>即可编译发布。</p>
+<h2 id="DIY-hexo"><a href="#DIY-hexo" class="headerlink" title="DIY hexo"></a>DIY hexo</h2><p>修改全局配置文件</p>
+<p>配置文件详细说明可参照<a href="https://hexo.io/zh-cn/docs/configuration.html" target="_blank" rel="external">Hexo官方文档</a></p>
+<p>其他待续</p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[使用不蒜子为Hexo添加访客统计]]></title>
+      <url>/2017/06/21/Hexo-%E4%B8%8D%E8%92%9C%E5%AD%90%E6%B7%BB%E5%8A%A0%E8%AE%BF%E5%AE%A2%E7%BB%9F%E8%AE%A1/</url>
+      <content type="html"><![CDATA[<p>参考<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="external">不蒜子教程</a></p>
+<p>其实就是一个操作，在使用的themes/layout/_partial/footer.ejs底部加入这段脚本</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>更多diy可以参考<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="external">不蒜子教程</a></p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> 不蒜子 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[利用LeanCloud添加阅读量统计功能]]></title>
+      <url>/2017/06/20/%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD/</url>
+      <content type="html"><![CDATA[<p>NexT主题目前已经合并这个Feature，因此如果你使用的是NexT主题，可以直接使用不用修改主题模版而直接在_config.yml中配置即可。</p>
+<a id="more"></a>
+<h2 id="配置LeanCloud"><a href="#配置LeanCloud" class="headerlink" title="配置LeanCloud"></a>配置<a href="https://leancloud.cn/" target="_blank" rel="external">LeanCloud</a></h2><p>在注册完成<a href="https://leancloud.cn/" target="_blank" rel="external">LeanCloud</a>帐号并验证邮箱之后，我们就可以登录我们的<a href="https://leancloud.cn/" target="_blank" rel="external">LeanCloud</a>帐号，进行一番配置之后拿到AppID以及AppKey这两个参数即可正常使用文章阅读量统计的功能了。</p>
+<h2 id="创建应用"><a href="#创建应用" class="headerlink" title="创建应用"></a>创建应用</h2><p>我们新建一个应用来专门进行博客的访问统计的数据操作。首先，打开控制台，如下图所示：</p>
+<p>在出现的界面点击创建应用：</p>
+<p>在接下来的页面，新建的应用名称我们可以随意输入，即便是输入的不满意我们后续也是可以更改的:</p>
+<p>新建一个应用。创建完成之后我们点击新创建的应用的名字来进行该应用的参数配置：</p>
+<p>在应用的数据配置界面，左侧下划线开头的都是系统预定义好的表，为了便于区分我们新建一张表来保存我们的数据。点击左侧右上角的齿轮图标，新建Class：<br>在弹出的选项中选择创建Class来新建Class用来专门保存我们博客的文章访问量等数据:<br>点击创建Class之后，理论上来说名字可以随意取名，只要你交互代码做相应的更改即可，但是为了保证我们前面对NexT主题的修改兼容，此处的新建Class名字必须为Counter:</p>
+<p>由于LeanCloud升级了默认的ACL权限，如果你想避免后续因为权限的问题导致次数统计显示不正常，建议在此处选择无限制。</p>
+<p>创建完成之后，左侧数据栏应该会多出一栏名为Counter的栏目，这个时候我们点击顶部的设置，切换到test应用的操作界面:<br>在弹出的界面中，选择左侧的应用Key选项，即可发现我们创建应用的AppID以及AppKey，有了它，我们就有权限能够通过主题中配置好的Javascript代码与这个应用的Counter表进行数据存取操作了:</p>
+<p>复制AppID以及AppKey并在NexT主题的_config.yml文件中我们相应的位置填入即可，正确配置之后文件内容像这个样子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">leancloud_visitors:</div><div class="line">  enable: true</div><div class="line">  app_id: joaeuuc4hsqudUUwx4gIvGF6-gzGzoHsz</div><div class="line">  app_key: E9UJsJpw1omCHuS22PdSpKoh</div></pre></td></tr></table></figure>
+<p>这个时候重新生成部署Hexo博客，应该就可以正常使用文章阅读量统计的功能了。需要特别说明的是：记录文章访问量的唯一标识符是文章的发布日期以及文章的标题，因此请确保这两个数值组合的唯一性，如果你更改了这两个数值，会造成文章阅读数值的清零重计。</p>
+<h2 id="后台管理"><a href="#后台管理" class="headerlink" title="后台管理"></a>后台管理</h2><p>当你配置部分完成之后，初始的文章统计量显示为0，但是这个时候我们LeanCloud对应的应用的Counter表中并没有相应的记录，只是单纯的显示为0而已，当博客文章在配置好阅读量统计服务之后第一次打开时，便会自动向服务器发送数据来创建一条数据，该数据会被记录在对应的应用的Counter表中。</p>
+<p>我们可以修改其中的time字段的数值来达到修改某一篇文章的访问量的目的（博客文章访问量快递提升人气的装逼利器）。双击具体的数值，修改之后回车即可保存。</p>
+<p>url字段被当作唯一ID来使用，因此如果你不知道带来的后果的话请不要修改。<br>title字段显示的是博客文章的标题，用于后台管理的时候区分文章之用，没有什么实际作用。<br>其他字段皆为自动生成，具体作用请查阅LeanCloud官方文档，如果你不知道有什么作用请不要随意修改。<br>Web安全</p>
+<p>因为AppID以及AppKey是暴露在外的，因此如果一些别用用心之人知道了之后用于其它目的是得不偿失的，为了确保只用于我们自己的博客，建议开启Web安全选项，这样就只能通过我们自己的域名才有权访问后台的数据了，可以进一步提升安全性。</p>
+<p>选择应用的设置的安全中心选项卡:</p>
+<p>进入安全中心</p>
+<p>在Web 安全域名中填入我们自己的博客域名，来确保数据调用的安全:</p>
+<h2 id="修改-config-yml文件"><a href="#修改-config-yml文件" class="headerlink" title="修改_config.yml文件"></a>修改_config.yml文件</h2><p>待续。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html" target="_blank" rel="external">为NexT主题添加文章阅读量统计功能</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> NexT </tag>
+            
+            <tag> LeanCloud </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
+      <url>/2017/06/20/Markdown%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</url>
+      <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
+<blockquote>
+<p>转载来自<a href="http://itmyhome.com/markdown/" target="_blank" rel="external">http://itmyhome.com/markdown/</a></p>
+</blockquote>
+<a id="more"></a>
+<p>这部分内容列出了 John Gruber 定义的 Markdown 语法，包括：</p>
+<ol>
+<li>段落与换行</li>
+<li>标题</li>
+<li>引用</li>
+<li>列表</li>
+<li>代码</li>
+<li>分隔线</li>
+<li>超链接</li>
+<li>图像</li>
+<li>强调</li>
+<li>字符转义</li>
+</ol>
+<!-- more -->
+<h2 id="段落与换行"><a href="#段落与换行" class="headerlink" title="段落与换行"></a>段落与换行</h2><pre><code>1. 段落的前后必须是空行：
+</code></pre><p>  空行指的是行内什么都没有，或者只有空白符（空格或制表符）</p>
+<p>  相邻两行文本，如果中间没有空行 会显示在一行中（换行符被转换为空格）、</p>
+<pre><code>2. 如果需要在段落内加入换行（&lt;br&gt;）：
+</code></pre><p>  可以在前一行的末尾加入至少两个空格<br>  然后换行写其它的文字</p>
+<pre><code>3. Markdown 中的多数区块都需要在两个空行之间.
+</code></pre><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h2 id="1-Setext-形式"><a href="#1-Setext-形式" class="headerlink" title="1. Setext 形式"></a>1. Setext 形式</h2><pre><code>H1
+====
+H2
+----
+</code></pre><h2 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h2><hr>
+<h4 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h4><hr>
+<blockquote>
+<p>= 和 - 的数量是没有限制的。通常的做法是使其和标题文本的长度相同，这样看起来比较舒服。或者可以像我一样，用四个 - 或 =。<br>Setext 形式只支持 h1 和 h2 两种标题。</p>
+</blockquote>
+<h2 id="2-atx-形式"><a href="#2-atx-形式" class="headerlink" title="2. atx 形式"></a><strong>2. atx 形式</strong></h2><p>① 可以用对称的 # 包括文本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#### H4 ####</div><div class="line"></div><div class="line">##### H5 #####</div></pre></td></tr></table></figure></p>
+<h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><p>② 也可以只在左边使用 #：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#### H4</div><div class="line"></div><div class="line">##### H5</div></pre></td></tr></table></figure></p>
+<p>H4</p>
+<p>H5</p>
+<p>③ 成对的 # 左侧和只在左边使用的 # 左侧都不可以有任何空白，但其内侧可以使用空白。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> ###左侧使用了空格###</div><div class="line"></div><div class="line">#### 内侧使用了空格</div></pre></td></tr></table></figure>
+<h4 id="左侧使用了空格"><a href="#左侧使用了空格" class="headerlink" title="左侧使用了空格"></a>左侧使用了空格</h4><p>内侧使用了空格</p>
+<blockquote>
+<p>在这一点上，可能各种 Markdown 的实现会有不同的结果，不过仍然需要我们遵守语法规则。</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> Markdown </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[解决设置Gulp中出现的Unable to minify JavaScript错误]]></title>
+      <url>/2017/06/20/Gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><a id="more"></a>
+<p>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</p>
+<p>events.js:160<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">throw</span> er; <span class="comment">// Unhandled 'error' event</span></div><div class="line">^</div></pre></td></tr></table></figure></p>
+<p>GulpUglifyError: unable to minify JavaScript<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)</div><div class="line">at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash\_createHybrid.js:87:15)</div><div class="line">at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)</div><div class="line">at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)</div><div class="line">at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:172:10)</div><div class="line">at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:160:12)</div><div class="line">at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:335:12)</div><div class="line">at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:321:5)</div><div class="line">at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:248:11)</div><div class="line">at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib\_stream_readable.js:623:24)</div></pre></td></tr></table></figure></p>
+<p>PS C:\Users\alex\apflora&gt;</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>如遇到这个问题，可以检查gulpfile.js中调用的插件是否都成功安装，是否需要升级。特别留意安装后提示的警告（WARNING）</p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Gulp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
+      <url>/2017/06/20/Hexo-Algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
+<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
+</ol>
+<blockquote>
+<p>algolia可以使用github和谷歌账号直接登录。</p>
+</blockquote>
+<ol>
+<li>点击Indices，新建Index</li>
+<li>点击API Keys，记录下以下三个值：</li>
+</ol>
+<pre><code>Application ID
+Search-Only API Key
+Admin API Key
+</code></pre><ol>
+<li>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。<blockquote>
+<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="http://orp61qolg.bkt.clouddn.com/images/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/Create%20a%20new%20API%20Key%20for%20search.png" alt="设置页面"></p>
+<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2><p>待续……</p>
+<h2 id="更新搜索内容"><a href="#更新搜索内容" class="headerlink" title="更新搜索内容"></a>更新搜索内容</h2><p>当配置完成后，输入如下指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=…</div></pre></td></tr></table></figure>
+<p>“=”后面填入新建的API，完成后在站点根目录下执行 <code>hexo algolia</code> 来更新 Index。请注意观察命令的输出。</p>
+<p><img src="http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png" alt="img"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://theme-next.iissnan.com/third-party-services.html#search-system" target="_blank" rel="external">NexT 第三方服务集成</a></p>
+<p><a href="https://github.com/oncletom/hexo-algolia/tree/20f6ecfde2b3348c2fba5ffc3963cc1ba7d2e3cb#api-key" target="_blank" rel="external">hexo-algolia</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Algolia </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo设置Disqus评论]]></title>
+      <url>/2017/06/20/Hexo%E8%AE%BE%E7%BD%AEDisqus%E8%AF%84%E8%AE%BA/</url>
+      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
+<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
+<blockquote>
+<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
+<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
+</li>
+<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
+</li>
+<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
+</li>
+<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
+</li>
+<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Disqus </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[个人推荐的Win应用]]></title>
+      <url>/2017/06/19/%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E5%BA%94%E7%94%A8/</url>
+      <content type="html"><![CDATA[<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><ul>
+<li>Mozilla Firefox</li>
+<li>Google Chromium</li>
+<li>Chrome</li>
+<li>Edge</li>
+<li>搜狗浏览器</li>
+</ul>
+<h2 id="视频播放器"><a href="#视频播放器" class="headerlink" title="视频播放器"></a>视频播放器</h2><ul>
+<li>Daum Potplayer</li>
+<li>VLC media player</li>
+<li>KMP Player</li>
+<li><a href="http://player.qq.com/" target="_blank" rel="external">QQ影音</a></li>
+</ul>
+<h2 id="音乐播放器"><a href="#音乐播放器" class="headerlink" title="音乐播放器"></a>音乐播放器</h2><ul>
+<li>Foobar2000</li>
+<li>酷狗音乐绿色版</li>
+</ul>
+<h2 id="PDF阅读器"><a href="#PDF阅读器" class="headerlink" title="PDF阅读器"></a>PDF阅读器</h2><ul>
+<li>福昕阅读器Foxit Reader</li>
+<li>Adobe Acrobat Pro</li>
+</ul>
+<h2 id="下载类"><a href="#下载类" class="headerlink" title="下载类"></a>下载类</h2><ul>
+<li>IDM</li>
+<li>Free Download Manager</li>
+<li>百度云管家4.6版本</li>
+<li>迅雷精简版</li>
+<li><a href="http://www.flvcd.com/" target="_blank" rel="external">硕鼠</a></li>
+</ul>
+<h2 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h2><ul>
+<li>FormatFactory</li>
+<li>Caesium</li>
+</ul>
+<h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><ul>
+<li>Notepad++</li>
+<li>Sublime Text</li>
+<li>typora</li>
+</ul>
+<h2 id="辅助软件"><a href="#辅助软件" class="headerlink" title="辅助软件"></a>辅助软件</h2><ul>
+<li>flux</li>
+<li>Unlocker</li>
+<li>Ditto</li>
+<li>Everthing</li>
+</ul>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MachineWorld </tag>
+            
+            <tag> Tools </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello-NewWorld-Hexo新建文章指南]]></title>
+      <url>/2017/06/07/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Gulp简介及使用]]></title>
+      <url>/2017/05/13/Gulp%E7%AE%80%E4%BB%8B/</url>
+      <content type="html"><![CDATA[<h2 id="什么是Gulp"><a href="#什么是Gulp" class="headerlink" title="什么是Gulp"></a>什么是<a href="http://gulpjs.com/" target="_blank" rel="external">Gulp</a></h2><blockquote>
+<p>官方介绍</p>
+<p>gulp is a toolkit for automating painful or time-consuming tasks in your development workflow, so you can stop messing around and build something.</p>
+</blockquote>
+<p>简单意译如下：</p>
+<p>gulp是一个用于在开发工作流程中自动执行任务的工具包，从而使开发更加快速高效。</p>
+<a id="more"></a>
+<h2 id="如何使用Gulp"><a href="#如何使用Gulp" class="headerlink" title="如何使用Gulp"></a>如何使用Gulp</h2><h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --glup-cli</div></pre></td></tr></table></figure>
+<h3 id="创建gulp文件"><a href="#创建gulp文件" class="headerlink" title="创建gulp文件"></a>创建gulp文件</h3><p>在项目根目录创建gulpfile.js文件，并添加如下内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var gulp = require(&apos;gulp&apos;);</div><div class="line"></div><div class="line">gulp.task(&apos;default&apos;, function() &#123;</div><div class="line">  // place code for your default tash here</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="测试安装结果"><a href="#测试安装结果" class="headerlink" title="测试安装结果"></a>测试安装结果</h3><p>在项目根目录运行如下命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">gulp</div></pre></td></tr></table></figure>
+<p>如果成功返回版本号，则说明安装成功。</p>
+<h3 id="Gulp命令行参数"><a href="#Gulp命令行参数" class="headerlink" title="Gulp命令行参数"></a>Gulp命令行参数</h3><ul>
+<li><code>-v</code> 或 <code>--version</code> 会显示全局和项目本地所安装的 gulp 版本号</li>
+<li><code>--require &lt;module path&gt;</code> 将会在执行之前 require 一个模块。这对于一些语言编译器或者需要其他应用的情况来说很有用。你可以使用多个 <code>--require</code></li>
+<li><code>--gulpfile &lt;gulpfile path&gt;</code> 手动指定一个 gulpfile 的路径，这在你有很多个 gulpfile 的时候很有用。这也会将 CWD 设置到该 gulpfile 所在目录</li>
+<li><code>--cwd &lt;dir path&gt;</code> 手动指定 CWD 。定义 gulpfile 查找的位置，此外，所有的相应的依赖（require）会从这里开始计算相对路径</li>
+<li><code>-T</code> 或 <code>--tasks</code> 会显示所指定 gulpfile 的 task 依赖树</li>
+<li><code>--tasks-simple</code> 会以纯文本的方式显示所载入的 gulpfile 中的 task 列表</li>
+<li><code>--color</code> 强制 gulp 和 gulp 插件显示颜色，即便没有颜色支持</li>
+<li><code>--no-color</code> 强制不显示颜色，即便检测到有颜色支持</li>
+<li><code>--silent</code> 禁止所有的 gulp 日志</li>
+</ul>
+<h2 id="Gulp插件"><a href="#Gulp插件" class="headerlink" title="Gulp插件"></a>Gulp插件</h2><p>gulp 本身虽然不能完成很多任务，但它有大量插件可用，我们可以在 插件页面 或者在 npm 搜索 gulpplugin 。<br>列一些很棒的 plugin ：</p>
+<ul>
+<li><a href="http://www.browsersync.cn/docs/gulp/" target="_blank" rel="external">browser-sync</a> ： 浏览器自动刷新</li>
+<li><a href="https://www.npmjs.com/package/gulp-bump" target="_blank" rel="external">gulp-bump</a> ： 更新版本号</li>
+<li><a href="https://www.npmjs.com/package/gulp-coffee/" target="_blank" rel="external">gulp-coffee</a> ： 编译CoffeeScript</li>
+<li><a href="https://www.npmjs.com/package/gulp-concat" target="_blank" rel="external">gulp-concat</a> ： 合并</li>
+<li><a href="https://www.npmjs.com/package/gulp-eslint" target="_blank" rel="external">gulp-eslint</a> ： 支持 ES6 JSX</li>
+<li><p><a href="https://www.npmjs.com/package/gulp-mocha" target="_blank" rel="external">gulp-mocha</a> ： 执行Mocha测试</p>
+</li>
+<li><p><a href="https://www.npmjs.com/package/gulp-sass" target="_blank" rel="external">gulp-sass</a> ： sass 编译</p>
+</li>
+<li><p><a href="https://www.npmjs.com/package/gulp-uglify" target="_blank" rel="external">gulp-uglify</a> ： 代码压缩</p>
+</li>
+<li><p><a href="https://www.npmjs.com/package/gulp-jshint/" target="_blank" rel="external">JSHint</a> ： js代码检查分析工具</p>
+</li>
+</ul>
+<h2 id="了解Gulp-API"><a href="#了解Gulp-API" class="headerlink" title="了解Gulp API"></a>了解Gulp API</h2><h3 id="Gulp-API-简介"><a href="#Gulp-API-简介" class="headerlink" title="Gulp API 简介"></a>Gulp API 简介</h3><p>gulp 的核心 API 有四个： gulp.src()、  gulp.task()、 gulp.dest() 、 gulp.watch() 。</p>
+<h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><p>参考官方文档：</p>
+<p><a href="https://github.com/gulpjs/gulp/blob/master/docs/API.md" target="_blank" rel="external">gulp API</a><br><a href="http://www.gulpjs.com.cn/docs/api/" target="_blank" rel="external">gulp API 中文</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Gulp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[使用Gulp压缩Hexo]]></title>
+      <url>/2017/05/02/Hexo-Gulp%E9%85%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h2 id="安装gulp及相关插件"><a href="#安装gulp及相关插件" class="headerlink" title="安装gulp及相关插件"></a>安装gulp及相关插件</h2><p>这里主要安装以下插件：<br>CSS 压缩：gulp-clean-css<br>JS 压缩：gulp-uglify<br>HTML 压缩：gulp-htmlmin，gulp-htmlclean<br>图片压缩：gulp-imagemin</p>
+<a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install gulp -g</div><div class="line">npm npm install gulp-clean-css gulp-uglify gulp-htmlmin gulp-imagemin gulp-htmlclean gulp --save</div></pre></td></tr></table></figure>
+<p>安装完后打开hexo目录中的package.json文件，检查是否安装了以上插件</p>
+<h2 id="配置gulpfile-js"><a href="#配置gulpfile-js" class="headerlink" title="配置gulpfile.js"></a>配置gulpfile.js</h2><p>在Hexo根目录中新建文件gulpfile.js，复制以下文件。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</div><div class="line">    minifycss = <span class="built_in">require</span>(<span class="string">'gulp-clean-css'</span>);</div><div class="line">    uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);</div><div class="line">    htmlmin = <span class="built_in">require</span>(<span class="string">'gulp-htmlmin'</span>);</div><div class="line">    htmlclean = <span class="built_in">require</span>(<span class="string">'gulp-htmlclean'</span>);</div><div class="line">    imagemin = <span class="built_in">require</span>(<span class="string">'gulp-imagemin'</span>);</div><div class="line"><span class="comment">// 压缩 public 目录内 css</span></div><div class="line">gulp.task(<span class="string">'minify-css'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'./public/**/*.css'</span>)</div><div class="line">        .pipe(minifycss(&#123;</div><div class="line">           <span class="attr">advanced</span>: <span class="literal">true</span>,<span class="comment">//类型：Boolean 默认：true [是否开启高级优化（合并选择器等）]</span></div><div class="line">           compatibility: <span class="string">'ie7'</span>,<span class="comment">//保留ie7及以下兼容写法 类型：String 默认：''or'*' [启用兼容模式； 'ie7'：IE7兼容模式，'ie8'：IE8兼容模式，'*'：IE9+兼容模式]</span></div><div class="line">           keepBreaks: <span class="literal">true</span>,<span class="comment">//类型：Boolean 默认：false [是否保留换行]</span></div><div class="line">           keepSpecialComments: <span class="string">'*'</span></div><div class="line">           <span class="comment">//保留所有特殊前缀 当你用autoprefixer生成的浏览器前缀，如果不加这个参数，有可能将会删除你的部分前缀</span></div><div class="line">        &#125;))</div><div class="line">        .pipe(gulp.dest(<span class="string">'./public'</span>));</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 压缩 public 目录内 html</span></div><div class="line">gulp.task(<span class="string">'minify-html'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> gulp.src(<span class="string">'./public/**/*.html'</span>)</div><div class="line">    .pipe(htmlclean())</div><div class="line">    .pipe(htmlmin(&#123;</div><div class="line">        <span class="attr">removeComments</span>: <span class="literal">true</span>,<span class="comment">//清除 HTML 注释</span></div><div class="line">        collapseWhitespace: <span class="literal">true</span>,<span class="comment">//压缩 HTML</span></div><div class="line">        collapseBooleanAttributes: <span class="literal">true</span>,<span class="comment">//省略布尔属性的值 &lt;input checked="true"/&gt; ==&gt; &lt;input /&gt;</span></div><div class="line">        removeEmptyAttributes: <span class="literal">true</span>,<span class="comment">//删除所有空格作属性值 &lt;input id="" /&gt; ==&gt; &lt;input /&gt;</span></div><div class="line">        removeScriptTypeAttributes: <span class="literal">true</span>,<span class="comment">//删除 &lt;script&gt; 的 type="text/javascript"</span></div><div class="line">        removeStyleLinkTypeAttributes: <span class="literal">true</span>,<span class="comment">//删除 &lt;style&gt; 和 &lt;link&gt; 的 type="text/css"</span></div><div class="line">        minifyJS: <span class="literal">true</span>,<span class="comment">//压缩页面 JS</span></div><div class="line">        minifyCSS: <span class="literal">true</span><span class="comment">//压缩页面 CSS</span></div><div class="line">    &#125;))</div><div class="line">    .pipe(gulp.dest(<span class="string">'./public'</span>))</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 压缩 public/js 目录内 js</span></div><div class="line">gulp.task(<span class="string">'minify-js'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> gulp.src(<span class="string">'./public/**/*.js'</span>)</div><div class="line">        .pipe(uglify())</div><div class="line">        .pipe(gulp.dest(<span class="string">'./public'</span>));</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 压缩 public 目录内图片</span></div><div class="line">gulp.task(<span class="string">'minify-images'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    gulp.src(<span class="string">'./public/**/*.*'</span>)</div><div class="line">        .pipe(imagemin(&#123;</div><div class="line">           <span class="attr">optimizationLevel</span>: <span class="number">5</span>, <span class="comment">//类型：Number  默认：3  取值范围：0-7（优化等级）</span></div><div class="line">           progressive: <span class="literal">true</span>, <span class="comment">//类型：Boolean 默认：false 无损压缩jpg图片+</span></div><div class="line">           interlaced: <span class="literal">false</span>, <span class="comment">//类型：Boolean 默认：false 隔行扫描gif进行渲染</span></div><div class="line">           multipass: <span class="literal">false</span>, <span class="comment">//类型：Boolean 默认：false 多次优化svg直到完全优化</span></div><div class="line">        &#125;))</div><div class="line">        .pipe(gulp.dest(<span class="string">'./public'</span>));</div><div class="line">&#125;);</div><div class="line"><span class="comment">// 执行 gulp 命令时执行的任务</span></div><div class="line">gulp.task(<span class="string">'default'</span>, [</div><div class="line">    <span class="string">'minify-html'</span>,<span class="string">'minify-css'</span>,<span class="string">'minify-js'</span>,<span class="string">'minify-images'</span></div><div class="line">]);</div></pre></td></tr></table></figure>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">hexo clean</div><div class="line">hexo g</div><div class="line">gulp</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+<p>进行测试。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://www.liuxinggang.com/2016-12-08-hexo%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E8%A1%A5%E5%85%85/" target="_blank" rel="external">hexo性能优化补充</a><br><a href="http://www.ydcss.com/archives/18" target="_blank" rel="external">gulp详细入门教程</a><br><a href="https://clearsky.me/hexo-gulp-compress.html" target="_blank" rel="external">使用 gulp 压缩 hexo 静态资源</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Gulp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo常见命令]]></title>
+      <url>/2017/04/28/Hexo%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/</url>
+      <content type="html"><![CDATA[<h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></div><div class="line">hexo new page <span class="string">"pageName"</span> <span class="comment"># 新建页面</span></div><div class="line">hexo generate <span class="comment"># 生成静态页面至public目录</span></div><div class="line">hexo server <span class="comment"># 开启预览访问端口(默认端口4000，'ctrl+c'关闭server)</span></div><div class="line">hexo deploy <span class="comment"># 项目部署</span></div><div class="line">hexo <span class="built_in">help</span> <span class="comment"># 查看帮助</span></div><div class="line">hexo version <span class="comment"># 查看Hexo的版本</span></div></pre></td></tr></table></figure>
+<h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><p><a href="https://alaxn.github.io/tags/Hexo/" target="_blank" rel="external">Hexo标签</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[徐宝璜与梁启超新闻思想之比较]]></title>
+      <url>/2016/07/17/%E5%BE%90%E5%AE%9D%E7%92%9C%E4%B8%8E%E6%A2%81%E5%90%AF%E8%B6%85%E6%96%B0%E9%97%BB%E6%80%9D%E6%83%B3%E4%B9%8B%E6%AF%94%E8%BE%83/</url>
+      <content type="html"><![CDATA[<p>&nbsp;</p>
+<h2 id="一、徐宝璜成就概述"><a href="#一、徐宝璜成就概述" class="headerlink" title="一、徐宝璜成就概述"></a>一、徐宝璜成就概述</h2><p>徐宝璜，江西九江人，是中国最早的新闻理论家和新闻教育家，在中国新闻史和新闻学史上享有盛名，被誉为“新闻界的开山祖” (徐宝璜, 1919)。1912北京大学毕业后，官费赴密歇根大学留学，期间修读了部分新闻课程。1916年回国后在北京《晨报》担任编辑，后任北大教授。1920年先后在民国大学、北平大学和朝阳大学任教。1930年为北大筹办新闻系，于同年6月1日病逝，年仅37岁 (双永清, 2000)。</p>
+<a id="more"></a>
+<p>在中国的新闻史上，他拥有三个第一 (方汉奇, 2016)。即：</p>
+<p>（一）第一个在大学讲授新闻学课程。1918年徐宝璜在北大文科各系开设新闻学选修课。在此前，大学从未开讲新闻学课程。此外，他还是中国大学中的第一个新闻系主任，1923年任职于平民大学新闻系。</p>
+<p>（二）参与创办中国第一个新闻学研究团体。1918年10月14日北京大学成立了新闻研究会，不久改称新闻学研究会，是中国新闻史上第一个新闻学研究团体。自1918年9月起，徐宝璜便参与了该研究会的筹备，直至1918年研究会成立。在研究会成立以后，他担任副会长，是研究会的实际负责人。同时，他还担任研究会专职导师。当时研究会聘有两位专职导师，另一位是邵飘萍。</p>
+<p>（三）出版第一部新闻学专著。早在1918年9月徐宝璜将他在北大文科各系讲授新闻学的讲稿，用《新闻学大意》为题，在《东方杂志》上连载。1919年又以《新闻学》为书名，交北大出版部出版。这是中国历史上的第一部新闻学专著。被蔡元培称之为“破天荒之作”。这部专著自1919年初版后，曾陆续再版4次，1994年又由中国人民大学出版社重新出版，连同初版，前后出版了6次，这在中国的新闻学史上，也是十分罕见的，可见其受推重之一斑。书中其中的有关新闻学普遍规律的论述，有关报纸功能的论述，有关反对假新闻和有偿新闻的论述，以及新闻如鲜鱼这一形象的比喻，仍然历久弥新，给今天的新闻工作者以很大的启示。</p>
+<p>从方汉奇教授为纪念徐宝璜诞辰100周年而撰写的《纪念徐宝璜先生》 (方汉奇, 2016)一文中对徐宝璜的三个“第一”评价可以看出，徐宝璜一生的贡献主要体现在为新闻学提供理论与实践指导上。而大部分人对徐宝璜的研究也都是集中在其新闻思想上 (周翔, 2010)，一般均是结合其代表作《新闻学》进行理论分析，而较少比较徐宝璜新闻思想与其他著名新闻人的区别。</p>
+<p>梁启超作为新闻学启蒙时期的最高水平，在新闻行业具有崇高地位。一生从事报刊活动27年，创办领导报刊17种，被誉为言论界之骄子。其新闻思想始见于《论报馆有益于国事》。</p>
+<p>陈力丹教授在《论中国新闻学的启蒙和创立》中的话很好的概括了梁启超与徐宝璜的最显著差别：“梁启超代表了中国新闻学启蒙时期的最高认识水平，他走到了从新闻学启蒙到新闻学创立的边缘，但一步之差的距离，他始终没有跨过去 (2004 页 237)。</p>
+<p>徐宝璜《新闻学》一书的出现，正式标志着新闻从“术”的领域拓展到“学”。而新闻也开始有了系统的定义和职能。</p>
+<p>本文主要讨论徐宝璜与梁启超在新闻思想上的异同，重点分析其新闻舆论的差别。</p>
+<p>&nbsp;</p>
+<h2 id="二、徐宝璜、梁启超新闻思想相同之处"><a href="#二、徐宝璜、梁启超新闻思想相同之处" class="headerlink" title="二、徐宝璜、梁启超新闻思想相同之处"></a>二、徐宝璜、梁启超新闻思想相同之处</h2><h3 id="（一）强调报纸之用"><a href="#（一）强调报纸之用" class="headerlink" title="（一）强调报纸之用"></a>（一）强调报纸之用</h3><p>徐宝璜认同蔡元培“凡是先有术而后有学”的观点，强调新闻是一种强有力的术 (向喆, 2009)。他认为报纸在教育发达的国家非常盛行，影响广泛，不看报纸的国民言论行动都会受到影响。且报纸的势力“驾乎学校教员、教堂牧师之上，视为社会教育最有力之机关，亦为公论之事实。 (徐宝璜, 1919 页 2)”</p>
+<p>而梁启超也在其《论报馆有益于国事》一文中分析强调了报纸的作用。</p>
+<p>古之学者，但凡儒者，必以国为家，安身立命，全在乎于“国”。梁所处之年代，乃清末国门稍开，国智刚启之时。时值甲午中日战争之后，国之困顿受侮，时人无不感同于心而愚蒙不知所措 (梁启超, 1896)。</p>
+<p>他认为。而弱的原因，是阻塞不通。上下不通、内外不通。上下不通，故内藏有奸狡之官吏，颠倒黑白，是非不分，朋比为奸。内外不通，故自恃天朝大国，守旧而积弱。而报馆能起到去塞求通的作用，是“报馆乃去塞求通的导端”。报纸是耳，是帮助国家、君主了解国内国外发生的事情，对当下形势环境了然于胸。</p>
+<p>当然，这里也需要注意，两者对于报纸重要性看法不同，这也是两者新闻思想的差异所在。</p>
+<p>###（二）强调真实性原则</p>
+<p>徐宝璜认为，“新闻须为事实，此理极明，无待解释，故凡凭空杜撰闭门捏造之消息，均非新闻。 (1919 页 10)”非真实，非新闻。</p>
+<p>而《访员应守之金科玉律》和《访员之资格》两节中也均强调了真实性原则——“访得新闻，访得所有之新闻，切勿视谣言为事实”、“新闻须为事实” (徐宝璜, 1919 页 44-45)。此两节是其为新闻从业人员所撰写的职业守则，可见其对真实性的重视程度。</p>
+<p>又如：“苟记载失实，无论其出于有意之造谣与播弄，抑出于无意之疏忽与传讹小之常足以使个人受莫大之损失与痛苦，大之足以贻毒社会，扰乱国家，此亦为不能掩饰之事实。 (徐宝璜, 1919 页 97)”此话来自《新闻社之组织》一节中，充分强调了非真实可能带来的后果。</p>
+<p>在《论报馆有益于国事》一文中，梁启超也分析了新闻报道不实的三个弊端：“记载琐故。采访异闻，非齐东之野言，即秘辛之杂事，闭门而造，信口以谈，无补时艰，徒伤风化，其弊一也；军情敌情，记载不实，仅凭市虎之口，罔惩夕鸡之嫌，甚乃揣摩众情，臆造诡悦，海外已成劫烬，纸上犹登捷书，荧惑听闻，贻误大局，其弊二也。”“或有译录稍广，言论足观，删汰秽芜，颇知体要，而借阐宗风，不出郑志，虽有断章取义之益，未免歌诗不类之憾，其弊五也。”他认为，在进行采访的时候，如果只是道听途说，只会有伤风化；如果对于军事情报，也只是听信谣言，甚至编造，只会迷惑大众，耽误了大局。而当引用他人言论时，不能随便随意断章取义采用。</p>
+<p>###（三）追求新闻的时效性</p>
+<p>徐宝璜在对新闻的定义是：新闻是多数阅者所注意的最近事实 (1919 页 10)。“最近”二字是其新闻价值之一。他认为，“新闻如同鲜鱼”，愈新鲜价值愈高，价值与发生及登载时间成反比 (1919 页 10)。</p>
+<p>梁启超也同样重视时效性。在《&lt;时报&gt;发刊例》中，他提出了办报的论说四条，纪事五条的要求。论说四条：“公”、“要”、“周”、“适”；纪事五条：“博”、“速”、“确”、“真”、“正”。其中“速”，就是要求纪事讲求时效性。“各处访事员，凡遇要事，必以电达，务供阅者先睹之快。” (梁启超, 1999 页 131-132)</p>
+<p>&nbsp;</p>
+<h2 id="三、徐宝璜、梁启超新闻思想不同之处"><a href="#三、徐宝璜、梁启超新闻思想不同之处" class="headerlink" title="三、徐宝璜、梁启超新闻思想不同之处"></a>三、徐宝璜、梁启超新闻思想不同之处</h2><p>梁启超首载于《时务报》创刊号的《论报馆有益于国事》阐述了其耳目喉舌论。</p>
+<p>总一句话，以报去塞，通达上下内外，是以强国。报刊是国家和国民的“耳目喉舌”，是“去塞求通”、促使国家富强的重要工具。其耳目喉舌均是从国家和君主出发。这点明显表现出报纸的政治宣传作用。</p>
+<p>相比较来看，关于报纸舆论的阐述，两者有着根本性的区别。</p>
+<p>在其《新闻学》一书中，徐宝璜分为六个点对报纸的职能进行了阐述，分别是：供给新闻、代表舆论、创造舆论、灌输知识、倡导道德和振兴商业 (1919 页 4)。从字面上看，代表舆论和创造舆论与梁启超的说法并无二意。但实际上其“舆论”内涵有差异，分别体现在三个方面。</p>
+<p>###（一）受众不同</p>
+<p>梁启超认为，报纸是耳目，是帮助君主和国家了解讯息的。而徐宝璜则认为新闻的第一职务是供给新闻。“以真正之新闻，供给社会，乃新闻纸之重要职务，亦于社会有极大关系。 (1919 页 4)”一个是为国家和君主提供讯息，一个是为大众提供讯息。</p>
+<p>###（二）舆论来源不同</p>
+<p>而喉舌，梁认为是国家和君主的喉舌，主张为国家和君主说话，将君主的各项措施和政策通过报纸传播下去，同时宣扬其中的益处，是国民欣然接受，实为通过报纸引导舆论。</p>
+<p>徐则认为，报纸是国民的喉舌，代表国民提出建议和要求。“昔则似仅代表国民而监督政府也，今则又应代表国民向政府有所建议或者要求。新闻纸欲尽代表舆论之职，其编辑应默查国民多数对于各重要事之舆论，取其正当者，著论立说，代为其发声 (1919 页 5)” 民众是其主要舆论意见来源。</p>
+<p>###（三）舆论目的不同</p>
+<p>舆论的来源不同决定了舆论目的的区别。</p>
+<p>在《论报馆有益于国事》一文中，梁启超所提出的“报纸之用”立场在国而非在民。</p>
+<p>梁启超所言报馆和报纸之用时，出发点是站在了“国”这个角度。从为国弱诊出病症，到开出良药，论述全不离国。这点决定了舆论的导向是目的是维护国家统治，宣传“维新”政策和思想。</p>
+<p>反观徐宝璜的“代表舆论”和“制造舆论”。实际上则是西方新闻主义。“若仅代表一人或一党之意思，则机关报耳，不足云代表舆论也。 (1919 页 6)”“新闻纸不仅应代表舆论也，亦应善用其势力，立于社会之前，创造正当之舆论，而纳人事于轨物焉。 (徐宝璜, 1919 页 6)”舆论的目的实为站在公众立场为公众发声，用舆论影响政府和国家的决策。同时也创造正当的舆论，把民众纳入征途。</p>
+<p>实际上，徐宝璜和梁启超舆论三个差异之处便体现了他们新闻思想的核心差异。</p>
+<p>梁启超的实践办报和自身政治身份决定了他对新闻、报纸的理解是一种“术”，通过这种术推动政治的改良。分析梁启超当时的政治背景和个人主张抱负，可以得出，梁启超是一个士人，一个满怀救国的改革派，一个稍涉西学的儒者。虽然梁启超思想可能比起其他士大夫阶层稍微开放，但骨子里还是逃不过本着西学中用的理念，希望在中国大兴报业，以报纸报馆开风气、立国体、出人才。这种特点使得他的新闻思想与政治紧密的联系在一起，强调报纸的实用性。</p>
+<p>而徐宝璜早期的美国新闻教育则令他产生了将新闻带入中国的想法。在机缘巧合之下，成为中国新闻第一人，从“学”出发定义新闻思想及新闻从业人员的职业规范。在为《新闻学》作序时蔡元培写道：“伯轩先生游学于北美时，对于兹学，至有兴会，归国以来，亦颇有心于本国之新闻事业。”也有学者考证到：“徐宝璜对密歇根大学当时的新闻课程与新闻教育项目是有所了解的，他也亲身体验到在美国，新闻已成为大学中的一种专门科目，大学开始承担起培养报纸工作者的任务，他把这样的认识、理念和新闻教育比较具体的形式和内容都带回了中国，带回了北大；在种种因缘际会下，开启了中国新闻教育和新闻学研究的新篇。 (周婷婷, 2008)”因此，徐宝璜的新闻思想更具有系统性，也更加理想化。他将新闻的功能和作用回归到新闻本位层面，对新闻本身进行纯理论的研究。</p>
+<p>&nbsp;</p>
+<h2 id="四、结论"><a href="#四、结论" class="headerlink" title="四、结论"></a>四、结论</h2><p>无论是徐宝璜，还是梁启超，其新闻思想都包含着真实性和时效性原则，而对于报纸之“用”，两者的出发点则是截然不同。</p>
+<p>结合西方新闻主义，尝试提问：为什么会有新闻，新闻的作用是什么？。大部分人想到的答案可能是：让民众了解新近发生的事情，监督政府，充当社会良知。当然，这个答案，新闻也需要起到这些作用。但是，再追问下去，为什么民众需要？答案是新闻的产生起源于人们对信息的需求，起源于人们对自身所处的环境了解的需要以及表达自己诉求的愿望，基于这些需求，才会发展出当下的西报。</p>
+<p>从这一点考量梁启超的新闻思想，我们能够发现，其出发点和西方自由主义以及市场化报纸截然不同。其根本在于用报，而非宣言人之独立和自由。虽然其耳目喉舌之比喻中提及到“民”，但他并没有单纯从“民”出发论述报馆的作用。所以，梁启超之报纸，实际是论报馆报纸这术对中国政治的影响。换而言之，报馆之于国事有益是在于其撰写评议发行之作用，而非其内含西方新闻思想的源头。相较之下，徐宝璜则是对西方新闻主义的一脉继承和发展，将社会、公民作为报纸的服务对象，秉承新闻客观公正真实的原则，发展新闻事业，其报纸的六大职能观点（供给新闻、代表舆论、创造娱乐、灌输知识、提倡道德和振兴商业）对于今天的新闻工作仍有指导和借鉴的意义。</p>
+<p>&nbsp;</p>
+<h2 id="参考书目"><a href="#参考书目" class="headerlink" title="参考书目"></a>参考书目</h2><p><strong>陈力丹. 2004.</strong> 陈力丹自选集·新闻观念：从传统到现代. 上海 : 复旦大学出版社, 2004.</p>
+<p><strong>方汉奇. 2016.</strong> 纪念徐宝璜先生. 爱思想. [联机] 2016年5月7日. [引用日期: 2016年6月22日.]</p>
+<p><strong>梁启超. 1999.</strong> &lt;时报&gt;发刊词. [书籍作者] 张之华. 国新闻事业史文选. 北京 : 中国人民大学出版社, 1999.</p>
+<p><strong>—. 1896.</strong> 论报馆有益于国事 . 新浪博客. [联机] 1896年8月9日. [引用日期: 2016年6月21日.] <a href="http://blog.sina.com.cn/s/blog_14dfa20d50102vz4y.html" target="_blank" rel="external">http://blog.sina.com.cn/s/blog_14dfa20d50102vz4y.html</a>.</p>
+<p><strong>双永清. 2000.</strong> 试论徐宝璜的新闻思想. 山西大学学报（哲学社会科学版）. 2000年, 卷 23.</p>
+<p><strong>向喆. 2009.</strong> 从徐宝璜《新闻学》看五四时期的新闻立学. 人民网. [联机] 2009年12月16日. [引用日期: 2016年6月21日.] <a href="http://media.people.com.cn/GB/22114/44110/142321/10593588.html" target="_blank" rel="external">http://media.people.com.cn/GB/22114/44110/142321/10593588.html</a>.</p>
+<p><strong>徐宝璜. 1919.</strong> 新闻学. 上海 : 商务印书馆, 1919.</p>
+<p><strong>周婷婷. 2008.</strong> 徐宝璜留学美国学习新闻学考证. 国际新闻界. 2008年, 卷 3.</p>
+<p><strong>周翔. 2010.</strong> 徐宝璜新闻思想研究. 南昌大学统招硕士研究生论文. 2010年.</p>
+]]></content>
+      
+        <categories>
+            
+            <category> NewFreedom </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 名记者 </tag>
+            
+            <tag> 新闻史 </tag>
+            
+            <tag> 新闻思想 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Chrome 常用插件]]></title>
+      <url>/2016/07/17/Chrome%20%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>点击插件名即可进入chrome商城下载，如无法下载，可在此处寻找<a href="http://yurl.sinaapp.com/crx2.php" target="_blank" rel="external">国内加速，常用扩展一键秒下</a>。</p>
+</blockquote>
+<h3 id="Adblock"><a href="#Adblock" class="headerlink" title="Adblock"></a><a href="https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom" target="_blank" rel="external">Adblock</a></h3><p>屏蔽互联网上各种恼人的广告。对于自己喜欢的网站，可以设置白名单。对于强迫症患者，只要稍懂html，就可以自定义规则，屏蔽掉网页上任何自己不想看到的东西。</p>
+<h3 id="chrome下载管理器"><a href="#chrome下载管理器" class="headerlink" title="chrome下载管理器"></a><a href="https://chrome.google.com/webstore/detail/chrono-download-manager/mciiogijehkdemklbdcbfkefimifhecn" target="_blank" rel="external">chrome下载管理器</a></h3><p>替代chrome原生的下载界面，并增强了相关功能。此外，还可以探测所访问页面的所有资源，包括图片、文档、css文件、js文件。提供一键下载。特别是当需要在下载某页面的多个文档时，一键下载特别方便。</p>
+<h3 id="Nimbus-Screenshot-and-Screencast"><a href="#Nimbus-Screenshot-and-Screencast" class="headerlink" title="Nimbus Screenshot and Screencast"></a><a href="https://chrome.google.com/webstore/detail/nimbus-screenshot-and-scr/bpconcjcammlapcogcnnelfmaeghhagj" target="_blank" rel="external">Nimbus Screenshot and Screencast</a></h3><p>优秀的网页截图工具。支持多种截图方式，特别是能够支持在页面中进行自定义的滚动截屏。截图后可对图片进行编辑，并以png和jpeg格式输出。</p>
+<h3 id="Neater-Bookmarks"><a href="#Neater-Bookmarks" class="headerlink" title="Neater Bookmarks"></a><a href="https://chrome.google.com/webstore/detail/neater-bookmarks/ofgjggbjanlhbgaemjbkiegeebmccifi" target="_blank" rel="external">Neater Bookmarks</a></h3><p>弹出式书签。chrome自带的书签有个缺点，就是如果设置了多个层级，选取起来会比较困难，手抖一下就失焦。「Neater Bookmarks」可以解决这个问题。</p>
+<h3 id="Session-Buddy"><a href="#Session-Buddy" class="headerlink" title="Session Buddy"></a><a href="https://chrome.google.com/webstore/detail/session-buddy/edacconmaakjimmfgnblocblbcdcpbko" target="_blank" rel="external">Session Buddy</a></h3><p>一键保存当前浏览器打开的全部网页。现实中经常会遇到打开很多网页，还没来得及看，宿舍就熄灯断网的情况。这时候就可以把这些网页一键保存到Session Buddy中，第二天再慢慢细看。</p>
+<h3 id="SwitchyOmega"><a href="#SwitchyOmega" class="headerlink" title="SwitchyOmega"></a><a href="https://chrome.google.com/webstore/detail/proxy-switchyomega/padekgcemlokbadohgkifijomclgjgif?hl=en-US" target="_blank" rel="external">SwitchyOmega</a></h3><p>好用的代理管理器，你懂得。</p>
+<h3 id="有道智能翻译"><a href="#有道智能翻译" class="headerlink" title="有道智能翻译"></a><a href="https://chrome.google.com/webstore/detail/%E6%9C%89%E9%81%93%E6%99%BA%E8%83%BD%E7%BF%BB%E8%AF%91-by-pubuim/chpeaiibggkmaongjphijmielpkokcdg?hl=en-US" target="_blank" rel="external">有道智能翻译</a></h3><p>瀑布IM 制作的有道翻譯插件，可一键翻译整个网页，也支持划词翻译。良心之作。</p>
+<h3 id="新浪微博图床"><a href="#新浪微博图床" class="headerlink" title="新浪微博图床"></a><a href="https://chrome.google.com/webstore/detail/%E6%96%B0%E6%B5%AA%E5%BE%AE%E5%8D%9A%E5%9B%BE%E5%BA%8A/fdfdnfpdplfbbnemmmoklbfjbhecpnhf" target="_blank" rel="external">新浪微博图床</a></h3><p>可以当成个人博客的图床。点开插件，将图片拖入，就会自动生成外链。支持Html和Markdown格式。缺点是没有提供注册账户功能，也就不能进行图片管理。我自己是拿来做测试用。</p>
+<h3 id="印象笔记·剪藏"><a href="#印象笔记·剪藏" class="headerlink" title="印象笔记·剪藏"></a><a href="https://chrome.google.com/webstore/detail/evernote-web-clipper/pioclpoplcdbaefihamjohnefbikjilc" target="_blank" rel="external">印象笔记·剪藏</a></h3><p>印象笔记开发的插件。功能十分强大，可以将网页内容完全原样复制、保存到个人的笔记本中。</p>
+<h3 id="印象笔记·悦读"><a href="#印象笔记·悦读" class="headerlink" title="印象笔记·悦读"></a><a href="https://chrome.google.com/webstore/detail/clearly/iooicodkiihhpojmmeghjclgihfjdjhj" target="_blank" rel="external">印象笔记·悦读</a></h3><p>同样是印象笔记开发的插件，可以对网页内容进行重新排版。特别是对于那些在版式或者字体上令人无法忍受的网站，有治疗奇效。可以让读者专注于内容本身。</p>
+<h3 id="新媒体管家"><a href="#新媒体管家" class="headerlink" title="新媒体管家"></a><a href="https://chrome.google.com/webstore/detail/%E6%96%B0%E5%AA%92%E4%BD%93%E7%AE%A1%E5%AE%B6/jicmnjcngcnfhgfggbdhlbjpcbadimaj?hl=en-US" target="_blank" rel="external">新媒体管家</a></h3><p>方便管理所有新媒体帐号，可实现多平台快速登录，支持微信、微博、知乎等。也提供一些素材搜索和微信公众号功能拓展，如生成文章永久链接、制作封面、一键复制公众号等。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Chrome </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[浅议 “文明”的界定——“文明冲突论”观点的几点思考]]></title>
+      <url>/2015/11/03/%E6%B5%85%E8%AE%AE%20%E2%80%9C%E6%96%87%E6%98%8E%E2%80%9D%E7%9A%84%E7%95%8C%E5%AE%9A%E2%80%94%E2%80%94%E2%80%9C%E6%96%87%E6%98%8E%E5%86%B2%E7%AA%81%E8%AE%BA%E2%80%9D%E8%A7%82%E7%82%B9%E7%9A%84%E5%87%A0%E7%82%B9%E6%80%9D%E8%80%83/</url>
+      <content type="html"><![CDATA[<h2 id="一、“文明冲突论”简述"><a href="#一、“文明冲突论”简述" class="headerlink" title="一、“文明冲突论”简述"></a>一、“文明冲突论”简述</h2><p>《文明的冲突与世界秩序的重建》（The Clash of Civilizations and the Remaking of World Order）洋洋洒洒34万字，将亨廷顿的“文明冲突论”前前后后详细地举例论述了一遍，并在最后一章节模拟了世界各大文明间冲突局势，显示了儒家文明，或者说中华文明的威胁。</p>
+<p>“文明冲突论”是该书的核心，在探讨这种理论对国际格局的影响前，需要简单地理解下该理论。该理论首先发表于《文明的冲突》一文，其核心思想是，自冷战结束后，国际冲突主要因素不再是意识形态，而是各主要文明间的差异。</p>
+<p>在亨廷顿看来，世界上主要文明有八种，分别是西方文明、儒家文明、日本文明、伊斯兰文明、印度教文明、东正教文明、拉丁美洲文明以及非洲文明（可能存在）。美苏冷战后，由于各国经济的发展及政治运动的进行，西方世界权力的衰落，西方文明、价值观对其他国家的吸引力也随之下降，各国开始关注自身的文化归属，着手本土化，在全球范围逐渐形成了“非西方化运动”（De-westernization） (亨廷顿, 1998)。而这种“非西方化运动”势必导致冲突的产生。原因在于：一，文明的差别是人类最基本的差别，包括历史、语言、文化、宗教，这些方面的差异很难统一和消除；二，技术的进步使得世界变“小”，不同文明间的交流促进了各文明的意识和文明的觉醒；三，经济和社会的发展使得宗教弥补地理因素造成的地域文化，成为文明认同的重要力量，同时，由于经济的发展使得非西方国家对自身的文明产生更强的认同感，开始质疑和反抗西方价值；四，西方文明在向外渗透其价值观时，必定导致文明的冲突。</p>
+<p>亨廷顿分析，就目前的国际形势，伊斯兰文明和儒家文明将会是西方文明的最大威胁。文明将围绕核心国家形成，并在不同文化的交界处产生断层线，不断产生摩擦。而围绕核心国家组成的文明，将在世界舞台上互相博弈，甚至引发全球层面的战争。</p>
+<p>&nbsp;</p>
+<a id="more"></a>
+<h2 id="二、文明概念的模糊性及其矛盾"><a href="#二、文明概念的模糊性及其矛盾" class="headerlink" title="二、文明概念的模糊性及其矛盾"></a>二、文明概念的模糊性及其矛盾</h2><p>书中，亨廷顿首先对文明（Civilizations）和文化（Culture）做了概论区分和界定，“文明和文化都涉及一个民族全面地生活方式，文明是放大了的文化。”，“一个文明是一个最广泛的文化实体。”“文明是文化实体，而不是政治实体。”“文明是包容广泛的。” (亨廷顿, 1998)而实际上，这种区分存在概念模糊。</p>
+<p>一方面，上述罗列的定义在学界并不是“广泛的一致意见”，争议的焦点包括文化及文明的范畴及界定、文明与政治、意识形态的关系，也曾有中国学者认为亨廷顿对“文化”及“文明”的界定仅仅是使用了口号式的断语来实现“广泛的一致意见” (萧俊明, 2002)。仅“文明是文化实体，而不是政治实体。”这一观点，便存在着值得商榷的地方。雅格布·伯克哈特认为 , 国家 、宗教和文化是一个文明的三个主要成分 。而汤因比则是不大注重经济方面 , 认为宗教是最重要的 ;克罗伯 、 巴格比和布罗代尔则认为文化与文明包括了社会生活的所有方面 , 既包括物质方面也包括心理和精神方面 。 由此可见 , 对于“文明”该概念的界定仍是存在很大争议的。</p>
+<p>另一方面，由于对“文明”的界定不够详细，在判断“西方化”、“现代化”等概念是否属于文明上便存在了矛盾，这也为其他学者驳斥“文明冲突论”提供了角度。亨氏在书中区别分了“西方化”及“现代化”，认为两者并不等同，中东地区的伊斯兰国家可以穿着牛仔裤喝着可乐的同时，去进行朝拜，并在空闲之余利用互联网组织圣战。日本可以实现在现代化的同时，仍然保留着传统文化及礼仪。按照亨氏的观点，文明间存在和不可调和的根本差异，才会最终导致冲突，但是另一方面，现代化的进行，人们的日常生活部分向西方靠拢，穿牛仔裤、吃西餐、喝可乐，难道不是文化互相交融的一部分吗？或许作者仅仅是想要区分现代化的过程中，非西方主义文明不会被西方价值观所侵蚀，但对于广泛的文明概念而言，却很容易给人们带来误导。</p>
+<p>作者在论述冲突存在的原因时，不只一次强调了文明间不可和解的差异，并认为正是差异使得使得人们认识和认同自我；却同时也承认了文化的不断演变——“文化是动态的，而不是僵化的，一个社会的主流信仰及态度也是会转变的。” (亨廷顿, 1998)。问题在于为何持续演变的几种文化不会互相包容和共同促进，却一定出现的冲突呢？是因为亨廷顿只看到了文化差异所带来的矛盾和冲突，却没有看到融合共存的一面吗？早在80年代，历史学家入江昭（Akira Lriye）便提出了通过文化角度分析国际关系，而他强调的重点则是文明间的合作。</p>
+<p>个人认为，这是因为亨廷顿的观察视角和出发点与其他人不同所导致的。对美国多元主义的意识形态的担忧及悲观审视，使得亨氏在多元文化上抱有较为悲观的态度。 “文化冲突论”表面上承认文化的多样性，而实际上则是基于美国视角的文化霸权理论，从美国的战略角度思考未来格局。文中对围绕中国形成的儒家文明多次举例，并持以非常乐观的态度看待中国及周边儒家文明国家的经济发展，反观西方经济及文明，已经处在衰落的阶段，而西方价值观已经在很大程度上对其他国家缺乏吸引力，西方文明的最大威胁是来自中华文明。这种观点显然是站在了西方国家立场上进行分析，其目的是为了维护和巩固西方文明在世界文明中的地位，维护以美国为首的西方世界的国际地位。同时对其他国家的考察和审视也是从一个西方人的视角出发的，在对中华文明进行分析时，作者采用的是以历史事实作为主要论据，而并未深入到儒家传统思想，中华传统文化层面进行分析，也并未关注到经济腾飞的原因和背后的代价，高估了以中国为首的儒家国家实力，片面看待儒家文化。</p>
+<p>&nbsp;</p>
+<h2 id="三、普世文明是否存在"><a href="#三、普世文明是否存在" class="headerlink" title="三、普世文明是否存在"></a>三、普世文明是否存在</h2><p>亨廷顿对普世文明持有否定的态度。认为世界不存在普世文明。而事实上，观点的认同与否还是得回归到对普世文明的界定上。</p>
+<p>在亨廷顿眼中，关于不同国家、社会、群体中的基本价值观念作为普世文明是肤浅的。这些观念中的共同之处只是不同文明的最基本特征，应该将它们理解为人类在发展过程中不变的内涵。同样的，作为现代化过程中必然产物的语言、文字，也只能看成社会发展的必备因素，称不上文明。在他看来，达沃斯文明才是所谓的文明，一种文明同另一种文明存在共通的价值观、共同的理念。但这也不是普世文明，因为这仅仅是极少数部分人所认同的文明，不能大规模应用。而当下西方世界在文化传播、生活方式、科学技术所产生的影响，也即西方消费模式和大众文化，由于没有改变接受者的基本文化，因此也不能称之为普世文明 (亨廷顿, 1998)。因此，多元文化将会是世界的必然趋势。</p>
+<p>在我看来，普世文明的有无实际上取决于对普世文明范围的界定上。从亨氏角度出发，可以判定世界上不存在普世文明。但是，亨廷顿在论述八大文明时，又何尝不是在尝试给出特定范围的普世文明呢？实际上，无论是儒家文明还是西方文明，当中的组成国家都包含了不少差异。同时国家内部、某类文明的内部同样也存在着多种次文明，如美国，那么，按照亨氏的看法，国家又是否可以属于某类特定文明呢？是按照该国家的多数主流看法归类还是按照国家意识形态倾向呢？</p>
+<p>而上一节中亨氏对“文明”界定上分析，似乎我们也没有理由认定文明必定必须是某类本质的文明，而不能是日常生活中的文化。我们没有办法肯定未来的发展必定出现某一种文明是大家都接受认可，就如同西方文明并非所有国家、群体所能够由衷认可践行一样，但对于人权、法制的要求却是世界政治发展的趋势。直到如今，我们没有办法证明“民主”一定是唯一的选择，但却能排除某些选择，如“封建专制”、“奴隶制”等等。同样的，关于普世文明这个问题，或许更加应该抱有一种求同存异的态度，在不同文明中寻找彼此认同的观点，而不是一味强调文明冲突的必然。</p>
+<p>&nbsp;</p>
+<h2 id="四、文明的背后仍有其他因素驱动"><a href="#四、文明的背后仍有其他因素驱动" class="headerlink" title="四、文明的背后仍有其他因素驱动"></a>四、文明的背后仍有其他因素驱动</h2><p>使用“文明冲突”的观点分析当下国际形势是可行的，但文明的背后是否存在其他驱动力量却是值得我们认真研究的。</p>
+<p>亨氏认为文明是国际秩序的决定性因素，并将文明与政治、经济划清了界限。但在分析非西方文明的崛起时，论证逻辑却是从经济开始的。经济的发展唤醒了非西方文明，非西方国家开始意识到自身文明，并对其产生了认同感。换个角度思考，若是经济的发展出现问题，非西方国家在对待自身文明上，是否又会出现怀疑呢？</p>
+<p>就以中国为例，由于近几十年经济的快速发展，令世界开始瞩目中国，瞩目中国传统文化，但在五十多年前，中国却在开展除四旧，打倒孔夫子等反对传统文化的行为。对于文明的认同感起码部分来自当下“我”发展的好坏。其根本还是回到了现代化进程和经济发展这个问题上来。当然仅仅举中国一个例子并不能证明所有的文明认同都来自于经济，但已经证明经济与文明之间存在一定的联系，并且经济促进了对文明的认可。换句话讲，本土化的兴起实际上是取决于自身国家的发展以及西方世界的相对势弱。</p>
+<p>回到对文明冲突主体对象的讨论上来。根据亨氏最后章节模拟的国际冲突，使用“文明冲突论”时所站的视角是围绕着某一特定文明的国家。在其中的国家考虑战略是采取的仍然是本国最优化策略，而并非我所在文明的最佳策略。当然，这并不是说“文明冲突论”无法解释模拟中各国的行为，但是换做从国家利益角度思考，同样也可以解释各国之间的行为。在“文明冲突论”视角下，最终做决策的不是文明，仍然是一个远高于所属文明的国家，在战略部署和利益纠纷问题上，势必仍然站在国家策略最优化的角度上，而不可能会为了所谓的所属文明而放弃国家利益。</p>
+<p>&nbsp;</p>
+<h2 id="五、多元文明背后的难言之隐"><a href="#五、多元文明背后的难言之隐" class="headerlink" title="五、多元文明背后的难言之隐"></a>五、多元文明背后的难言之隐</h2><p>事实上，“文明冲突论”的视角来源于亨廷顿对美国国内形势的观察判断上。“多元文化”及“公民宗教”是目前在美国占据主导地位的两种意识形态。而对于“多元文化”该问题的讨论恰恰是《文明的冲突与世界秩序的重建》讨论的大前提。亨氏书中的核心部分（第四部分第八章）就是通过分析西方普世主义、人权民主、和移民来论证西方文明与非西方文明的冲突的。这其实便隐含了作者部分思考的逻辑思路。西方文明中的人权、民主等价值、移民政策不仅仅是国家间或者文明间的问题，也是每个西方国家乃至非西方国家的问题。民主、平等、自由等价值可能成为威胁西方文化的根源，而基于这些价值的移民政策和文化政策会反过来威胁西方文化价值观。其实，中国学者李慎之就曾在97年发表过一篇论文讨论亨廷顿该理论背后所隐藏的难言之隐，认为在坚持“政治正确”（Political Correctness）的美国当下环境中，亨氏只能隐晦的将文明—宗教—种族三位一体的主线仅仅以文明作为讨论的话题， (李慎之, 1997)。多元文化的兴起势必削弱原来作为一个整体的美国文化。美国更应警惕的是种族范式，尤其是黑人群体。非白种人群的数量比例上升最终会导致“美利坚的非合众化”（The Disuniting of American） (Schlesinger, 1995)，美国将不再是以西方价值观主导的文明。多元文化环境培育了来自不同地区不同种族的民族文化，而数量上的优势也将带来合法化和更大面积的受众，进而影响原有的美利坚合众国价值，最后造成内部意见的不统一。</p>
+<p>而回到国际秩序中看待文明的冲突，文明—宗教—种族三位一体的主线也是说得通的，甚至是更加契合目前国际局势的冲突。例如波斯湾战争和两伊战争，便来自于伊斯兰文明的内部冲突；而巴以冲突则来自于文明、宗教、种族的多种矛盾。种族的根本是生理上的认同，血缘、形体和肤色的明显差异令群体能够深刻地认识到自己是谁，而宗教的差异则是填补工业化大生产下精神世界的空白，这种信仰的力量能够让人战胜对死亡的恐惧，十年如一日的坚持信念。反而是文明的约束力并不那么显而易见，且并没有形成完整体系。对文明的范畴也存在着太多的争议，容易泛化。亨氏在归纳八大文明时也只能按照典型文化特征进行简单归类，以至于是否存在非洲文明还是一个有待讨论的问题。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 流年淡思 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 亨廷顿 </tag>
+            
+            <tag> 文明冲突论 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[VIA声卡在Win10下外放及耳机无法自动切换]]></title>
+      <url>/2015/10/05/VIA%E5%A3%B0%E5%8D%A1%E5%9C%A8Win10%E4%B8%8B%E5%A4%96%E6%94%BE%E5%8F%8A%E8%80%B3%E6%9C%BA%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E5%88%87%E6%8D%A2/</url>
+      <content type="html"><![CDATA[<p><strong>此Bug已经消失，本文已经完成其历史意义了！</strong></p>
+<p>最近对VIA和Win10这个Bug有点厌烦了，于是就谷歌起来，想要解决这个问题。</p>
+<h2 id="网络上普遍有两种做法"><a href="#网络上普遍有两种做法" class="headerlink" title="网络上普遍有两种做法"></a>网络上普遍有两种做法</h2><ol>
+<li>控制面板——硬件和声音——VIA HD Audio Deck——点右下角高级选项图标——选喇叭与耳机同一音源<br>就能切换了(经个人测试，新版本v11_1000b已没有此选项，默认喇叭与同一音源输出)</li>
+<li>删除VIA High Definition Audio驱动文件夹，令win10安装默认驱动。<br>想来第一种方法的更为简单省事，但无奈却发现自己电脑根本就没有这选项，也懒得重新找驱动，便按照第二种方法操作，测试中发现，若是原来电脑VIA驱动有多个，当删除当下驱动后，系统会自动安装另外匹配的VIA驱动，因此需要在原教程的基础上，多操作几遍（删除多几个目录），最后使驱动安装成 High Definition Audio便可以了。详细介绍可参考<a href="http://www.onlyke.com/html/387.html" target="_blank" rel="external">解决WIN10系统 VIA HD驱动无法自动切换外置音响和耳机的问题</a>此文。</li>
+</ol>
+<p>当然，若是想要省心，尝试第一种方法却没有办法找到这个图标，可以直接到官网下载最新的驱动，默认安装重启即可。</p>
+<p>驱动下载地址：<a href="http://download.viatech.com" target="_blank" rel="external">http://download.viatech.com</a></p>
+<p>进入后分别选择<code>Microsoft Windows</code>，<code>Windows 10</code>，<code>Audio</code>，<code>VIA HD Audio codec ...</code>，然后进入到下载页面，下载安装重启即可。</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ol>
+<li><a href="http://www.onlyke.com/html/387.html" target="_blank" rel="external">解决WIN10系统 VIA HD驱动无法自动切换外置音响和耳机的问题</a></li>
+<li><a href="http://moflying.com/p/how-to-solve-via-sound-driver-problems-for-windows10" target="_blank" rel="external">解决VIA声卡的电脑在Win10下外放及耳机无法自动切换及左右声道失衡的问题</a></li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> VIA </tag>
+            
+            <tag> win10 </tag>
+            
+            <tag> 声卡 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[LNMP环境下WordPress程序伪静态解决方案]]></title>
+      <url>/2015/10/03/LNMP%E7%8E%AF%E5%A2%83%E4%B8%8BWordPress%E7%A8%8B%E5%BA%8F%E4%BC%AA%E9%9D%99%E6%80%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+      <content type="html"><![CDATA[<p>最近尝试用vps搭建服务器，使用了Lnmp一键工具作为安装web服务的软件。</p>
+<p>在测试wordpress 的时候发现伪静态插件和lnmp自带的wordpress.conf文件冲突，导致nginx错误无法启动，后懒得调试，自己重新搭建，却发现伪静态出现了问题。在搜罗网上关于wordpress伪静态的解决方案测试后，发现有些网站的教程不是特别完整，故整合汇编了此文，供一些菜鸟使用。</p>
+<a id="more"></a>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>直接贴出解决方法。</p>
+<p>声明：我的测试环境是Ubuntu 14.04.3 LTS (GNU/Linux 3.13.0-48-generic x86_64)，使用Lnmp1.2。</p>
+<h3 id="1-检查wordpress-conf的文件是否有问题，正常应该如下（或者直接修改成如下）："><a href="#1-检查wordpress-conf的文件是否有问题，正常应该如下（或者直接修改成如下）：" class="headerlink" title="1.检查wordpress.conf的文件是否有问题，正常应该如下（或者直接修改成如下）："></a>1.检查wordpress.conf的文件是否有问题，正常应该如下（或者直接修改成如下）：</h3><p>vi /usr/local/nginx/conf/wordpress.conf</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">location / &#123; if (-d $request_filename)&#123; rewrite ^/(.*)([^/])$ /$1$2/ permanent; &#125;</div><div class="line">if (-f $request_filename/index.html)&#123; rewrite (.*) $1/index.html break; &#125;</div><div class="line">if (-f $request_filename/index.php)&#123; rewrite (.*) $1/index.php; &#125;</div><div class="line">if (!-f $request_filename)&#123; rewrite (.*) /index.php; &#125;&#125;</div></pre></td></tr></table></figure>
+<p>&nbsp;</p>
+<h3 id="2-检查虚拟主机（vhost）下的文件："><a href="#2-检查虚拟主机（vhost）下的文件：" class="headerlink" title="2.检查虚拟主机（vhost）下的文件："></a>2.检查虚拟主机（vhost）下的文件：</h3><p><code>vi/usr/local/nginx/conf/vhost/www.alaxn.ml.conf</code></p>
+<p>(<strong>www.alaxn.ml</strong>修改成自己网站的配置文件名称，如果不知道，也可以使用</p>
+<p><code>cd /usr/local/nginx/conf/vhost/</code> </p>
+<p>进入该目录后 dir 列出所有文件，寻找需要修改的文件)</p>
+<p>vi打开后应该会看到类似代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">server &#123;</div><div class="line">listen 80;</div><div class="line">server_name www.laozuo.org;</div><div class="line">index index.html index.php;</div><div class="line">include wordpress.conf;</div><div class="line"></div><div class="line">……（省略下文内容）</div></pre></td></tr></table></figure>
+<p>如果没有“<strong>include wordpress.conf</strong>”，请自行添加进去后保存退出。</p>
+<p>&nbsp;</p>
+<h3 id="3-重启Lnmp"><a href="#3-重启Lnmp" class="headerlink" title="3.重启Lnmp"></a>3.重启Lnmp</h3><p>lnmp restart，观察是否可以重启成功。</p>
+<blockquote>
+<p>若还出现其他问题，请自行寻找错误代码或特征谷歌。关于代码原理可以参考下文文章。</p>
+</blockquote>
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="http://www.laozuo.org/490.html" target="_blank" rel="external">LNMP环境中WordPress程序伪静态解决方案</a></p>
+<p><a href="http://www.wpmee.com/lnmp-1-0-wordpress-err/" target="_blank" rel="external">修复军哥lnmp一键安装wordpress伪静态规则错误</a>  </p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Lnmp </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Lnmp </tag>
+            
+            <tag> VPS </tag>
+            
+            <tag> Wordpress </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[大数据带来了什么？——分析方式的革新]]></title>
+      <url>/2015/05/13/big-data/</url>
+      <content type="html"><![CDATA[<p>这个时代，互联网与大数据、云计算被频繁地搬上台面，越来越多人熟悉并且开始着手应用这些词汇背后的科技。</p>
+<p>这让我想起了前些天探索的谷歌图书（Google Books）以及旗下的Google Ngram Viewer。</p>
+<p>我想，这可能是一个与我们学生群体非常相关的大数据项目。谷歌图书是当下收录海量书籍、报刊等文字讯息最大型的全球虚拟电子图书馆了。通过Google Scholar，我们可以捕捉到各类数据库公开信息及谷歌录入的电子图书，而Ngram Viewer更提供了查询特定词汇，在某个年份区间的频率。这个功能其实看似无用，但背后却蕴含着不少的玄机。</p>
+<p>下面，就用一些简单的例子来说明文本世界大数据的简单应用。</p>
+<p>比如我们想要研究全球变暖在世界范围的关注度变化，我们可以运用以下方法。</p>
+<p>运用Google Ngram Viewer对Sea levels、Atmospheric CO2、Global Temperature进行检索，可以找下如下截图：</p>
+<p>&nbsp;</p>
+<p>从三个词的变化可以看到侧面印证全球气候变化在文字世界中（也就是互联网电子媒介及书本报纸媒介中）的关注度变化。</p>
+<p>再以“Influenza”作为检索关键词进行测试，可以看到以下截图：</p>
+<p>对比历史可以发现在1920年、1930年和1960年出现了峰值与“1918年大流感”、“亚洲流感”等时间相吻合。</p>
+<p>虽然，Ngram Viewer开放给用户使用查询的年份是从1800年-2008年，时效性很差，无法通过它结合当下的时事去做一些预测。但这并不意味着，谷歌及与其合作的公司无法达到这种效果，毕竟，仅仅谷歌每天各个地区的热门搜索就为谷歌产生了几T以上的数据了。</p>
+<p>舍恩伯格在《大数据时代》中提到了不是因果关系，而是相关性。其实就是上面这个例子所能够印证的。在大数据时代，由于数据收集量非常巨大，在分析问题，迅速做出决策的时候，可以仅仅使用海量数据的相关性分析，用数据说话，而不需要研究背后的因果。Google Translate不懂得英语语法，却能够按照一定基础语法将中文翻译成英文。机器人不懂得语言的本质，却懂得用适当的语言回复你。你可以不懂得1+1=2背后的逻辑，你只要知道绝大数人得出的答案等于2。只要大多数结果是这样，我们几乎就可以判定结果就是这样（数学上的不完全归纳推理的延伸，暂不考虑是否一定正确）。</p>
+<p>相关性的分析可以让我们轻易得出“啤酒和尿布”放在一起的结论，也能够轻易得出用户购物倾向，从而推荐给用户合适的商品，但是，这并不是说我们能够抛弃背后的因果。就如译者周涛所说:“我本人对于大数据时代“相关关系比因果关系更重要”这个观点就不认同。相关重于因果，是某些有代表性的大数据分析手段（譬如机器学习）里面内禀的实用主义的魅影，绝非大数据自身的诉求。从小处讲，作者试图避免的“数据的独裁”和“错误的前提导致错误的结论”，其解决之道恰在于挖掘因果逻辑而非相关性；从大处讲，放弃对因果性的追求，就是放弃了人类凌驾于计算机之上的智力优势，是人类自身的放纵和堕落。如果未来某一天机器和计算完全接管了这个世界，那么这种放弃就是末日之始。”</p>
+<p>无论如何，做出决策的最终把关者都是人，具有理性和逻辑才能称之为人，我们看到现象，我们需要应用现象，更需要预测现象，对因果的分析才能够让我们看清在n个变量条件下，彼此之间相关性的强弱从而去击中最关键的x-y对应关系。在《大数据时代》中，作者还提到了混杂性这一说法，他认为，海量数据的导入会使得一些不精确的数据也导入其中，使得结果不精确。在大数据面前，混杂是不可避免的，且其在论述过程将其作为大数据的一个趋势，认为大数据未来就应当是这样。而我认为，恰恰是因为混杂性的存在，才使得考究因果尤为重要。在利用大数据的同时，更加需要使用大数据去考究因果，传统分析中会把精确作为考究分析结果好坏和分析方法是否有效的衡量标准，在大数据面前，也应当是如此。我们不能因为数据的庞大，因而存在太多不相关变量，便认为这是大数据必然的缺陷。</p>
+<p>大数据给了我们更加全面的来自各方面的信息去分析。就以互联网搜索为例，无论是百度还是谷歌，作为PC网络的入口，掌握着每个用户的搜索习惯和上网时间、甚至是网页停留时长等信息，网站的后台每天都记录着每一位匿名用户（仍然存在cookie）搜索者iP、搜索时间，搜索关键词，浏览网页地址，甚至是网页跳转记录，而注册用户则更为全面，谷歌所涉及服务囊括了普通用户的音乐、视频、邮箱、新闻、安卓系统；专业人士的站长服务工具Webmaster、开发人员的AppEngine、广告投放商的Adword等等。数据来源之多和数据本身带有不确定性必然带来混杂性。就如同我们都明白一个常识：心理学研究针对的只能是一个群体，而不可能到某个个体，因为个体在思考和行动中存在着主观能动性，个体行为本身便不具有完全的理性。用户每天的上网行为带有某种喜好和规律，但同时也携带者太多的不确定因素。这些不确定性才真正是大数据的用武之地。大数据不是不需要算法，而是需要更多更加高效精确的算法。而算法的设计者便是人，大量重复和有序的工作可以交由计算机去计算，最终设计和主导挖掘数据价值的主体是人的智慧。未来，大数据的发展可能会分化出三类方向，一是数据收集方向，研究如何高效准确收集信息及储存；二是数据分析方向，海量数据如何使用有效方式分析其中的相关程度和因果关系，大数据分析方式已经慢慢颠覆传统概率论的核心，如何抽样；三是数据的应用，将各类数据通过某一方式结合起来，进行学术研究及商业应用。</p>
+<p>大数据用量的变化开始改变了我们的思维方式，部分理性可以被归纳法所替代。数据的量变带来了我们传统未考虑到的混杂性问题，也带来了不究因果的经验判断方式。应该说，在某些领域我们需要也值得如此应用，但应该警醒，这并不是探索人类真理的未来。技术已经决定了生产力和生活水平，不能再让它决定了人性的发展。</p>
+<p>若是，科技黑箱的存在令我们少了很多功夫去探索其中的运作过程，码农只需要知道调用某个库能够使用什么算法而不需要了解原理；大法官可以是个机器，因为大法官只需要根据历史案例和受审者的各类数据，便能够判定是否定罪；甚至于在出生前便收录DNA讯息便分析得出你的未来，活生生的个体不过是一堆存放在冷冰冰硬盘中的数据；那么，这将是人性面对技术的一次彻底的溃败。</p>
+<p>大数据来临，我们已经在路上，晃晃悠悠。未来，自由意志是否异化，我们不得而知；当请记住，拥抱未来，拥抱大数据，我们别无选择。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> big data </tag>
+            
+            <tag> 大数据 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[漫谈亚洲价值观]]></title>
+      <url>/2015/05/04/%E6%BC%AB%E8%B0%88%E4%BA%9A%E6%B4%B2%E4%BB%B7%E5%80%BC%E8%A7%82/</url>
+      <content type="html"><![CDATA[<p>要谈亚洲价值观，首先要了解什么是亚洲价值观。根据范为前的说法，亚洲价值观是影响东亚数世纪的儒家传统，具体内容包括重视家庭，勤俭、孝顺等传统价值。</p>
+<p>&nbsp;</p>
+<a id="more"></a>
+<p>以阿马蒂亚·森为代表的学者认为这套观念体系是“系统剥削人权可以促进经济”的滥觞。他们认为，新加坡经济的发展和亚洲价值观没有必然联系，是具体时代环境外因造就的。</p>
+<p>&nbsp;</p>
+<p>而我认为，这是以李光耀为首的新加坡政府实用主义的重要表现，恰恰是亚洲价值观成就了今天的新加坡。</p>
+<p>&nbsp;</p>
+<p>亚洲价值观并非中国旧儒学，它的诞生是为集体主义和权威主义服务的。在这种价值观下，政府拥有实实在在的强大的实权，而这种强权能够从长远利益推动经济的发展；主导社会福利和公共设施的建设。</p>
+<p>&nbsp;</p>
+<p>建国后，新加坡经历了劳动密集型到技术密集型制造业的建立和转变，其比例一直稳居在15%以上。成为贡献GDP的一个重要产业。而在1997年，香港制造业比例已低于8％。</p>
+<p>&nbsp;</p>
+<p>原因在于香港奉行亚当斯密自由市场经济，而新加坡本质上是奉行凯恩斯主义，政府干预市场的道路。香港劳力、地价等运营成本的增加势必逼走各类制造业，而新加坡却由于政府的主导促进了Jurong工业园区的建立和相关政策的制定，为工业发展和国家资本积累创造了有利的基础。以国家为后台的淡马锡更控股了新加坡重点工业海洋工业。</p>
+<p>高投入高风险的产业也主要由政府主导和投资，使得新加坡拥有新生水、滨海花园、政府组屋等惠及民生和维持国家可持续发展的项目。</p>
+<p>&nbsp;</p>
+<p>再以屌丝最头疼的房价问题为例，1964年，新加坡就开始推行了”居者有其屋”计划，统一重新规划有限的土地，强制拆除城中村，建立密集型的住宅单位，加快国家基础建设。根据2011年数据，超过79％的新加坡人居住在政府组屋中，相较之下，香港房价几乎是世界第一，大部分普通民众无法接受。虽然，在董建华时期的香港也提出过”八万五建屋计划”，但后来却因97金融危机和大规模游行而被迫终止。</p>
+<p>&nbsp;</p>
+<p>概括来讲，李光耀所提出的亚洲价值观成就了新加坡政府，也成就了今天的新加坡。或许我们需要反思，是否自由、民主一定能够带来自我价值的实现和美好的生活。作为一个社会，需要为每个公民提供足够广阔的天空去飞翔，但也不能忽视集体和政府的重要性，一切从大局出发和集体利益优先或许能够更好地来带动社会的进步，而社会的进步也能为个人价值的实现提供更好的平台。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> NewFreedom </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Singapore </tag>
+            
+            <tag> 价值观 </tag>
+            
+            <tag> NewFreedom </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Marina Bay]]></title>
+      <url>/2015/05/02/marina-bay/</url>
+      <content type="html"><![CDATA[<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0199-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0199-1.jpg" alt=""></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0201-0-e1430573368405.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0201-0-765x1024.jpg" alt="IMG_0201-0.JPG"></a></p>
+<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0204.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0204.jpg" alt=""></a></p>
+<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0207-0.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0207-0.jpg" alt=""></a> <span style="line-height: 28px;"> </span><br><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0206-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0206-1.jpg" alt=""></a></p>
+<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0203-0.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0203-0.jpg" alt=""></a></p>
+<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0208-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0208-1.jpg" alt=""></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> All Post </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Singapore </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[纸媒出路：拥抱互联网]]></title>
+      <url>/2015/05/01/how-newpaper/</url>
+      <content type="html"><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>当进入第四次产业革命后，人们已经不自觉生活在碎片化的网络时代中了。有些人惶恐了，有些人欣喜了，而伴随着大众喜怒哀乐的，还有媒体。</p>
+<p>传统的大众传媒，经历了报纸、广播、电视，PC、移动终端，时代与时代间的界限越来越模糊，而时间也变得越来越短。</p>
+<p>置身和依赖于传媒生存的这些企业，究竟该走向何方？</p>
+<p>九零后的这一代人，看起来是在互联网下长大的，但其实仔细想想，就会发现，我们经历了也正在经历着工业4.0，互联网的大变革。</p>
+<p>这个问题会让我感到恐惧和彷徨。在思考当下传媒变革的时候，还会问自己一个问题：你在哪里，你会干什么，你需要干什么？</p>
+<p>抛开个人，这几个问题也可以是各大报刊和电视媒体需要自问的核心问题。</p>
+<p>新浪依靠体育新闻兴起了，网易腾讯也兴起了。微博前几年曾成为资讯传递最快的平台，现在微信成为各家自媒体翱翔的天空。而报业呢？传统的日报、都市报慢慢地变得黯淡无光，好像已经距离我们这个时代很遥远，所幸的是还有出生在60、70年代的那代人仍然对它们不离不弃。</p>
+<p>但是，若只是这样，时间终究会流逝，那一代人的逝去也便意味着报业的死亡？</p>
+<p>他们不知道，而我们其实更加不知道，但是感受到危机，总得要做些什么吧？</p>
+<p>于是，新媒体、全媒体被光鲜地搬上了他们的变革舞台，雷声很大地开始叫嚣着进行。</p>
+<p>从距离最近的汕头日报社、到享誉海外的南方报业，无不搭建了自己的数字媒体、报社网站，甚至是微博和微信号。先不讨论其中的质量良莠问题，关乎生计的问题似乎根本没有得到解决，更没有可预见的光明的未来。</p>
+<p>&nbsp;</p>
+<a id="more"></a>
+<h2 id="互联网出现后，PC-时代"><a href="#互联网出现后，PC-时代" class="headerlink" title="互联网出现后，PC**时代"></a>互联网出现后，PC<em>**</em>时代</h2><p>1995年到2010年，基于PC端的互联网时代在迅速的发展，这一时期，几乎所有大型互联网公司都在打造自家的门户网站，用百科式网站主页的方式去引导人们使用它，而依托门户主页背后的力量就是各家的信息资讯网页。新浪和腾讯就是这个时期的代表。就以新浪体育新闻为例，突破了报纸时效性不强的弱点，实时传递球赛资讯成为了当时互联网最令人称赞的功能，后来又建立完善BBS论坛功能，使得在线讨论讯息成为了可能，打破了传统媒介只是单纯信息输入的局限。</p>
+<p>这一时代的互联网媒介功能，大致可以列成：互联网=门户+资讯+信息交流。</p>
+<p>或许是因为这是一种新兴的媒介，所以许多规则都没有被制定和规范。互联网资讯网站的早期，本质上是一种新闻挖掘和转载工具，几乎所有的资讯源头都是报纸。所以，作为媒介巨头的报社，对这一新生的兄弟表现出极度的宽容和呵护。很多报社免费为网站提供资讯，也没有想到与之竞争。在他们眼里，互联网是一群年轻人的天地，再怎么红火便利，也不可能威胁到自己的地位。</p>
+<p>于是，他们安逸的活着，偶尔做出一些与新媒体做一些互动，表示自己跟上了时代。</p>
+<p>&nbsp;</p>
+<h2 id="移动终端的崛起"><a href="#移动终端的崛起" class="headerlink" title="移动终端的崛起"></a>移动终端的崛起</h2><p>有一天，iPhone来了，iPad来了，Android也来了。智能手机如病毒般在几年内传遍了中国，沿海经济较发达地区几乎见不到功能机了。伴随着智能机而来的，是移动互联网的迅速发展和各类App的成长。</p>
+<p>早前，移动互联网只是WAP，一个活在独立于万维网的局域网，但当智能机来临后，打通了互联网间的鸿沟，PC的地位已经慢慢被下降，移动终端慢慢成为广大民众（根据中国互联网信息中心CNNIC2015年发布的第35次调查报告，手机网民达到5.57亿，占整体网民85.8%）互联网世界的入口。</p>
+<p>这一改变，顺延着网络媒介先前的道路——挖掘和转载纸质媒介新闻，但同时也发挥着其巨大的创造性——载体的多样化和原创讯息的出现。（限于篇幅原创讯息部分暂不讨论）</p>
+<p>PC时代的互联网入口几乎可以约等于浏览器+QQ，而到了移动互联网，入口已经变成了热门APP和微信。移动终端相较PC，讯息传递和发布的功能被发挥得更加淋漓尽致。微信公众号、今日头条、知乎、Zaker，分分钟都传递着吸引眼球的各类信息，还支持自定义订阅内容。人们开始放弃订阅和阅读报纸，也悄悄远离了一些新闻类节目，网民数量直线上升。巨大的市场占有率开始令传统媒介感受到了威胁，也纷纷加入了新媒体行列。</p>
+<p>大部分互联网企业的营生之道是流量，用流量吸引目标客户、用流量发展电子商务，进行着各类B2C、C2C活动，而作为纸媒以及电视媒体，其方式几乎都是广告投放，利用发行量和收视率赢得广告主的青睐。</p>
+<p>其实两者的核心是相同的，都是所谓的流量，但显然，互联网有着更加广阔的天空。网络媒体可以依赖广告，也能够抛弃广告，走向消费者，换句话讲，资讯吸引来的，可能不仅仅是读者，更是一个消费者。</p>
+<p>就拿爱范儿为例，旗下的玩物志用新奇科技资讯吸引读者，反过来通过贩卖类似物品获利。也许，从新闻专业主义看来，需要保持客观与中立，不能向读者传递某种导向的观点，但在科技资讯媒体上，却做得理所应当。</p>
+<p>若是一个真正的新闻专业主义媒体，估计会唾弃这种行为，但恰恰是因为企业所流的血液不同，新生的互联网科技资讯媒体没有对这种行为表现出任何的迟疑。</p>
+<p>这才是传统媒体转型的最大问题——自认为自己才是正统，却不知道已经远离主流。</p>
+<p>&nbsp;</p>
+<h2 id="我在哪里，我会干什么，我需要干什么？"><a href="#我在哪里，我会干什么，我需要干什么？" class="headerlink" title="我在哪里，我会干什么，我需要干什么？"></a>我在哪里，我会干什么，我需要干什么？</h2><p>这个时代已经不是纸媒称霸的时代了。传统的媒体需要转型，首先需要认清自己的位置，这个是个O2O的时代，Online部分已经重要得不能轻易被忽略了，这也就意味着传统媒体需要抛弃自己的观念，用线上线下宏观的概念去分析这个市场，去思考生存的空间。</p>
+<p>线下，是传统媒体的优势，融合是未来的方向。脱离了实际物质世界的互联网难以单独存在，而失去了虚拟互联网的媒介传播也会变得务必无助。传统媒体有着内容优势，也牢牢握住着实际世界的传媒渠道，却抛不下老大的心理，不肯去学习去迎接信息时代的来临。</p>
+<p>实际上，媒介的传播可以分成两部分，内容和介质。内容是根本，所有的讯息都需要实实在在的内容才能真正传播和具有传播的能力；而介质是手段，是令内容发挥其影响力的决定性因素。</p>
+<p>在当下，无论是内容还是介质，都发生着巨大的转变。这个时代不缺人才，也不缺写手，内容的产生者数之不清，所谓新闻学院出身的人才，也未必比起别人多了许多理性和写作技巧。那么传统媒体能够做什么呢？</p>
+<p>人们始终对老牌媒体有着某种信任，某某日报和晚报在人看起来就比百度新闻靠谱得多，也严肃得多。这，便是优势。群众还需要内容，还需要真正说真话，客观说话，理性说话的文章，纸媒能够依靠日积月累的客户群和类品牌效应迅速聚拢流量，重振纸媒。而要达到这种效果，纸媒始终逃不过走上互联网。技术虽不是根本，互联网也不是根本，但却不得不做。互联网不再是与现实世界格格不入的新生产物，而是一个整体，就如纸张成为记录讯息的载体一般，生活包括了它。</p>
+<p>反观下美国传媒发展便会发现，成功的转型例子，无不拥抱了互联网。</p>
+<p>金融时报，采用了付费墙（hardpaywall）对用户进行划分，发展出了一种真正内容为王，服务至上的网站新闻。这种模式的转变，本质上是抓住了用户对其品牌的信任和对专业内容的要求，而形式上，则利用了互联网获取信息的便利条件，乘着这东风，飞了起来。</p>
+<p>而以博客汇出身的赫芬顿邮报，则利用了名人评论吸引流量，通过广告商和活动赞助盈利。这种模式和传统纸媒完全不同，借助了互联网自由言论和领袖意见的优势、低成本投入快速拓展。</p>
+<p>当然，成功的转型去不了运气，但当中还是有值得去学习的内容。两个例子中对互联网的理解都是平台，是一个传递讯息的平台。金融时报的方式是偏向传统的较保守的方式，也在一定程度上维护了新闻专业主义；而赫芬顿邮报则用上了互联网投放广告的常规方式，但其创新之处在于意见领袖的公众影响力，意见领袖想要发出声音，而公众希望听取声音，博客汇对于双方都有好处存在，而且，用公众影响力作为信息的交换也降低了稿费等金钱支出。</p>
+<p>&nbsp;</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>成功与否，很多时候还是那个词汇——创新。纸媒自己需要意识问题，需要认清自己的位置，互联网还是一个未成熟的世界，拥有机遇和挑战，前方的路虽然不明朗，但却充满无限可能。唯有抱着改变媒体的梦想和冲劲，认识它，创造它，才能走出一条新的道路。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> NewFreedom </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 互联网 </tag>
+            
+            <tag> 传媒 </tag>
+            
+            <tag> 纸媒 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[斑点，感知世界的媒介]]></title>
+      <url>/2015/04/30/%E6%96%91%E7%82%B9%EF%BC%8C%E6%84%9F%E7%9F%A5%E4%B8%96%E7%95%8C%E7%9A%84%E5%AA%92%E4%BB%8B/</url>
+      <content type="html"><![CDATA[<p><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/spot-1024x723.jpg" alt="spot"></p>
+<p>意识流小说一般都没有完整的故事和严密的逻辑，《墙上的斑点》亦是如此。全篇没有鲜明的人物形象，也没有人物间的戏剧冲突。而这，可能对没有怎么接触过意识流小说的我们来说，是一种巨大的挑战。但是，我认为，正是这种随着意识、思维跳动的写作方式，为文学，也为我们提供了一个另类的感知世界和心灵的窗口。</p>
+<a id="more"></a>
+<p>例如小说一开头：“大约是在今年一月中旬，我抬起头来，第一次看见了墙上的那个斑点，为了要确定是哪一天，就得回忆当时我看见了些什么。”这一句没有铺垫，也似乎没有任何深层含义的话语，却隐含了作者对世界的认识。作者用看到什么来反推是哪一天来表示自己感知世界的方法，即在外界对“我”的刺激下，“我”发挥主观性，才对外界有了所谓的感觉，并且这种感觉是人内在的并不一定表露出来。</p>
+<p>全文，便是建立在“我”对外界的感知的基础上进行叙事的。 “我”回忆了“我” 看到炉子里火红的木炭，在此回忆基础，想到了塔楼的旗帜，有想到了骑士。而这些，都是建立在那个墙上的斑点。</p>
+<p>通过斑点这一个外界的实物，勾起“我”的一段又一段思绪，在一段又一段没有逻辑联系的回忆中，不断的深化“我”的思考深度，不断地揭露出“我”对这个世界的认识和重构，“在某种光线下面看……它竟像是凸在墙上的，让‘我’想到了古冢，英国人的忧伤度……‘我’设想斑点是钉子头想起了现代生活，想像没有权威没有等级观念的世界。”</p>
+<p>可以说，“斑点”这一客观事物构成了文本的中心环节，也是小说与外部世界发生关系的媒介。从一个对斑点的想象到另一个斑点的可能，将各种具象火炭，旗帜，骑士岩壁，从毫无关系到相互比较，并借此将潜意识中对世界阳光面和阴暗面的认识，红黑颜色的冲突表现出来。</p>
+<p>摈弃传统，用“我”思“我”想的第一人称手法，直接打破逻辑的要求，以思维为线索，通过人与外界具象的相互影响，冷暖色调的对比（各种具象的颜色冲突），深入探索 “我与外界”的关系。这，便是《墙上的斑点》，不可否认，这是一部不易读懂的小说，但是，不可置疑，它是一本贴近内心，我与世界生活的作品。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 流年淡思 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> spot </tag>
+            
+            <tag> 意識流 </tag>
+            
+            <tag> 斑点 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Light and Shadow-Hongkong]]></title>
+      <url>/2015/04/29/Light%20and%20Shadow-Hongkong/</url>
+      <content type="html"><![CDATA[<p><a href="http://www.alaxn.ml/wp-content/uploads/2015/04/wpid-img_20150213_113022.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/wpid-img_20150213_113022.jpg" alt="wpid-img_20150213_113022.jpg"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/wpid-img_20150213_110503.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/wpid-img_20150213_110503.jpg" alt="wpid-img_20150213_110503.jpg"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/wpid-img_20150213_111404.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/wpid-img_20150213_111404-768x1024.jpg" alt="wpid-img_20150213_111404.jpg"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> PhotoSlide </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 光影 </tag>
+            
+            <tag> 敦煌佛像 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[U Town of Singapore]]></title>
+      <url>/2015/04/29/u-town-of-singapore/</url>
+      <content type="html"><![CDATA[<p><a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0186.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0186.jpg" alt="IMG_0186.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0187.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0187.jpg" alt="IMG_0187.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0191.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0191.jpg" alt="IMG_0191.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0192.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0192.jpg" alt="IMG_0192.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0184.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0184.jpg" alt="IMG_0184.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0185.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0185.jpg" alt="IMG_0185.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0193.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0193.jpg" alt="IMG_0193.JPG"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> PhotoSlide </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Singapore </tag>
+            
+            <tag> NUS </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Singapore-East Coast]]></title>
+      <url>/2015/04/29/Singapore-East%20Coast/</url>
+      <content type="html"><![CDATA[<p><a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0014.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0014-765x1024.jpg" alt="IMG_0014.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0015.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0015-765x1024.jpg" alt="IMG_0015.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0009.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0009-1024x765.jpg" alt="IMG_0009.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0012.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0012-1024x765.jpg" alt="IMG_0012.JPG"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> PhotoSlide </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Singapore </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[理性人，未必理性至上]]></title>
+      <url>/2015/04/28/%E7%90%86%E6%80%A7%E4%BA%BA%EF%BC%8C%E6%9C%AA%E5%BF%85%E7%90%86%E6%80%A7%E8%87%B3%E4%B8%8A/</url>
+      <content type="html"><![CDATA[<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/default1.jpeg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/default1-224x300.jpeg" alt="default"></a></p>
+<p>几乎所有上了小学的人都知道1+1=2（从数学的角度）。但是如果我问你，你是怎么得到这个答案的，或许你没法给出详细而具有说服力的答案。从你耳蜗感受到振动到将其转化为电信号，到了大脑皮层，到最后你说出了答案，中间的复杂程度远远不亚于当下最高级的计算机，而我们却对此毫无知晓。人类的意识就像一个科技黑箱，能对外界的各种信息进行处理，但过程却是保密的，很难窥探到其中的过程，就如同两个暧昧中的人，总是会思考他/她是不是爱着我，等着他/她的行为举动，却无法到达意识去一窥究竟。</p>
+<p>&amp;nbsp</p>
+<a id="more"></a>
+<p>意识的这种复杂性，让我们无法掌控自己做出决策的原因和对错。</p>
+<p>&nbsp;</p>
+<p>生活中我们不可避免会面临这大大小小许多的决策：今天约人吃饭吗，今天要背单词吗，什么时候去跑步，淘宝购物吗，等等。每一件事情到最后都会有一个结果。很多人会认为自己的结果都是理性思维的，事后追问或探究为什么，他/她一般都能给你个“很有道理”的理由，“增进下感情，所以约了人”“喜欢一个人吃饭，不喜欢约人”“因为今天事情太多，所以不背单词”“想做学霸，所以背背单词”</p>
+<p>&nbsp;</p>
+<p>但是，这些理由真的是我们的理性思维在掌控吗？很多时候，答案是否定的。约人吃饭也许真正的原因是不想一个人去下馆子有点孤单。说不想约人吃饭，喜欢一个人吃饭可能是因为约不到人吃饭或是没有约人吃饭。而说事情太多不背单词可能是自己更喜欢刷朋友圈，比较慵懒。默默背单词的可能因为和某个人有了约定，一起去留学。</p>
+<p>&nbsp;</p>
+<p>真正的理由或许回答者心里清楚，但有时候也往往藏得很深，是我们的感性所驱使的，在大脑引导做出决策时，下达优先级命令（高于理性），并指挥理性思维对这一指令做出一系列看似合理的解释，让我们的决定和行为看上去都有理可循。</p>
+<p>&nbsp;</p>
+<p>晚上告诉自己：好好学习，认真复习不要碰手机。结果还是不到半个小时刷起了朋友圈。你的理性思维告诫自己要好好学习，可感性的思维却强大得不可抗拒。于是，理性思维又自我安慰道：就刷一下下，了解下大家今天的看法，等下一定更加认真的学习。</p>
+<p>&nbsp;</p>
+<p>为什么？为什么屈服的一方反而是代表科学和高级认知的理性思维呢？原来，送进化学角度看，感性思维或情绪控制在生物中存在和进化的时间远远要大于理性。人脑不是一个完美的整体设计产物，而是在漫长的自然淘汰中修修补补而成的。在进化中后产生的新皮质，拥有强大的认知能力和计划能力，但其力量却远次于原始的自然反应，很多时候会被本能反应所打败。原始的条件和非条件反射根深蒂固地存在于我们的大脑，在很多决策面前具有优先级，并且更可怕的是，它会让后产生的理性思维给出其合理的解答，让我们的行为给别人看起来具有合理性，更可能使你自己说服自己，自信地认为自己是个理性人。比如你面前有一条毒牙被拔掉的小蛇，你敢用手去抓它吗？抓的时候会害怕吗？在人类进化过程中，有着一些强大的条件和非条件反射设定，比如对性的渴望，对美食的热爱，对湿漉漉滑溜溜东西的害怕，等等。尽管你的理性告诉你，那是一条无法伤害到你的蛇，但由于本能的感性认识，让你不敢或害怕去触碰。这时候，你可能会告诉实验者或者附近的人，不敢触碰是因为你从小怕蛇，或者讨厌，亦或是觉得它们恶心，很脏。</p>
+<p>&nbsp;</p>
+<p>应用到日常生活中来，我们许多的决策都可能受到潜藏在深处的感性的影响。人有慵懒的天性，喜欢和享受容易获取的满足。于是我们的生活、学习就情不自禁地受到了影响。这个互联网的时代，我们每天接触着微信和电脑，也上着高等教育的课程，却很难真正深入地去埋头学习，去花上几个月的时间对某一个问题深入的了解和分析，更很难一天不刷微信，不打开手机，不接听电话。我们会埋怨这个社会太过浮躁，会解释自己为什么每天还开心发着微信和聊天，却不愿或者无法触及到这些行为背后真正的原因，我们受着原始的大脑和享受至上的感性的影响，容易过着浅尝辄止，目光短浅的生活，但我们却告诉自己，我们活在当下，体验生活，享受生活。或许，很多年后才发现，自己当初有多么follow your heart。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Psychology </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Mind </tag>
+            
+            <tag> Psychology </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[iOS更新错误3194的一种原因]]></title>
+      <url>/2015/04/28/iOS%E6%9B%B4%E6%96%B0%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF3194%E7%9A%84%E4%B8%80%E7%A7%8D%E5%8E%9F%E5%9B%A0/</url>
+      <content type="html"><![CDATA[<p><strong>原因是苹果关闭了该iOS版本的认证，就是不能刷该版本了。</strong></p>
+<p>故事来了：</p>
+<p>今天试着给iPad更新，莫名其妙3194错误，还不能开机了，开机直接跳到恢复模式，最后险些DFU强制刷机~</p>
+<p>问题出现的一开始当然都是度娘，结果绝大多数解决方法都是提及修改host。</p>
+<p>而Apple官方的解释也是类似的。</p>
+<blockquote>
+<p>Error 3194, Error 17, or “This device isn’t eligible for the requested build”</p>
+<p>If iTunes can’t communicate with the update server, you may see one of these messages.</p>
+<ul>
+<li>Error 17</li>
+<li>Error 1639</li>
+<li>Errors 3000-3020</li>
+<li>Error 3194</li>
+<li>Errors 3100-3999</li>
+<li>This device isn’t eligible for the requested build<br>If you see one of these messages and need help updating or restoring your iOS device, <a href="http://support.apple.com/kb/HT5654" target="_blank" rel="external">install the latest version of iTunes</a> and try to update or restore again. If you need more help, follow these steps.</li>
+</ul>
+<h2 id="Check-your-hosts-file"><a href="#Check-your-hosts-file" class="headerlink" title="Check your hosts file"></a>Check your hosts file</h2><p>After you update iTunes to the latest version, check the hosts file to make sure your computer can contact the update server.</p>
+<p>If you’re using a Windows computer, follow the steps in this <a href="http://support.microsoft.com/kb/972034" target="_blank" rel="external">Microsoft support article</a> (note that resetting the hosts file will affect software services that rely on hosts file redirects). If you’re using Windows on a business computer, consult your IT department to be sure applications will work correctly after you reset the hosts file.</p>
+<p>If you’re using a Mac, follow these steps:</p>
+<p><img src="https://support.apple.com/library/content/dam/edam/applecare/images/en_US/osx/hosts_file.png" alt=""></p>
+<ol>
+<li>In the Finder, choose Applications &gt; Utilities.</li>
+<li>Open Terminal.</li>
+<li>Enter this command and press Return:<br><em>sudo nano /private/etc/hosts</em></li>
+<li>Enter the password you use to sign in to your computer and press Return. You won’t see text appear in the Terminal window when you enter the password. Make sure you use a <a href="http://support.apple.com/kb/HT4103" target="_blank" rel="external">nonblank administrator password</a>.</li>
+<li>Terminal will display the hosts file.</li>
+<li>Navigate using the arrow keys and look for an entry containing “gs.apple.com”.</li>
+<li>Add the # symbol and a space (“# “) to the beginning of the gs.apple.com entry.</li>
+<li>Press Control-O to save the file.</li>
+<li>Press Enter when asked for the filename and Control-X to exit the editor.</li>
+<li>Restart your computer.</li>
+<li>Try to <a href="http://support.apple.com/kb/ht4623" target="_blank" rel="external">update</a> or <a href="http://support.apple.com/kb/ht1414" target="_blank" rel="external">restore</a> your iOS device again.<br>&nbsp;</li>
+</ol>
+<h2 id="Address-TCP-IP-filtering-firewall-or-security-software"><a href="#Address-TCP-IP-filtering-firewall-or-security-software" class="headerlink" title="Address TCP/IP filtering, firewall, or security software"></a>Address TCP/IP filtering, firewall, or security software</h2><p>If you have TCP/IP filtering, firewall, or security software installed on your computer, follow these steps.</p>
+<ol>
+<li>Follow <a href="http://support.apple.com/kb/TS3125" target="_blank" rel="external">these steps</a> to configure or temporarily uninstall your security software.</li>
+<li><p>Bypass your Internet router. Some routers might block iTunes from accessing the update server. If you’re using a router that isn’t manufactured by Apple, try these steps.</p>
+<ul>
+<li>Disconnect from your wired or wireless router.</li>
+<li>Use an Ethernet cable to connect directly to your modem.</li>
+<li>Restart your computer and modem. Contact your Internet service provider for instructions on using your modem.</li>
+<li>Be sure you have a working Internet connection by visiting <a href="http://www.apple.com/" target="_blank" rel="external">www.apple.com</a>. See <a href="http://support.apple.com/kb/HT1714" target="_blank" rel="external">these steps</a> for help or contact your Internet service provider.</li>
+<li>If your Internet connection is working, try to <a href="http://support.apple.com/kb/ht4623" target="_blank" rel="external">update</a> or <a href="http://support.apple.com/kb/ht1414" target="_blank" rel="external">restore</a> your iOS device again.</li>
+</ul>
+</li>
+</ol>
+<h2 id="Restore-or-update-on-another-computer"><a href="#Restore-or-update-on-another-computer" class="headerlink" title="Restore or update on another computer"></a>Restore or update on another computer</h2><p>Try to restore or update on another computer with a different Internet connection. This will help rule out other issues on your computer that might stop iTunes from communicating with the update server.</p>
+<p><br>Errors 1639, 3000-3020, and 3100-3999 (with the exception of 3194) are sometimes caused by your network settings. If your computer uses a managed network, refer to your network administrator. Proxies, firewalls, and other network security measures can cause these errors. If necessary, find a different network connection to restore the device. For example, if you’re restoring at work, try to restore at home or on a friend’s computer and network.</p>
+</blockquote>
+<p>这解释和操作着实让人汗颜， 但鉴于官方的权威性，我还是乖乖的试了一下。<br>结果还是不行，默默地3194又出现了几次。<br>再看看官方的解释：</p>
+<blockquote>
+<p>If iTunes can’t communicate with the update server, you may see one of these messages.</p>
+</blockquote>
+<p>可是想想，我的网络也还是OK的，苹果网站并没有被墙，且设备接入的时候都可以正常连接到服务器，不过是速度慢了些罢了。</p>
+<p>于是推测会不会是苹果服务器不接受验证请求，故意把能够越狱的8.12给废了。<br>毕竟会选择8.12更新就是因为这个版本还可以越狱，8.13、8.2都还不能够。</p>
+<p>试着网上搜索8.12关闭验证的信息，发现有个帖子（时间是2月份），内容是庆幸在关闭前一两天刷回了8.12，顺利越狱。<br>所以只好再下个8.2试试更新。</p>
+<p>结果很顺利，不会出现3194。但是，要越狱还得折腾。之前也没有备份SHSH。 默默使用8.2~~</p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MachineWorld </tag>
+            
+            <tag> iOS </tag>
+            
+            <tag> iPad </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[GOOGLE搜索從入門到精通V4.0]]></title>
+      <url>/2015/04/28/GOOGLE%E6%90%9C%E7%B4%A2%E5%BE%9E%E5%85%A5%E9%96%80%E5%88%B0%E7%B2%BE%E9%80%9AV4.0/</url>
+      <content type="html"><![CDATA[<p><img src="http://img3.cache.netease.com/tech/2010/5/6/201005060155332f5a5.jpg" alt=""></p>
+<p>donquix 2002.8</p>
+<p>[TOC]</p>
+<p>——————————————————————————————————</p>
+<a id="more"></a>
+<h2 id="1，前言"><a href="#1，前言" class="headerlink" title="1，前言"></a>1，前言</h2><p>我是在2000年上半年知道Google的。在這之前，我搜索英文資訊通常用AltaVista，而搜索中文資訊則常用Sina。但自使用了Google之後，它便成為我的Favorite Search engine了。這也得感謝新浪網友曹溪，因為當初正是因為他的大力推介，才使我識得了Google。</p>
+<p>記得1996年夏季的時候，當我第一次接觸Internet，便被撲面而來的魔力征服了。那種天涯咫尺的感覺，真是妙不可言。在經歷了瘋狂的WWW衝浪和如癡如醉的BBS沉迷之後，我意識到Internet對我影響至深的還是在於學習方式的變遷。</p>
+<p>如何來描述這種變遷呢？以前的學習，一般需要預先在肚子裏存儲下足夠的知識，必要時，就從海量的資訊中提取所需的部分。這種學習方式造就了很多“才高八斗，學富五車”的大才子。但是，到了資訊領域大大超出“四書五經”的新時期，預先無目的的吞下海量資訊的學習方式就有些不合時宜了。比方說，我們到了大型的圖書城，往往有一種不知所措的感覺。舊有的學習方式需要變更以適應這個資訊爆炸的年代。目的明確的去學習，即先知道要學什麼，然後有目的的去尋找答案，這種方式看上去更加有效率。我不妨把這稱為“即學式”，相應的，舊有的稱為“預學式”。</p>
+<p>不過，“即學式”的實施是有前提的。首先，要求學習者擁有一個包羅萬象的資訊庫，以供隨時抽取各種目的資訊；其次，是需要一個強勁的資訊檢索工具，以便高效率的從資訊庫中提取資訊。很明顯，Internet可以充當那個海量的資訊庫，而搜索引擎，則正是尋找光明之火的絕好工具。</p>
+<p>“公欲善其事，必先利其器”。Internet只有一個，而搜索引擎則有N多個。有搜索高手說，所謂搜索，就是“在正確的地方使用正確的工具和正確的方法尋找正確的內容”。但是，對於普通人而言，掌握諸多搜索引擎的可能性似乎不大。用一兩個相對強勁的具代表性的工具達到絕大多數搜索目的更為人們所迫切希望。不同的時期，湧現出不同的強者。就目前而言，我們非常幸運的有了： <strong>*</strong>Google<strong>**</strong></p>
+<h2 id="2，摘要"><a href="#2，摘要" class="headerlink" title="2，摘要"></a>2，摘要</h2><p>本文簡要的介紹了Google的歷史和特點，Google的基本搜索語法和高級搜索語法，Google的特色功能，包括圖片搜索、新聞組搜索和集成工具條等。儘管本文名為“Google搜索從入門到精通”，但事實上，本文只能算是對Google的一個並不十分完全的介紹而已。 :)</p>
+<h2 id="3，如何使用本文"><a href="#3，如何使用本文" class="headerlink" title="3，如何使用本文"></a>3，如何使用本文</h2><p>閱讀本文最好具備一些最基本的布林代數基礎，如“與”、“或”、“非”等。不過，即便你沒有這方面的知識，也不必在意。對那些實例進行練習，你的疑惑就會迎刃而解。對於剛剛接觸網絡搜索的讀者而言，也許你應該從頭到尾的閱讀本文；但對於那些有一定搜索基礎的讀者而言，只需要跳躍著尋找自己所需要的資訊就可以了。此外，你也可以參考中文Google大全：<a href="http://www.google.com/intl/zh-CN/about.html" target="_blank" rel="external">http://www.Google.com/intl/zh-CN/about.html</a>，以及搜索幫助：<a href="http://www.google.com/intl/zh-CN/help.html" target="_blank" rel="external">http://www.google.com/intl/zh-CN/help.html</a>，那是官方Google使用手冊以及問題解答中心。</p>
+<h2 id="4，Google簡介"><a href="#4，Google簡介" class="headerlink" title="4，Google簡介"></a>4，Google簡介</h2><p>Google（<a href="http://www.google.com/" target="_blank" rel="external">www.Google.com</a>）是一個搜索引擎，由兩個斯坦福大學博士生Larry Page與Sergey Brin於1998年9月發明，Google Inc. 于1999年創立。2000年7月份，Google替代Inktomi成為Yahoo公司的搜索引擎，同年9月份，Google成為中國網易公司的搜索引擎。98年至今，Google已經獲得30多項業界大獎。到<a href="http://www.google.com/press/index.html" target="_blank" rel="external">Google的新聞中心</a>，你可以找到關於一切關於Google的歷史和新聞資料。</p>
+<p>Google的成功得益於其強大的功能和獨到的特點：</p>
+<ul>
+<li>Google檢索網頁數量達24億，搜索引擎中排名第一；</li>
+<li><p>Google支援多達132種語言，包括簡體中文和繁體中文；</p>
+</li>
+<li><p>Google網站只提供搜索引擎功能，沒有花裏胡哨的累贅；</p>
+</li>
+<li><p>Google速度極快，年初時據說有15000多台伺服器，200多條T3級寬頻；</p>
+</li>
+<li><p>Google的專利網頁級別技術PageRank能夠提供準確率極高的搜索結果；</p>
+</li>
+<li><p>Google智慧化的“手氣不錯”功能，提供可能最符合要求的網站；</p>
+</li>
+<li><p>Google的“網頁快照”功能，能從Google伺服器裏直接取出緩存的網頁。</p>
+</li>
+<li><p>Google具有獨到的圖片搜索功能；</p>
+</li>
+<li><p>Google具有強大的新聞組搜索功能；</p>
+</li>
+<li><p>Google具有二進位檔搜索功能（PDF，DOC，SWF等）；</p>
+</li>
+</ul>
+<ul>
+<li>Google還有很多尚在開發階段的令人吃驚的設想和功能。等等</li>
+</ul>
+<h2 id="5，搜索入門"><a href="#5，搜索入門" class="headerlink" title="5，搜索入門"></a>5，搜索入門</h2><p>要用Google做搜索，當然首先要進Google網站–www.Google.com；不過，163.com和yahoo.com.cn使用的實際上也是Google搜索引擎，只是對搜索結果進行了編排，而且無法提供一些特色功能，如圖片搜索等。因此，如果你要搜索網頁的話，就直接使用Google.com吧。</p>
+<p>第一次進入Google，它會根據你的作業系統，確定語言介面。需要提醒的是，Google是通過cookie來存儲頁面設定的，所以，如果你的系統禁用cookie，就無法對Google介面進行個人設定了。</p>
+<p>Google的首頁很清爽，LOGO下面，排列了四大功能模組：網站、圖像、新聞組和目錄服務。默認是網站搜索。現在進行第一次搜索實踐，假定你是個搜索新手，想要瞭解一下搜索引擎的來龍去脈和搜索技巧。在搜索框內輸入一個關鍵字“搜索引擎”， 選中“搜索中文(簡體)網頁”選項，然後點擊下面的“Google搜索”按鈕（或者直接回車），結果就出來了。 搜索：“搜索引擎”<br>結果：已搜索有關搜索引擎的中文(簡體)網頁。 共約有707,000項查詢結果，這是第1-10項 。 搜索用時0.08秒。</p>
+<p>仔細看一下搜索結果的前十項，就會發現絕大部分鏈結是搜索引擎本身，而不是對搜索引擎的或者搜索技巧方面的介紹。</p>
+<p>注意：文章中搜索語法外面的引號僅起引用作用，不能帶入搜索欄內。</p>
+<h2 id="6，初階搜索"><a href="#6，初階搜索" class="headerlink" title="6，初階搜索"></a>6，初階搜索</h2><p>上例是最基本的搜索，即查詢包含單個關鍵字的資訊。但是，你可以發現，上例中，單個關鍵字“搜索引擎”，搜索得的資訊浩如煙海，而且絕大部分並不符合自己的要求，怎麼辦呢？我們需要進一步縮小搜索範圍和結果。</p>
+<h3 id="6-1，搜索結果要求包含兩個及兩個以上關鍵字"><a href="#6-1，搜索結果要求包含兩個及兩個以上關鍵字" class="headerlink" title="6.1，搜索結果要求包含兩個及兩個以上關鍵字"></a>6.1，搜索結果要求包含兩個及兩個以上關鍵字</h3><p>一般搜索引擎需要在多個關鍵字之間加上“ ”，而Google無需用明文的“ ”來表示邏輯“與”操作，只要空格就可以了。現在，我們需要瞭解一下搜索引擎的歷史，因此期望搜得的網頁上有“搜索引擎”和“歷史”兩個關鍵字。</p>
+<p>示例：搜索所有包含關鍵字“搜索引擎”和“歷史”的中文網頁<br>搜索：“搜索引擎 歷史”<br>結果：已搜索有關搜索引擎 歷史的中文(簡體)網頁。 共約有78,600項查詢結果，這是第1-10項 。 搜索用時0.36秒。</p>
+<p>用了兩個關鍵字，查詢結果已經從70多萬項減少到7萬多項。但查看一下搜索結果，發現前列的絕大部分結果還是不符合要求，大部分網頁涉及的“歷史”，並不是我們所需要的“搜索引擎的歷史”。 怎麼辦呢？刪除與搜索引擎不相關的“歷史”。我們發現，這部分無用的資訊，總是和“文化”這個詞相關的，另外一些常見詞是“中國歷史”、“世界歷史”、“歷史書籍”等。</p>
+<h3 id="6-2，搜索結果要求不包含某些特定資訊"><a href="#6-2，搜索結果要求不包含某些特定資訊" class="headerlink" title="6.2，搜索結果要求不包含某些特定資訊"></a>6.2，搜索結果要求不包含某些特定資訊</h3><p>Google用減號“-”表示邏輯“非”操作。“A –B”表示搜索包含A但沒有B的網頁。</p>
+<p>示例：搜索所有包含“搜索引擎”和“歷史”但不含“文化”、“中國歷史”和“世界歷史”的中文網頁<br>搜索：“搜索引擎 歷史 –文化 –中國歷史 –世界歷史”<br>結果：已搜索有關搜索引擎 歷史 –文化 –中國歷史 –世界歷史的中文(簡體)網頁。 共約有36,800項查詢結果，這是第1-10項 。 搜索用時0.22秒。</p>
+<p>我們看到，通過去掉不相關資訊，搜索結果又減少了將近一半。第一個搜索結果是：</p>
+<p>搜索引擎直通車≡搜索引擎發展歷史<br>搜索引擎直通車, … 搜索引擎專業介紹站點. …<br><a href="http://www.se-express.com/about/about.htm" target="_blank" rel="external">http://www.se-express.com/about/about.htm</a> – 14k – 網頁快照 – 類似網頁</p>
+<p>非常符合搜索要求。另外，第八項搜索結果：</p>
+<p>463搜索王<br>本站檢索 整個網站 在此輸入關鍵字. 你的當前<br>位置：首頁 &gt;&gt; Internet搜索手冊 &gt;&gt; 搜索引擎的歷史. …<br><a href="http://www.cnco.net/search/history.htm" target="_blank" rel="external">http://www.cnco.net/search/history.htm</a> – 21k – 網頁快照 – 類似網頁</p>
+<p>也符合搜索要求。但是，10個結果只有兩個符合要求，未免太少了點。不過，在沒有更好的策略之前，不妨先點開一個結果看看。點開se-express.com的這個名為“搜索引擎發展歷史”的網頁，我們發現，搜索引擎的歷史，是與互聯網早期的檔檢索工具“Archie”息息相關的。此外，搜索引擎似乎有個核心程式，叫“蜘蛛”，而最早成型的搜索引擎是“Lycos”，使搜索引擎深入人心的是“Yahoo”。瞭解了這些資訊，我們就可以進一步的讓搜索結果符合要求了。</p>
+<p>注意：這裏的“ ”和“-”號，是英文字元，而不是中文字元的“＋”和“－”。此外，操作符與作用的關鍵字之間，不能有空格。比如“搜索引擎– 文化”，搜索引擎將視為關鍵字為“搜索引擎”和“文化”的邏輯“與”操作，中間的“-”被忽略。</p>
+<h3 id="6-3，搜索結果至少包含多個關鍵字中的任意一個。"><a href="#6-3，搜索結果至少包含多個關鍵字中的任意一個。" class="headerlink" title="6.3，搜索結果至少包含多個關鍵字中的任意一個。"></a>6.3，搜索結果至少包含多個關鍵字中的任意一個。</h3><p>Google用大寫的“OR”表示邏輯“或”操作。搜索“A OR B”，意思就是說，搜索的網頁中，要麼有A，要麼有B，要麼同時有A和B。在上例中，我們希望搜索結果中最好含有“archie”、“lycos”、“蜘蛛”等關鍵字中的一個或者幾個，這樣可以進一步的精簡搜索結果。</p>
+<p>示例：搜索如下網頁，要求必須含有“搜索引擎”和“歷史”，沒有“文化”，可以含有以下關鍵字中人任何一個或者多個：“Archie”、“蜘蛛”、“Lycos”、“Yahoo”。<br>搜索：“搜索引擎 歷史 archie OR 蜘蛛 OR lycos OR yahoo –文化”<br>結果：已搜索有關搜索引擎 歷史 archie OR 蜘蛛 OR lycos OR yahoo –文化的中文(簡體)網頁。 共約有8,400項查詢結果，這是第1-10項 。 搜索用時0.16秒。</p>
+<p>我們看到，搜索結果縮小到8千多項，前20項結果中，大部分都符合搜索要求。如果你想瞭解一下解搜索引擎的歷史發展，就不妨研究一下現在搜索到的結果吧。 注意：“與”操作必須用大寫的“OR”，而不是小寫的“or”。</p>
+<p>在上面的例子中，我介紹了搜索引擎最基本的語法“與”“非”和“或”，這三種搜索語法Google分別用“ ”（空格）、“-”和“OR”表示。順著上例的思路，你也可以瞭解到如何縮小搜索範圍，迅速找到目的資訊的一般方法：目標資訊一定含有的關鍵字（用“ ”連起來），目標資訊不能含有的關鍵字（用“-”去掉），目標資訊可能含有的關鍵字（用“OR”連起來）。</p>
+<h2 id="7，雜項語法"><a href="#7，雜項語法" class="headerlink" title="7，雜項語法"></a>7，雜項語法</h2><h3 id="7-1，通配符問題"><a href="#7-1，通配符問題" class="headerlink" title="7.1，通配符問題"></a>7.1，通配符問題</h3><p>很多搜索引擎支援通配符號，如“<em>”代表一連串字元，“?”代表單個字元等。Google對通配符支持有限。它目前只可以用“</em>”來替代單個字元，而且包含“<em>”必須用“”引起來。比如，““以</em>治國“”，表示搜索第一個為“以”，末兩個為“治國”的四字短語，中間的“*”可以為任何字元。</p>
+<h3 id="7-2，關鍵字的字母大小寫"><a href="#7-2，關鍵字的字母大小寫" class="headerlink" title="7.2，關鍵字的字母大小寫"></a>7.2，關鍵字的字母大小寫</h3><p>Google對英文字元大小寫不敏感，“GOD”和“god”搜索的結果是一樣的。</p>
+<h3 id="7-3，搜索整個短語或者句子"><a href="#7-3，搜索整個短語或者句子" class="headerlink" title="7.3，搜索整個短語或者句子"></a>7.3，搜索整個短語或者句子</h3><p>Google的關鍵字可以是單詞（中間沒有空格），也可以是短語（中間有空格）。但是，用短語做關鍵字，必須加英文引號，否則空格會被當作“與”操作符。</p>
+<p>示例：搜索關於第一次世界大戰的英文資訊。<br>搜索：““world war I””<br>結果：已向英特網搜索“world war i”. 共約有937,000項查詢結果，這是第1-10項 。 搜索用時0.06秒。</p>
+<h3 id="7-4，搜索引擎忽略的字元以及強制搜索"><a href="#7-4，搜索引擎忽略的字元以及強制搜索" class="headerlink" title="7.4，搜索引擎忽略的字元以及強制搜索"></a>7.4，搜索引擎忽略的字元以及強制搜索</h3><p>Google對一些網路上出現頻率極高的英文單詞，如“i”、“com”、“www”等，以及一些符號如“*”、“.”等，作忽略處理。</p>
+<p>示例：搜索關於www起源的一些歷史資料。<br>搜索：“www的歷史 internet”<br>結果：以下的字詞因為使用過於頻繁，沒有被列入搜索範圍: www 的. 已搜索有關www的歷史 internet的中文(簡體)網頁。 共約有75,100項查詢結果，這是第1-10項 。 搜索用時0.22秒。</p>
+<p>我們看到，搜索“www的歷史 internet”，但搜索引擎把“www”和“的”都省略了。於是上述搜索只搜索了“歷史”和“internet”。這顯然不符合要求。這裏我順便說一點搜索引擎分詞的知識。當我們在搜索“www的歷史”的時候，搜索引擎實際上把這個短語分成三部分，“www”、“的”和“歷史”分別來檢索，這就是搜索引擎的分詞。所以儘管你輸入了連續的“www的歷史”，但搜索引擎還是把這個短語當成三個關鍵字分別檢索。</p>
+<p>如果要對忽略的關鍵字進行強制搜索，則需要在該關鍵字前加上明文的“+”號。<br>搜索：“+www +的歷史 internet”<br>結果：已搜索有關+www +的歷史 internet的中文(簡體)網頁。 共約有25,000項查詢結果，這是第1-10項 。 搜索用時0.05秒。</p>
+<p>另一個強制搜索的方法是把上述的關鍵字用英文雙引號引起來。在上例“”world war I””中，“I”其實也是忽略詞，但因為被英文雙引號引起來，搜索引擎就強制搜索這一特定短語。</p>
+<p>搜索：““www的歷史” internet”<br>結果：已搜索有關“www的歷史” internet的中文(簡體)網頁。 共約有7項查詢結果，這是第1-6項 。 搜索用時0.26秒。</p>
+<p>我們看到，這一搜索事實上把“www的歷史”作為完整的一個關鍵字。顯然，包含這樣一個特定短語的網頁並不是很多，不過，每一項都很符合要求。</p>
+<p>注意：大部分常用英文符號（如問號，句號，逗號等）無法成為搜索關鍵字，加強制也不行。</p>
+<h2 id="8，進階搜索"><a href="#8，進階搜索" class="headerlink" title="8，進階搜索"></a>8，進階搜索</h2><p>上面已經探討了Google的一些最基礎搜索語法。通常而言，這些簡單的搜索語法已經能解決絕大部分問題了。不過，如果想更迅速更貼切找到需要的資訊，你還需要瞭解更多的東西。</p>
+<h3 id="8-1，對搜索的網站進行限制"><a href="#8-1，對搜索的網站進行限制" class="headerlink" title="8.1，對搜索的網站進行限制"></a>8.1，對搜索的網站進行限制</h3><p>“site”表示搜索結果局限於某個具體網站或者網站頻道，如“<a href="http://www.sina.com.xn--cn-02t/" target="_blank" rel="external">http://www.sina.com.cn”</a>、“edu.sina.com.cn”，或者是某個功能變數名稱，如“com.cn”、“com”等等。如果是要排除某網站或者功能變數名稱範圍內的頁面，只需用“–網站/功能變數名稱”。</p>
+<p>示例：搜索中文教育科研網站（edu.cn）上關於搜索引擎技巧的頁面。<br>搜索：“搜索引擎 技巧 site:edu.cn”<br>結果：已搜索有關搜索引擎 技巧 site:edu.cn的中文(簡體)網頁。 共約有608項查詢結果，這是第1-10項 。 搜索用時0.05秒。</p>
+<p>示例：上著名IT門戶網站ZDNET和CNET搜索一下關於搜索引擎技巧方面的資訊。<br>搜索：““search engine” tips site:www.zdnet.com OR site:www.cnet.com”<br>結果：已在<a href="http://www.zdnet.com/" target="_blank" rel="external">http://www.zdnet.com</a>內搜索有關“search engine” tips OR site:www.cnet.com的網頁。 共約有1,040項查詢結果，這是第1-10項 。 搜索用時0.09秒。</p>
+<p>注意，在這裏Google有個小BUG。“已在<a href="http://www.zdnet.com/" target="_blank" rel="external">http://www.zdnet.com</a>內搜索…”，其實應該表述成“已在<a href="http://www.zdnet.com/" target="_blank" rel="external">http://www.zdnet.com</a>和<a href="http://www.cnet.com/" target="_blank" rel="external">http://www.cnet.com</a>內搜索…”。</p>
+<p>示例：搜索新浪科技頻道中關於搜索引擎技巧的資訊。<br>搜索：“搜索引擎 技巧 site:tech.sina.com.cn”<br>結果：已在tech.sina.com.cn搜索有關搜索引擎 技巧 的中文(簡體)網頁。 共約有163項查詢結果，這是第1-10項 。 搜索用時0.07秒。</p>
+<p>注意：site後的冒號為英文字元，而且，冒號後不能有空格，否則，“site:”將被作為一個搜索的關鍵字。此外，網站功能變數名稱不能有“<a href="http://xn--ivg/" target="_blank" rel="external">http://”</a>首碼，也不能有任何“/”的目錄尾碼；網站頻道則只局限於“頻道名.功能變數名稱”方式，而不能是“功能變數名稱/頻道名”方式。</p>
+<h3 id="8-2，在某一類檔中查找資訊"><a href="#8-2，在某一類檔中查找資訊" class="headerlink" title="8.2，在某一類檔中查找資訊"></a>8.2，在某一類檔中查找資訊</h3><p>“filetype:”是Google開發的非常強大實用的一個搜索語法。也就是說，Google不僅能搜索一般的文字頁面，還能對某些二進位文檔進行檢索。目前，Google已經能檢索微軟的Office文檔如.xls、.ppt、.doc，.rtf，WordPerfect文檔，Lotus1-2-3文檔，Adobe的.pdf文檔，ShockWave的.swf文檔（Flash動畫）等。其中最實用的文檔搜索是PDF搜索。PDF是ADOBE公司開發的電子文檔格式，現在已經成為互聯網的電子化出版標準。目前Google檢索的PDF文檔大約有2500萬左右，大約占所有索引的二進位文檔數量的80％。PDF文檔通常是一些圖文並茂的綜合性文檔，提供的資訊一般比較集中全面。</p>
+<p>示例：搜索幾個資產負債表的Office文檔。<br>搜索：“資產負債表 filetype:doc OR filetype:xls OR filetype:ppt”<br>結果：已搜索有關資產負債表 filetype:doc OR filetype:xls OR filetype:ppt的中文(簡體)網頁。 共約有481項查詢結果，這是第1-10項 。 搜索用時0.04秒。</p>
+<p>注意，下載的Office檔可能含有巨集病毒，謹慎操作。</p>
+<p>示例：搜索一些關於搜索引擎知識和技巧方面的PDF文檔<br>搜索：?quot;search engine” tips OR tutorial filetype:pdf”<br>結果：已向英特網搜索“search engine” tips OR tutorial filetype:pdf. 共約有12,600項查詢結果，這是第1-10項 。 搜索用時0.22秒。</p>
+<p>我們來看其中的一個結果：</p>
+<p>[PDF]Search Engines Tips<br>文檔類型: PDF/Adobe Acrobat – HTML 版<br>… <a href="http://www.google.com/press/zeitgeist.html" target="_blank" rel="external">http://www.google.com/press/zeitgeist.html</a> See what people are searching on at Google.com</p>
+<ul>
+<li>Search Engine Watch <a href="http://searchenginewatch.com/" target="_blank" rel="external">http://searchenginewatch.com/</a> Some free tips …<br><a href="http://www.allvertical.com/PromoKits/SearchEngineTips.pdf" target="_blank" rel="external">http://www.allvertical.com/PromoKits/SearchEngineTips.pdf</a> – 類似網頁</li>
+</ul>
+<p>可以看到，Google用[PDF]來標記這是一個PDF的文檔檢索，另外，它還給出了該PDF文檔的HTML版本，該HTML版保留了文檔的文字內容和結構，但沒有圖片。</p>
+<h3 id="8-3，搜索的關鍵字包含在URL鏈結中"><a href="#8-3，搜索的關鍵字包含在URL鏈結中" class="headerlink" title="8.3，搜索的關鍵字包含在URL鏈結中"></a>8.3，搜索的關鍵字包含在URL鏈結中</h3><p>“inurl”語法返回的網頁鏈結中包含第一個關鍵字，後面的關鍵字則出現在鏈結中或者網頁文檔中。有很多網站把某一類具有相同屬性的資源名稱顯示在目錄名稱或者網頁名稱中，比如“MP3”、“GALLARY”等，於是，就可以用INURL語法找到這些相關資源鏈結，然後，用第二個關鍵字確定是否有某項具體資料。INURL語法和基本搜索語法的最大區別在於，前者通常能提供非常精確的專題資料。 示例：查找MIDI曲“滄海一聲笑”。<br>搜索：“inurl:midi “滄海一聲笑””<br>結果：已搜索有關inurl:midi “滄海一聲笑“的中文(簡體)網頁。 共約有27項查詢結果，這是第1-10項 。 搜索用時0.34秒。</p>
+<p>注意：“inurl:”後面不能有空格，Google也不對URL符號如“/”進行搜索。例如，Google會把“cgi-bin/phf”中的“/”當成空格處理。</p>
+<p>“allinurl”語法返回的網頁的鏈結中包含所有作用關鍵字。這個查詢的關鍵字只集中於網頁的鏈結字串。</p>
+<p>示例：查找可能具有PHF安全漏洞的公司網站。通常這些網站的CGI-BIN目錄中含有PHF腳本程式（這個腳本是不安全的），表現在鏈結中就是“功能變數名稱/cgi-bin/phf”。<br>搜索：“allinurl:”cgi-bin” phf +com”<br>結果：已向英特網搜索allinurl:”cgi-bin” phf +com. 共約有51項查詢結果，這是第1-10項 。 搜索用時0.11搿?/font&gt;</p>
+<h3 id="8-4，搜索的關鍵字包含在網頁標題中"><a href="#8-4，搜索的關鍵字包含在網頁標題中" class="headerlink" title="8.4，搜索的關鍵字包含在網頁標題中"></a>8.4，搜索的關鍵字包含在網頁標題中</h3><p>“intitle”和“allintitle”的用法類似於上面的inurl和allinurl，只是後者對URL進行查詢，而前者對網頁的標題欄進行查詢。網頁標題，就是HTML標記語言title中之間的部分。網頁設計的一個原則就是要把主頁的關鍵內容用簡潔的語言表示在網頁標題中。因此，只查詢標題欄，通常也可以找到高相關率的專題頁面。 示例：查找日本明星藤原紀香的照片集。<br>搜索：“intitle:藤原紀香 “寫真集“”<br>結果：已搜索有關intitle:藤原紀香 “寫真集“的中文(簡體)網頁。 共約有315項查詢結果，這是第1-10項 。 搜索用時0.15秒。</p>
+<h3 id="8-5，搜索的關鍵字包含在網頁的“錨”（anchor）鏈點內"><a href="#8-5，搜索的關鍵字包含在網頁的“錨”（anchor）鏈點內" class="headerlink" title="8.5，搜索的關鍵字包含在網頁的“錨”（anchor）鏈點內"></a>8.5，搜索的關鍵字包含在網頁的“錨”（anchor）鏈點內</h3><p>所謂“錨”，就是在同一個網頁中快速切換鏈結點。與URL和TITLE類似，Google提供了兩種對anchor的檢索，“inanchor”和“allincnchor”。對此不作詳述。</p>
+<h2 id="9，其他罕用語法"><a href="#9，其他罕用語法" class="headerlink" title="9，其他罕用語法"></a>9，其他罕用語法</h2><h3 id="9-1，搜索所有鏈結到某個URL位址的網頁"><a href="#9-1，搜索所有鏈結到某個URL位址的網頁" class="headerlink" title="9.1，搜索所有鏈結到某個URL位址的網頁"></a>9.1，搜索所有鏈結到某個URL位址的網頁</h3><p>如果你擁有一個個人網站，估計很想知道有多少人對你的網站作了鏈結。而“link”語法就能讓你迅速達到這個目的。</p>
+<p>示例：搜索所有含指向華軍軟體園“<a href="http://www.newhua.xn--com-9o0a/" target="_blank" rel="external">http://www.newhua.com”</a>鏈結的網頁。<br>搜索：“link:www.newhua.com”<br>結果：搜索有鏈結到<a href="http://www.newhua.com/" target="_blank" rel="external">http://www.newhua.com</a>的網頁 。 共約有920項查詢結果，這是第1-10項 。 搜索用時0.12秒。</p>
+<p>注意：“link”不能與其他語法相混合操作，所以“link:”後面即使有空格，也將被Google忽略。另外還要說明的是，link只列出Google索引鏈結很小一部分，而非全部，所以如果你用Google沒有搜到鏈到你的主頁的鏈結，也不必灰心喪氣。</p>
+<p>除了上述功能，link語法還有其他妙用。一般說來，做友情鏈結的網站都有相似地方。這樣，你可以通過這些友情鏈結，找到一大批具有相似內容的網站。比如說，你是個天文愛好者，你發現某網站非常不錯，那麼，可以用link語法查一下與之做鏈結的網站，也許可以找到更多符合你興趣的內容。</p>
+<h3 id="9-2，查找與某個頁面結構內容相似的頁面"><a href="#9-2，查找與某個頁面結構內容相似的頁面" class="headerlink" title="9.2，查找與某個頁面結構內容相似的頁面"></a>9.2，查找與某個頁面結構內容相似的頁面</h3><p>“related”用來搜索結構內容方面相似的網頁。例：搜索所有與中文新浪網主頁相似的頁面（如網易首頁，搜狐首頁，中華網首頁等），“related:wwwsina.com.cn/index.shtml”。我到現在也不明白這個語法有什麼作用，如果有誰知道，請不吝指教。預先感謝。 :)</p>
+<h3 id="9-3，從Google伺服器上緩存頁面中查詢資訊"><a href="#9-3，從Google伺服器上緩存頁面中查詢資訊" class="headerlink" title="9.3，從Google伺服器上緩存頁面中查詢資訊"></a>9.3，從Google伺服器上緩存頁面中查詢資訊</h3><p>“cache”用來搜索Google伺服器上某頁面的緩存，通常用於查找某些已經被刪除的死鏈結網頁，相當於使用普通搜索結果頁面中的“網頁快照”功能。</p>
+<p>其他罕用語法如info、stock等不一一介紹，有興趣的讀者可以參閱Google大全。</p>
+<h2 id="10，圖片搜索"><a href="#10，圖片搜索" class="headerlink" title="10，圖片搜索"></a>10，圖片搜索</h2><p>Google自稱可以檢索390,000,000張圖片，並稱自己為“互聯網上最好用的圖像搜索工具”。從使用結果來看，Google的圖片搜索的確不錯，但個人以為比AltaVista的還是要差一些，主要體現在檢索圖片數量比不上AV，匹配度比AV的圖片搜索器也差了些。但AltaVista國內用戶無法正常訪問，因此對中國用戶而言，Google的圖片搜索引擎已經是最好的了。</p>
+<p>Google首頁點擊“圖像”鏈結就進入了Google的圖像搜索介面“<a href="http://images.google.com/" target="_blank" rel="external">images.Google.com</a>”。你可以在關鍵字欄位元內輸入描述圖像內容的關鍵字，如“britney spears”，就會搜索到大量的小甜甜布蘭妮的圖片。我目前尚不是很清楚圖片的排列標準，不過以觀察來看，似乎圖片檔案名完全符合關鍵字的結果排列比較考前，然後才按照普通的頁面搜索時的標準排列。</p>
+<p>Google給出的搜索結果具有一個直觀的縮略圖（THUMBNAIL），以及對該縮略圖的簡單描述，如圖像檔案名稱，以及大小等。點擊縮略圖，頁面分成兩禎，上禎是圖像之縮略圖，以及頁面鏈結，而下禎，則是該圖像所處的頁面。螢幕右上角有一個“Remove Frame”的按鈕，可以把框架頁面迅速切換到單禎的結果頁面，非常方便。</p>
+<p>Google圖像搜索目前支援的語法包括基本的搜索語法如“ ”、“-”、“OR”、“site”和 “filetype:”。其中“filetype:”的尾碼只能是幾種限定的圖片類似，如JPG，GIF等。</p>
+<p>示例：查找新浪網上本拉登的圖片<br>搜索：“拉登 OR 拉丹 site:sina.com.cn”<br>結果：搜索有關 拉登 OR 拉丹 site:sina.com.cn 的圖片。 共有6項查詢結果，這是第1-6項。 搜索用時0.36秒。</p>
+<p>這裏我想說明一點的是，images.google.com作為專門的圖片搜索引擎，實際上有其特殊的用途。</p>
+<p>舉個例子，互聯網上本拉登的照片成千上萬，但是，它們都是分散的，往往隨機的分佈於各種新聞報導中。如果用搜索圖片庫的方式（最容易想到的如“Ben Ladin photo”），來搜索本拉登的照片，顯然是不恰當的，因為很少有人專門為拉登建一個線上相冊。在這個時候，images.google.com就派上用場了。</p>
+<p>但是，如果查找的圖片在網上有很多主題“gallary”，如諸多電影電視明星的照片，則明顯就不適合用images.google.com來查找了。</p>
+<p>images.google.com對於很多報紙雜誌的編輯，絕對是一個雪中送炭式的工具。比如要在某個版面上插一張專題圖片，用google的圖片搜索功能幾秒鐘就可以搞定。</p>
+<p>綜上，可以有這樣的一般性結論：如果要搜索的圖片是分散的，則用google圖片搜索；如果要搜索的圖片通常是處於某個圖片集合中的，則不適合用google圖片搜索。</p>
+<h2 id="11，目錄檢索"><a href="#11，目錄檢索" class="headerlink" title="11，目錄檢索"></a>11，目錄檢索</h2><p>如果不想搜索廣泛的網頁，而是想尋找某些專題網站，可以訪問Google的分類目錄“<a href="http://directory.google.com/" target="_blank" rel="external">http://directory.Google.com/</a>”，中文目錄是“<a href="http://directory.google.com/Top/World/Chinese_Simplified/" target="_blank" rel="external">http://directory.Google.com/Top/World/Chinese_Simplified/</a>”。分類的網站目錄一般由專人負責，分類明確，資訊集中。因此讀者應該養成這樣的習慣：首先考慮所需要的資訊能否在一個專門主題的網站上找到。不過需要說明的是，用目錄檢索，往往需要用戶對查詢的領域很熟悉。否則，連查詢的內容屬於哪個類目都不知道，目錄流覽也就無從談及了。 目前Google使用的分類目錄採用了ODP的內容。“Open Directory Project”是網景公司所主持的一項大型公共網頁目錄。由全世界各地的義務編輯人員來審核挑選網頁，並依照網頁的性質及內容來分門別類。因此，在某一目錄門類中進行搜索往往能有更高的命中率。另外，Google根據其專業的“網頁級別”（PageRank）技術對目錄中登錄的網站進行了排序，可以讓一般的檢索更具高效率。</p>
+<p>示例：查找一下介紹搜索引擎方面的中文網站<br>搜索：先進入中文簡體分類目錄，再進入“電腦”目錄，再進入“互聯網路”子目錄，再進入“搜尋”子目錄。我們看到在“World &gt; Chinese Simplified &gt; 電腦 &gt; 互聯網路 &gt; 搜尋”下，還有兩個子目錄“分類目錄 (33) 搜索引擎 (10)”，以及6個相關網站。顯然，這些都是我們所需要的資訊。</p>
+<p>除了用滑鼠層層點入，也可以在目錄中檢索。比如，在上例的“互聯網路”目錄下，選中“只在互聯網路中搜索”選項，在搜索欄內填入“搜索引擎”進行搜索。<br>結果：在分類Google 網頁目錄項中搜索搜索引擎。 共約有387項查詢結果，這是第11-20項 。 搜索用時0.09秒。</p>
+<p>可以看到，上述查詢結果比普通的檢索更有效，因為在分類“互聯網路”下進行搜索剔除了很多不相關的諸如新聞之類的無效資訊。不過，對於中文用戶而言，現在最大的問題是志願的中文目錄編輯太少，導致收錄站點太少，因此搜索結果範圍顯得過於狹隘。但願這個問題能隨著Google以及ODP項目在國內名聲的響亮而能得到改觀。</p>
+<h2 id="12，新聞組搜索"><a href="#12，新聞組搜索" class="headerlink" title="12，新聞組搜索"></a>12，新聞組搜索</h2><p>新聞組有詳盡的分類主題，某些主題還有專人管理和編輯，具有大量的有價值資訊。由於新聞組包含的資訊實在是海量，因此不利用工具進行檢索是不大可能的。DEJA一直是新聞組搜索引擎中的佼佼者。2001年2月份，Google將DEJA收購並提供了所有DEJA的功能。現在，除了搜索之外，Google還支援新聞組的WEB方式流覽和張貼功能。</p>
+<p>進入Google新聞組“<a href="http://groups.google.com/" target="_blank" rel="external">http://groups.Google.com/</a>”，你有兩種資訊查找方式。一種是一層層的點擊進入特定主題討論組，另一種則是直接搜索。現在，我們進行一個最簡單的搜索試驗，查找一下新聞組中關於山頂洞人的討論資訊。</p>
+<p>搜索：“山頂洞人”<br>結果：在各群組內搜索 山頂洞人 共約有2,400項查詢結果，這是第1-10項 。 搜索用時0.94秒。 搜索結果默認按照“留言內容”排列，但是你也可以點擊“依照日期”按鈕，讓帖子按照發布日期排列。</p>
+<p>因為新聞組中的帖子實在是多，而且又涉及一些普通搜索所沒有的語法，所以建議使用“高級群組搜尋”進入高級搜索介面。新聞組高級搜索提供留言內容、分類主題、標題、留言者、留言代碼、語言和發布日期作為條件進行搜索。其中作者項指作者發帖所用的唯一識別號電子信箱。</p>
+<h2 id="13，Google的其他傑出功能"><a href="#13，Google的其他傑出功能" class="headerlink" title="13，Google的其他傑出功能"></a>13，Google的其他傑出功能</h2><h3 id="13-1網頁快照"><a href="#13-1網頁快照" class="headerlink" title="13.1網頁快照"></a>13.1網頁快照</h3><p>網頁快照是Google抓下來緩存在伺服器上的網頁。它有三個作用：</p>
+<p>第一， 如果原位址打開很慢，那麼可以直接查看Google緩存頁面，因為Google伺服器速度極快。</p>
+<p>第二， 如果原鏈結已經死掉或者因為網路的原因暫時鏈結不通，那麼可以通過Google快照看到該頁面資訊。當然，快照內容不是該頁最新頁面。</p>
+<p>第三， 如果打開的頁面信息量巨大，一下子找不到關鍵字所在位置，那麼可以通過Google快照，因為快照中Google用黃色表明關鍵字位置。</p>
+<h3 id="13-2，集成化的工具條"><a href="#13-2，集成化的工具條" class="headerlink" title="13.2，集成化的工具條"></a>13.2，集成化的工具條</h3><p>為了方便搜索者，Google提供了工具條，集成於流覽器中，用戶無需打開Google主頁就可以在工具條內輸入關鍵字進行搜索。此外，工具條還提供了其他許多功能，如顯示頁面PageRank等。最方便的一點在於用戶可以快捷的在Google主頁、目錄服務、新聞組搜索、高級搜索和搜索設定之間切換。欲安裝Google的工具條，可以訪問“<a href="http://toolbar.google.com/" target="_blank" rel="external">http://toolbar.Google.com/</a>”，按頁面提示可以自動下載並安裝。不過，Google工具條目前只支援IE5.0以上版本。</p>
+<p>對於經常進行網路搜索者而言，Google工具條實在是必備的東西！！</p>
+<h3 id="13-3，單詞英文解釋"><a href="#13-3，單詞英文解釋" class="headerlink" title="13.3，單詞英文解釋"></a>13.3，單詞英文解釋</h3><p>寫英文文章的時候，最頭疼的事情就是對某個英文單詞的用法不確定。現在有了Google，一切就迎刃而解了！無論你是想查找某個生詞的意思還是想瞭解某個單詞的用法，均可使用線上詞典。</p>
+<p>進入英文Google，輸入你要查的單詞。舉個例子，我想查一下suggest的用法。結果如下：“Searched the web for suggest. Results 1 – 10 of about 8,000,000. Search took 0.08 seconds. ”注意看上面句子中，單詞suggest下出現了一個橫線，點擊這個鏈結，就跳轉到另外一個網站“<a href="http://www.dictionary.com/" target="_blank" rel="external">http://www.dictionary.com/</a>”，Google已經把單詞提交給該網站的查詢腳本。看看這個網站所提供的詳盡解釋吧。 :)</p>
+<h3 id="13-4，網頁翻譯"><a href="#13-4，網頁翻譯" class="headerlink" title="13.4，網頁翻譯"></a>13.4，網頁翻譯</h3><p>你懂英文，但是你不見得就懂德文、法文、拉丁文。如果搜索出來的頁面是這些語言怎麼辦？呵呵，Google提供了網頁翻譯功能！！雖然目前只支持有限的拉丁語、法語、西班牙語、德語和葡萄牙文，但是我不得不承認，這是個傑出功能。</p>
+<p>試著做以下搜索：“big bang site:fr”。這個表示查找關於宇宙大爆炸的法文網頁。看第一條結果：</p>
+<p>The Big Bang Website – [ Translate this page ]<br>… A propos de Big Bang. Le dernier numéro en date. Les anciens numéros. Autres<br>activités. Concerts progressifs en France. Emissions de radio. Liens.<br>perso.club-internet.fr/calyx/bigbang/ – 3k – Cached – Similar pages</p>
+<p>有點暈。沒關係，點擊“Translate this page”按鈕。再看結果，嗯，大致能看明白，這原來是個叫“big bang”的樂隊的網站，與大爆炸無關…</p>
+<p>機器翻譯是一個很前沿的人工智慧課題，想指望翻譯出來的結果跟專門用英語撰寫的內容是不可能的。但西文間的互相轉譯比中英文機譯強得多得多了。至少能看明白。</p>
+<h3 id="13-5，單詞糾錯"><a href="#13-5，單詞糾錯" class="headerlink" title="13.5，單詞糾錯"></a>13.5，單詞糾錯</h3><p>筆者記憶力很差，英文單詞經常拼寫錯誤。但Google有糾錯功能。比如在寫上文的時候，我要用到英文單詞“tutorial”，我只是依稀記得好像是“tatorial”的樣子，但不肯定，於是用Google查了一下，它馬上提醒：“您要找的會不會是： tutorial ”，呵呵，正是這個單詞。</p>
+<h3 id="13-6，繁簡轉換"><a href="#13-6，繁簡轉換" class="headerlink" title="13.6，繁簡轉換"></a>13.6，繁簡轉換</h3><p>對中文用戶而言，常希望能同時檢索繁體和簡體資訊。Google能做到這一點。Google默認使用繁簡自動轉換功能，因此你輸入的簡體關鍵字也將被轉換成繁體做檢索。這樣省了不少力氣。當然，如果你不希望這樣的話，也可以在“使用偏好”中把這個選項關掉。</p>
+<h3 id="13-7，搜索結果過濾"><a href="#13-7，搜索結果過濾" class="headerlink" title="13.7，搜索結果過濾"></a>13.7，搜索結果過濾</h3><p>網路上的成人內容浩如煙海，而且很多站點具有欺騙或者其他不良企圖，流覽者很容易掉入其中的陷阱。為此，Google新設立了成人內容過濾功能，見Google的設置頁面，<a href="http://www.google.com/preferences" target="_blank" rel="external">http://www.Google.com/preferences</a>，最底下有一個選項SafeSearch Filtering。不過，中文狀態下的Google尚沒有這個功能。</p>
+<h2 id="14，Google尚未發佈的一些新特性和功能"><a href="#14，Google尚未發佈的一些新特性和功能" class="headerlink" title="14，Google尚未發佈的一些新特性和功能"></a>14，Google尚未發佈的一些新特性和功能</h2><h3 id="14-1，對網頁更新日期做出限定“daterange-”"><a href="#14-1，對網頁更新日期做出限定“daterange-”" class="headerlink" title="14.1，對網頁更新日期做出限定“daterange:”"></a>14.1，對網頁更新日期做出限定“daterange:”</h3><p>評價一個搜索引擎的好壞，更新頻率是一個很關鍵因素。通常情況下，我們總希望能找到最新的網頁。Google已經開發了對更新日期做限定的搜索語法，但目前還未公佈。而且比較麻煩的是，Google現在支持的日期格式為julian（凱撒日）格式，把通用日期數值切換成julian格式需要借助第三方網站：<a href="http://www.tesre.bo.cnr.it/~mauro/JD/" target="_blank" rel="external">http://www.tesre.bo.cnr.it/~mauro/JD/</a>。不過，在下面這個自稱是“Google終極搜索介面”的網頁上，你已經可以利用Google的這項新特性了，它自動提供日期轉換功能。</p>
+<p>Google Ultimate Interface：<a href="http://www.faganfinder.com/google.html" target="_blank" rel="external">http://www.faganfinder.com/google.html</a></p>
+<p>Google為什麼要這樣做呢？也許是在測試階段，不想讓太多人使用吧。 :)</p>
+<h3 id="14-2，新聞搜索“http-news-google-com-”"><a href="#14-2，新聞搜索“http-news-google-com-”" class="headerlink" title="14.2，新聞搜索“http://news.google.com/”"></a>14.2，新聞搜索“<a href="http://news.google.com/%E2%80%9D" target="_blank" rel="external">http://news.google.com/”</a></h3><p>Google的新聞搜索尚在B測試階段，但使用起來已經非常不錯了。新聞首頁按頭條新聞，各國新聞，以及不同領域做了分類。你可以通過Google搜索各大門戶和新聞網站的新聞，簡單、快捷、方便。遺憾的是，目前Google新聞只檢索英文資訊。</p>
+<h3 id="14-3，分類廣告搜索“http-catalogs-google-com-”"><a href="#14-3，分類廣告搜索“http-catalogs-google-com-”" class="headerlink" title="14.3，分類廣告搜索“http://catalogs.google.com/”"></a>14.3，分類廣告搜索“<a href="http://catalogs.google.com/%E2%80%9D" target="_blank" rel="external">http://catalogs.google.com/”</a></h3><p>這也在B測試階段。主要是對電子分類廣告做檢索。廣告頁為JPG圖片格式。</p>
+<h3 id="14-4，其他Google的最新發展動態"><a href="#14-4，其他Google的最新發展動態" class="headerlink" title="14.4，其他Google的最新發展動態"></a>14.4，其他Google的最新發展動態</h3><p>想瞭解Google公司的工程師們都在忙些什麼嗎？去看一下Google實驗室（<a href="http://labs.google.com/" target="_blank" rel="external">http://labs.google.com/</a>）吧。Google的最新設想都在這個地方向訪問者展現出來。現在處於發展和試驗階段的新功能有：術語查詢、語音查詢、鍵盤查詢等等。</p>
+<p>網路工程師和程式師可以看看這個地方：<a href="http://www.google.com/apis/" target="_blank" rel="external">http://www.google.com/apis/</a>，我想可以讓你喜出望外的。</p>
+<h3 id="14-5，一個有趣的地方"><a href="#14-5，一個有趣的地方" class="headerlink" title="14.5，一個有趣的地方"></a>14.5，一個有趣的地方</h3><p>想看看世界各國線民都用Google搜索什麼資訊麼？到<a href="http://www.google.com/press/zeitgeist.html" target="_blank" rel="external">http://www.google.com/press/zeitgeist.html</a>看一下就知道了。從這些資訊中，你大致可以瞭解到世界熱點和流行時尚走向。 :)</p>
+<h2 id="15，後記"><a href="#15，後記" class="headerlink" title="15，後記"></a>15，後記</h2><p>這個文章4.0版本與3.0版本相比，變更很大，主要把一些與Google無關的東西刪除了，另外隨Google的變化作了一些修正，並增加了一些Google尚未發佈的新功能。關於搜索技巧和搜索實例，是各個搜索引擎共通的東西，是搜索者長期的經驗積累，要寫出來，是件工程很浩大的事情，因此在這個小文章中我就不獻醜了。</p>
+<p>隨著時間的推移，我發現搜索已經成為網路生活的一部分。工作需要搜索技術文檔、客戶資訊；購物需要搜索商品資訊和指南；娛樂需要搜索相關背景資料和圖片。搜索已經變得無處不在，而Google則相應的成了工作和生活中的一個必備工具。套用雅虎的一句廣告詞，我們也許應該這樣說：“今天你Google了嗎？”</p>
+<p>&nbsp;</p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[“耳目喉舌”与“报纸之用”之再讨论]]></title>
+      <url>/2015/04/28/%E2%80%9C%E8%80%B3%E7%9B%AE%E5%96%89%E8%88%8C%E2%80%9D%E4%B8%8E%E2%80%9C%E6%8A%A5%E7%BA%B8%E4%B9%8B%E7%94%A8%E2%80%9D%E4%B9%8B%E5%86%8D%E8%AE%A8%E8%AE%BA/</url>
+      <content type="html"><![CDATA[<p>《时务报》创刊号，梁启超首载《论报馆有益于国事》。</p>
+<p>古之学者，但凡儒者，必以国为家，安身立命，全在乎于“国”。梁所处之年代，乃清末国门稍开，国智刚启之时。时值甲午中日战争之后，国之困顿受侮，时人无不感同于心而愚蒙不知所措。</p>
+<p>国弱的原因，梁启超认为是阻塞不通。上下不通、内外不通。上下不通，故内藏有奸狡之官吏，颠倒黑白，是非不分，朋比为奸。内外不通，故自恃天朝大国，守旧而积弱。</p>
+<p>针对这种情况，梁启超认为报馆应当起到去塞求通的作用。他认为“报馆乃去塞求通的导端”。报纸是耳目、喉舌。作为耳目。对国家、君主，是了解国内国外发生的事情，对当下形势环境了然于胸。作为喉舌，是传递各项举措和命令到基层，为国家、为君主说话。而对民众，报纸是开启智慧的钥匙，是向国家、君主反映疾苦病患的渠道。</p>
+<p><strong>总一句话，以报去塞，通达上下内外，是以强国。</strong>文章所提出的思想在后来影响十分深远，但个人认为，围绕“耳目喉舌”和“报纸之用”有以下两点需要注意的。</p>
+<a id="more"></a>
+<h3 id="其一，“耳目喉舌”与“党的耳目喉舌”之微妙区别。"><a href="#其一，“耳目喉舌”与“党的耳目喉舌”之微妙区别。" class="headerlink" title="其一，“耳目喉舌”与“党的耳目喉舌”之微妙区别。"></a>其一，“耳目喉舌”与“党的耳目喉舌”之微妙区别。</h3><p>梁启超分析国情之时，用了耳目喉舌作为比喻，他认为中国现状就是“有耳目而无耳目，有喉舌而无喉舌”，其意思呢，就是说国家和民众缺乏信息的传递和沟通，不知当下现状，以至懵懵懂懂而败得一塌糊涂。进而将治这“有耳目而无耳目，有喉舌而无喉舌”的废疾任务交由报馆来完成，希望帮助国家和君主闻国事，喻措置于民，而民也能告君其苦患。</p>
+<p>这“耳目喉舌”概念在当下影响深远，而尤以党报为甚。作为报纸，就必须为国家和人民带来有用的讯息，为国家说话。不可否认，这是一种很好的新闻观。在梁之后不久，中国的许多报纸也都从骨子里贯彻了这么一种思想。但是，这种贯彻是片面的。报纸更多的是作为国家强权的喉舌，而不是民众的喉舌。最典型如文革时期的《人民日报》此类党报，无所不用其极，充分为人民讲述了党的光辉。其实为民众之耳目，但这耳目是否变了味呢。梁启超办报之目的，在于开民智，“阅报愈多者，其人愈智；报馆愈多者，其国愈强。”，而以党报为代表的报纸，是否又能够担当这种功能？更多的是宣扬社会主义之精华和成就，用清一色的政治立场和模式化的陈述语言一遍又一遍灌输“真正的思想”，以达到所谓的万众一心。</p>
+<p>耳目，需要的是广搜各国各地事件实录，博搜交涉要案，详录各省新政，用报纸广而告之，使国家上下内外通达，是民众知其位和明其理而不致狂妄自大。</p>
+<p>喉舌，需要的是评议各国各地政事要闻，用客观公正立场表达国家、民众对事件的看法，而非信口胡造，因势而转舵。上辅国家君王下达措置，下助百姓申告苦患。</p>
+<p>因此，我认为现所言报纸为党的耳目喉舌这一观点中的耳目喉舌并不能完全等同于梁所提及的耳目喉舌，这是我们需要警醒的一个方面。</p>
+<h3 id="其二，“报纸之用”立场在国而非在民。"><a href="#其二，“报纸之用”立场在国而非在民。" class="headerlink" title="其二，“报纸之用”立场在国而非在民。"></a>其二，“报纸之用”立场在国而非在民。</h3><p>梁启超所言报馆和报纸之用时，出发点是站在了“国”这个角度。从为国弱诊出病症，到开出良药，论述全不离国。分析梁启超当时的政治背景和个人主张抱负，可以得出，梁启超是一个士人，一个满怀救国的改革派，一个稍涉西学的儒者。虽然梁启超思想可能比起其他士大夫阶层稍微开放，但骨子里还是逃不过本着西学中用的理念，希望在中国重振报纸，以报纸报馆开风气、立国体、出人才。</p>
+<p>反观西方自由主义和现代报业的发展，尝试问自己个问题：为什么会有新闻，新闻的作用是什么？（当然，其实也就是在问广义上的报纸作用是什么）。大部分人可以想到的可能是：让民众了解新近发生的事情，监督政府，充当社会良知。当然，这些没有错，而新闻也需要起到这些作用。但是我想要表达的是，新闻的产生起源于人们对信息的需求，起源于人们对自身所处的环境了解的需要以及表达自己诉求的愿望，基于这些需求，才会发展出当下的西报。而从这一点考量梁启超的办报思想，我们能够发现，其出发点和西方自由主义以及市场化报纸截然不同。其根本在于用报，而非宣言人之独立和自由。虽然其耳目喉舌之比喻中提及到“民”，但纵观全篇文章，并没有单纯从“民”出发论述报馆的作用。所以，梁启超之论报馆，实际是论报馆报纸这术对中国政治的影响。换而言之，报馆之于国事有益是在于其撰写评议发行之作用，而非其内含的西方新闻思想的源头。</p>
+<h3 id="附：论报馆有益于国事"><a href="#附：论报馆有益于国事" class="headerlink" title="附：论报馆有益于国事"></a>附：论报馆有益于国事</h3><blockquote>
+<p>戰國之強弱，則于其通塞而已。血脈不通則病；學術不通則陋；道路不通，故秦越之視肥瘠，漠不相關；言語不通，故閩粵之与中原，邈若异域。惟國亦然。上下不通，故無宣德達情之效，而舞文之吏，因緣為奸；內外不通，故無知己知彼之能，而守舊之儒，乃鼓其舌。中國受侮數十年，坐此焉耳。</p>
+<p>去塞求通，厥道非一，而報館其導端也。無耳目，無喉舌，是曰廢疾。今夫万國并立，猶比鄰也，齊州以內，猶同室也。比鄰之事，而吾不知，甚乃同室所為，不相聞問，則有耳目而無耳目；上有所措置，不能喻之民，下有所苦患，不能告之君，則有喉舌而無喉舌。其有助耳目、喉舌之用，而起天下之廢疾者，則報館之為也。</p>
+<p>報館于古有征乎？古者太師陳詩以觀民風，饑者歌其食，勞者歌其事，使乘輶軒以采訪之，鄉移于邑，邑移于國，國移于天子，猶民報也。公卿大夫，揄揚上德，論列政治，皇華命使，江漢紀勳，斯干考室，駉馬畜牧，君以之告臣，上以之告下，猶官報也。又如誦訓掌道方志，以詔觀事；掌道方慝，以詔辟忌，以知地俗；外史掌四方之志，達書名于四方；撢人掌誦王志，道國之政事，以巡天下邦國而語之。凡所以宣上德、通下情者，非徒紀述，兼有職掌，故人主可坐一室而知四海，士夫可誦三百而知國政。三代盛強，罔不由此。</p>
+<p>西人之大報也，議院之言論紀焉，國用之會計紀焉，人數之生死紀焉，地理之險要紀焉，民業之盈絀紀焉，學會之程課紀焉，物產之品目紀焉，鄰國之舉動紀焉，兵力之增減紀焉，律法之改變紀焉，格致之新理紀焉，器藝之新制紀焉。</p>
+<p>其分報也，言政務者可閱官報，言地理者可閱地學報，言兵學者可閱水陸軍報，言農務者可閱農學報，言商政者可閱商會報，言醫學者可閱醫報，言工務者可閱工程報，言格致者可閱各种天、算、聲、光、化、電專門名家之報。有一學即有一報，其某學得一新義，即某報多一新聞，体繁者證以圖，事賾者列為表，朝登一紙，夕布万邦。是故任事者無閡隔蒙昧之憂，言學者得觀善濯磨之益。猶恐文義太賾，不能盡人而解，故有婦女報，有孩孺報。其出報也，或季報，或月報，或半月報，或旬報，或七日報，或五日報，或三日報，或兩日報，或每日報，或半日報。國家之保護報館，如鳥鬻子；士民之嗜閱報章，如蟻附膻。閱報愈多者，其人愈智；報館愈多者，其國愈強。曰：惟通之故。</p>
+<p>其益于國事如此，故怀才抱德之士，有昨為主筆而今作執政者，亦有朝罷樞府而夕進報館者，其主張國是，每与政府通聲气。如俄、土之爭戰，德、奧、意之聯盟，五洲之人，莫不仰首企足以觀《秦晤士》之議論，文甫脫稿，電已飛馳，其重之又如此。然而英國、德國、日本國，或于報館有讒謗之律，有懲罰之條，則又何也？記載瑣故，采訪异聞，非齊東之野言，即秘辛之雜事，閉門而造，信口以談，無補時艱，徒傷風化，其弊一也；軍事敵情，記載不實，僅憑市虎之口，罔懲夕雞之嫌，甚乃揣摩眾情，臆造詭說，海外已成劫燼，紙上猶登捷書，熒惑听聞，貽誤大局，其弊二也；臧否人物，論列近事，毀譽憑其恩怨，筆舌甚于刀兵，或颺頌權貴，為曳裾之階梯，或指斥富豪，作苞苴之左卷，行同無賴，義乖祥言，其弊三也；操觚發論，匪有本原，蹈襲陳言，剿撮涂說，或乃才盡為憂，敷衍塞責，討論軼聞，紀述游覽，義無足取，言之無文，其弊四也；或有譯錄稍廣，言論足觀，刪汰穢蕪，頗知体要，而借闡宗風，不出鄭志，雖有斷章取義之益，未免歌詩不類之憾，其弊五也。具此諸端，斯義遂梏，遂使海內一二自好之士，反視報館為蝥賊，目報章為妖言，古義不行，良法致弊。嗚呼，不其恫歟！</p>
+<p>今設報于中國，而欲复西人之大觀，其勢則不能也。西國議院議定一事，布之于眾，令報館人入院珥筆而錄之；中國則諱莫如深，樞府舉動，真相不知，無論外人也。西國人數、物產、民業、商冊，日有記注，展卷粲然，錄副印報，与眾共悉；中國則夫家六畜，未有專司，州縣親民，于其所轄民物、產業，末由周知，無論朝廷也。西人格致制造專門之業，官立學校，士立學會，講求觀摩，新法日出，故亟登報章，先睹為快；中國則稍講此學之人，已如鳳毛麟角，安有專精其業，神明其法，而出新制也。坐此數故，</p>
+<p>則西報之長，皆非吾之所能有也。然則報之例當如何？曰：廣譯五洲近事，則閱者知全地大局，与其強盛弱亡之故，而不至夜郎自大，坐眢井以議天地矣；詳錄各省新政，則閱者知新法之實有利益，及任事人之艱難經畫，与其宗旨所在，而阻撓者或希矣；博搜交涉要案，則閱者知國体不立，受人嫚辱，律法不講，為人愚弄，可以奮厲新學。思洗前恥矣；旁載政治、學藝要書，則閱者知一切實學源流門徑，与其日新月异之跡，而不至抱八股八韻考据詞章之學，枵然而自大矣。准此行之，待以歲月，風气漸開，百廢漸舉，國体漸立，人才漸出，十年以后，而報館之規模，亦可漸備矣。</p>
+<p>嗟夫！中國邸報興于西報未行以前，然歷數百年未一推廣。商岸肇辟，踵事滋多；勸百諷一，裨補蓋寡；橫流益急，晦盲依然；喉舌不通，病及心腹。雖蚊虻之力，無取負山；而精禽之心，未忘填海。上循不非大夫之義，下附庶人市諫之條；私怀救火弗趨之愚，迫為大聲疾呼之舉；見知見罪，悉憑當途。若听者不亮，目為誹言，摧萌拉薛，其何有焉？或亦同舟共艱，念厥孤憤，提倡保護，以成區區，則顧亭林所謂“天下興亡，匹夫之賤，与有責焉”已耳。</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[網路只是工具]]></title>
+      <url>/2015/04/24/%E7%B6%B2%E8%B7%AF%E5%8F%AA%E6%98%AF%E5%B7%A5%E5%85%B7/</url>
+      <content type="html"><![CDATA[<p>偶爾瞭解到《網路讓人變笨》這本書，順便寫一些看法。</p>
+<p>根據書中的說法，首先我們需要先對自己做一個檢視：每天都會使用Google之類的搜尋引擎；同時開啟的網頁常超過10個；文章還未細讀就先轉帖到自己的塗鴉牆；一發表文章就期待有人按贊回應；離開電腦或手機就無法安排生活；很久沒有讀完一整本書了。</p>
+<a id="more"></a>
+<p>作者卡爾認為，網絡會對人造成負面的影響。他認為，印刷時代已經將人們的思維重新塑造了一次，相對於口頭傳播時代。他列舉了各種歷史和科學證據來說明，人類的大腦會應我們的經驗而改變。而如今，科技、網路也正在改變我們的大腦。</p>
+<p>為什麼作者會認為網路讓人變笨呢？書中列舉了大量神經科學的研究，用以證明我們的大腦具有相當程度的可塑性，從而證明我們的大腦被網路改變，我們的行為改變，專注力下降而難以進行深入的持續的閱讀。</p>
+<p>與閱讀書籍相比，書籍能夠取得較為完整的知識，而網路只能幫助我們取得零散的訊息，並讓我們在獲取訊息的過程中不斷地被其他東西干擾。利用網路，我們能夠迅速的搜尋想要的訊息，但卻容易失去專注和深入思考的能力，形成碎片化的記憶和知識體系。</p>
+<p>其實仔細回想，這個觀點確實在現在很多人身上都印記。我們依賴網絡，無論是學習還是生活，我們習慣於閱讀短小的文章，喜歡發表簡單的心情歷程，甚至連文字不想寫，只是發佈了幾張照片。但是，或許網路給人們帶來的結果並沒有那麼悲觀。</p>
+<p>與網絡的情形一般的還有電視媒體，在二十世紀末，電視伴隨著一代人的成長，那一代人被稱之為電視人。那個時候，也有學者指出電視給人們帶來的危害，認為電視使得人們變得浮躁，喜歡閱讀影響而忽略了書本等印刷文字，認為這代人的思維和未來都很有問題。而實際上，儘管電視媒介給人們帶來了一些影響，但事實遠沒有那麼糟糕。我認為，網路的結果應也是如此。網路是一個工具，如何使用工具才會決定人的未來。沒有所謂的它令人們變好或變笨，應當說是人們希望自己變好或變笨。</p>
+<p>心迷網路轉，心悟轉網路。網路讓獲取資訊變得容易，這也便使我們能夠比起前人更加容易整合知識，理清知識脈絡，提高獲取知識的效率。Google在一定程度上把關了訊息的顯示和排序，但是最終選擇點擊哪一個頁面的仍是我們，只要作為人的個體能夠真正用心使用網路學習和搜尋想要的資訊，還是能夠利用好這個一個工具的。</p>
+<p>曾經，我試過打開一個關於AI的維基百科的頁面，接著由於其中的某些名詞連接，我打開了超過了十個頁面的資料來源頁面，但最後，我還是花了三個小時的時間將他們一一讀完。其中所花費的辛苦當然不少，但這種方法卻真正讓你瞭解了某一個事物的前因後果，讓我們能夠迅速把握某一個學科，快速入門，當然，大前提還是人的主觀能動性，需要我們端正對待網路的態度，才能夠不被它所誤導。</p>
+<p>現在，流行在大多數間的app應該就是微信了。微信的朋友圈，相信幾乎所有人都會刷，每天閑著沒事也會偶爾發發感慨下生活。這種行為正是被人們所詬病的網路使人變笨的表現，而我認為，其實好壞仍是取決與人。人是社會性動物，所以免不了社交，微信等社交軟件的出現，使得這一項事情變得簡單了，但卻也是許多人投入其中，沉浸在其中。原因其實很簡單，人們傾向於休閒和娛樂，不喜歡挑戰。不用動腦又能享受其中的事情是不少人最大的樂趣。解決這一問題，最大的要點仍是在於個體，個體的思維和個體的理性。縱然網路改變了媒介，進而改變了思維方式，但本質的東西並沒有改變——世界上存在著各種浩瀚的資訊，其中有一些對人有益處，有一些只是無用的，而人的目的就在於尋找對自己有用的資訊去學習，因此，用好工具去幫助自身提高才是關鍵。</p>
+<p>網路只是工具，也只能讓它成為工具，生活是自己的，學會反思自己的狀態和行為，學會選擇工具的使用方式，那麼自己便能夠不被這個喧囂的外界所影響。換種角度看待網路，換種角度去使用它，相信它可以令我們變得更加強大。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 流年淡思 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 互联网 </tag>
+            
+            <tag> Internet </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[光耀百年，新加坡何以光耀]]></title>
+      <url>/2015/03/03/why-singapore-lee-kuan-yew/</url>
+      <content type="html"><![CDATA[<p>這個月，李光耀逝世的新聞傳遍了大江南北，足足讓新加坡和其制度又热了一把。</p>
+<p><a href="http://www.alaxn.ml/wp-content/uploads/2015/03/Lee-Kuan-Yew.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/03/Lee-Kuan-Yew.jpg" alt="Lee Kuan Yew"></a></p>
+<p>被英國殖民過的地區。一個在六十年被迫從馬來西亞聯邦中獨立的國家，沒有技術、沒有實業、沒有資源、沒有土地，是如何從困境中走出的呢？</p>
+<p>&nbsp;</p>
+<p>一個僭主的人物應時出現在了國際的舞臺上，李光耀。一個尊總實用主義的統治者，一切行動從獲得最大效用角度出發，為人民解決了從出生到死亡的幾乎所有人生的大事。</p>
+<a id="more"></a>
+<p>&nbsp;</p>
+<p>他，不屑於取悅大眾，固執己見，堅持去做自以為對的事情，強調保持務實的頭腦，不要被理論束縛和限制。許多事情都是從謀求絕大部分人的最大福利出發，個人利益在必要時候需要為集體讓路，服從整體全局的要求。在宏觀政策和制度上高度規範和約束個人。</p>
+<p>&nbsp;</p>
+<p>換句話講，也就是政府對社會、個人的干預非常大。從組屋的設定到個人的香煙、口香糖，政府對列出了明文的規定，讓所有人都在筐筐內辦事和生活。</p>
+<p>&nbsp;</p>
+<p>如今，這個人口不足五百萬的小島，仍然以“世界上最適合居住的地方”的享譽海外，人均GDP位列世界前列。</p>
+<p>&nbsp;</p>
+<p>很多時候，人們都喜歡拿香港和新加坡做對比。兩個曾經一樣都受到了英聯邦的殖民、主權喪失、孤立沒有資源的小島，為何在歷史中行走的過程中，越走越遠呢？</p>
+<p>&nbsp;</p>
+<p>對比香港和新加坡，或許政府起點的不同，是造成現狀的原因之壹。主權的獨立和非獨立，國家與地區的差別，帶來的是政府規劃抉策和執行的不同。政府是否能夠帶領社會廣泛變革和發展，是抉定城市未來可持續發展的重要因素。只有政府，或者說強權，能夠有力地走在城市發展的前端。</p>
+<p>&nbsp;</p>
+<p>區域的差距讓種族產生了不同的偏見。對生存的需求更放大了這些矛盾。聚居一直是很多哺乳動物的習性，不可避免，主流人群聚集成為地域的強勢群體，必定排斥和擠壓另外的群體。</p>
+<p>生存的需要讓人只看到了前方，忘記了背後走來的路，更忘記了前方的前方。移民政策和對待移民態度的不同，對待旅客和旅遊業購物中心的不同發展趨向，從一定程度上會改變世人對該地域的刻板印象，進而影響城市形象，最終不可避免影響到其經濟的發展。一直在水貨客和反水貨客中反復掙扎的香港，難道不會做出點思考，這樣規模的惡性事件，真的給香港帶來了實體的利益嗎？</p>
+<p>&nbsp;</p>
+<p>自我意識的覺醒是個人的成長，也是集體意識的掘起，可在發展之期，也免不了狹隘的目光。每個自我意識的局限性會使得我們誤解和看不清事實的真相和背後的因果，多數時候，更僅僅是個人的主觀揣測。而這個時候，是否存在一個超越個人得失的主宰存在成為集體意識走向較為理性和具有前瞻性一面的重要因素。在民主的對立面的獨裁，從某種角度講，不一定不是一個最好的決策。</p>
+<p>&nbsp;</p>
+<p>新加坡的未來，是壹個由政府主導和控制的未來，是壹個比較能夠預見的光明的未來。可持續是城市生存的技能，是所有城市值得借鑒的理念和方式。</p>
+<p>相比，香港的未來，也許不是那麼光明。喪失了城市自我的生存能力，慢慢被侵蝕的體制，真正的復興又豈是幾次占中能夠實現的？</p>
+]]></content>
+      
+        <categories>
+            
+            <category> NewFreedom </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Singapore </tag>
+            
+            <tag> Lee Kuan Yew </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Memory of Hongkong]]></title>
+      <url>/2015/02/18/hongkong/</url>
+      <content type="html"><![CDATA[<p><a href="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_153753.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_153753-1024x768.jpg" alt="wpid-img_20150212_153753.jpg"></a><a href="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_131030.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_131030-1024x768.jpg" alt="wpid-img_20150212_131030.jpg"></a><a href="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_181922.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_181922-768x1024.jpg" alt="wpid-img_20150212_181922.jpg"></a><a href="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_172749.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_172749-1024x768.jpg" alt="wpid-img_20150212_172749.jpg"></a><a href="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_154102.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_154102-1024x768.jpg" alt="wpid-img_20150212_154102.jpg"></a><a href="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_152953.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_152953-768x1024.jpg" alt="wpid-img_20150212_152953.jpg"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> PhotoSlide </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hongkong </tag>
+            
+            <tag> 香港 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[透过Propagandizing 看朝鲜纪录片]]></title>
+      <url>/2014/10/30/%E9%80%8F%E8%BF%87Propagandizing%20%E7%9C%8B%E6%9C%9D%E9%B2%9C%E7%BA%AA%E5%BD%95%E7%89%87/</url>
+      <content type="html"><![CDATA[<p>观 《全景：潜入朝鲜2013》有感</p>
+<p>朝鲜，一直以来都被看作是最神秘的国家之一。由于其极度的封闭性使得外界对它充满了好奇，倍加关注。不少媒体都尝试对其进行拍摄和报道，而目前广为流传的纪录片有两个，一个是2006年国家地理频道的《前进北朝鲜》，另一个则是2013年BBC的《全景：潜入朝鲜2013》。</p>
+<p>该片是由BBC知名记者John Sweeney及其带领的团队 混入英国伦敦政治经济学院（LSE）学术交流团秘密拍摄的。</p>
+<p>在交流团中，记者假扮教授，同学术交流团一同按照制行程参观朝鲜。在七天的秘密拍摄中，摄影师为我们展示了他们部分朝鲜见闻，为我们传递一个个人崇拜严重，政府强权触角无处不在，人民生活极度不自由的社会主义国度。</p>
+<p>似乎这种秘密拍摄足够的真实，BBC也足够的权威，给我们展示了一个真正的朝鲜。但是，我要反驳的就是这种真实。</p>
+<a id="more"></a>
+<p>西方有所谓的Propagandize，意思是Information which is false or which emphasizes just one part of a situation, used by a government or political group to make people agree with them，中文译为宣传，意思是传递的信息是虚假的或是强调部分情况，也即选择性告知信息。</p>
+<p>个人认为，现在流传的朝鲜纪录片，无论是美国国家地理频道还是BBC，都有这种”宣传“之嫌，而且，这种Propagandize是双重，一方面来自朝鲜一方，另一方面来自媒介。</p>
+<p>第一重，本次秘密拍摄是跟随LSE学术交流团进行的，其行程是通过了朝鲜官方同意的，这便意味着参观所见，沿途风景都是事先被安排好的——你所见的朝鲜也就是我要你知道和了解的朝鲜。这个行程的拍摄不过是把参观者的部分视角展示在我们其他没有通过这个渠道去到朝鲜的人面前，从这个角度分析，不过是给我们传播了本次学术交流团的交流内容。所以，以一个朝鲜允许的参观者的视角去探秘朝鲜，实际上只不过是记录了一次朝鲜之旅，见识了官方传播给我们的朝鲜印象。因此，这种画面的记录从拍摄取材和角度上来讲，就已经是属于部分的记录，以及选择性的告知信息了。</p>
+<p>当然，影片中拍摄的画面都是真实的，但是，这些拍摄的画面来自摄影师，而这，也就引出了第二重的Propagandize。拍摄的影片经过后期的拼接和裁减，所展示的画面已经是经过了BBC的审核和修订的。一方面，而朝鲜是不是如同这些人7天所见的内容？答案是部分肯定的。BBC属于西方的媒体，有着西方新闻业准则，追求客观和公正。不可否认，正常情况下，他们不会去伪造虚假的画面，我们可以抱着足够大的信心去相信这些见到的场景是朝鲜的，可是，它真能够反映全面的朝鲜现状吗？或许真实的朝鲜没有如此森严，或许朝鲜其他地方饥荒严重，尸横遍野。我们能够肯定这是真实的朝鲜，但这不是客观反映朝鲜的方式，甚至说，抛开后期剪辑的问题，这还可能是一个令人产生误解或曲解的纪录片。因为，没有前后连接的，断断续续的7天见闻，没有逻辑主线的故事，信息接收者对信息的处理有更大的自主发挥空间，其结果便是可能真实情况和自己推理出来的完全相反。</p>
+<p>而另一方面，这种所谓的编辑，实际上就是一定程度的主观倾向。在传播学领域，卢因曾提出”把关人“理论，他认为传播者不可避免地会站在自己的立场和视角上，对信息进行筛选和过滤。BBC属于政府公营媒体，虽然管理相对独立，但由于人员和所处环境的限制，必定使得这个媒体的立场偏向于西方自由主义。从某种角度上分析，这无疑也是一种主观意识。</p>
+<p>其次，为了影片的观赏性和连贯度，后期影片的制作会舍去部分的原始素材，这也是一种主观性的体现，是在现有的原始素材基础上进行了二次的选择性传播，可能会使得真实的情景和最终的画面情景语义大庭相径。</p>
+<p>以一个后期影片剪辑工作者为例，抛开西方的阴谋论和洗脑手段，他需要在断续的拍摄素材中剪辑出一份过渡转折自然的片子，一方面依据来源于视觉的美感和连贯，另一方面，也来自脚本。这两方面都具有很大的自由空间让影片表达不同的意思，而这种自由空间很大程度上也收到个人学识与思想的左右，所以，导致的结果可能便是播出的朝鲜便是我要展示的朝鲜。</p>
+<p>当然，这种对Propagandize的解释和分析可能带来许多异议，反驳也不甚简单。但是，我想要强调的是，真实世界和影片世界，很多时候都是两个世界。我们需要接受媒介带来的信息，但我们也要警惕媒介带来的信息。信息的背后还是信息，信息的客观与真实永远需要我们多一层推测和思考。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> NewFreedom </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 价值观 </tag>
+            
+            <tag> NewFreedom </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Mindmap of Communication Theory]]></title>
+      <url>/2014/05/30/mindmap-of-communication-theory/</url>
+      <content type="html"><![CDATA[<p><a href="http://www.alaxn.ml/wp-content/uploads/2015/04/Outline.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/Outline-571x1024.jpg" alt="Mindmap of Communication Theory"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> NewFreedom </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Communication </tag>
+            
+            <tag> 传播学概论 </tag>
+            
+            <tag> 思维导图 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[俄狄浦斯的困顿]]></title>
+      <url>/2014/05/30/%E4%BF%84%E7%8B%84%E6%B5%A6%E6%96%AF%E7%9A%84%E5%9B%B0%E9%A1%BF/</url>
+      <content type="html"><![CDATA[<p><a href="http://www.alaxn.ml/wp-content/uploads/2014/05/Oedipus.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2014/05/Oedipus.jpg" alt="Oedipus"></a></p>
+<p>灯塔，一个看得到而从未去过的地方。由灯塔为引子，作者展开了弑父情结的描述。</p>
+<p>天真的詹姆斯曾经问过母亲：“我可以到灯塔去吗？”母亲为了保护他幼小的心灵，便告诉他“如果天气好的话，你就可以去。”这句话，深深地扎根在他的心里。以后，他就认定他一定可以去灯塔。可以说，母亲的这句话，不仅点亮了他梦想的灯火，也成为他追逐梦想——到灯塔去的动力源泉。</p>
+<a id="more"></a>
+<p>然而，詹姆斯还有着一个不苟言笑的父亲，拉姆齐先生。他是一位反对者，他嘲笑并揭露詹姆斯的梦幻，将他的梦想当做白日梦，认为那是是虚幻而飘渺的，而且，从一开始，他便打击了詹姆斯去灯塔的积极性：“但天气是不会好的。”梦想被反对的记忆，始终在詹姆斯的脑海中挥之不去。更可怕的是，父亲的这些话语，也使得詹姆斯在之后探险去灯塔的途中，都深感恐惧。当他的小船平稳航行时，他就担心他的父亲会突然责骂他。</p>
+<p>不过，恐惧的心态没有一直下去。拉姆齐先生并没有使得詹姆斯完全屈从他的意志，渐渐的，詹姆斯开始有了心理的反抗：“要是当时手边有把斧头，或者有把火钳，或者其他任何可以在他父亲胸脯上砸出个窟窿并且杀死他的凶器，詹姆斯都会马上抓在手中。”这种前后巨大的变化，可能来源梦想毁灭后的愤怒。当天真的幻想被父亲无情地否定掉后，内心的无奈和害怕反而转变成极端的离奇的弑父心理。</p>
+<p>到这里，弗洛伊德的俄狄浦斯情结应该算是完整了，但是，作者并未止于此处。</p>
+<p>虽然詹姆斯有了扭曲的弑父幻想，但是，当他冷静地注视着他的父亲时，他会反思到自己的幻想是不合适的，是荒谬的想象。于是，怀着愧疚的心情，詹姆斯继续寻找新的俄狄浦斯形象 “来平息、派遣和结束他的心头怒火。”俄狄浦斯的对象的转移，让我们看到了人物性格的复杂，更看到了作者对俄狄浦斯情结的困惑。这是一个复杂而又纠结的心理。詹姆斯恨他，但是詹姆斯又察觉到有一种感情的存在，那种感情似乎是爱。它在阻止着他继续那种幻想。情感是如此的矛盾，以至于詹姆斯不得不另外寻找对象以宣泄怒火。或许，詹姆斯的情感也是我们自己情感的放大镜。一方面，我们依赖这母亲，忍受的父权的权威，想要进行反抗；但是，另外一方面，我们有割舍不了恩情和亲情，看着他老去的背影，我们的心又变软了，开始反思自己的幻想，寻找新的宣泄口。</p>
+<p>弑父情结，可能存在，但是人的复杂性使得它远没有那么容易显现。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 流年淡思 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Oedipus </tag>
+            
+            <tag> 俄狄浦斯 </tag>
+            
+            <tag> 灯塔 </tag>
+            
+            <tag> 古希腊 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[红粉知己，我们会成为恋人吗]]></title>
+      <url>/2014/04/30/%E7%BA%A2%E7%B2%89%E7%9F%A5%E5%B7%B1%EF%BC%8C%E6%88%91%E4%BB%AC%E4%BC%9A%E6%88%90%E4%B8%BA%E6%81%8B%E4%BA%BA%E5%90%97/</url>
+      <content type="html"><![CDATA[<p><a href="http://www.alaxn.ml/wp-content/uploads/2014/04/love-together.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2014/04/love-together.jpg" alt="love-together"></a></p>
+<p>“最近过的怎么样，社团那边怎么样了？”</p>
+<p>她站在草丛旁问着我，眼睛望着前方灰蓝色的天。</p>
+<p>“还好啦，也没有多大的改变，还是那么忙……”</p>
+<p>话说到一半，远处走来手牵手的一对情侣，亲昵地靠着，脸上洋溢着幸福的笑容。我们两个默默地看着，看着他们一步一步走近，很久，很久。看着他们渐渐走进的身影，我想起了许多事情。一直以来，我们都是相当好的朋友，我们曾经一起漫步在沙滩上行走，一起在孤灯下闲聊，一起在冬夜里暗颤着吃火锅，一起在炎热的夏日里在冷气底下吃雪糕……我们的关系一直都是那么好，也曾经传出几次绯闻，但是我们始终没有走在一起。可能，在我心里，她只能是一个很好很特殊的朋友。有时候，我也会揣摩她的心思，为什么她会这么关心我，难道她对我有意思？我们之间真的只是纯粹的友谊吗？曾经，也想过在一起，但却不敢说出口，害怕一旦迈出那一步，连朋友都做不成。毕竟，感情是一条不可逆函数，恋爱后，成功或失败，都不可能回到之前的状态。</p>
+<p>其实，在异性交往的过程中，我们很多时候都会揣测这段感情，揣摩自己和对方的心思，揣摩彼此的关系。究竟她对我是不是有意思呢？是不是对我也有同样的感觉和期待呢？有没有什么特征可以表明她喜欢上我了呢？她需要多喜欢我才会表现出来她的爱恋呢？苦思冥想不到结果之后，于是，我们寄希望于科学，寄希望于心理学家。</p>
+<p>通常我们认为心理学可以成功地帮我们预测和判断这些事情，但是，事实上，心理学并没有办法准确的预测任何一个个体的行为动机和目的。心理学是建立在调查和分析的基础上，是一门实验学科，需要大量的数据事实支撑，得出的结果大多也只能是整体的、宏观的。尽管我们不能准确预测每个人的情况，但还是有一些共同的特征可以让我们去分析和研究的。</p>
+<h2 id="为什么我们会做朋友"><a href="#为什么我们会做朋友" class="headerlink" title="为什么我们会做朋友"></a>为什么我们会做朋友</h2><p>北卡罗来纳大学的Heidi M. Reeder 认为可以将人对人的吸引力分为几个方面：</p>
+<p>主观吸引力：纯粹意义上的“性吸引力”，觉得对方很性感，有想做点儿什么冲动，但并不打算开始一段严肃的关系。1/3的参与者承认对异性好友有此“邪念”，通常是在友情初期比较强烈。由于对方没有同样的感觉，或者担心这样做会破坏这段友谊，他们没有贸然付诸行动。</p>
+<p>客观吸引力：超过一半的参与者觉得他们的异性好友很有魅力，只不过不是自己的菜。</p>
+<p>友伴吸引力：觉得这个人值得交朋友，这是形成友情的最基本要素。几乎所有参与者都觉得异性好友有此种吸引力。</p>
+<p>浪漫吸引力：不只想做朋友，期待和对方有进一步发展。在瑞德的研究中，14%的参与者想从朋友身份升级为恋人。另外，约40%承认自己曾经心动过。</p>
+<p>只有当某个人对你来说具有主观吸引力和浪漫吸引力的时候，你才会爱上她；而当她对你仅仅只有客观吸引力或友伴吸引力的时候，你就不会对她产生感觉，你们只是普通的朋友。当然，你对她的感觉并不是一成不变的，而是随着你们的相处而默默地发生变化。这就意味着，可能有一天，她的某一个微笑或某一个摆头发的姿势会突然让你砰然心动，会让你爱上她，爱上一个一开始你认为只想做朋友的人。</p>
+<h2 id="红粉知己，我们是恋人吗"><a href="#红粉知己，我们是恋人吗" class="headerlink" title="红粉知己，我们是恋人吗"></a>红粉知己，我们是恋人吗</h2><p>但是，我们身边不乏存在着一种人，她能够和我聊些情感状况等敏感话题，和我的联系也非常频繁。有的时候我甚至会和她倾诉我与伴侣间的不愉快、和她分享私密的快乐时光。难道她仅仅因为客观吸引力或友伴吸引力而长期保持与我的联系，任劳任怨、随叫随到？难道一直以来她就没有想过和我在一起？我们之间真的很暧昧，有很多小秘密，彼此也挺依赖对方的。这又是为什么呢？</p>
+<p>Guerrero, L.K. 和A.M. Chavez 指出，形成红粉知己至少有以下四种模型，互有好感、我方渴望、对方渴望、柏拉图式友情。</p>
+<p>然而，在已知的四种模型中，男生和女生的反应是不一样的。在我方渴望中，女生会倾向于和男生倾诉感情问题，而男生则对心爱的女生绝口不提。在对方渴望中，当女生察觉到对方的意图并且意识到自己并不像和对方发展的的时候，会逐渐疏远彼此的关系；而男生对于不想在一起的女生，却不会刻意减少联络和疏远彼此的关系，仍然保持现有的交往模式。而在柏拉图式友情模式中，女生会更倾向于向对方倾述心声。</p>
+<p>根据以上分析，你的红粉知己是哪种呢？你们会不会变成恋人呢？</p>
+<p>当然，人际交往是双向的，当一方的行为举止发生变化时，往往会引起另外一方的改变，因此，以上四种模型中男女行为的变化也是非常频繁的。正是由于人的行为的思想的复杂和多变，使得原本就很暧昧的关系变得更加不可琢磨。</p>
+<h2 id="界限在哪"><a href="#界限在哪" class="headerlink" title="界限在哪"></a>界限在哪</h2><p>即使人的善变和狡猾使得原本暧昧模糊的异性关系变得更为模糊，但心理学家并不会因此而死心。他们仍然努力尝试找出原本就友情和爱情的界限，即使可能界限本来就不存在。</p>
+<p>人类学家爱德华发现，只有非常亲密的对象才能够进入我们的最小亲密距离之中，从皮肤接触到五十公分左右。在这种距离内，我们可以接触，牵手，拥抱，接吻，甚至是从事性行为。然而这也仅仅能说明我们的关系是否亲密，行为是否暧昧，并不能说明我们的心是否在一起，彼此是否相爱。毕竟，有些时候，作为从小一起生活的我，会对你有特殊的关照，偶尔也会为你撑撑伞，但是，这并不是因为我爱你呀。</p>
+<p>于是，心理学家又提出了另一条标准，期待。</p>
+<p>美国德州大学的罗伯特·富尔曼做过一项研究，他将人对他人的需求区分为情感亲密、社会陪伴和正向呈现。结果表明，人们对于伴侣的各项需求总要高于同性和异性朋友。我们希望伴侣能够理解我们，给我们带来幸福，时刻想着我们。而对于异性密友，很多时候，我们只是想要找个人倾诉自己的感情，寻求一点点安慰，并不会对他（或她）有什么特殊要求，不会要他（或她）想着自己，更不会时刻要求他（或她）想着我们。换句话说，倘若你对某个异性朋友在行为或思想上有了期待，希望他（或她）能够经常给你打电话，经常关心你，相处的时候看着你，关注着你……，可能就是你爱上了他（或她）。</p>
+<p>毫无疑问，期待来源于感觉，期待的产生就是我对你感觉发生了变化，我爱上了你。也就是说，友情和爱情的界限，期待，追根到底，还是感觉。从相识，相恋，到分开，人与人之间的感觉都在变化。关系的变化一般意味着感觉的变化，而感觉的变化也会影响两人之间的关系的变化。换句话讲，是友情还是爱情，其实是感觉使然。</p>
+<p>但是，不幸的是，人不是理性的动物，有得时候我们都不知道为什么自己会爱上她，甚至我们都不知道自己所爱的她是真实的她还是在我自己眼中的她，她的吸引力是纯粹建立在我的主观想象和记忆中还是现实存在。我们很难区分自己爱的，究竟是对方、对方在自己眼中的模样、还是自己在对方眼中的模样。</p>
+<p>更不幸的是，感觉的变化是可能是缓慢的、也可能是一瞬间的。我们捉摸不到自己感觉变化的时刻，更无法轻易得知对方感觉的变化。往往在我们认为她不想和我交男朋友的时候，她已经在等待着我；而当我意识到这种感觉的时候，她已经牵着别人的手在漫步沙滩了；直到那一刻，你才知道一直都是你迟钝的神经的错。</p>
+<p>所幸的是，感觉还是有一些指标可以帮助我们衡量的。</p>
+<p>虽然感觉的变化是很难捉摸的，但是可以察觉的是彼此间行为话语是否发生变化。透过这种变化，我们可以意识到我们间的亲密感是否改变了。当你和他之间心理的距离变短，一段时间内的联络频率突然变高，意识里总是想到他，想到他的时候心里就会涌起激动和热情，让自己很享受，欲罢不能的时候，可能你就爱上了他。当然这种美妙的感觉并不能长久地维持下去，一段时间后，两个人的联系变得稳定之后，这种每天都期待和对方说话，期待见到对方，想到对方时候产生的奇妙感觉也会慢慢消失殆尽。这就是为什么有些人一见钟情，两人感情迅速升温，但不久后又老死不相往来。用微分的方式来说，就是单位时间内亲密感的增减，决定了我们爱的轨迹。亲密感的增加，不可能像指数函数那样永远的增加下去，总有趋于缓和的时候，同理，我们的爱也不可能永远依靠亲密感的持续增加进行下去。所以，心理学家鲁斯布尔特又提出了维持彼此关系的关键——承诺<sup>[7]</sup>。在彼此的交往中，我们通过约会、电话等渠道加深对彼此的了解，同时，也通过日常的相处了解对方的为人和他对我们的付出奉献有多少，我在对方心里的有多重。在相处中，我们渐渐把自己寄托在对方身上，依赖对方，不断从对方那里获取安全感和幸福感，在行为和话语中有意无意向对方许下承诺，“我会给你惊喜”，“死生契阔，与子成说”，“我记得你说这是你最爱的”，“不要再离开我”。正是通过这些琐碎的言语，慢慢地强化我们的感情，同时不断实现的诺言也让我们的信任感增强，对彼此的依赖更深，投入的感情越来越多。用一句话总结，就是“身体的距离决定我们是否是朋友，内心的感觉区分我们是否只是朋友。”</p>
+<p>“看什么啦？盯着人家看，羡慕他们呀？”</p>
+<p>她打破沉默，将我拉回了现实。</p>
+<p>“没呀，突然想起了一些事情，时间过得好快，很多事情都好久好久了……”</p>
+<p>“笨蛋，整天不知道再想些什么，难怪没有人和你在一起”她奸诈地笑着。</p>
+<p>“……”此时的我无言以对。因为我弄不清你的感觉，更弄不清自己的感觉。但是，有的时候，有些人，一个暧昧不明的角色，才是最好的结局。许多年后，或许你会发现，心中有一个位置，安放着这么一个人，他既不是恋人，也不是朋友，但是与他的关系，超过朋友，甚至某些方面超过了恋人。我们可以彼此信任，彼此畅聊，没有恋人间不能告诉的禁忌，也没有情人间零距离的亲密，但彼此为彼此的生命增添或浓或淡的色彩，历久弥新，永不忘怀。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> Psychology </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 爱情心理学 </tag>
+            
+            <tag> 红颜知己 </tag>
+            
+            <tag> Psychology </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[华硕N55光驱位换HDD硬盘]]></title>
+      <url>/2014/02/13/N55%E5%85%89%E9%A9%B1%E4%BD%8D%E6%8D%A2HDD%E7%A1%AC%E7%9B%98/</url>
+      <content type="html"><![CDATA[<p>先来个大合照，已拆了键盘。<br><img src="http://r.photo.store.qq.com/psb?/V121MZ1S4Srv3a/w2gBfIVPSHbdG82p.RGDnmQ.2mQmI1nuaZXlJFNWMXU!/o/dKVEgo5ZCAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wAOAAkAGKwQBAA8!&amp;t=5&amp;su=1145132433&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></p>
+<p>开后盖，拆原有机械硬盘。<br><img src="http://r.photo.store.qq.com/psb?/V121MZ1S4Srv3a/B7g24Oy*3V8Oi.QJO0P1yJ4ab27D*fRhY*BVcaj67.4!/o/dAqC3Y3oBwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wAOAAkAGKwQBAA8!&amp;t=5&amp;su=181054785&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></p>
+<a id="more"></a>
+<p>装到光驱位，测试成功。<br><img src="http://r.photo.store.qq.com/psb?/V121MZ1S4Srv3a/Y4dVWt48Jy3hqLjw9ok.FNSOXElXlIxL5i3XbfM0zNY!/o/dCP8tI9hBwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wAOAAkAGKwQBAA8!&amp;t=5&amp;su=1183192289&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></p>
+<p>大合照，原有SATA3位置虚位以待固态硬盘。<br><img src="http://r.photo.store.qq.com/psb?/V121MZ1S4Srv3a/ZUJSDFhYNIoGVk6dARRRHYhZWdqXZUgsXGnVbLHxYcI!/o/dJNDgo66BwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wAOAAkAGKwQBAA8!&amp;t=5&amp;su=1138724289&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></p>
+<p>拆出来的光驱装到了USB光驱盒中（顺便测试下小痰盂）。<br><img src="http://r.photo.store.qq.com/psb?/V121MZ1S4Srv3a/zyie*cbTceRQL9hCiJLQyTlfLtpwnV6QQ*8JoxDx4Ag!/o/dCHjro9ZBwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wAOAAkAGKwQBAA8!&amp;t=5&amp;su=173209745&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 拆机 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[OS X Mavericks折腾记]]></title>
+      <url>/2014/01/17/OS%20X%20Mavericks%E6%8A%98%E8%85%BE%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<p>寒假第一篇日志给黑苹果。</p>
+<p><a href="http://alaxn.esy.es/wp-content/uploads/2014/01/QQphoto.jpeg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2014/01/QQphoto.jpeg" alt="OSX_startup"></a></p>
+<p><a href="http://alaxn.esy.es/wp-content/uploads/2014/01/QQphoto.png" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2014/01/QQphoto.png" alt="OSX10.9_screenshot"></a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> OSX </tag>
+            
+            <tag> 黑苹果 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[拼将玉骨委黄沙]]></title>
+      <url>/2013/12/28/%E6%8B%BC%E5%B0%86%E7%8E%89%E9%AA%A8%E5%A7%94%E9%BB%84%E6%B2%99/</url>
+      <content type="html"><![CDATA[<p><img src="http://orp61qolg.bkt.clouddn.com/images/ChenYinke.jpg" alt="陈寅恪"></p>
+<p>古来，文人与政治的关系就比较暧昧。多少读书人十年寒窗苦读为的不是金榜题名？诸葛孔明的“不求问达于诸侯”，像是姜太公钓鱼，愿者上钩，实则是以退为进，钓“明君”， “遂许先帝以驱驰”。厌倦官场是是非非的人，也不过是因官场的失败，壮志难酬才逼不得已退出，并非是真正的远离政治，一旦统治者赏识，又春风得意，走马上任。纵观历史，难见真正为读书而读书，为学术而学术之人，实为可悲。</p>
+<p>当然，历史还是会为后人留下珍贵的几只标杆。陈寅恪就是其中一只。</p>
+<a id="more"></a>
+<p>文人的孤傲和耿直，在陈寅恪身上表现得淋漓尽致。陈寅恪当年对科学院请他担任中古史研究所所长提出了两个条件：“一、允许研究所不宗奉马列主义，并不学习政治；二、请毛公或刘公给一允许证明书，以作挡箭牌。”从所提的两个条件，看到的是文人的一种自负和无力，一种书生气，一种对学术独立的追求。也许他深知，如此的条件，当局是绝对不会接受的，但他还是不合时宜的提了出来。如今我们没有办法去了解他当时的想法，但是从他本人性格和事件发展的前后来看，还是可以得出一些结论的。毋庸置疑，陈是在用自己的生命去捍卫学术，宁可不要这个“官职”，也要保住学术的纯粹；宁可特立独行，不信奉马列主义，遭众人鄙夷，也要维持自身的清高。陈的这份追求，正是其“脱心志于俗谛之桎梏”的诠释。</p>
+<p>典型事例还有康生被陈拒之不见，但是，为人之孤傲与不懂人情世故也会给他带来极大的伤害。</p>
+<p>陈的最后二十年，是在一个特殊的政治背景中，努力着追求着其所谓的纯粹的学术中度过的。他花费极大的心血精力专攻于文史研究，闭口不谈政治，无论其行径还是思想，都与政治不相干。但是，对于他这样的人，政治怎么会放过他呢？</p>
+<p>在一个唯马列主义为真理，资本主义为腐朽的疯狂年代，在一个只要声称自己是马列主义拥护者即可大肆批判老教授、知识分子的扭曲年代，学术只能为意识形态服务，不能独立于“俗谛”，凡非社会主义的，就一定是资本主义的，在这种非黑即白，不是你死就是我活的斗争中，陈寅恪所秉持的独立自由学术立场必定会与之冲突，而他也必定成为被批驳的对象。</p>
+<p>于是，无法置身事外的他，被迫地应战了。结局可想而知，特立独行，坚持己见，弱不禁风的文人，在与时代的潮流死磕烂打中，注定要头破血流，无奈痛苦地死去。可是，预料到结局的他，却没有放弃这场场必输无疑的抗争，在精神和病痛的双重折磨中，毅然地活着。多次的检查反思仍不改其追求学术独立之作风，继而又多次遭到批判。但也正是这种行为，恰恰成就了他，使他成为文人的标杆，那个时代璀璨的明星，照亮着我们这些后来者前进的道路。<br>历史总会给我们一些事件的对比，也只有从这些事件的对比中，我们才能够发现到某些人的难能可贵之处。<br>恰如其时代的文化巨匠郭沫若，他选择了与陈寅恪不一样的道路，于是走出了属于他自己的光辉人生，在将近三十年间，担任中央人民政府等国家一级机构及各类协会团体中任职兼职数十个，不可不谓之官职显赫。还有新文化运动的代表人，胡适，选择了漂泊异乡一途，隔岸观火，免受迫害。</p>
+<p>此二人的遭遇，不知好过陈多少倍。但对比之下，陈之行为才更为珍贵。也许可以说陈寅恪就是屈原口中“举世皆浊我独清，众人皆醉我独醒”的代表，在亿万人俯首称臣的大殿中，傲然冷眼对视统治者，不卑不亢，神色如故。虽必死无疑，却勇气可嘉。陈的遭遇无疑是悲惨的，结局无疑是不美满的，但其精神与思想无疑是珍贵的。</p>
+<p>用陈在《王观堂先生挽词并序》所写的一段话：“凡一种文化值衰落之时，为此文化所化之人，必感苦痛，其表现此文化之程量愈宏，则其受之苦痛愈甚。”陈对对王国维的看法，也恰恰是其自身的写照。凡在历史动荡变换过程中，一种文化衰落，另一种文化兴起中，必有贤者拙者坚守本心，不随波逐流，趋炎附势，在动荡中坚守操守痛苦地死去；也必有顺应潮流，见风使舵之人，游刃于新旧之间，适时改变，最终飞黄腾达，但此类人却丧失人格，被后人所唾弃。</p>
+<p>当下如往昔，我辈之抉择如何，个中取舍，个人自知。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 流年淡思 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 文革 </tag>
+            
+            <tag> 知识分子 </tag>
+            
+            <tag> 陈寅恪 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[探索提出创造性点子的过程及方法]]></title>
+      <url>/2013/11/30/creative-thinking/</url>
+      <content type="html"><![CDATA[<p><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/jiong-small-thumb.jpg" alt="人脸建筑"></p>
+<h3 id="什么是创造性思维"><a href="#什么是创造性思维" class="headerlink" title="什么是创造性思维"></a>什么是创造性思维</h3><p>人之所以为人是因为人有思维。而思维有很多种，各自发挥着不同的作用。创造性思维，很奇妙，有时候，在你面对难题绞尽脑汁而想不出来时，突然给了你一个非常非常新奇的解决方法；而有的时候，在你认真答题时，冒出来干扰你的正常答题，就像一个善良却偶尔帮倒忙的小精灵。这个比喻说出了创造性思维一个特点，那就是它不像常人。有人曾经研究过富有创造力的一些人，发现他们都有一个特征，就是大脑的抑制被解除。大脑抑制被解除，在一定程度上说明了禁锢局限他们的因素减弱了。也就是他们可以尝试不按逻辑不按常理思考。这就契合了创造性思维的二个特征，<strong>非逻辑的</strong>（本人猜测的）、<strong>发散的</strong>。往往你得到的新奇的不同常规的点子不是按照着一步一步严密的推导的，更多的倾向于突然在你的脑海中蹦出。所以我认为，非逻辑是创造性一个很显著的特点。当然，这不是说创造性都是没有逻辑的。仅仅是个人观点。</p>
+<p>那么，由于创造性的点子的想出是没有逻辑可以寻找的，那是不是意味着我们没有方法去提升我们提出创造性点子的能力呢？</p>
+<p>答案当然是否定的。</p>
+<h3 id="创造性观点的步骤"><a href="#创造性观点的步骤" class="headerlink" title="创造性观点的步骤"></a>创造性观点的步骤</h3><p>让我们仔细回想一下我们提出创造性观点的步骤。</p>
+<h4 id="转换问题的表述"><a href="#转换问题的表述" class="headerlink" title="转换问题的表述"></a>转换问题的表述</h4><p>首先你得知道你的问题是什么，你能不能换一种说法描述你的问题呢？有些时候我们容易被问题的某些字词局限住，<strong>不同的字眼暗示不同的假设，并引导你朝不同方向思考……你得到的答案视乎你提出的问题</strong>，这时候就需要我们多换几种表达方式去描述，以突破思维的限制。</p>
+<p>接着要有一个问题需要你去解决的。即创造性观点所解答，所作用的一个东西。Dr. Anthony McCaffrey曾查看过100多种现代文明和1000多种历史文明，发现几乎所有的创造性解答都是依靠先找出问题中的一个重要的隐晦特性，然后依据这个隐晦特性去解决问题。同时，他发现大部分人都存在功能固化，即对一件物品，大多数人往往只想到其常用的几个特性，而没有注意到其它的特性。基于这点假设，他提出了隐晦特性假设，认为每个物品都包含了多种特性，人们可以通过学习记住物品的隐晦特性，在思考的时候运用，从而提高创造性。而他的实验也证明了这种方法是有效的。因此，在以后遇到棘手的问题时，可以尝试挖掘题目的关键词，尝试尽可能多的往关键词的各个不同方面思考，突破功能固化。</p>
+<h4 id="思考问题的几种方法"><a href="#思考问题的几种方法" class="headerlink" title="思考问题的几种方法"></a>思考问题的几种方法</h4><p>其实，当你找出关键词的时候，你有没有思考过与之相关或者不相关的东西呢？</p>
+<p>比如当被问道报纸可以用来做什么的时候，你可以想到多少种用处呢？</p>
+<p>可以尝试把它们进行归类。我认为，一般大多数东西可以分为两类：一类是替代品（或者说相似的东西），一类是互补品（或者说互相作用的东西）。</p>
+<p>替代品这一类东西就是运用了类比联想的方法得到的，许多创造性的东西就是通过类比产生，比如我们的飞机。类比没有一个严谨严密的过程，但它可以帮我们快速找到一些具有共同点的东西，拓展我们的思维。</p>
+<p>另外一类，一般是有着某种联系的东西，互相作用的东西，很多时候我们可以通过跳转到这个东西去发散我们的思维，或者运用逆向思维去倒着思考。</p>
+<p>其实，除了以上两种分类外，还有一些东西是我们不知如何分类的 ，那就是与我们思考的东西不相关的东西（这类东西的产生可以是通过多种方式，比如<strong>联想，头脑风暴，同理心、观察法等</strong>）。</p>
+<p>或许你觉得这类东西可能是没有用的，和我们的问题没有关系，但有些时候，它们这类也是有一定价值的。按照常规的思考是不可能将它们和我们的问题其联系在一起的，但有些时候我们会发现如果把它们联系在一起后，会有一些新颖的东西出现，比如蜘蛛网和椅子——蜘蛛网状的椅子、雨伞和狗窝——有一个遮雨防晒棚子的豪华狗窝。这种通过联系毫无关系的两种物品在一起的方法就叫做<strong>强制联系法</strong>。它通过强制要求自己去联系思考本不可能在一起的几个东西组在一起后的状况，来启发自己得到一些创造性的点子。</p>
+<p>以上，就是我们在得到问题，分析问题时候可以用到的四种方法：<strong>隐晦特性分析、类比法、逆向思考、强制联系法</strong>。</p>
+<p>当我们分析完问题后，我们又有哪些途径去发散自己的思维，拓展思考的深度和广度呢？</p>
+<p>相信大家都有绞尽脑汁，脑子一片空白，在几个已有的方案中循环，就是没有新的好点子的经历吧，也相信大家听说过头脑风暴可以改变这种痛苦的经历吧。下面，就让我揭开头脑风暴这个又高端又神秘的秘密。头脑风暴是亚历克斯‧奥斯本在1938年提出的一种快速得到新奇点子的方法。可以由一个人或一组人进行。参与者围在一起，随意将脑中和研讨主题有关的见解提出来，然后再将大家的见解重新分类整理。在整个过程中，无论提出的意见和见解多么可笑、荒谬，其他人都不得打断和批评，从而产生很多的新观点和问题解决方法。头脑风暴遵循四个基本规则：</p>
+<ol>
+<li>追求数量 </li>
+</ol>
+<ol>
+<li>禁止评论</li>
+</ol>
+<ol>
+<li>提倡独特的想法</li>
+</ol>
+<ol>
+<li>综合并改善设想</li>
+</ol>
+<p>（from wikipedia）</p>
+<p>我认为头脑风暴能够迅速想出许多点子的原因是许多种不同的意见点子出现在你面前，你可以不断的听取并从中吸取一些内容或关键字，有意识无意识地运用<strong>类比，逆向</strong>等方法，继而得到自己的一些点子。同时头脑风暴还要求在一个无批判，较轻松的环境，以减轻你提出错误的荒谬的想法后的压力，使你更加大胆表达。</p>
+<p>当然，我认为头脑风暴也存在一些缺陷，头脑风暴虽然可以得到很多点子，但其中有许多点子是十分相似的，也有一些是完全没有任何意义的，也就是说头脑风暴不能对创意结果提供明显的直接的益处，它只是给了许多创意，而创意的结果并不是它能控制的范围。总的来说，头脑风暴一个可以很好拓展思考广度的方法（通过每个人的发言）。</p>
+<p>而关于拓展思维的深度，我认为有以下几种方法可以尝试。</p>
+<p>一是<strong>情景转换</strong>，通过模拟或真实面对具体问题的情景，或者变更题目的情景，尝试获取其中的共同点和不同点，进而挖掘本质的一些东西。</p>
+<p>二是<strong>角色转换</strong>（运用同理心），通过角色扮演，了解到不同人不同种角色下的真实感受和实际问题，尝试深入分析不同角色的心理，进而完善拓展自己的观点。</p>
+<p>这两种方法，都是试图模拟，深入去了解，摆脱主观的臆测，进而使你提出的观点更加切合实际需求。</p>
+<p>在提出创造性想法和观点后，我们还有最后两步需要做，那就是筛选分类整理、尝试执行你的想法或证明你的观点以及反思总结整个创造过程。</p>
+<p>在这一步我们可以用到的方法有分类法和SWOT分析法等。</p>
+<p>在筛选掉一些没有实际意义的想法和观点后，需要进行整理。在进行分类整理的时候，我们可以使用常规的树状图（线性），通过划定某一种规则，比如首字母，来进行分类。这种方法简单规范，广泛运用于我们的学习和生活中；也可以运用思维导图（非线性）这种方法。思维导图是由英国的托尼·博赞（托尼·布詹）于1970年代提出的一种辅助思考工具。思维导图通过在平面上的一个主题出发画出相关联的对象，所有关联的对象都是被辐射线形及非线性图解方式接连在一起，以头脑风暴（激发灵感）方法为本去建立一个适当或相关的概念性组织任务框架。由于这种表现方式比单纯的文本更加接近人思考时的空间性想像，可以有效地提高记忆，所以越来越为大家用于创造性思维过程中。运用思维导图这种方法，可以让你把握你的切入点，并且很快记住由它引出的一系列的创意点子。</p>
+<p>在确定是否要实施某一个创意点子的时候，可以运用SWOT分析法(Albert Humphrey)，衡量是否可行。这种方法原本用于市场营销，通过评价企业的优势（Strengths）、劣势（Weaknesses）、竞争市场上的机会（Opportunities）和威胁（Threats），用以在制定企业的发展战略前对企业进行深入全面的分析以及竞争优势的定位。针对具体某一个点子分析的时候，我们可以按照SWOT的原则，分析这个点子的优点、缺点、可行性和隐患。</p>
+<h4 id="反思创意过程"><a href="#反思创意过程" class="headerlink" title="反思创意过程"></a>反思创意过程</h4><p>最后是反思阶段。这个需要我们回顾提出创意点子的整个过程，将能成功想出点子的这种路径这种方法纳入到我们的思考体系中，在下一次思考问题的时候用上，如同波利亚所说：“你能不能将这一结果或方法用于其他问题。”思维很大程度上都取决于我们的经验，创造性思维也不例外，只不过依赖的经验是所用的方法或工具，而不是具体的某一些解题步骤。我们需要在不断地创造中去总结并学会运用到下次的创造中。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>通过创造性思维的学习以及对创造性点子提出过程的分析，可以让我们更加深刻的理解自己如何思考，如何解决一些问题，并从中找出某些可以利用的规律，在以后的学习工作中，有意识的运用，以改变对一些事物的看法，提高自己的问题解决能力。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 流年淡思 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Mind </tag>
+            
+            <tag> Thinking </tag>
+            
+            <tag> 创造性思维 </tag>
+            
+            <tag> 思维 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[衔石成痴绝？精卫？汪精卫！]]></title>
+      <url>/2013/11/22/%E8%A1%94%E7%9F%B3%E6%88%90%E7%97%B4%E7%BB%9D%EF%BC%9F%E7%B2%BE%E5%8D%AB%EF%BC%9F%E6%B1%AA%E7%B2%BE%E5%8D%AB%EF%BC%81/</url>
+      <content type="html"><![CDATA[<p>这篇文章其实一个多月前就想写了，只不过因为各种事情而耽搁了。</p>
+<p>近代历史中，一位被一笔带过的汉奸，汪精卫，一位被大陆和台湾所渐渐遗忘的政治人物<span style="font-family: Calibri;">……</span></p>
+<p><a href="http://www.alaxn.ml/wp-content/uploads/2015/04/13.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/13.jpg" alt="Wang_jingwei.jpg"></a></p>
+<p>&nbsp;</p>
+<p>“吾侪同志，结义于港，誓与满酋拼一死，以事实示革命党之决心，使灰心者复归于热，怀疑者复归于信。今者北上赴京，若能唤醒中华睡狮，引导反满革命火种，则吾侪成仁之志已竟。”</p>
+<p>这是汪精卫在刺杀摄政王之前所写下的一段话。我不知道这是不是出自肺腑之言，也不是很能确信他写此段话的目的，唯一可以确定的就是历史上真实地流传下来这段话了。</p>
+<a id="more"></a>
+<p>历史很奇怪，它有自己的脾性，会根据自己的需要去塑造一系列的人物来满足社会的需要人民的需要。我不想多说什么，只不过很奇怪的自己被某种情感所渲染，戴上了情绪化的眼镜去看到文章，而自己因感而发有了相应的感受。</p>
+<p>一位道学先生，最后为什么会沦落成一个千古罪人呢？事实的真相是我们所看到的历史那样吗？还是其中有了很多虚假或者夸张的成分呢？</p>
+<p>你我都不是那个时代的见证者，我们没有资格说出很有说服力的话语，我们仅仅能做的就是从别人所给出的言论以及当时的记载，来认识一个人，判断一个人。</p>
+<p>我并不想为他申辩什么，也无需申辩什么，过去的人与事，都已经是过去得一干二净，没有什么过不去的坎。只是在阅读林思云的那篇《真实的汪精卫》时，有了一些触动心弦的感受，想要拿出来分享一下。</p>
+<p>“胜者为王，败者为寇。”似乎是千古的真理，是因为他们的英明所以胜利了，所以他们是王者，还是他们胜利了，所以他们英明，所以他们理所应当成为一个主宰历史过去和未来的人呢？也许是因为身为平民的我们很无知，目光很浅短，我们只能顾及我们自身的眼前的利益，却不能真正去看到事件的背后是什么。我们对很多事件的认知，都是从别人那直接获取结论的，因为那不必费神，拿来就有。历史书和别人如何说，事实便是那样，动机就是那样。我们只是传播的工具，根本不知道何谓真实，何谓虚假。</p>
+<p>汪精卫，一个共产党所厌恶的人，一个南京国民政府所讨厌的人，在他的政权失败后，注定就是一个失败者，他的历史只会由别人来书写，因为他的失败，他的一切行为都是失败的典范，他的一切荣耀和成就都化为乌有。无论在哪一方，汪精卫都是渺小的失败者，他就是一个失败者。许多年以后，孩子的印象中，他也就是一个渺小的可耻的失败者。</p>
+<p>历史在成为历史后，便变得十分的平面，所有的人与事，都有一个结论：它是好的还是坏的。马克思教导我们要辩证地看待事物。如此说来我们是不是也得辩证地看到他说的这句话的对错呢？人与事也不例外，它没有正确与错误之分，只有从什么方面去看的不同。也许汪精卫当时主和是错，可是几年的抗战过去了，不完全数据摆在面前，我们看到了多少人的牺牲。因为主和，汪精卫被激进分子开枪射中。难道我们没有一个疑问存在吗？当汉奸是不是为了自己呢？主战的发展，最后只会是平民和激进分子的斗争，号召主战的人，基本上是没有冲上前线的，并且主战还可以被冠以爱国者的身份，何等之荣耀。从这个角度分析，也许主和派所站的出发点更为中国着想。也许他们背负着成为千古罪人的骂名在危险地前行着，只是为了中国四万万人民的生命着想。</p>
+<p>汪精卫，是不是我们印象中的那么邪恶，还是如林觉云所写的那么光鲜，我们不得而知，也无法知道得非常准确，当这并不妨碍我们去分析去学习现已存在的这种问题：一俊遮百丑，一丑盖百俊。</p>
+<p>滚滚长江东逝水，浪花淘尽千古英雄。是非成败转头空，青山依旧在，几度夕阳红。</p>
+<p>是是非非，我们无法看得很重。尽管我们当中很多人都看得很重，但最后你会发现，是非不是你定的，而是你盖棺之后的人帮你定的。你的鲜活丰满的人免不了成为别人影响中的一面形象，一个固定的程式。</p>
+<p>汪精卫如此，秦桧如此，袁世凯如此，蒋介石亦是如此，该是一个民族英雄还是一个窃国大盗，亦或是一个汉奸，不是你定，也一定程度上脱离了真实的你，但这就是历史的你。</p>
+<p>引刀成一快，不负少年头。若是历史定格在那一时刻，或许现在的汪精卫就是民族的英雄，就是正人君子，就是一个名垂千古的革命烈士。</p>
+<p>历史是可笑的，也是可爱的。历史和你开玩笑，你就仅仅把它当作玩笑便足够了。</p>
+<p>最后，我只想听听逍遥游这首歌。任逍遥，管什么历史的评价，活在当下才是真实的自己，才是应该去体验去经历的历史，尔后，那历史不是你的历史了，历史中的那个你，只是他们时代的产物，他们的教案。你已经故去。</p>
+<hr>
+<p><strong>汪精卫曾作诗词</strong></p>
+<p>&nbsp;</p>
+<p>《被逮口占》（又名《慷慨篇》）。</p>
+<p>街石成痴绝，沧波万里愁；</p>
+<p>孤飞终不倦，羞逐海浪浮。</p>
+<p>诧紫嫣红色，从知渲染难；</p>
+<p>他时好花发，认取血痕斑。</p>
+<p>慷慨歌燕市，从容作楚囚；</p>
+<p>引刀成一快，不负少年头。</p>
+<p>留得心魂在，残躯付劫灰；</p>
+<p>青磷光不灭，夜夜照燕台。</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>《金缕曲》送给陈璧君。</p>
+<p>别后平安否？便相逢凄凉万事，不堪回首。国破家亡无穷恨，禁得此生消受，又添了离愁</p>
+<p>万斗。眼底心头如昨日，诉心期夜夜常携手。一腔血，为君剖。泪痕料渍云笺透，倚寒衾</p>
+<p>循环细读，残灯如豆。留此余生成底事，空令故人潺愁，愧戴却头颅如旧。跋涉关河知不</p>
+<p>易，愿孤魂缭护车前后。肠已断，歌难又。</p>
+<p>&nbsp;</p>
+<p>汪精卫在《金缕曲》后面，又用血写了五个字“勿留京贾祸”。</p>
+<p>背后是否是真实的情感的存在，我们不得而知，但我知道当时的他确确实实的在狱中，确确实实写过这个东西给陈璧君。莫非他知道他可以出去？莫非他认为这样写才能使陈璧君更加激动，想方设法帮他出狱？也许不是真心就是心机吧。</p>
+<p>&nbsp;</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 流年淡思 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> China </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[QQ木马札记]]></title>
+      <url>/2013/09/28/QQ%E6%9C%A8%E9%A9%AC%E6%9C%AD%E8%AE%B0/</url>
+      <content type="html"><![CDATA[<p>中午，邮箱中收到一封名为大学补学金文档(1) 的邮箱<br><img src="http://b164.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/wXSWhme6kVfEr9OTJTHMYOebS8r7VcIF2sZEvC17mAg!/b/dFmJxmHMJQAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=eAT8AAAAAAABAKc!&amp;t=5&amp;su=0159016257&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>看着挺有趣的，就下载下来看看。</p>
+<a id="more"></a>
+<p><img src="http://b166.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/VdsdUN7tk0RDdILGiIWzoQGtNPd3vavu7aWJWG5Vcd0!/b/dEI.82I0IwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAO0AQAAAAABALE!&amp;t=5&amp;su=024146545&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></p>
+<p>第一感觉就是不对劲，为啥是exe格式的呢？    这年头学校都高级得这样？什么东西都自己开发程序了？<br>而且为啥压缩格式是7z，这么节省资源？干起环保事业了？</p>
+<p>但是强大的好奇心让我解压后打开了。。。</p>
+<p>双击了一次，没有反应？ 再双击一次。。。<br>还是没有反应。</p>
+<p>过了一会，点点QQ的界面，突然出现了一个腾讯QQ重新登录框</p>
+<div><img src="/2013/09/28/QQ木马札记/null" alt="本地图片，请重新上传"></div><br><img src="http://b166.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/xWlVF*PKT4Y3XNnyUzJcJf*tNazri.Pa6SPsEvdC0Bk!/b/dE9b*2IaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IgHdAAAAAAABANk!&amp;t=5&amp;su=095386081&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><br>折腾了下这个窗口，感觉怎么好像有点卡，而且看起来不美观啊。。。<br>突然想了想，为啥莫名其妙就出现这东西呢？我一直都很规矩的呀~<em>~<br>心里开始有底了。<br><br>打开任务管理器，看到 学生补助金.exe优雅地在最后一行默默地站着。<br><img src="http://b164.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/TuvzK5YYDCcQm5GIMJkoBQZi*70dM6OJQwuTZGN53Lc!/b/dDgVyGH3IwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wwG1AAAAAAABAFA!&amp;t=5&amp;su=096402753&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><div>一切都明白了，八成这就是个盗QQ号的木马。。。</div><br><div></div><br><div><br><div>果断结束进程<br><img src="http://b166.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/xWlVF*PKT4Y3XNnyUzJcJf*tNazri.Pa6SPsEvdC0Bk!/b/dE9b*2IaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IgHdAAAAAAABANk!&amp;t=5&amp;su=095386081&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>框框一下就不见了，更加验证了我的猜想。<br><br>那么接下来就来看看这个传说中的“学生补奖金”吧。<br><br>首先我用7z打开来看了下。<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/AS3isTRkrzUbG28G4NiqCDJpS5iyRpTLRTGO*OgELsE!/b/dHioyWFyIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMUAgAAAAABABI!&amp;t=5&amp;su=052615857&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>感觉应该没有加过壳，经验不足额、、、<br>接着用PEiD规规矩矩地查了下。。。<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/2LPS3YWvz9DuQYdxDKChDRte237K8B2jI5J2gVci9pM!/b/dK8fy2HOJAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=pgEfAQAAAAABAJ4!&amp;t=5&amp;su=089607217&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>这个壳，(⊙o⊙)…，第一次见到的。。。<br>So，找找手头有的工具，发现似乎没有可以脱的工具。<br>果断上百度。。。<br>先找找有没 有工具，没有结果，孩子找到别人手脱的过程。<br>唉，自己动手学习学习了。。。<br><br>于是，借鉴 <a href="http://www.52pojie.cn/thread-49406-1-1.html" target="_blank" rel="external">http://www.52pojie.cn/thread-49406-1-1.html</a> 自己开始折腾了。<br>学习他，打开OD，找到ESP<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/OpbnEo6XZas.9AsqHRFxLz*vgnKxPW4Q5U7gTb4qXtw!/b/dLS6zGF5JQAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=0159455585&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>设置断点后，F9进入<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/ZiXKLLseIV1zGtVOuBqyyNqnoFVCU*KVXsuGprSeh6c!/b/dIcpy2HaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=072708481&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>一路F8 那个忐忑啊@</div></div></em>@ 。<br>终于，看到了光明。<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/AblHysyo4Kz8lkWmXXKgwjuFrfhU3*ABUwQT.bH6F7w!/b/dIL*LmTrCwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=088094609&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>004EAE9A  - FFE0            jmp eax                                  ; 学生补学.00454435  /这里飞向光明之巅（荣耀属于<a href="http://www.52pojie.cn/space-uid-335.html" target="_blank" rel="external">mycsy</a> ）<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/vUQG6Lf0woKda*opTPMYxe*s0XQV67.sk*0FZdpwYWc!/b/dB4WMmQEDAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=08310817&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>找到了OEP    尝试脱壳<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/0PTvqXh8JLFuUCTZMYmP6IqQ9UynZnCc*YP8H3I.yKI!/b/dAd3J2R8DAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=TgK9AQAAAAABANc!&amp;t=5&amp;su=0111914417&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>唉，虽然输入表好几个无效，无法运行，不管了。。。<br><br>再次查壳验证<br><img src="http://b166.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/DMtw5v2yh2ebeMFcvSp1tjVPvJ3qddVBB0mClsecWrg!/b/dEJT.WLyIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=pgEfAQAAAAABAJ4!&amp;t=5&amp;su=0246979361&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>应该是脱壳成功了。。。<br><br>接着载入OD，查看字符串，希望可以一些信息。<br><img src="http://b165.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/zeLAQ*nS*UE4FXRPjkq22zDQ2XwClLPl0uXDpysCp48!/b/dM24YGLPIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=097915969&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>耐下心来，好好一个一个看。。。晕+<em>+<br><br>看来程序是通过跑到<a href="http://check.ptlogin2.qq.com/" target="_blank" rel="external">http://check.ptlogin2.qq.com</a>验证密码的正误，还会拉去验证码，这样说来，是不是只有密码正确QQ的账号密码才会被发送到指定的地址？<br><div><br>再看到一条字符：</div><br>超级字串参考, 条目 137<br><div> 地址=004040CD</div><br><div> 反汇编=push UnPack</div></em>.00478C84<br><div> 文本字串=The 0411558 file is missingn_C<br><br>0411558 是什么？   记得刚开始的压缩文件吗？  就在其中。。。<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/l1SXwtMD40g2Ei6LD0r6edWeSh1e1.PiSYwL4fthbnA!/b/dOD1l2P1DAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAO0AQAAAAABALE!&amp;t=5&amp;su=0233961409&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></div><br><div><br>果断万能的记事本打开它<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/Y4ni.QeugAU947VZz2HlDqMqDvQ7HSygJHZOVWO17oc!/b/dE9OjWNpDAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAPaAQAAAAABAN8!&amp;t=5&amp;su=070237137&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>这个是脚本吧？。。。<br><br>尝试打开<a href="http://ueryrtew.gwrewt.net/fe86dsdb/find.asp?QQNumber=074419977&amp;QQPassWord=074419887" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/find.asp?QQNumber=074419977&amp;QQPassWord=074419887</a><br>网页一片空白，没有回显<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/knMiP3Vu6XPbxPwuslTaE5HHhU3d.v.klAZm.2vA.yU!/b/dE0PmGN3CwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOnAQAAAAABAKI!&amp;t=5&amp;su=0218858465&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>再次刷新，结果一样。<br>于是猜想是不是上传QQ账号和密码的地址呢？<br><br>尝试打开<br><a href="http://ueryrtew.gwrewt.net/fe86dsdb/find.asp" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/find.asp</a>     空白网页<br><a href="http://ueryrtew.gwrewt.net/fe86dsdb/" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/</a>                  登陆界面<br><a href="http://ueryrtew.gwrewt.net/" target="_blank" rel="external">http://ueryrtew.gwrewt.net</a>            拒绝访问<br><a href="http://gwrewt.net/" target="_blank" rel="external">http://gwrewt.net</a>  无法打开<br><img src="http://b165.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/VnScZfZIWtMM*rrpTpxnjp4b*WWCv4g8E96v80q87ms!/b/dGybXWJoIAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOnAQAAAAABAKI!&amp;t=5&amp;su=0141235793&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>难道这就是传说中的后台？<br>试了下admin admin   确实，没有这么白痴，无法进入。。。<br><br>再次搜索程序字符串，找不到关于这个网页的任何有用信息。 看来程序应该没有直接调用什么东西去访问这个网站，估计就是通过调用0411558这个脚本来访问这个网站的。这样做的目的，我猜想是为了躲避杀毒软件的主动防御，行为检测。<br>想到这，上virscan.org 查一下它看看。。。<br><img src="http://b168.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/9r5WJqFiwYkYHrEoNm2mW5K4bkbGDOxXpOP2SAAgD9s!/b/dDtcJGTnCgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=CwNTAgAAAAABAH4!&amp;t=5&amp;su=0145940593&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>厉害啊，国内估计就一个NOD32可以报毒了。。。<br>根据扫描的结果，其实真正意义讲只有三个杀毒怀疑它是木马或病毒、后门。。。<br><br>顺便查了下IP<br><img src="http://b164.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/Uudq8L7lue.qY9F9mWiLp3tu4ahUUpyjG53o2s1UewU!/b/dNHNz2FmJQAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=AwSJAAAAAAABAKk!&amp;t=5&amp;su=0184756001&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><br>下一步还能够干什么呢。。。郁闷(⊙o⊙)…</div><br>]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> OD </tag>
+            
+            <tag> 木马 </tag>
+            
+            <tag> MachineWorld </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[ATP-小句子大思考]]></title>
+      <url>/2013/09/26/ATP-%E5%B0%8F%E5%8F%A5%E5%AD%90%E5%A4%A7%E6%80%9D%E8%80%83/</url>
+      <content type="html"><![CDATA[<p>Great hopes make great man.<a target="_blank" name="_GoBack"></a></p>
+<p>享受过程，不问结果。</p>
+<p>让自己与众不同。</p>
+<p>做到极致。</p>
+<p>我很渺小。</p>
+<a id="more"></a>
+<p>让团队离不开你。</p>
+<p>多从自身找原因。</p>
+<p>苦难是宝贵的财富。</p>
+<p>Learn from mistake.</p>
+<p>改造世界不如改造自己。</p>
+<p>学会欣赏别人的同时学会欣赏自己。</p>
+<p>快乐与否，你说了算！</p>
+<p>发展才是硬道理。</p>
+<p>罗马城不是一日建成的。</p>
+<p>The man who has make up his mind to win will never say impossible.  —- Napoléon Bonaparte</p>
+<p>成功是逼出来的。</p>
+<p>不要过度规划你的未来。</p>
+<p>To serve , to share , to care , to overcome.</p>
+<p>让你的大学记住你。</p>
+<p>别人的经历可以看，自己的经历要自己去写，趁年轻，不如去闯。</p>
+<p>行由不得，反求诸己。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 流年淡思 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[一些旧的照片]]></title>
+      <url>/2012/07/21/old-photos/</url>
+      <content type="html"><![CDATA[<p><img src="http://b.hiphotos.baidu.com/album/pic/item/b7003af33a87e950b81517fe10385343fbf2b426.jpg" alt=""><br>太阳在下面吗？</p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/00e93901213fb80ed6be854536d12f2eb9389431.jpg" alt=""><br>长这么大 终于看到彩虹了(⊙o⊙)</p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/2f738bd4b31c8701e3d85674277f9e2f0708ff32.jpg" alt=""><br>分不清山和海了 也许就是云罢了</p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/9e3df8dcd100baa13e42a3294710b912c8fc2e32.jpg" alt=""></p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/64380cd7912397dd3b057c965982b2b7d0a28720.jpg" alt=""><br>海 哪儿的</p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/838ba61ea8d3fd1fa37546a8304e251f95ca5f20.jpg" alt=""><br>海 哪儿的</p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/fcfaaf51f3deb48f4d00454cf01f3a292df57833.jpg" alt=""><br>夜晚的XX地方</p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/50da81cb39dbb6fd583301b40924ab18972b3733.jpg" alt=""><br>美好的景色 修饰词不恰当 但当时那感觉确实很美好</p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/b21c8701a18b87d6633c4f8d070828381f30fd22.jpg" alt=""><br>还是某个城市的一角</p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/7a899e510fb30f2454e30891c895d143ad4b0322.jpg" alt=""><br>望过去 有船在楼的最高层</p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/78310a55b319ebc49c1d920b8226cffc1e17163e.jpg" alt=""><br>海 云 山</p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/023b5bb5c9ea15ceb18a049bb6003af33a87b238.jpg" alt=""><br>都太 好吃</p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/cefc1e178a82b90178cb27a1738da9773912ef3a.jpg" alt=""><br>哪儿呢？ 阿拉伯国家？</p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/4bed2e738bd4b31cc6a7702987d6277f9f2ff88d.jpg" alt=""><br>什么蟹呢？这么大的腿。。。</p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/a8ec8a13632762d0aca5402da0ec08fa503dc68d.jpg" alt=""><br>好长</p>
+<p><img src="http://b.hiphotos.baidu.com/album/pic/item/b7003af33a87e950b88c17fe10385343faf2b48d.jpg" alt=""></p>
+<p>当做宣传吧</p>
+<p>一晃 时间过了好久    想起那些时候   感觉真好  追不回 只能忆。</p>
+<p>现在看起来 ，图片都好美</p>
+<p>可惜拍照的当时，却不觉得一切是多么的美好，令现在的自己向往和追求。</p>
+<p>也许每个人都有怀旧的毛病，酒是旧的纯，人是旧的好。</p>
+<p>忽然想起《怀旧之痛》</p>
+<p>但是无论我们多么怀念，过去的，就再回得来了。</p>
+<p>眼睛还得向前看，回头望，不过是偶尔的放纵自我罢了。</p>
+<p>眼前，不到一年，何去何从呢？</p>
+<p>也许时间可以不论好坏的帮我们解决这一切，这一切现在令我自己迷惑困顿而又倍感压力的所有事情，</p>
+<p>可是，那将是不尽如人意的。</p>
+<p>现在命运是在自己手中，将来的过去是现在的我们创造的，我们完全可以也完全需要去创造，属于未来的我们的过去，那是生为一个人所必须完成的事情，否则活着就没有多大的价值了。</p>
+<p>活着，就是必须改变尚未绝对的事情。</p>
+<p>以此为碑，完成几个月后的梦想吧。</p>
+<p>我会的。</p>
+<p>天行健，君子以自强不息！</p>
+<p>地势坤，君子以厚德载物！</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 流年淡思 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Singapore </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[通关天龙单机游戏后。。。]]></title>
+      <url>/2012/01/19/tianlong/</url>
+      <content type="html"><![CDATA[<p>大概一个小时前，打了三天的天龙单机马马虎虎通关了。</p>
+<p>本来，通关也没有什么，这个游戏其实也没有什么。</p>
+<p>不过，可能在适当的时候，遇到适当的事，刺激了我。</p>
+<p>在看到这次期末的成绩，我现在还在怀疑是不是公布错了，录入录错了，学校的破系统。。。</p>
+<p>突然，内心非常不安宁。不过，外表看起来还是依旧非常平静。</p>
+<p>搜索了天龙单机片尾曲，听起来还真有些滋味。</p>
+<p>&nbsp;</p>
+<p>虽然，似乎这首歌不是很好听。但是听到其中只字片语，还是触动了我。</p>
+<p>天龙八部，八部天龙。</p>
+<p>经典的游戏，经典的电影。经典的著作。</p>
+<p>唤醒的是对昔日时光的回忆，对昔日社会的遐想。对八部天龙的禅理的自我陶醉。</p>
+<p>贪嗔痴。在天龙中演绎，游戏中灵动。</p>
+<p>安安静静的听着歌。不想打字了。</p>
+<p>[embed]<a href="http://7xitqm.com1.z0.glb.clouddn.com/music贾爱国、顾盼盼-英雄梦《天龙八部》主题歌.mp3[/embed" target="_blank" rel="external">http://7xitqm.com1.z0.glb.clouddn.com/music贾爱国、顾盼盼-英雄梦《天龙八部》主题歌.mp3[/embed</a>]</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 流年淡思 </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> 天龙八部单机版 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[衣裳没了？]]></title>
+      <url>/2010/08/14/%E8%A1%A3%E8%A3%B3%E6%B2%A1%E4%BA%86/</url>
+      <content type="html"><![CDATA[<p>现实与梦想 现实毕竟是现实，人性在现实中一览无遗，在梦想中竟是何等的光辉。高大的形象。</p>
+<p>假象下，现在有一个人和你在一起，其中有一个人一定要死，你会选谁？</p>
+<a id="more"></a>
+<p>你的回答会是：</p>
+<p>1.首先那个人是谁？和我是否有关系？认识吗？</p>
+<p>其实，问的所有问题表面上看符合逻辑，实际上摸着自己的心，你想你是不是在逃避这个问题？或是你在寻在另一条解决这棘手问题的另类答法——有关系—有仇？不认识—我当然不会去死，让他去死！</p>
+<p>2.这问题太无聊了，没新意——拒绝回答。</p>
+<p>3.我死或是他死——爽快   极端   是不是用心想过呢？</p>
+<p>坦白说，谁本身都有自私存在，不过是多少显隐罢了</p>
+<p>在越来越背离中华传统过后，有没有曾想过我们忘记了我们为人处世的根本，原则，进而被取代成的是为己才是王道，所作的客气动作也只是虚伪的礼节，不过摆摆样子罢了。</p>
+<p>人性的一切，不能说是丑陋（在现实的角度讲），只能说他是本来存在。可是当人类从原始进入社会后，从个人到群体，再到部落、国家，人性便需要衣裳了，这不是虚伪的，这是自然的变化，不出现才是“虚伪”，不过现在却逐渐没了……</p>
+<p>这件衣裳是社会中自然形成的规律，他定出了超越人性的“命令”，——又比生命更重要的东西。 他因社会而生，却可能没等社会这一东西消失就先殆尽了。。。</p>
+<p>因为教育，也因为历史，也可能还因为人本身，环境和信仰……种种原因，归结到底是社会本身，而社会的载体是人，到最后便是人创造了这衣裳，却又把这衣裳埋入坟墓，同事也是把社会的地基打碎，社会会摇摇欲坠直至倒塌。</p>
+<p>——————————人类文明科技的进步，可能也是在倒退，在走向毁灭</p>
+<p>——————————会没人类的其实便是人自己！</p>
+]]></content>
+      
+        <categories>
+            
+            <category> 旧闻 </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+  
+  
+</search>
