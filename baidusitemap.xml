@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>http://alaxn.tk/2017/07/03/Hexo%20%E9%83%A8%E7%BD%B2%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E5%86%99%E9%97%AE%E9%A2%98/</loc>
+    <lastmod>2017-07-03T02:36:05.267Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo 部署中的文件大小写问题</title>
+        <pubTime>2017-07-03T02:09:17.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>MachineWorld</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="http://alaxn.tk/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="http://alaxn.tk/categories/MachineWorld/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://alaxn.tk/2017/06/20/Hexo-Algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</loc>
     <lastmod>2017-07-02T15:38:54.356Z</lastmod>
     <data>
@@ -611,11 +636,11 @@
         <title>iOS更新错误3194的一种原因</title>
         <pubTime>2015-04-28T07:25:45.000Z</pubTime>
         
+        <tag>MachineWorld</tag>
+         
         <tag>iOS</tag>
          
         <tag>iPad</tag>
-         
-        <tag>MachineWorld</tag>
          
          
            
