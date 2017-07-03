@@ -4,7 +4,7 @@
     
     <entry>
       <title><![CDATA[Hexo 部署中的文件大小写问题]]></title>
-      <url>/2017/07/03/Hexo%20%E9%83%A8%E7%BD%B2%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E5%86%99%E9%97%AE%E9%A2%98/</url>
+      <url>/Hexo%20%E9%83%A8%E7%BD%B2%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E5%86%99%E9%97%AE%E9%A2%98/</url>
       <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>修改文件或文件夹名称后无法成功部署，例如原来的文章名称是Hexo.md，后来改为hexo.md，但上传到github并不会生效新的名称。</p>
 <h2 id="原因探讨"><a href="#原因探讨" class="headerlink" title="原因探讨"></a>原因探讨</h2><p>git默认忽略文件大小写。</p>
 <h2 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h2><h3 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h3><p>如果只是一两个文件，可以直接删除文件，再进行发布。</p>
@@ -40,7 +40,7 @@
     
     <entry>
       <title><![CDATA[Hexo搭建教程]]></title>
-      <url>/2017/06/21/Hexo%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
+      <url>/Hexo%E6%90%AD%E5%BB%BA%E6%95%99%E7%A8%8B/</url>
       <content type="html"><![CDATA[<h2 id="软件安装"><a href="#软件安装" class="headerlink" title="软件安装"></a>软件安装</h2><ul>
 <li>安装Node.js</li>
 <li>安装git</li>
@@ -130,7 +130,7 @@
     
     <entry>
       <title><![CDATA[使用不蒜子为Hexo添加访客统计]]></title>
-      <url>/2017/06/21/Hexo-%E4%B8%8D%E8%92%9C%E5%AD%90%E6%B7%BB%E5%8A%A0%E8%AE%BF%E5%AE%A2%E7%BB%9F%E8%AE%A1/</url>
+      <url>/Hexo-%E4%B8%8D%E8%92%9C%E5%AD%90%E6%B7%BB%E5%8A%A0%E8%AE%BF%E5%AE%A2%E7%BB%9F%E8%AE%A1/</url>
       <content type="html"><![CDATA[<p>参考<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="external">不蒜子教程</a></p>
 <p>其实就是一个操作，在使用的themes/layout/_partial/footer.ejs底部加入这段脚本</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;script <span class="keyword">async</span> src=<span class="string">"//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
@@ -160,7 +160,7 @@
     
     <entry>
       <title><![CDATA[利用LeanCloud添加阅读量统计功能]]></title>
-      <url>/2017/06/20/%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD/</url>
+      <url>/%E4%B8%BANext%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD/</url>
       <content type="html"><![CDATA[<p>NexT主题目前已经合并这个Feature，因此如果你使用的是NexT主题，可以直接使用不用修改主题模版而直接在_config.yml中配置即可。</p>
 <a id="more"></a>
 <h2 id="配置LeanCloud"><a href="#配置LeanCloud" class="headerlink" title="配置LeanCloud"></a>配置<a href="https://leancloud.cn/" target="_blank" rel="external">LeanCloud</a></h2><p>在注册完成<a href="https://leancloud.cn/" target="_blank" rel="external">LeanCloud</a>帐号并验证邮箱之后，我们就可以登录我们的<a href="https://leancloud.cn/" target="_blank" rel="external">LeanCloud</a>帐号，进行一番配置之后拿到AppID以及AppKey这两个参数即可正常使用文章阅读量统计的功能了。</p>
@@ -207,38 +207,8 @@
     </entry>
     
     <entry>
-      <title><![CDATA[解决设置Gulp中出现的Unable to minify JavaScript错误]]></title>
-      <url>/2017/06/20/Gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
-      <content type="html"><![CDATA[<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><a id="more"></a>
-<p>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</p>
-<p>events.js:160<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">throw</span> er; <span class="comment">// Unhandled 'error' event</span></div><div class="line">^</div></pre></td></tr></table></figure></p>
-<p>GulpUglifyError: unable to minify JavaScript<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)</div><div class="line">at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash\_createHybrid.js:87:15)</div><div class="line">at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)</div><div class="line">at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)</div><div class="line">at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:172:10)</div><div class="line">at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:160:12)</div><div class="line">at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:335:12)</div><div class="line">at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:321:5)</div><div class="line">at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:248:11)</div><div class="line">at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib\_stream_readable.js:623:24)</div></pre></td></tr></table></figure></p>
-<p>PS C:\Users\alex\apflora&gt;</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>如遇到这个问题，可以检查gulpfile.js中调用的插件是否都成功安装，是否需要升级。特别留意安装后提示的警告（WARNING）</p>
-]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Gulp </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
-      <url>/2017/06/20/Markdown%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</url>
+      <url>/Markdown%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</url>
       <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
 <blockquote>
 <p>转载来自<a href="http://itmyhome.com/markdown/" target="_blank" rel="external">http://itmyhome.com/markdown/</a></p>
@@ -301,27 +271,15 @@ H2
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo设置Disqus评论]]></title>
-      <url>/2017/06/20/Hexo%E8%AE%BE%E7%BD%AEDisqus%E8%AF%84%E8%AE%BA/</url>
-      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
-<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
-<blockquote>
-<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
-<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
-</li>
-<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
-</li>
-<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
-</li>
-<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
-</li>
-<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
-</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
+      <title><![CDATA[解决设置Gulp中出现的Unable to minify JavaScript错误]]></title>
+      <url>/Gulp%E8%AE%BE%E7%BD%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%BF%87%E7%9A%84%E9%82%A3%E4%BA%9B%E9%97%AE%E9%A2%98/</url>
+      <content type="html"><![CDATA[<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><a id="more"></a>
+<p>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</p>
+<p>events.js:160<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">throw</span> er; <span class="comment">// Unhandled 'error' event</span></div><div class="line">^</div></pre></td></tr></table></figure></p>
+<p>GulpUglifyError: unable to minify JavaScript<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)</div><div class="line">at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash\_createHybrid.js:87:15)</div><div class="line">at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)</div><div class="line">at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)</div><div class="line">at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:172:10)</div><div class="line">at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:160:12)</div><div class="line">at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:335:12)</div><div class="line">at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:321:5)</div><div class="line">at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:248:11)</div><div class="line">at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib\_stream_readable.js:623:24)</div></pre></td></tr></table></figure></p>
+<p>PS C:\Users\alex\apflora&gt;</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>如遇到这个问题，可以检查gulpfile.js中调用的插件是否都成功安装，是否需要升级。特别留意安装后提示的警告（WARNING）</p>
+]]></content>
       
         <categories>
             
@@ -336,7 +294,7 @@ H2
             
             <tag> Hexo </tag>
             
-            <tag> Disqus </tag>
+            <tag> Gulp </tag>
             
         </tags>
         
@@ -344,7 +302,7 @@ H2
     
     <entry>
       <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
-      <url>/2017/06/20/Hexo-Algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</url>
+      <url>/Hexo-Algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/</url>
       <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
 <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
 <a id="more"></a>
@@ -397,8 +355,50 @@ Admin API Key
     </entry>
     
     <entry>
+      <title><![CDATA[Hexo设置Disqus评论]]></title>
+      <url>/Hexo%E8%AE%BE%E7%BD%AEDisqus%E8%AF%84%E8%AE%BA/</url>
+      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
+<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
+<blockquote>
+<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
+<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
+</li>
+<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
+</li>
+<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
+</li>
+<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
+</li>
+<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Disqus </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[个人推荐的Win应用]]></title>
-      <url>/2017/06/19/%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E5%BA%94%E7%94%A8/</url>
+      <url>/%E4%B8%AA%E4%BA%BA%E4%BD%BF%E7%94%A8%E5%BA%94%E7%94%A8/</url>
       <content type="html"><![CDATA[<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><ul>
 <li>Mozilla Firefox</li>
 <li>Google Chromium</li>
@@ -463,7 +463,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[Hello-NewWorld-Hexo新建文章指南]]></title>
-      <url>/2017/06/07/hello-world/</url>
+      <url>/hello-world/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
@@ -494,7 +494,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[Gulp简介及使用]]></title>
-      <url>/2017/05/13/Gulp%E7%AE%80%E4%BB%8B/</url>
+      <url>/Gulp%E7%AE%80%E4%BB%8B/</url>
       <content type="html"><![CDATA[<h2 id="什么是Gulp"><a href="#什么是Gulp" class="headerlink" title="什么是Gulp"></a>什么是<a href="http://gulpjs.com/" target="_blank" rel="external">Gulp</a></h2><blockquote>
 <p>官方介绍</p>
 <p>gulp is a toolkit for automating painful or time-consuming tasks in your development workflow, so you can stop messing around and build something.</p>
@@ -561,7 +561,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[使用Gulp压缩Hexo]]></title>
-      <url>/2017/05/02/Hexo-Gulp%E9%85%8D%E7%BD%AE/</url>
+      <url>/Hexo-Gulp%E9%85%8D%E7%BD%AE/</url>
       <content type="html"><![CDATA[<h2 id="安装gulp及相关插件"><a href="#安装gulp及相关插件" class="headerlink" title="安装gulp及相关插件"></a>安装gulp及相关插件</h2><p>这里主要安装以下插件：<br>CSS 压缩：gulp-clean-css<br>JS 压缩：gulp-uglify<br>HTML 压缩：gulp-htmlmin，gulp-htmlclean<br>图片压缩：gulp-imagemin</p>
 <a id="more"></a>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">npm install gulp -g</div><div class="line">npm npm install gulp-clean-css gulp-uglify gulp-htmlmin gulp-imagemin gulp-htmlclean gulp --save</div></pre></td></tr></table></figure>
@@ -594,7 +594,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[Hexo常见命令]]></title>
-      <url>/2017/04/28/Hexo%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/</url>
+      <url>/Hexo%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4/</url>
       <content type="html"><![CDATA[<h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></div><div class="line">hexo new page <span class="string">"pageName"</span> <span class="comment"># 新建页面</span></div><div class="line">hexo generate <span class="comment"># 生成静态页面至public目录</span></div><div class="line">hexo server <span class="comment"># 开启预览访问端口(默认端口4000，'ctrl+c'关闭server)</span></div><div class="line">hexo deploy <span class="comment"># 项目部署</span></div><div class="line">hexo <span class="built_in">help</span> <span class="comment"># 查看帮助</span></div><div class="line">hexo version <span class="comment"># 查看Hexo的版本</span></div></pre></td></tr></table></figure>
 <h2 id="相关文章"><a href="#相关文章" class="headerlink" title="相关文章"></a>相关文章</h2><p><a href="https://alaxn.github.io/tags/Hexo/" target="_blank" rel="external">Hexo标签</a></p>
 ]]></content>
@@ -618,7 +618,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[徐宝璜与梁启超新闻思想之比较]]></title>
-      <url>/2016/07/17/%E5%BE%90%E5%AE%9D%E7%92%9C%E4%B8%8E%E6%A2%81%E5%90%AF%E8%B6%85%E6%96%B0%E9%97%BB%E6%80%9D%E6%83%B3%E4%B9%8B%E6%AF%94%E8%BE%83/</url>
+      <url>/%E5%BE%90%E5%AE%9D%E7%92%9C%E4%B8%8E%E6%A2%81%E5%90%AF%E8%B6%85%E6%96%B0%E9%97%BB%E6%80%9D%E6%83%B3%E4%B9%8B%E6%AF%94%E8%BE%83/</url>
       <content type="html"><![CDATA[<p>&nbsp;</p>
 <h2 id="一、徐宝璜成就概述"><a href="#一、徐宝璜成就概述" class="headerlink" title="一、徐宝璜成就概述"></a>一、徐宝璜成就概述</h2><p>徐宝璜，江西九江人，是中国最早的新闻理论家和新闻教育家，在中国新闻史和新闻学史上享有盛名，被誉为“新闻界的开山祖” (徐宝璜, 1919)。1912北京大学毕业后，官费赴密歇根大学留学，期间修读了部分新闻课程。1916年回国后在北京《晨报》担任编辑，后任北大教授。1920年先后在民国大学、北平大学和朝阳大学任教。1930年为北大筹办新闻系，于同年6月1日病逝，年仅37岁 (双永清, 2000)。</p>
 <a id="more"></a>
@@ -700,7 +700,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[Chrome 常用插件]]></title>
-      <url>/2016/07/17/Chrome%20%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/</url>
+      <url>/Chrome%20%E5%B8%B8%E7%94%A8%E6%8F%92%E4%BB%B6/</url>
       <content type="html"><![CDATA[<blockquote>
 <p>点击插件名即可进入chrome商城下载，如无法下载，可在此处寻找<a href="http://yurl.sinaapp.com/crx2.php" target="_blank" rel="external">国内加速，常用扩展一键秒下</a>。</p>
 </blockquote>
@@ -734,7 +734,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[浅议 “文明”的界定——“文明冲突论”观点的几点思考]]></title>
-      <url>/2015/11/03/%E6%B5%85%E8%AE%AE%20%E2%80%9C%E6%96%87%E6%98%8E%E2%80%9D%E7%9A%84%E7%95%8C%E5%AE%9A%E2%80%94%E2%80%94%E2%80%9C%E6%96%87%E6%98%8E%E5%86%B2%E7%AA%81%E8%AE%BA%E2%80%9D%E8%A7%82%E7%82%B9%E7%9A%84%E5%87%A0%E7%82%B9%E6%80%9D%E8%80%83/</url>
+      <url>/%E6%B5%85%E8%AE%AE%20%E2%80%9C%E6%96%87%E6%98%8E%E2%80%9D%E7%9A%84%E7%95%8C%E5%AE%9A%E2%80%94%E2%80%94%E2%80%9C%E6%96%87%E6%98%8E%E5%86%B2%E7%AA%81%E8%AE%BA%E2%80%9D%E8%A7%82%E7%82%B9%E7%9A%84%E5%87%A0%E7%82%B9%E6%80%9D%E8%80%83/</url>
       <content type="html"><![CDATA[<h2 id="一、“文明冲突论”简述"><a href="#一、“文明冲突论”简述" class="headerlink" title="一、“文明冲突论”简述"></a>一、“文明冲突论”简述</h2><p>《文明的冲突与世界秩序的重建》（The Clash of Civilizations and the Remaking of World Order）洋洋洒洒34万字，将亨廷顿的“文明冲突论”前前后后详细地举例论述了一遍，并在最后一章节模拟了世界各大文明间冲突局势，显示了儒家文明，或者说中华文明的威胁。</p>
 <p>“文明冲突论”是该书的核心，在探讨这种理论对国际格局的影响前，需要简单地理解下该理论。该理论首先发表于《文明的冲突》一文，其核心思想是，自冷战结束后，国际冲突主要因素不再是意识形态，而是各主要文明间的差异。</p>
 <p>在亨廷顿看来，世界上主要文明有八种，分别是西方文明、儒家文明、日本文明、伊斯兰文明、印度教文明、东正教文明、拉丁美洲文明以及非洲文明（可能存在）。美苏冷战后，由于各国经济的发展及政治运动的进行，西方世界权力的衰落，西方文明、价值观对其他国家的吸引力也随之下降，各国开始关注自身的文化归属，着手本土化，在全球范围逐渐形成了“非西方化运动”（De-westernization） (亨廷顿, 1998)。而这种“非西方化运动”势必导致冲突的产生。原因在于：一，文明的差别是人类最基本的差别，包括历史、语言、文化、宗教，这些方面的差异很难统一和消除；二，技术的进步使得世界变“小”，不同文明间的交流促进了各文明的意识和文明的觉醒；三，经济和社会的发展使得宗教弥补地理因素造成的地域文化，成为文明认同的重要力量，同时，由于经济的发展使得非西方国家对自身的文明产生更强的认同感，开始质疑和反抗西方价值；四，西方文明在向外渗透其价值观时，必定导致文明的冲突。</p>
@@ -780,7 +780,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[VIA声卡在Win10下外放及耳机无法自动切换]]></title>
-      <url>/2015/10/05/VIA%E5%A3%B0%E5%8D%A1%E5%9C%A8Win10%E4%B8%8B%E5%A4%96%E6%94%BE%E5%8F%8A%E8%80%B3%E6%9C%BA%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E5%88%87%E6%8D%A2/</url>
+      <url>/VIA%E5%A3%B0%E5%8D%A1%E5%9C%A8Win10%E4%B8%8B%E5%A4%96%E6%94%BE%E5%8F%8A%E8%80%B3%E6%9C%BA%E6%97%A0%E6%B3%95%E8%87%AA%E5%8A%A8%E5%88%87%E6%8D%A2/</url>
       <content type="html"><![CDATA[<p><strong>此Bug已经消失，本文已经完成其历史意义了！</strong></p>
 <p>最近对VIA和Win10这个Bug有点厌烦了，于是就谷歌起来，想要解决这个问题。</p>
 <h2 id="网络上普遍有两种做法"><a href="#网络上普遍有两种做法" class="headerlink" title="网络上普遍有两种做法"></a>网络上普遍有两种做法</h2><ol>
@@ -819,7 +819,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[LNMP环境下WordPress程序伪静态解决方案]]></title>
-      <url>/2015/10/03/LNMP%E7%8E%AF%E5%A2%83%E4%B8%8BWordPress%E7%A8%8B%E5%BA%8F%E4%BC%AA%E9%9D%99%E6%80%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
+      <url>/LNMP%E7%8E%AF%E5%A2%83%E4%B8%8BWordPress%E7%A8%8B%E5%BA%8F%E4%BC%AA%E9%9D%99%E6%80%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</url>
       <content type="html"><![CDATA[<p>最近尝试用vps搭建服务器，使用了Lnmp一键工具作为安装web服务的软件。</p>
 <p>在测试wordpress 的时候发现伪静态插件和lnmp自带的wordpress.conf文件冲突，导致nginx错误无法启动，后懒得调试，自己重新搭建，却发现伪静态出现了问题。在搜罗网上关于wordpress伪静态的解决方案测试后，发现有些网站的教程不是特别完整，故整合汇编了此文，供一些菜鸟使用。</p>
 <a id="more"></a>
@@ -867,7 +867,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[大数据带来了什么？——分析方式的革新]]></title>
-      <url>/2015/05/13/big-data/</url>
+      <url>/big-data/</url>
       <content type="html"><![CDATA[<p>这个时代，互联网与大数据、云计算被频繁地搬上台面，越来越多人熟悉并且开始着手应用这些词汇背后的科技。</p>
 <p>这让我想起了前些天探索的谷歌图书（Google Books）以及旗下的Google Ngram Viewer。</p>
 <p>我想，这可能是一个与我们学生群体非常相关的大数据项目。谷歌图书是当下收录海量书籍、报刊等文字讯息最大型的全球虚拟电子图书馆了。通过Google Scholar，我们可以捕捉到各类数据库公开信息及谷歌录入的电子图书，而Ngram Viewer更提供了查询特定词汇，在某个年份区间的频率。这个功能其实看似无用，但背后却蕴含着不少的玄机。</p>
@@ -907,7 +907,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[漫谈亚洲价值观]]></title>
-      <url>/2015/05/04/%E6%BC%AB%E8%B0%88%E4%BA%9A%E6%B4%B2%E4%BB%B7%E5%80%BC%E8%A7%82/</url>
+      <url>/%E6%BC%AB%E8%B0%88%E4%BA%9A%E6%B4%B2%E4%BB%B7%E5%80%BC%E8%A7%82/</url>
       <content type="html"><![CDATA[<p>要谈亚洲价值观，首先要了解什么是亚洲价值观。根据范为前的说法，亚洲价值观是影响东亚数世纪的儒家传统，具体内容包括重视家庭，勤俭、孝顺等传统价值。</p>
 <p>&nbsp;</p>
 <a id="more"></a>
@@ -948,7 +948,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[Marina Bay]]></title>
-      <url>/2015/05/02/marina-bay/</url>
+      <url>/marina-bay/</url>
       <content type="html"><![CDATA[<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0199-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0199-1.jpg" alt=""></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0201-0-e1430573368405.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0201-0-765x1024.jpg" alt="IMG_0201-0.JPG"></a></p>
 <p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0204.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0204.jpg" alt=""></a></p>
 <p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0207-0.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0207-0.jpg" alt=""></a> <span style="line-height: 28px;"> </span><br><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0206-1.jpg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/IMG_0206-1.jpg" alt=""></a></p>
@@ -973,7 +973,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[纸媒出路：拥抱互联网]]></title>
-      <url>/2015/05/01/how-newpaper/</url>
+      <url>/how-newpaper/</url>
       <content type="html"><![CDATA[<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>当进入第四次产业革命后，人们已经不自觉生活在碎片化的网络时代中了。有些人惶恐了，有些人欣喜了，而伴随着大众喜怒哀乐的，还有媒体。</p>
 <p>传统的大众传媒，经历了报纸、广播、电视，PC、移动终端，时代与时代间的界限越来越模糊，而时间也变得越来越短。</p>
 <p>置身和依赖于传媒生存的这些企业，究竟该走向何方？</p>
@@ -1036,7 +1036,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[斑点，感知世界的媒介]]></title>
-      <url>/2015/04/30/%E6%96%91%E7%82%B9%EF%BC%8C%E6%84%9F%E7%9F%A5%E4%B8%96%E7%95%8C%E7%9A%84%E5%AA%92%E4%BB%8B/</url>
+      <url>/%E6%96%91%E7%82%B9%EF%BC%8C%E6%84%9F%E7%9F%A5%E4%B8%96%E7%95%8C%E7%9A%84%E5%AA%92%E4%BB%8B/</url>
       <content type="html"><![CDATA[<p><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/spot-1024x723.jpg" alt="spot"></p>
 <p>意识流小说一般都没有完整的故事和严密的逻辑，《墙上的斑点》亦是如此。全篇没有鲜明的人物形象，也没有人物间的戏剧冲突。而这，可能对没有怎么接触过意识流小说的我们来说，是一种巨大的挑战。但是，我认为，正是这种随着意识、思维跳动的写作方式，为文学，也为我们提供了一个另类的感知世界和心灵的窗口。</p>
 <a id="more"></a>
@@ -1068,7 +1068,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[Light and Shadow-Hongkong]]></title>
-      <url>/2015/04/29/Light%20and%20Shadow-Hongkong/</url>
+      <url>/Light%20and%20Shadow-Hongkong/</url>
       <content type="html"><![CDATA[<p><a href="http://www.alaxn.ml/wp-content/uploads/2015/04/wpid-img_20150213_113022.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/wpid-img_20150213_113022.jpg" alt="wpid-img_20150213_113022.jpg"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/wpid-img_20150213_110503.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/wpid-img_20150213_110503.jpg" alt="wpid-img_20150213_110503.jpg"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/wpid-img_20150213_111404.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/wpid-img_20150213_111404-768x1024.jpg" alt="wpid-img_20150213_111404.jpg"></a></p>
 ]]></content>
       
@@ -1091,7 +1091,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[U Town of Singapore]]></title>
-      <url>/2015/04/29/u-town-of-singapore/</url>
+      <url>/u-town-of-singapore/</url>
       <content type="html"><![CDATA[<p><a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0186.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0186.jpg" alt="IMG_0186.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0187.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0187.jpg" alt="IMG_0187.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0191.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0191.jpg" alt="IMG_0191.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0192.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0192.jpg" alt="IMG_0192.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0184.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0184.jpg" alt="IMG_0184.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0185.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0185.jpg" alt="IMG_0185.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0193.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0193.jpg" alt="IMG_0193.JPG"></a></p>
 ]]></content>
       
@@ -1114,7 +1114,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[Singapore-East Coast]]></title>
-      <url>/2015/04/29/Singapore-East%20Coast/</url>
+      <url>/Singapore-East%20Coast/</url>
       <content type="html"><![CDATA[<p><a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0014.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0014-765x1024.jpg" alt="IMG_0014.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0015.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0015-765x1024.jpg" alt="IMG_0015.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0009.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0009-1024x765.jpg" alt="IMG_0009.JPG"></a> <a href="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0012.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/IMG_0012-1024x765.jpg" alt="IMG_0012.JPG"></a></p>
 ]]></content>
       
@@ -1135,7 +1135,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[理性人，未必理性至上]]></title>
-      <url>/2015/04/28/%E7%90%86%E6%80%A7%E4%BA%BA%EF%BC%8C%E6%9C%AA%E5%BF%85%E7%90%86%E6%80%A7%E8%87%B3%E4%B8%8A/</url>
+      <url>/%E7%90%86%E6%80%A7%E4%BA%BA%EF%BC%8C%E6%9C%AA%E5%BF%85%E7%90%86%E6%80%A7%E8%87%B3%E4%B8%8A/</url>
       <content type="html"><![CDATA[<p><a href="http://alaxn.esy.es/wp-content/uploads/2015/04/default1.jpeg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2015/04/default1-224x300.jpeg" alt="default"></a></p>
 <p>几乎所有上了小学的人都知道1+1=2（从数学的角度）。但是如果我问你，你是怎么得到这个答案的，或许你没法给出详细而具有说服力的答案。从你耳蜗感受到振动到将其转化为电信号，到了大脑皮层，到最后你说出了答案，中间的复杂程度远远不亚于当下最高级的计算机，而我们却对此毫无知晓。人类的意识就像一个科技黑箱，能对外界的各种信息进行处理，但过程却是保密的，很难窥探到其中的过程，就如同两个暧昧中的人，总是会思考他/她是不是爱着我，等着他/她的行为举动，却无法到达意识去一窥究竟。</p>
 <p>&amp;nbsp</p>
@@ -1174,7 +1174,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[iOS更新错误3194的一种原因]]></title>
-      <url>/2015/04/28/iOS%E6%9B%B4%E6%96%B0%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF3194%E7%9A%84%E4%B8%80%E7%A7%8D%E5%8E%9F%E5%9B%A0/</url>
+      <url>/iOS%E6%9B%B4%E6%96%B0%E6%8F%90%E7%A4%BA%E9%94%99%E8%AF%AF3194%E7%9A%84%E4%B8%80%E7%A7%8D%E5%8E%9F%E5%9B%A0/</url>
       <content type="html"><![CDATA[<p><strong>原因是苹果关闭了该iOS版本的认证，就是不能刷该版本了。</strong></p>
 <p>故事来了：</p>
 <p>今天试着给iPad更新，莫名其妙3194错误，还不能开机了，开机直接跳到恢复模式，最后险些DFU强制刷机~</p>
@@ -1243,19 +1243,57 @@ Admin API Key
         
         <tags>
             
-            <tag> MachineWorld </tag>
-            
             <tag> iOS </tag>
             
             <tag> iPad </tag>
+            
+            <tag> MachineWorld </tag>
             
         </tags>
         
     </entry>
     
     <entry>
+      <title><![CDATA[“耳目喉舌”与“报纸之用”之再讨论]]></title>
+      <url>/%E2%80%9C%E8%80%B3%E7%9B%AE%E5%96%89%E8%88%8C%E2%80%9D%E4%B8%8E%E2%80%9C%E6%8A%A5%E7%BA%B8%E4%B9%8B%E7%94%A8%E2%80%9D%E4%B9%8B%E5%86%8D%E8%AE%A8%E8%AE%BA/</url>
+      <content type="html"><![CDATA[<p>《时务报》创刊号，梁启超首载《论报馆有益于国事》。</p>
+<p>古之学者，但凡儒者，必以国为家，安身立命，全在乎于“国”。梁所处之年代，乃清末国门稍开，国智刚启之时。时值甲午中日战争之后，国之困顿受侮，时人无不感同于心而愚蒙不知所措。</p>
+<p>国弱的原因，梁启超认为是阻塞不通。上下不通、内外不通。上下不通，故内藏有奸狡之官吏，颠倒黑白，是非不分，朋比为奸。内外不通，故自恃天朝大国，守旧而积弱。</p>
+<p>针对这种情况，梁启超认为报馆应当起到去塞求通的作用。他认为“报馆乃去塞求通的导端”。报纸是耳目、喉舌。作为耳目。对国家、君主，是了解国内国外发生的事情，对当下形势环境了然于胸。作为喉舌，是传递各项举措和命令到基层，为国家、为君主说话。而对民众，报纸是开启智慧的钥匙，是向国家、君主反映疾苦病患的渠道。</p>
+<p><strong>总一句话，以报去塞，通达上下内外，是以强国。</strong>文章所提出的思想在后来影响十分深远，但个人认为，围绕“耳目喉舌”和“报纸之用”有以下两点需要注意的。</p>
+<a id="more"></a>
+<h3 id="其一，“耳目喉舌”与“党的耳目喉舌”之微妙区别。"><a href="#其一，“耳目喉舌”与“党的耳目喉舌”之微妙区别。" class="headerlink" title="其一，“耳目喉舌”与“党的耳目喉舌”之微妙区别。"></a>其一，“耳目喉舌”与“党的耳目喉舌”之微妙区别。</h3><p>梁启超分析国情之时，用了耳目喉舌作为比喻，他认为中国现状就是“有耳目而无耳目，有喉舌而无喉舌”，其意思呢，就是说国家和民众缺乏信息的传递和沟通，不知当下现状，以至懵懵懂懂而败得一塌糊涂。进而将治这“有耳目而无耳目，有喉舌而无喉舌”的废疾任务交由报馆来完成，希望帮助国家和君主闻国事，喻措置于民，而民也能告君其苦患。</p>
+<p>这“耳目喉舌”概念在当下影响深远，而尤以党报为甚。作为报纸，就必须为国家和人民带来有用的讯息，为国家说话。不可否认，这是一种很好的新闻观。在梁之后不久，中国的许多报纸也都从骨子里贯彻了这么一种思想。但是，这种贯彻是片面的。报纸更多的是作为国家强权的喉舌，而不是民众的喉舌。最典型如文革时期的《人民日报》此类党报，无所不用其极，充分为人民讲述了党的光辉。其实为民众之耳目，但这耳目是否变了味呢。梁启超办报之目的，在于开民智，“阅报愈多者，其人愈智；报馆愈多者，其国愈强。”，而以党报为代表的报纸，是否又能够担当这种功能？更多的是宣扬社会主义之精华和成就，用清一色的政治立场和模式化的陈述语言一遍又一遍灌输“真正的思想”，以达到所谓的万众一心。</p>
+<p>耳目，需要的是广搜各国各地事件实录，博搜交涉要案，详录各省新政，用报纸广而告之，使国家上下内外通达，是民众知其位和明其理而不致狂妄自大。</p>
+<p>喉舌，需要的是评议各国各地政事要闻，用客观公正立场表达国家、民众对事件的看法，而非信口胡造，因势而转舵。上辅国家君王下达措置，下助百姓申告苦患。</p>
+<p>因此，我认为现所言报纸为党的耳目喉舌这一观点中的耳目喉舌并不能完全等同于梁所提及的耳目喉舌，这是我们需要警醒的一个方面。</p>
+<h3 id="其二，“报纸之用”立场在国而非在民。"><a href="#其二，“报纸之用”立场在国而非在民。" class="headerlink" title="其二，“报纸之用”立场在国而非在民。"></a>其二，“报纸之用”立场在国而非在民。</h3><p>梁启超所言报馆和报纸之用时，出发点是站在了“国”这个角度。从为国弱诊出病症，到开出良药，论述全不离国。分析梁启超当时的政治背景和个人主张抱负，可以得出，梁启超是一个士人，一个满怀救国的改革派，一个稍涉西学的儒者。虽然梁启超思想可能比起其他士大夫阶层稍微开放，但骨子里还是逃不过本着西学中用的理念，希望在中国重振报纸，以报纸报馆开风气、立国体、出人才。</p>
+<p>反观西方自由主义和现代报业的发展，尝试问自己个问题：为什么会有新闻，新闻的作用是什么？（当然，其实也就是在问广义上的报纸作用是什么）。大部分人可以想到的可能是：让民众了解新近发生的事情，监督政府，充当社会良知。当然，这些没有错，而新闻也需要起到这些作用。但是我想要表达的是，新闻的产生起源于人们对信息的需求，起源于人们对自身所处的环境了解的需要以及表达自己诉求的愿望，基于这些需求，才会发展出当下的西报。而从这一点考量梁启超的办报思想，我们能够发现，其出发点和西方自由主义以及市场化报纸截然不同。其根本在于用报，而非宣言人之独立和自由。虽然其耳目喉舌之比喻中提及到“民”，但纵观全篇文章，并没有单纯从“民”出发论述报馆的作用。所以，梁启超之论报馆，实际是论报馆报纸这术对中国政治的影响。换而言之，报馆之于国事有益是在于其撰写评议发行之作用，而非其内含的西方新闻思想的源头。</p>
+<h3 id="附：论报馆有益于国事"><a href="#附：论报馆有益于国事" class="headerlink" title="附：论报馆有益于国事"></a>附：论报馆有益于国事</h3><blockquote>
+<p>戰國之強弱，則于其通塞而已。血脈不通則病；學術不通則陋；道路不通，故秦越之視肥瘠，漠不相關；言語不通，故閩粵之与中原，邈若异域。惟國亦然。上下不通，故無宣德達情之效，而舞文之吏，因緣為奸；內外不通，故無知己知彼之能，而守舊之儒，乃鼓其舌。中國受侮數十年，坐此焉耳。</p>
+<p>去塞求通，厥道非一，而報館其導端也。無耳目，無喉舌，是曰廢疾。今夫万國并立，猶比鄰也，齊州以內，猶同室也。比鄰之事，而吾不知，甚乃同室所為，不相聞問，則有耳目而無耳目；上有所措置，不能喻之民，下有所苦患，不能告之君，則有喉舌而無喉舌。其有助耳目、喉舌之用，而起天下之廢疾者，則報館之為也。</p>
+<p>報館于古有征乎？古者太師陳詩以觀民風，饑者歌其食，勞者歌其事，使乘輶軒以采訪之，鄉移于邑，邑移于國，國移于天子，猶民報也。公卿大夫，揄揚上德，論列政治，皇華命使，江漢紀勳，斯干考室，駉馬畜牧，君以之告臣，上以之告下，猶官報也。又如誦訓掌道方志，以詔觀事；掌道方慝，以詔辟忌，以知地俗；外史掌四方之志，達書名于四方；撢人掌誦王志，道國之政事，以巡天下邦國而語之。凡所以宣上德、通下情者，非徒紀述，兼有職掌，故人主可坐一室而知四海，士夫可誦三百而知國政。三代盛強，罔不由此。</p>
+<p>西人之大報也，議院之言論紀焉，國用之會計紀焉，人數之生死紀焉，地理之險要紀焉，民業之盈絀紀焉，學會之程課紀焉，物產之品目紀焉，鄰國之舉動紀焉，兵力之增減紀焉，律法之改變紀焉，格致之新理紀焉，器藝之新制紀焉。</p>
+<p>其分報也，言政務者可閱官報，言地理者可閱地學報，言兵學者可閱水陸軍報，言農務者可閱農學報，言商政者可閱商會報，言醫學者可閱醫報，言工務者可閱工程報，言格致者可閱各种天、算、聲、光、化、電專門名家之報。有一學即有一報，其某學得一新義，即某報多一新聞，体繁者證以圖，事賾者列為表，朝登一紙，夕布万邦。是故任事者無閡隔蒙昧之憂，言學者得觀善濯磨之益。猶恐文義太賾，不能盡人而解，故有婦女報，有孩孺報。其出報也，或季報，或月報，或半月報，或旬報，或七日報，或五日報，或三日報，或兩日報，或每日報，或半日報。國家之保護報館，如鳥鬻子；士民之嗜閱報章，如蟻附膻。閱報愈多者，其人愈智；報館愈多者，其國愈強。曰：惟通之故。</p>
+<p>其益于國事如此，故怀才抱德之士，有昨為主筆而今作執政者，亦有朝罷樞府而夕進報館者，其主張國是，每与政府通聲气。如俄、土之爭戰，德、奧、意之聯盟，五洲之人，莫不仰首企足以觀《秦晤士》之議論，文甫脫稿，電已飛馳，其重之又如此。然而英國、德國、日本國，或于報館有讒謗之律，有懲罰之條，則又何也？記載瑣故，采訪异聞，非齊東之野言，即秘辛之雜事，閉門而造，信口以談，無補時艱，徒傷風化，其弊一也；軍事敵情，記載不實，僅憑市虎之口，罔懲夕雞之嫌，甚乃揣摩眾情，臆造詭說，海外已成劫燼，紙上猶登捷書，熒惑听聞，貽誤大局，其弊二也；臧否人物，論列近事，毀譽憑其恩怨，筆舌甚于刀兵，或颺頌權貴，為曳裾之階梯，或指斥富豪，作苞苴之左卷，行同無賴，義乖祥言，其弊三也；操觚發論，匪有本原，蹈襲陳言，剿撮涂說，或乃才盡為憂，敷衍塞責，討論軼聞，紀述游覽，義無足取，言之無文，其弊四也；或有譯錄稍廣，言論足觀，刪汰穢蕪，頗知体要，而借闡宗風，不出鄭志，雖有斷章取義之益，未免歌詩不類之憾，其弊五也。具此諸端，斯義遂梏，遂使海內一二自好之士，反視報館為蝥賊，目報章為妖言，古義不行，良法致弊。嗚呼，不其恫歟！</p>
+<p>今設報于中國，而欲复西人之大觀，其勢則不能也。西國議院議定一事，布之于眾，令報館人入院珥筆而錄之；中國則諱莫如深，樞府舉動，真相不知，無論外人也。西國人數、物產、民業、商冊，日有記注，展卷粲然，錄副印報，与眾共悉；中國則夫家六畜，未有專司，州縣親民，于其所轄民物、產業，末由周知，無論朝廷也。西人格致制造專門之業，官立學校，士立學會，講求觀摩，新法日出，故亟登報章，先睹為快；中國則稍講此學之人，已如鳳毛麟角，安有專精其業，神明其法，而出新制也。坐此數故，</p>
+<p>則西報之長，皆非吾之所能有也。然則報之例當如何？曰：廣譯五洲近事，則閱者知全地大局，与其強盛弱亡之故，而不至夜郎自大，坐眢井以議天地矣；詳錄各省新政，則閱者知新法之實有利益，及任事人之艱難經畫，与其宗旨所在，而阻撓者或希矣；博搜交涉要案，則閱者知國体不立，受人嫚辱，律法不講，為人愚弄，可以奮厲新學。思洗前恥矣；旁載政治、學藝要書，則閱者知一切實學源流門徑，与其日新月异之跡，而不至抱八股八韻考据詞章之學，枵然而自大矣。准此行之，待以歲月，風气漸開，百廢漸舉，國体漸立，人才漸出，十年以后，而報館之規模，亦可漸備矣。</p>
+<p>嗟夫！中國邸報興于西報未行以前，然歷數百年未一推廣。商岸肇辟，踵事滋多；勸百諷一，裨補蓋寡；橫流益急，晦盲依然；喉舌不通，病及心腹。雖蚊虻之力，無取負山；而精禽之心，未忘填海。上循不非大夫之義，下附庶人市諫之條；私怀救火弗趨之愚，迫為大聲疾呼之舉；見知見罪，悉憑當途。若听者不亮，目為誹言，摧萌拉薛，其何有焉？或亦同舟共艱，念厥孤憤，提倡保護，以成區區，則顧亭林所謂“天下興亡，匹夫之賤，与有責焉”已耳。</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+        </categories>
+        
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[GOOGLE搜索從入門到精通V4.0]]></title>
-      <url>/2015/04/28/GOOGLE%E6%90%9C%E7%B4%A2%E5%BE%9E%E5%85%A5%E9%96%80%E5%88%B0%E7%B2%BE%E9%80%9AV4.0/</url>
+      <url>/GOOGLE%E6%90%9C%E7%B4%A2%E5%BE%9E%E5%85%A5%E9%96%80%E5%88%B0%E7%B2%BE%E9%80%9AV4.0/</url>
       <content type="html"><![CDATA[<p><img src="http://img3.cache.netease.com/tech/2010/5/6/201005060155332f5a5.jpg" alt=""></p>
 <p>donquix 2002.8</p>
 <p>[TOC]</p>
@@ -1414,46 +1452,8 @@ Admin API Key
     </entry>
     
     <entry>
-      <title><![CDATA[“耳目喉舌”与“报纸之用”之再讨论]]></title>
-      <url>/2015/04/28/%E2%80%9C%E8%80%B3%E7%9B%AE%E5%96%89%E8%88%8C%E2%80%9D%E4%B8%8E%E2%80%9C%E6%8A%A5%E7%BA%B8%E4%B9%8B%E7%94%A8%E2%80%9D%E4%B9%8B%E5%86%8D%E8%AE%A8%E8%AE%BA/</url>
-      <content type="html"><![CDATA[<p>《时务报》创刊号，梁启超首载《论报馆有益于国事》。</p>
-<p>古之学者，但凡儒者，必以国为家，安身立命，全在乎于“国”。梁所处之年代，乃清末国门稍开，国智刚启之时。时值甲午中日战争之后，国之困顿受侮，时人无不感同于心而愚蒙不知所措。</p>
-<p>国弱的原因，梁启超认为是阻塞不通。上下不通、内外不通。上下不通，故内藏有奸狡之官吏，颠倒黑白，是非不分，朋比为奸。内外不通，故自恃天朝大国，守旧而积弱。</p>
-<p>针对这种情况，梁启超认为报馆应当起到去塞求通的作用。他认为“报馆乃去塞求通的导端”。报纸是耳目、喉舌。作为耳目。对国家、君主，是了解国内国外发生的事情，对当下形势环境了然于胸。作为喉舌，是传递各项举措和命令到基层，为国家、为君主说话。而对民众，报纸是开启智慧的钥匙，是向国家、君主反映疾苦病患的渠道。</p>
-<p><strong>总一句话，以报去塞，通达上下内外，是以强国。</strong>文章所提出的思想在后来影响十分深远，但个人认为，围绕“耳目喉舌”和“报纸之用”有以下两点需要注意的。</p>
-<a id="more"></a>
-<h3 id="其一，“耳目喉舌”与“党的耳目喉舌”之微妙区别。"><a href="#其一，“耳目喉舌”与“党的耳目喉舌”之微妙区别。" class="headerlink" title="其一，“耳目喉舌”与“党的耳目喉舌”之微妙区别。"></a>其一，“耳目喉舌”与“党的耳目喉舌”之微妙区别。</h3><p>梁启超分析国情之时，用了耳目喉舌作为比喻，他认为中国现状就是“有耳目而无耳目，有喉舌而无喉舌”，其意思呢，就是说国家和民众缺乏信息的传递和沟通，不知当下现状，以至懵懵懂懂而败得一塌糊涂。进而将治这“有耳目而无耳目，有喉舌而无喉舌”的废疾任务交由报馆来完成，希望帮助国家和君主闻国事，喻措置于民，而民也能告君其苦患。</p>
-<p>这“耳目喉舌”概念在当下影响深远，而尤以党报为甚。作为报纸，就必须为国家和人民带来有用的讯息，为国家说话。不可否认，这是一种很好的新闻观。在梁之后不久，中国的许多报纸也都从骨子里贯彻了这么一种思想。但是，这种贯彻是片面的。报纸更多的是作为国家强权的喉舌，而不是民众的喉舌。最典型如文革时期的《人民日报》此类党报，无所不用其极，充分为人民讲述了党的光辉。其实为民众之耳目，但这耳目是否变了味呢。梁启超办报之目的，在于开民智，“阅报愈多者，其人愈智；报馆愈多者，其国愈强。”，而以党报为代表的报纸，是否又能够担当这种功能？更多的是宣扬社会主义之精华和成就，用清一色的政治立场和模式化的陈述语言一遍又一遍灌输“真正的思想”，以达到所谓的万众一心。</p>
-<p>耳目，需要的是广搜各国各地事件实录，博搜交涉要案，详录各省新政，用报纸广而告之，使国家上下内外通达，是民众知其位和明其理而不致狂妄自大。</p>
-<p>喉舌，需要的是评议各国各地政事要闻，用客观公正立场表达国家、民众对事件的看法，而非信口胡造，因势而转舵。上辅国家君王下达措置，下助百姓申告苦患。</p>
-<p>因此，我认为现所言报纸为党的耳目喉舌这一观点中的耳目喉舌并不能完全等同于梁所提及的耳目喉舌，这是我们需要警醒的一个方面。</p>
-<h3 id="其二，“报纸之用”立场在国而非在民。"><a href="#其二，“报纸之用”立场在国而非在民。" class="headerlink" title="其二，“报纸之用”立场在国而非在民。"></a>其二，“报纸之用”立场在国而非在民。</h3><p>梁启超所言报馆和报纸之用时，出发点是站在了“国”这个角度。从为国弱诊出病症，到开出良药，论述全不离国。分析梁启超当时的政治背景和个人主张抱负，可以得出，梁启超是一个士人，一个满怀救国的改革派，一个稍涉西学的儒者。虽然梁启超思想可能比起其他士大夫阶层稍微开放，但骨子里还是逃不过本着西学中用的理念，希望在中国重振报纸，以报纸报馆开风气、立国体、出人才。</p>
-<p>反观西方自由主义和现代报业的发展，尝试问自己个问题：为什么会有新闻，新闻的作用是什么？（当然，其实也就是在问广义上的报纸作用是什么）。大部分人可以想到的可能是：让民众了解新近发生的事情，监督政府，充当社会良知。当然，这些没有错，而新闻也需要起到这些作用。但是我想要表达的是，新闻的产生起源于人们对信息的需求，起源于人们对自身所处的环境了解的需要以及表达自己诉求的愿望，基于这些需求，才会发展出当下的西报。而从这一点考量梁启超的办报思想，我们能够发现，其出发点和西方自由主义以及市场化报纸截然不同。其根本在于用报，而非宣言人之独立和自由。虽然其耳目喉舌之比喻中提及到“民”，但纵观全篇文章，并没有单纯从“民”出发论述报馆的作用。所以，梁启超之论报馆，实际是论报馆报纸这术对中国政治的影响。换而言之，报馆之于国事有益是在于其撰写评议发行之作用，而非其内含的西方新闻思想的源头。</p>
-<h3 id="附：论报馆有益于国事"><a href="#附：论报馆有益于国事" class="headerlink" title="附：论报馆有益于国事"></a>附：论报馆有益于国事</h3><blockquote>
-<p>戰國之強弱，則于其通塞而已。血脈不通則病；學術不通則陋；道路不通，故秦越之視肥瘠，漠不相關；言語不通，故閩粵之与中原，邈若异域。惟國亦然。上下不通，故無宣德達情之效，而舞文之吏，因緣為奸；內外不通，故無知己知彼之能，而守舊之儒，乃鼓其舌。中國受侮數十年，坐此焉耳。</p>
-<p>去塞求通，厥道非一，而報館其導端也。無耳目，無喉舌，是曰廢疾。今夫万國并立，猶比鄰也，齊州以內，猶同室也。比鄰之事，而吾不知，甚乃同室所為，不相聞問，則有耳目而無耳目；上有所措置，不能喻之民，下有所苦患，不能告之君，則有喉舌而無喉舌。其有助耳目、喉舌之用，而起天下之廢疾者，則報館之為也。</p>
-<p>報館于古有征乎？古者太師陳詩以觀民風，饑者歌其食，勞者歌其事，使乘輶軒以采訪之，鄉移于邑，邑移于國，國移于天子，猶民報也。公卿大夫，揄揚上德，論列政治，皇華命使，江漢紀勳，斯干考室，駉馬畜牧，君以之告臣，上以之告下，猶官報也。又如誦訓掌道方志，以詔觀事；掌道方慝，以詔辟忌，以知地俗；外史掌四方之志，達書名于四方；撢人掌誦王志，道國之政事，以巡天下邦國而語之。凡所以宣上德、通下情者，非徒紀述，兼有職掌，故人主可坐一室而知四海，士夫可誦三百而知國政。三代盛強，罔不由此。</p>
-<p>西人之大報也，議院之言論紀焉，國用之會計紀焉，人數之生死紀焉，地理之險要紀焉，民業之盈絀紀焉，學會之程課紀焉，物產之品目紀焉，鄰國之舉動紀焉，兵力之增減紀焉，律法之改變紀焉，格致之新理紀焉，器藝之新制紀焉。</p>
-<p>其分報也，言政務者可閱官報，言地理者可閱地學報，言兵學者可閱水陸軍報，言農務者可閱農學報，言商政者可閱商會報，言醫學者可閱醫報，言工務者可閱工程報，言格致者可閱各种天、算、聲、光、化、電專門名家之報。有一學即有一報，其某學得一新義，即某報多一新聞，体繁者證以圖，事賾者列為表，朝登一紙，夕布万邦。是故任事者無閡隔蒙昧之憂，言學者得觀善濯磨之益。猶恐文義太賾，不能盡人而解，故有婦女報，有孩孺報。其出報也，或季報，或月報，或半月報，或旬報，或七日報，或五日報，或三日報，或兩日報，或每日報，或半日報。國家之保護報館，如鳥鬻子；士民之嗜閱報章，如蟻附膻。閱報愈多者，其人愈智；報館愈多者，其國愈強。曰：惟通之故。</p>
-<p>其益于國事如此，故怀才抱德之士，有昨為主筆而今作執政者，亦有朝罷樞府而夕進報館者，其主張國是，每与政府通聲气。如俄、土之爭戰，德、奧、意之聯盟，五洲之人，莫不仰首企足以觀《秦晤士》之議論，文甫脫稿，電已飛馳，其重之又如此。然而英國、德國、日本國，或于報館有讒謗之律，有懲罰之條，則又何也？記載瑣故，采訪异聞，非齊東之野言，即秘辛之雜事，閉門而造，信口以談，無補時艱，徒傷風化，其弊一也；軍事敵情，記載不實，僅憑市虎之口，罔懲夕雞之嫌，甚乃揣摩眾情，臆造詭說，海外已成劫燼，紙上猶登捷書，熒惑听聞，貽誤大局，其弊二也；臧否人物，論列近事，毀譽憑其恩怨，筆舌甚于刀兵，或颺頌權貴，為曳裾之階梯，或指斥富豪，作苞苴之左卷，行同無賴，義乖祥言，其弊三也；操觚發論，匪有本原，蹈襲陳言，剿撮涂說，或乃才盡為憂，敷衍塞責，討論軼聞，紀述游覽，義無足取，言之無文，其弊四也；或有譯錄稍廣，言論足觀，刪汰穢蕪，頗知体要，而借闡宗風，不出鄭志，雖有斷章取義之益，未免歌詩不類之憾，其弊五也。具此諸端，斯義遂梏，遂使海內一二自好之士，反視報館為蝥賊，目報章為妖言，古義不行，良法致弊。嗚呼，不其恫歟！</p>
-<p>今設報于中國，而欲复西人之大觀，其勢則不能也。西國議院議定一事，布之于眾，令報館人入院珥筆而錄之；中國則諱莫如深，樞府舉動，真相不知，無論外人也。西國人數、物產、民業、商冊，日有記注，展卷粲然，錄副印報，与眾共悉；中國則夫家六畜，未有專司，州縣親民，于其所轄民物、產業，末由周知，無論朝廷也。西人格致制造專門之業，官立學校，士立學會，講求觀摩，新法日出，故亟登報章，先睹為快；中國則稍講此學之人，已如鳳毛麟角，安有專精其業，神明其法，而出新制也。坐此數故，</p>
-<p>則西報之長，皆非吾之所能有也。然則報之例當如何？曰：廣譯五洲近事，則閱者知全地大局，与其強盛弱亡之故，而不至夜郎自大，坐眢井以議天地矣；詳錄各省新政，則閱者知新法之實有利益，及任事人之艱難經畫，与其宗旨所在，而阻撓者或希矣；博搜交涉要案，則閱者知國体不立，受人嫚辱，律法不講，為人愚弄，可以奮厲新學。思洗前恥矣；旁載政治、學藝要書，則閱者知一切實學源流門徑，与其日新月异之跡，而不至抱八股八韻考据詞章之學，枵然而自大矣。准此行之，待以歲月，風气漸開，百廢漸舉，國体漸立，人才漸出，十年以后，而報館之規模，亦可漸備矣。</p>
-<p>嗟夫！中國邸報興于西報未行以前，然歷數百年未一推廣。商岸肇辟，踵事滋多；勸百諷一，裨補蓋寡；橫流益急，晦盲依然；喉舌不通，病及心腹。雖蚊虻之力，無取負山；而精禽之心，未忘填海。上循不非大夫之義，下附庶人市諫之條；私怀救火弗趨之愚，迫為大聲疾呼之舉；見知見罪，悉憑當途。若听者不亮，目為誹言，摧萌拉薛，其何有焉？或亦同舟共艱，念厥孤憤，提倡保護，以成區區，則顧亭林所謂“天下興亡，匹夫之賤，与有責焉”已耳。</p>
-</blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-        </categories>
-        
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[網路只是工具]]></title>
-      <url>/2015/04/24/%E7%B6%B2%E8%B7%AF%E5%8F%AA%E6%98%AF%E5%B7%A5%E5%85%B7/</url>
+      <url>/%E7%B6%B2%E8%B7%AF%E5%8F%AA%E6%98%AF%E5%B7%A5%E5%85%B7/</url>
       <content type="html"><![CDATA[<p>偶爾瞭解到《網路讓人變笨》這本書，順便寫一些看法。</p>
 <p>根據書中的說法，首先我們需要先對自己做一個檢視：每天都會使用Google之類的搜尋引擎；同時開啟的網頁常超過10個；文章還未細讀就先轉帖到自己的塗鴉牆；一發表文章就期待有人按贊回應；離開電腦或手機就無法安排生活；很久沒有讀完一整本書了。</p>
 <a id="more"></a>
@@ -1487,7 +1487,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[光耀百年，新加坡何以光耀]]></title>
-      <url>/2015/03/03/why-singapore-lee-kuan-yew/</url>
+      <url>/why-singapore-lee-kuan-yew/</url>
       <content type="html"><![CDATA[<p>這個月，李光耀逝世的新聞傳遍了大江南北，足足讓新加坡和其制度又热了一把。</p>
 <p><a href="http://www.alaxn.ml/wp-content/uploads/2015/03/Lee-Kuan-Yew.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/03/Lee-Kuan-Yew.jpg" alt="Lee Kuan Yew"></a></p>
 <p>被英國殖民過的地區。一個在六十年被迫從馬來西亞聯邦中獨立的國家，沒有技術、沒有實業、沒有資源、沒有土地，是如何從困境中走出的呢？</p>
@@ -1533,7 +1533,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[Memory of Hongkong]]></title>
-      <url>/2015/02/18/hongkong/</url>
+      <url>/hongkong/</url>
       <content type="html"><![CDATA[<p><a href="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_153753.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_153753-1024x768.jpg" alt="wpid-img_20150212_153753.jpg"></a><a href="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_131030.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_131030-1024x768.jpg" alt="wpid-img_20150212_131030.jpg"></a><a href="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_181922.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_181922-768x1024.jpg" alt="wpid-img_20150212_181922.jpg"></a><a href="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_172749.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_172749-1024x768.jpg" alt="wpid-img_20150212_172749.jpg"></a><a href="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_154102.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_154102-1024x768.jpg" alt="wpid-img_20150212_154102.jpg"></a><a href="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_152953.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/05/wpid-img_20150212_152953-768x1024.jpg" alt="wpid-img_20150212_152953.jpg"></a></p>
 ]]></content>
       
@@ -1556,7 +1556,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[透过Propagandizing 看朝鲜纪录片]]></title>
-      <url>/2014/10/30/%E9%80%8F%E8%BF%87Propagandizing%20%E7%9C%8B%E6%9C%9D%E9%B2%9C%E7%BA%AA%E5%BD%95%E7%89%87/</url>
+      <url>/%E9%80%8F%E8%BF%87Propagandizing%20%E7%9C%8B%E6%9C%9D%E9%B2%9C%E7%BA%AA%E5%BD%95%E7%89%87/</url>
       <content type="html"><![CDATA[<p>观 《全景：潜入朝鲜2013》有感</p>
 <p>朝鲜，一直以来都被看作是最神秘的国家之一。由于其极度的封闭性使得外界对它充满了好奇，倍加关注。不少媒体都尝试对其进行拍摄和报道，而目前广为流传的纪录片有两个，一个是2006年国家地理频道的《前进北朝鲜》，另一个则是2013年BBC的《全景：潜入朝鲜2013》。</p>
 <p>该片是由BBC知名记者John Sweeney及其带领的团队 混入英国伦敦政治经济学院（LSE）学术交流团秘密拍摄的。</p>
@@ -1592,7 +1592,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[Mindmap of Communication Theory]]></title>
-      <url>/2014/05/30/mindmap-of-communication-theory/</url>
+      <url>/mindmap-of-communication-theory/</url>
       <content type="html"><![CDATA[<p><a href="http://www.alaxn.ml/wp-content/uploads/2015/04/Outline.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/Outline-571x1024.jpg" alt="Mindmap of Communication Theory"></a></p>
 ]]></content>
       
@@ -1617,7 +1617,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[俄狄浦斯的困顿]]></title>
-      <url>/2014/05/30/%E4%BF%84%E7%8B%84%E6%B5%A6%E6%96%AF%E7%9A%84%E5%9B%B0%E9%A1%BF/</url>
+      <url>/%E4%BF%84%E7%8B%84%E6%B5%A6%E6%96%AF%E7%9A%84%E5%9B%B0%E9%A1%BF/</url>
       <content type="html"><![CDATA[<p><a href="http://www.alaxn.ml/wp-content/uploads/2014/05/Oedipus.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2014/05/Oedipus.jpg" alt="Oedipus"></a></p>
 <p>灯塔，一个看得到而从未去过的地方。由灯塔为引子，作者展开了弑父情结的描述。</p>
 <p>天真的詹姆斯曾经问过母亲：“我可以到灯塔去吗？”母亲为了保护他幼小的心灵，便告诉他“如果天气好的话，你就可以去。”这句话，深深地扎根在他的心里。以后，他就认定他一定可以去灯塔。可以说，母亲的这句话，不仅点亮了他梦想的灯火，也成为他追逐梦想——到灯塔去的动力源泉。</p>
@@ -1652,7 +1652,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[红粉知己，我们会成为恋人吗]]></title>
-      <url>/2014/04/30/%E7%BA%A2%E7%B2%89%E7%9F%A5%E5%B7%B1%EF%BC%8C%E6%88%91%E4%BB%AC%E4%BC%9A%E6%88%90%E4%B8%BA%E6%81%8B%E4%BA%BA%E5%90%97/</url>
+      <url>/%E7%BA%A2%E7%B2%89%E7%9F%A5%E5%B7%B1%EF%BC%8C%E6%88%91%E4%BB%AC%E4%BC%9A%E6%88%90%E4%B8%BA%E6%81%8B%E4%BA%BA%E5%90%97/</url>
       <content type="html"><![CDATA[<p><a href="http://www.alaxn.ml/wp-content/uploads/2014/04/love-together.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2014/04/love-together.jpg" alt="love-together"></a></p>
 <p>“最近过的怎么样，社团那边怎么样了？”</p>
 <p>她站在草丛旁问着我，眼睛望着前方灰蓝色的天。</p>
@@ -1708,7 +1708,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[华硕N55光驱位换HDD硬盘]]></title>
-      <url>/2014/02/13/N55%E5%85%89%E9%A9%B1%E4%BD%8D%E6%8D%A2HDD%E7%A1%AC%E7%9B%98/</url>
+      <url>/N55%E5%85%89%E9%A9%B1%E4%BD%8D%E6%8D%A2HDD%E7%A1%AC%E7%9B%98/</url>
       <content type="html"><![CDATA[<p>先来个大合照，已拆了键盘。<br><img src="http://r.photo.store.qq.com/psb?/V121MZ1S4Srv3a/w2gBfIVPSHbdG82p.RGDnmQ.2mQmI1nuaZXlJFNWMXU!/o/dKVEgo5ZCAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wAOAAkAGKwQBAA8!&amp;t=5&amp;su=1145132433&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></p>
 <p>开后盖，拆原有机械硬盘。<br><img src="http://r.photo.store.qq.com/psb?/V121MZ1S4Srv3a/B7g24Oy*3V8Oi.QJO0P1yJ4ab27D*fRhY*BVcaj67.4!/o/dAqC3Y3oBwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wAOAAkAGKwQBAA8!&amp;t=5&amp;su=181054785&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></p>
 <a id="more"></a>
@@ -1734,7 +1734,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[OS X Mavericks折腾记]]></title>
-      <url>/2014/01/17/OS%20X%20Mavericks%E6%8A%98%E8%85%BE%E8%AE%B0/</url>
+      <url>/OS%20X%20Mavericks%E6%8A%98%E8%85%BE%E8%AE%B0/</url>
       <content type="html"><![CDATA[<p>寒假第一篇日志给黑苹果。</p>
 <p><a href="http://alaxn.esy.es/wp-content/uploads/2014/01/QQphoto.jpeg" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2014/01/QQphoto.jpeg" alt="OSX_startup"></a></p>
 <p><a href="http://alaxn.esy.es/wp-content/uploads/2014/01/QQphoto.png" target="_blank" rel="external"><img src="http://alaxn.esy.es/wp-content/uploads/2014/01/QQphoto.png" alt="OSX10.9_screenshot"></a></p>
@@ -1759,7 +1759,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[拼将玉骨委黄沙]]></title>
-      <url>/2013/12/28/%E6%8B%BC%E5%B0%86%E7%8E%89%E9%AA%A8%E5%A7%94%E9%BB%84%E6%B2%99/</url>
+      <url>/%E6%8B%BC%E5%B0%86%E7%8E%89%E9%AA%A8%E5%A7%94%E9%BB%84%E6%B2%99/</url>
       <content type="html"><![CDATA[<p><img src="http://orp61qolg.bkt.clouddn.com/images/ChenYinke.jpg" alt="陈寅恪"></p>
 <p>古来，文人与政治的关系就比较暧昧。多少读书人十年寒窗苦读为的不是金榜题名？诸葛孔明的“不求问达于诸侯”，像是姜太公钓鱼，愿者上钩，实则是以退为进，钓“明君”， “遂许先帝以驱驰”。厌倦官场是是非非的人，也不过是因官场的失败，壮志难酬才逼不得已退出，并非是真正的远离政治，一旦统治者赏识，又春风得意，走马上任。纵观历史，难见真正为读书而读书，为学术而学术之人，实为可悲。</p>
 <p>当然，历史还是会为后人留下珍贵的几只标杆。陈寅恪就是其中一只。</p>
@@ -1795,7 +1795,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[探索提出创造性点子的过程及方法]]></title>
-      <url>/2013/11/30/creative-thinking/</url>
+      <url>/creative-thinking/</url>
       <content type="html"><![CDATA[<p><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/jiong-small-thumb.jpg" alt="人脸建筑"></p>
 <h3 id="什么是创造性思维"><a href="#什么是创造性思维" class="headerlink" title="什么是创造性思维"></a>什么是创造性思维</h3><p>人之所以为人是因为人有思维。而思维有很多种，各自发挥着不同的作用。创造性思维，很奇妙，有时候，在你面对难题绞尽脑汁而想不出来时，突然给了你一个非常非常新奇的解决方法；而有的时候，在你认真答题时，冒出来干扰你的正常答题，就像一个善良却偶尔帮倒忙的小精灵。这个比喻说出了创造性思维一个特点，那就是它不像常人。有人曾经研究过富有创造力的一些人，发现他们都有一个特征，就是大脑的抑制被解除。大脑抑制被解除，在一定程度上说明了禁锢局限他们的因素减弱了。也就是他们可以尝试不按逻辑不按常理思考。这就契合了创造性思维的二个特征，<strong>非逻辑的</strong>（本人猜测的）、<strong>发散的</strong>。往往你得到的新奇的不同常规的点子不是按照着一步一步严密的推导的，更多的倾向于突然在你的脑海中蹦出。所以我认为，非逻辑是创造性一个很显著的特点。当然，这不是说创造性都是没有逻辑的。仅仅是个人观点。</p>
 <p>那么，由于创造性的点子的想出是没有逻辑可以寻找的，那是不是意味着我们没有方法去提升我们提出创造性点子的能力呢？</p>
@@ -1863,7 +1863,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[衔石成痴绝？精卫？汪精卫！]]></title>
-      <url>/2013/11/22/%E8%A1%94%E7%9F%B3%E6%88%90%E7%97%B4%E7%BB%9D%EF%BC%9F%E7%B2%BE%E5%8D%AB%EF%BC%9F%E6%B1%AA%E7%B2%BE%E5%8D%AB%EF%BC%81/</url>
+      <url>/%E8%A1%94%E7%9F%B3%E6%88%90%E7%97%B4%E7%BB%9D%EF%BC%9F%E7%B2%BE%E5%8D%AB%EF%BC%9F%E6%B1%AA%E7%B2%BE%E5%8D%AB%EF%BC%81/</url>
       <content type="html"><![CDATA[<p>这篇文章其实一个多月前就想写了，只不过因为各种事情而耽搁了。</p>
 <p>近代历史中，一位被一笔带过的汉奸，汪精卫，一位被大陆和台湾所渐渐遗忘的政治人物<span style="font-family: Calibri;">……</span></p>
 <p><a href="http://www.alaxn.ml/wp-content/uploads/2015/04/13.jpg" target="_blank" rel="external"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/13.jpg" alt="Wang_jingwei.jpg"></a></p>
@@ -1927,7 +1927,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[QQ木马札记]]></title>
-      <url>/2013/09/28/QQ%E6%9C%A8%E9%A9%AC%E6%9C%AD%E8%AE%B0/</url>
+      <url>/QQ%E6%9C%A8%E9%A9%AC%E6%9C%AD%E8%AE%B0/</url>
       <content type="html"><![CDATA[<p>中午，邮箱中收到一封名为大学补学金文档(1) 的邮箱<br><img src="http://b164.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/wXSWhme6kVfEr9OTJTHMYOebS8r7VcIF2sZEvC17mAg!/b/dFmJxmHMJQAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=eAT8AAAAAAABAKc!&amp;t=5&amp;su=0159016257&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>看着挺有趣的，就下载下来看看。</p>
 <a id="more"></a>
 <p><img src="http://b166.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/VdsdUN7tk0RDdILGiIWzoQGtNPd3vavu7aWJWG5Vcd0!/b/dEI.82I0IwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAO0AQAAAAABALE!&amp;t=5&amp;su=024146545&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></p>
@@ -1935,7 +1935,7 @@ Admin API Key
 <p>但是强大的好奇心让我解压后打开了。。。</p>
 <p>双击了一次，没有反应？ 再双击一次。。。<br>还是没有反应。</p>
 <p>过了一会，点点QQ的界面，突然出现了一个腾讯QQ重新登录框</p>
-<div><img src="/2013/09/28/QQ木马札记/null" alt="本地图片，请重新上传"></div><br><img src="http://b166.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/xWlVF*PKT4Y3XNnyUzJcJf*tNazri.Pa6SPsEvdC0Bk!/b/dE9b*2IaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IgHdAAAAAAABANk!&amp;t=5&amp;su=095386081&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><br>折腾了下这个窗口，感觉怎么好像有点卡，而且看起来不美观啊。。。<br>突然想了想，为啥莫名其妙就出现这东西呢？我一直都很规矩的呀~<em>~<br>心里开始有底了。<br><br>打开任务管理器，看到 学生补助金.exe优雅地在最后一行默默地站着。<br><img src="http://b164.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/TuvzK5YYDCcQm5GIMJkoBQZi*70dM6OJQwuTZGN53Lc!/b/dDgVyGH3IwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wwG1AAAAAAABAFA!&amp;t=5&amp;su=096402753&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><div>一切都明白了，八成这就是个盗QQ号的木马。。。</div><br><div></div><br><div><br><div>果断结束进程<br><img src="http://b166.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/xWlVF*PKT4Y3XNnyUzJcJf*tNazri.Pa6SPsEvdC0Bk!/b/dE9b*2IaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IgHdAAAAAAABANk!&amp;t=5&amp;su=095386081&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>框框一下就不见了，更加验证了我的猜想。<br><br>那么接下来就来看看这个传说中的“学生补奖金”吧。<br><br>首先我用7z打开来看了下。<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/AS3isTRkrzUbG28G4NiqCDJpS5iyRpTLRTGO*OgELsE!/b/dHioyWFyIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMUAgAAAAABABI!&amp;t=5&amp;su=052615857&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>感觉应该没有加过壳，经验不足额、、、<br>接着用PEiD规规矩矩地查了下。。。<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/2LPS3YWvz9DuQYdxDKChDRte237K8B2jI5J2gVci9pM!/b/dK8fy2HOJAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=pgEfAQAAAAABAJ4!&amp;t=5&amp;su=089607217&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>这个壳，(⊙o⊙)…，第一次见到的。。。<br>So，找找手头有的工具，发现似乎没有可以脱的工具。<br>果断上百度。。。<br>先找找有没 有工具，没有结果，孩子找到别人手脱的过程。<br>唉，自己动手学习学习了。。。<br><br>于是，借鉴 <a href="http://www.52pojie.cn/thread-49406-1-1.html" target="_blank" rel="external">http://www.52pojie.cn/thread-49406-1-1.html</a> 自己开始折腾了。<br>学习他，打开OD，找到ESP<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/OpbnEo6XZas.9AsqHRFxLz*vgnKxPW4Q5U7gTb4qXtw!/b/dLS6zGF5JQAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=0159455585&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>设置断点后，F9进入<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/ZiXKLLseIV1zGtVOuBqyyNqnoFVCU*KVXsuGprSeh6c!/b/dIcpy2HaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=072708481&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>一路F8 那个忐忑啊@</div></div></em>@ 。<br>终于，看到了光明。<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/AblHysyo4Kz8lkWmXXKgwjuFrfhU3*ABUwQT.bH6F7w!/b/dIL*LmTrCwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=088094609&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>004EAE9A  - FFE0            jmp eax                                  ; 学生补学.00454435  /这里飞向光明之巅（荣耀属于<a href="http://www.52pojie.cn/space-uid-335.html" target="_blank" rel="external">mycsy</a> ）<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/vUQG6Lf0woKda*opTPMYxe*s0XQV67.sk*0FZdpwYWc!/b/dB4WMmQEDAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=08310817&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>找到了OEP    尝试脱壳<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/0PTvqXh8JLFuUCTZMYmP6IqQ9UynZnCc*YP8H3I.yKI!/b/dAd3J2R8DAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=TgK9AQAAAAABANc!&amp;t=5&amp;su=0111914417&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>唉，虽然输入表好几个无效，无法运行，不管了。。。<br><br>再次查壳验证<br><img src="http://b166.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/DMtw5v2yh2ebeMFcvSp1tjVPvJ3qddVBB0mClsecWrg!/b/dEJT.WLyIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=pgEfAQAAAAABAJ4!&amp;t=5&amp;su=0246979361&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>应该是脱壳成功了。。。<br><br>接着载入OD，查看字符串，希望可以一些信息。<br><img src="http://b165.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/zeLAQ*nS*UE4FXRPjkq22zDQ2XwClLPl0uXDpysCp48!/b/dM24YGLPIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=097915969&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>耐下心来，好好一个一个看。。。晕+<em>+<br><br>看来程序是通过跑到<a href="http://check.ptlogin2.qq.com/" target="_blank" rel="external">http://check.ptlogin2.qq.com</a>验证密码的正误，还会拉去验证码，这样说来，是不是只有密码正确QQ的账号密码才会被发送到指定的地址？<br><div><br>再看到一条字符：</div><br>超级字串参考, 条目 137<br><div> 地址=004040CD</div><br><div> 反汇编=push UnPack</div></em>.00478C84<br><div> 文本字串=The 0411558 file is missingn_C<br><br>0411558 是什么？   记得刚开始的压缩文件吗？  就在其中。。。<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/l1SXwtMD40g2Ei6LD0r6edWeSh1e1.PiSYwL4fthbnA!/b/dOD1l2P1DAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAO0AQAAAAABALE!&amp;t=5&amp;su=0233961409&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></div><br><div><br>果断万能的记事本打开它<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/Y4ni.QeugAU947VZz2HlDqMqDvQ7HSygJHZOVWO17oc!/b/dE9OjWNpDAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAPaAQAAAAABAN8!&amp;t=5&amp;su=070237137&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>这个是脚本吧？。。。<br><br>尝试打开<a href="http://ueryrtew.gwrewt.net/fe86dsdb/find.asp?QQNumber=074419977&amp;QQPassWord=074419887" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/find.asp?QQNumber=074419977&amp;QQPassWord=074419887</a><br>网页一片空白，没有回显<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/knMiP3Vu6XPbxPwuslTaE5HHhU3d.v.klAZm.2vA.yU!/b/dE0PmGN3CwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOnAQAAAAABAKI!&amp;t=5&amp;su=0218858465&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>再次刷新，结果一样。<br>于是猜想是不是上传QQ账号和密码的地址呢？<br><br>尝试打开<br><a href="http://ueryrtew.gwrewt.net/fe86dsdb/find.asp" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/find.asp</a>     空白网页<br><a href="http://ueryrtew.gwrewt.net/fe86dsdb/" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/</a>                  登陆界面<br><a href="http://ueryrtew.gwrewt.net/" target="_blank" rel="external">http://ueryrtew.gwrewt.net</a>            拒绝访问<br><a href="http://gwrewt.net/" target="_blank" rel="external">http://gwrewt.net</a>  无法打开<br><img src="http://b165.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/VnScZfZIWtMM*rrpTpxnjp4b*WWCv4g8E96v80q87ms!/b/dGybXWJoIAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOnAQAAAAABAKI!&amp;t=5&amp;su=0141235793&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>难道这就是传说中的后台？<br>试了下admin admin   确实，没有这么白痴，无法进入。。。<br><br>再次搜索程序字符串，找不到关于这个网页的任何有用信息。 看来程序应该没有直接调用什么东西去访问这个网站，估计就是通过调用0411558这个脚本来访问这个网站的。这样做的目的，我猜想是为了躲避杀毒软件的主动防御，行为检测。<br>想到这，上virscan.org 查一下它看看。。。<br><img src="http://b168.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/9r5WJqFiwYkYHrEoNm2mW5K4bkbGDOxXpOP2SAAgD9s!/b/dDtcJGTnCgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=CwNTAgAAAAABAH4!&amp;t=5&amp;su=0145940593&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>厉害啊，国内估计就一个NOD32可以报毒了。。。<br>根据扫描的结果，其实真正意义讲只有三个杀毒怀疑它是木马或病毒、后门。。。<br><br>顺便查了下IP<br><img src="http://b164.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/Uudq8L7lue.qY9F9mWiLp3tu4ahUUpyjG53o2s1UewU!/b/dNHNz2FmJQAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=AwSJAAAAAAABAKk!&amp;t=5&amp;su=0184756001&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><br>下一步还能够干什么呢。。。郁闷(⊙o⊙)…</div><br>]]></content>
+<div><img src="/QQ木马札记/null" alt="本地图片，请重新上传"></div><br><img src="http://b166.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/xWlVF*PKT4Y3XNnyUzJcJf*tNazri.Pa6SPsEvdC0Bk!/b/dE9b*2IaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IgHdAAAAAAABANk!&amp;t=5&amp;su=095386081&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><br>折腾了下这个窗口，感觉怎么好像有点卡，而且看起来不美观啊。。。<br>突然想了想，为啥莫名其妙就出现这东西呢？我一直都很规矩的呀~<em>~<br>心里开始有底了。<br><br>打开任务管理器，看到 学生补助金.exe优雅地在最后一行默默地站着。<br><img src="http://b164.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/TuvzK5YYDCcQm5GIMJkoBQZi*70dM6OJQwuTZGN53Lc!/b/dDgVyGH3IwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=wwG1AAAAAAABAFA!&amp;t=5&amp;su=096402753&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><div>一切都明白了，八成这就是个盗QQ号的木马。。。</div><br><div></div><br><div><br><div>果断结束进程<br><img src="http://b166.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/xWlVF*PKT4Y3XNnyUzJcJf*tNazri.Pa6SPsEvdC0Bk!/b/dE9b*2IaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IgHdAAAAAAABANk!&amp;t=5&amp;su=095386081&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>框框一下就不见了，更加验证了我的猜想。<br><br>那么接下来就来看看这个传说中的“学生补奖金”吧。<br><br>首先我用7z打开来看了下。<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/AS3isTRkrzUbG28G4NiqCDJpS5iyRpTLRTGO*OgELsE!/b/dHioyWFyIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAMUAgAAAAABABI!&amp;t=5&amp;su=052615857&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>感觉应该没有加过壳，经验不足额、、、<br>接着用PEiD规规矩矩地查了下。。。<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/2LPS3YWvz9DuQYdxDKChDRte237K8B2jI5J2gVci9pM!/b/dK8fy2HOJAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=pgEfAQAAAAABAJ4!&amp;t=5&amp;su=089607217&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>这个壳，(⊙o⊙)…，第一次见到的。。。<br>So，找找手头有的工具，发现似乎没有可以脱的工具。<br>果断上百度。。。<br>先找找有没 有工具，没有结果，孩子找到别人手脱的过程。<br>唉，自己动手学习学习了。。。<br><br>于是，借鉴 <a href="http://www.52pojie.cn/thread-49406-1-1.html" target="_blank" rel="external">http://www.52pojie.cn/thread-49406-1-1.html</a> 自己开始折腾了。<br>学习他，打开OD，找到ESP<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/OpbnEo6XZas.9AsqHRFxLz*vgnKxPW4Q5U7gTb4qXtw!/b/dLS6zGF5JQAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=0159455585&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>设置断点后，F9进入<br><img src="http://b164.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/ZiXKLLseIV1zGtVOuBqyyNqnoFVCU*KVXsuGprSeh6c!/b/dIcpy2HaIgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=072708481&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>一路F8 那个忐忑啊@</div></div></em>@ 。<br>终于，看到了光明。<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/AblHysyo4Kz8lkWmXXKgwjuFrfhU3*ABUwQT.bH6F7w!/b/dIL*LmTrCwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=088094609&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>004EAE9A  - FFE0            jmp eax                                  ; 学生补学.00454435  /这里飞向光明之巅（荣耀属于<a href="http://www.52pojie.cn/space-uid-335.html" target="_blank" rel="external">mycsy</a> ）<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/vUQG6Lf0woKda*opTPMYxe*s0XQV67.sk*0FZdpwYWc!/b/dB4WMmQEDAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=08310817&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>找到了OEP    尝试脱壳<br><img src="http://b168.photo.store.qq.com/psb?/7b0f5656-a653-40e6-ada0-5f32eb4d4447/0PTvqXh8JLFuUCTZMYmP6IqQ9UynZnCc*YP8H3I.yKI!/b/dAd3J2R8DAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=TgK9AQAAAAABANc!&amp;t=5&amp;su=0111914417&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>唉，虽然输入表好几个无效，无法运行，不管了。。。<br><br>再次查壳验证<br><img src="http://b166.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/DMtw5v2yh2ebeMFcvSp1tjVPvJ3qddVBB0mClsecWrg!/b/dEJT.WLyIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=pgEfAQAAAAABAJ4!&amp;t=5&amp;su=0246979361&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>应该是脱壳成功了。。。<br><br>接着载入OD，查看字符串，希望可以一些信息。<br><img src="http://b165.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/zeLAQ*nS*UE4FXRPjkq22zDQ2XwClLPl0uXDpysCp48!/b/dM24YGLPIwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOvAQAAAAABAKo!&amp;t=5&amp;su=097915969&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>耐下心来，好好一个一个看。。。晕+<em>+<br><br>看来程序是通过跑到<a href="http://check.ptlogin2.qq.com/" target="_blank" rel="external">http://check.ptlogin2.qq.com</a>验证密码的正误，还会拉去验证码，这样说来，是不是只有密码正确QQ的账号密码才会被发送到指定的地址？<br><div><br>再看到一条字符：</div><br>超级字串参考, 条目 137<br><div> 地址=004040CD</div><br><div> 反汇编=push UnPack</div></em>.00478C84<br><div> 文本字串=The 0411558 file is missingn_C<br><br>0411558 是什么？   记得刚开始的压缩文件吗？  就在其中。。。<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/l1SXwtMD40g2Ei6LD0r6edWeSh1e1.PiSYwL4fthbnA!/b/dOD1l2P1DAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAO0AQAAAAABALE!&amp;t=5&amp;su=0233961409&amp;sce=0-12-12&amp;rf=2-9" alt="图片"></div><br><div><br>果断万能的记事本打开它<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/Y4ni.QeugAU947VZz2HlDqMqDvQ7HSygJHZOVWO17oc!/b/dE9OjWNpDAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAPaAQAAAAABAN8!&amp;t=5&amp;su=070237137&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>这个是脚本吧？。。。<br><br>尝试打开<a href="http://ueryrtew.gwrewt.net/fe86dsdb/find.asp?QQNumber=074419977&amp;QQPassWord=074419887" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/find.asp?QQNumber=074419977&amp;QQPassWord=074419887</a><br>网页一片空白，没有回显<br><img src="http://b167.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/knMiP3Vu6XPbxPwuslTaE5HHhU3d.v.klAZm.2vA.yU!/b/dE0PmGN3CwAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOnAQAAAAABAKI!&amp;t=5&amp;su=0218858465&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>再次刷新，结果一样。<br>于是猜想是不是上传QQ账号和密码的地址呢？<br><br>尝试打开<br><a href="http://ueryrtew.gwrewt.net/fe86dsdb/find.asp" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/find.asp</a>     空白网页<br><a href="http://ueryrtew.gwrewt.net/fe86dsdb/" target="_blank" rel="external">http://ueryrtew.gwrewt.net/fe86dsdb/</a>                  登陆界面<br><a href="http://ueryrtew.gwrewt.net/" target="_blank" rel="external">http://ueryrtew.gwrewt.net</a>            拒绝访问<br><a href="http://gwrewt.net/" target="_blank" rel="external">http://gwrewt.net</a>  无法打开<br><img src="http://b165.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/VnScZfZIWtMM*rrpTpxnjp4b*WWCv4g8E96v80q87ms!/b/dGybXWJoIAAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=IAOnAQAAAAABAKI!&amp;t=5&amp;su=0141235793&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>难道这就是传说中的后台？<br>试了下admin admin   确实，没有这么白痴，无法进入。。。<br><br>再次搜索程序字符串，找不到关于这个网页的任何有用信息。 看来程序应该没有直接调用什么东西去访问这个网站，估计就是通过调用0411558这个脚本来访问这个网站的。这样做的目的，我猜想是为了躲避杀毒软件的主动防御，行为检测。<br>想到这，上virscan.org 查一下它看看。。。<br><img src="http://b168.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/9r5WJqFiwYkYHrEoNm2mW5K4bkbGDOxXpOP2SAAgD9s!/b/dDtcJGTnCgAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=CwNTAgAAAAABAH4!&amp;t=5&amp;su=0145940593&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br>厉害啊，国内估计就一个NOD32可以报毒了。。。<br>根据扫描的结果，其实真正意义讲只有三个杀毒怀疑它是木马或病毒、后门。。。<br><br>顺便查了下IP<br><img src="http://b164.photo.store.qq.com/psb?/4b33e6b8-8ce0-4ad4-ad7e-1d63206621e5/Uudq8L7lue.qY9F9mWiLp3tu4ahUUpyjG53o2s1UewU!/b/dNHNz2FmJQAA&amp;ek=1&amp;kp=1&amp;pt=0&amp;bo=AwSJAAAAAAABAKk!&amp;t=5&amp;su=0184756001&amp;sce=0-12-12&amp;rf=2-9" alt="图片"><br><br>下一步还能够干什么呢。。。郁闷(⊙o⊙)…</div><br>]]></content>
       
         <categories>
             
@@ -1946,11 +1946,11 @@ Admin API Key
         
         <tags>
             
+            <tag> MachineWorld </tag>
+            
             <tag> OD </tag>
             
             <tag> 木马 </tag>
-            
-            <tag> MachineWorld </tag>
             
         </tags>
         
@@ -1958,7 +1958,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[ATP-小句子大思考]]></title>
-      <url>/2013/09/26/ATP-%E5%B0%8F%E5%8F%A5%E5%AD%90%E5%A4%A7%E6%80%9D%E8%80%83/</url>
+      <url>/ATP-%E5%B0%8F%E5%8F%A5%E5%AD%90%E5%A4%A7%E6%80%9D%E8%80%83/</url>
       <content type="html"><![CDATA[<p>Great hopes make great man.<a target="_blank" name="_GoBack"></a></p>
 <p>享受过程，不问结果。</p>
 <p>让自己与众不同。</p>
@@ -1994,7 +1994,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[一些旧的照片]]></title>
-      <url>/2012/07/21/old-photos/</url>
+      <url>/old-photos/</url>
       <content type="html"><![CDATA[<p><img src="http://b.hiphotos.baidu.com/album/pic/item/b7003af33a87e950b81517fe10385343fbf2b426.jpg" alt=""><br>太阳在下面吗？</p>
 <p><img src="http://b.hiphotos.baidu.com/album/pic/item/00e93901213fb80ed6be854536d12f2eb9389431.jpg" alt=""><br>长这么大 终于看到彩虹了(⊙o⊙)</p>
 <p><img src="http://b.hiphotos.baidu.com/album/pic/item/2f738bd4b31c8701e3d85674277f9e2f0708ff32.jpg" alt=""><br>分不清山和海了 也许就是云罢了</p>
@@ -2047,7 +2047,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[通关天龙单机游戏后。。。]]></title>
-      <url>/2012/01/19/tianlong/</url>
+      <url>/tianlong/</url>
       <content type="html"><![CDATA[<p>大概一个小时前，打了三天的天龙单机马马虎虎通关了。</p>
 <p>本来，通关也没有什么，这个游戏其实也没有什么。</p>
 <p>不过，可能在适当的时候，遇到适当的事，刺激了我。</p>
@@ -2081,7 +2081,7 @@ Admin API Key
     
     <entry>
       <title><![CDATA[衣裳没了？]]></title>
-      <url>/2010/08/14/%E8%A1%A3%E8%A3%B3%E6%B2%A1%E4%BA%86/</url>
+      <url>/%E8%A1%A3%E8%A3%B3%E6%B2%A1%E4%BA%86/</url>
       <content type="html"><![CDATA[<p>现实与梦想 现实毕竟是现实，人性在现实中一览无遗，在梦想中竟是何等的光辉。高大的形象。</p>
 <p>假象下，现在有一个人和你在一起，其中有一个人一定要死，你会选谁？</p>
 <a id="more"></a>
