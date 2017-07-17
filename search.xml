@@ -3,6 +3,50 @@
   
     
     <entry>
+      <title><![CDATA[Hosts文件小科普]]></title>
+      <url>/%E5%B8%B8%E7%94%A8%E7%9A%84%E5%90%84%E5%B9%B3%E5%8F%B0%E7%9A%84hosts%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE/</url>
+      <content type="html"><![CDATA[<h2 id="Hosts是什么"><a href="#Hosts是什么" class="headerlink" title="Hosts是什么"></a>Hosts是什么</h2><p>引用中文维基百科的介绍：</p>
+<blockquote>
+<p>一个用于储存<a href="https://zh.wikipedia.org/wiki/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C" target="_blank" rel="external">计算机网络</a>中各节点信息的计算机文件。这个文件负责将<a href="https://zh.wikipedia.org/wiki/%E4%B8%BB%E6%A9%9F%E5%90%8D%E7%A8%B1" target="_blank" rel="external">主机名称</a>映射到相应的<a href="https://zh.wikipedia.org/wiki/IP%E5%9C%B0%E5%9D%80" target="_blank" rel="external">IP地址</a>。hosts文件通常用于补充或取代网络中<a href="https://zh.wikipedia.org/wiki/DNS" target="_blank" rel="external">DNS</a>的功能。和DNS不同的是，计算机的用户可以直接对hosts文件进行控制。</p>
+</blockquote>
+<p>简单来说，就是一个指定特定ip给指定的网址或主机的文件，它优先于DNS起作用。</p>
+<h2 id="Hosts能干什么"><a href="#Hosts能干什么" class="headerlink" title="Hosts能干什么"></a>Hosts能干什么</h2><p>修改Host有以下几类作用：</p>
+<ol>
+<li>去广告</li>
+<li>加快特定网址的访问速度</li>
+<li>阻止某些网站的连接</li>
+<li>实现某些网站的连接</li>
+</ol>
+<h2 id="不同操作系统Hosts文件默认目录"><a href="#不同操作系统Hosts文件默认目录" class="headerlink" title="不同操作系统Hosts文件默认目录"></a>不同操作系统Hosts文件默认目录</h2><p><strong>Unix、类Unix系统（例如Linux等）：</strong>/etc/hosts</p>
+<p><strong>Windows（NT系统及之后的系统）：</strong>%SystemRoot%\System32\drivers\etc</p>
+<p><strong>Android：</strong>/etc/<a href="https://laod.cn/tag/hosts/" target="_blank" rel="external">hosts</a>（指向/system/etc/<a href="https://laod.cn/tag/hosts/" target="_blank" rel="external">hosts</a>的符号链接)</p>
+<p><strong>iOS：</strong>/etc/hosts（指向/private/etc/hosts的符号链接)</p>
+<p><strong>Mac OS X 10.0–10.1.5：</strong>通过NetInfo或niload设置</p>
+<p><strong>Mac OS X 10.2和更新版本：</strong>/etc/hosts（指向/private/etc/hosts的符号链接）</p>
+<p><strong>Windows Mobile、Windows Phone：</strong>注册表项HKEY_LOCAL_MACHINE\Comm\Tcpip\Hosts</p>
+<h2 id="该如何修改"><a href="#该如何修改" class="headerlink" title="该如何修改"></a>该如何修改</h2><p><a href="https://laod.cn/hosts/2017-google-hosts.html" target="_blank" rel="external">找老D</a></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li><a href="https://zh.wikipedia.org/wiki/Hosts%E6%96%87%E4%BB%B6" target="_blank" rel="external">Host文件-中文维基百科</a></li>
+<li><a href="https://laod.cn/hosts/" target="_blank" rel="external">老D博客</a></li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWord </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hosts </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hexo 部署中的文件大小写问题]]></title>
       <url>/Hexo%20%E9%83%A8%E7%BD%B2%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E5%A4%A7%E5%B0%8F%E5%86%99%E9%97%AE%E9%A2%98/</url>
       <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>修改文件或文件夹名称后无法成功部署，例如原来的文章名称是Hexo.md，后来改为hexo.md，但上传到github并不会生效新的名称。</p>
@@ -291,6 +335,48 @@ Admin API Key
     </entry>
     
     <entry>
+      <title><![CDATA[Hexo设置Disqus评论]]></title>
+      <url>/Hexo%E8%AE%BE%E7%BD%AEDisqus%E8%AF%84%E8%AE%BA/</url>
+      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
+<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
+<blockquote>
+<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
+<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
+</li>
+<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
+</li>
+<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
+</li>
+<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
+</li>
+<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Disqus </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
       <url>/Markdown%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</url>
       <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
@@ -349,48 +435,6 @@ H2
         <tags>
             
             <tag> Markdown </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hexo设置Disqus评论]]></title>
-      <url>/Hexo%E8%AE%BE%E7%BD%AEDisqus%E8%AF%84%E8%AE%BA/</url>
-      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
-<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
-<blockquote>
-<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
-<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
-</li>
-<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
-</li>
-<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
-</li>
-<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
-</li>
-<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
-</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Disqus </tag>
             
         </tags>
         
