@@ -319,31 +319,36 @@
     </entry>
     
     <entry>
-      <title><![CDATA[阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法]]></title>
-      <url>/4618109c/</url>
+      <title><![CDATA[阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法]]></title>
+      <url>/70221081/</url>
       <content type="html"><![CDATA[<a id="more"></a>
 <h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
-<li>漏洞名称：微擎文件编辑SQL注入</li>
-<li>存在漏洞文件：/web/source/site/article.ctrl.php中</li>
-<li>漏洞描述：微擎的/web/source/site/article.ctrl.php中对\$_GPC[‘template’]、\$_GPC[‘title’]、\$_GPC[‘description’]、\$_GPC[‘source’]、\$_GPC[‘author’]参数未进行正确转义过滤，导致SQL注入的产生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
+<li><p>漏洞名称：微擎任意文件下载</p>
+</li>
+<li><p>存在漏洞文件：/framework/function/global.func.php</p>
+</li>
+<li><p>漏洞描述：任意文件下载，补丁绕过。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了改漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</p>
+</li>
 </ul>
 <h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
-<li>找到/web/source/site/article.ctrl.php这个文件</li>
-<li>搜素如下代码，约在75-85行之间</li>
+<li>找到/framework/function/global.func.php这个文件</li>
+<li>搜素如下代码，约在440-450行之间</li>
 </ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">message(<span class="string">'标题不能为空，请输入标题！'</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$t = strtolower($src);</div></pre></td></tr></table></figure>
 <ol>
-<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E5%BE%AE%E6%93%8ESQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D.png" alt="修复位置"></p>
+<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E4%BF%AE%E5%A4%8D%E4%BD%8D%E7%BD%AE.png" alt="修复位置"></p>
 </li>
-<li><p>在83行后添加如下代码</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_set_charset(<span class="string">"gbk"</span>);  $_GPC[<span class="string">'template'</span>] = mysql_real_escape_string($_GPC[<span class="string">'template'</span>]);  $_GPC[<span class="string">'title'</span>] = mysql_real_escape_string($_GPC[<span class="string">'title'</span>]);  $_GPC[<span class="string">'description'</span>] = mysql_real_escape_string($_GPC[<span class="string">'description'</span>]);  $_GPC[<span class="string">'source'</span>] = mysql_real_escape_string($_GPC[<span class="string">'source'</span>]);  $_GPC[<span class="string">'author'</span>] = mysql_real_escape_string($_GPC[<span class="string">'author'</span>]);</div></pre></td></tr></table></figure>
+<li><p>将如下代码进行修改</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (strexists($t, <span class="string">'http://'</span>) || strexists($t, <span class="string">'https://'</span>) || substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>) &#123;</div><div class="line"><span class="keyword">return</span> $src;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>改成</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>((substr($t, <span class="number">0</span>, <span class="number">7</span>) == <span class="string">'http://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">8</span>) == <span class="string">'https://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>))&#123;</div><div class="line"><span class="keyword">return</span> $src; </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>完成后保存，再使用阿里云云盾进行检测即可。</p>
+<li><p>​完成后保存，再使用阿里云云盾进行检测即可。</p>
 </li>
 </ol>
 <h2 id="相关漏洞修复方法"><a href="#相关漏洞修复方法" class="headerlink" title="相关漏洞修复方法"></a>相关漏洞修复方法</h2><ol>
+<li><a href="https://alaxn.tk/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8F%90%E7%A4%BA%E5%BE%AE%E6%93%8E%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91SQL%E6%B3%A8%E5%85%A5article.ctrl.php%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
 <li><a href="https://alaxn.tk/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8F%90%E7%A4%BA%E5%BE%AE%E6%93%8E%E6%9C%80%E6%96%B0%E7%89%88SQL%E6%B3%A8%E5%85%A5%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/">微擎最新版SQL注入(editor.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8F%90%E7%A4%BA%E5%BE%AE%E6%93%8E%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/">阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法</a></li>
 <li><a href="https://alaxn.tk/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8F%90%E7%A4%BA%E5%BE%AE%E6%93%8E%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91SQL%E6%B3%A8%E5%85%A5wxmicro.ctrl.php%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/">阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法</a></li>
 </ol>
 ]]></content>
@@ -370,30 +375,30 @@
     </entry>
     
     <entry>
-      <title><![CDATA[微擎最新版SQL注入(editor.ctrl.php)修复方法]]></title>
-      <url>/a47989f9/</url>
+      <title><![CDATA[阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法]]></title>
+      <url>/4618109c/</url>
       <content type="html"><![CDATA[<a id="more"></a>
 <h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
-<li>漏洞名称：微擎最新版SQL注入</li>
-<li>存在漏洞文件：/web/source/paycenter/wxmicro.ctrl.php文件中</li>
-<li>漏洞描述：微擎CMS的/web/source/paycenter/wxmicro.ctrl.php中，对\$post[‘member’][‘uid’]输入参数未进行严格类型转义，导致SQL注入的发生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
+<li>漏洞名称：微擎文件编辑SQL注入</li>
+<li>存在漏洞文件：/web/source/site/article.ctrl.php中</li>
+<li>漏洞描述：微擎的/web/source/site/article.ctrl.php中对\$_GPC[‘template’]、\$_GPC[‘title’]、\$_GPC[‘description’]、\$_GPC[‘source’]、\$_GPC[‘author’]参数未进行正确转义过滤，导致SQL注入的产生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
 </ul>
 <h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
-<li>找到/web/source/paycenter/wxmicro.ctrl.php这个文件</li>
-<li>搜素如下代码，共有三处，约在23行、87行、176行。</li>
+<li>找到/web/source/site/article.ctrl.php这个文件</li>
+<li>搜素如下代码，约在75-85行之间</li>
 </ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$html = htmlspecialchars_decode($_GPC[<span class="string">'wapeditor'</span>][<span class="string">'html'</span>], ENT_QUOTES);</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">message(<span class="string">'标题不能为空，请输入标题！'</span>);</div></pre></td></tr></table></figure>
 <ol>
-<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E5%BE%AE%E6%93%8ESQL%E6%96%B0%E7%89%88%E6%9C%AC%E6%BC%8F%E6%B4%9E.png" alt="修复位置"></p>
+<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E5%BE%AE%E6%93%8ESQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D.png" alt="修复位置"></p>
 </li>
-<li><p>在三处此语句后面添加如下内容：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$html = str_replace(<span class="keyword">array</span>(<span class="string">'&lt;?'</span>, <span class="string">'&lt;%'</span>, <span class="string">'&lt;?php'</span>, <span class="string">'&#123;php'</span>), <span class="string">'_'</span>, $html); $html = preg_replace(<span class="string">'/&lt;s*?script.*(src)+/i'</span>, <span class="string">'_'</span>, $html);</div></pre></td></tr></table></figure>
+<li><p>在83行后添加如下代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_set_charset(<span class="string">"gbk"</span>);  $_GPC[<span class="string">'template'</span>] = mysql_real_escape_string($_GPC[<span class="string">'template'</span>]);  $_GPC[<span class="string">'title'</span>] = mysql_real_escape_string($_GPC[<span class="string">'title'</span>]);  $_GPC[<span class="string">'description'</span>] = mysql_real_escape_string($_GPC[<span class="string">'description'</span>]);  $_GPC[<span class="string">'source'</span>] = mysql_real_escape_string($_GPC[<span class="string">'source'</span>]);  $_GPC[<span class="string">'author'</span>] = mysql_real_escape_string($_GPC[<span class="string">'author'</span>]);</div></pre></td></tr></table></figure>
 </li>
 <li><p>完成后保存，再使用阿里云云盾进行检测即可。</p>
 </li>
 </ol>
 <h2 id="相关漏洞修复方法"><a href="#相关漏洞修复方法" class="headerlink" title="相关漏洞修复方法"></a>相关漏洞修复方法</h2><ol>
-<li><a href="https://alaxn.tk/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8F%90%E7%A4%BA%E5%BE%AE%E6%93%8E%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91SQL%E6%B3%A8%E5%85%A5article.ctrl.php%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8F%90%E7%A4%BA%E5%BE%AE%E6%93%8E%E6%9C%80%E6%96%B0%E7%89%88SQL%E6%B3%A8%E5%85%A5%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/">微擎最新版SQL注入(editor.ctrl.php)修复方法</a></li>
 <li><a href="https://alaxn.tk/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8F%90%E7%A4%BA%E5%BE%AE%E6%93%8E%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/">阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法</a></li>
 <li><a href="https://alaxn.tk/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8F%90%E7%A4%BA%E5%BE%AE%E6%93%8E%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91SQL%E6%B3%A8%E5%85%A5wxmicro.ctrl.php%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/">阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法</a></li>
 </ol>
@@ -472,36 +477,31 @@
     </entry>
     
     <entry>
-      <title><![CDATA[阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法]]></title>
-      <url>/70221081/</url>
+      <title><![CDATA[微擎最新版SQL注入(editor.ctrl.php)修复方法]]></title>
+      <url>/a47989f9/</url>
       <content type="html"><![CDATA[<a id="more"></a>
 <h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
-<li><p>漏洞名称：微擎任意文件下载</p>
-</li>
-<li><p>存在漏洞文件：/framework/function/global.func.php</p>
-</li>
-<li><p>漏洞描述：任意文件下载，补丁绕过。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了改漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</p>
-</li>
+<li>漏洞名称：微擎最新版SQL注入</li>
+<li>存在漏洞文件：/web/source/paycenter/wxmicro.ctrl.php文件中</li>
+<li>漏洞描述：微擎CMS的/web/source/paycenter/wxmicro.ctrl.php中，对\$post[‘member’][‘uid’]输入参数未进行严格类型转义，导致SQL注入的发生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
 </ul>
 <h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
-<li>找到/framework/function/global.func.php这个文件</li>
-<li>搜素如下代码，约在440-450行之间</li>
+<li>找到/web/source/paycenter/wxmicro.ctrl.php这个文件</li>
+<li>搜素如下代码，共有三处，约在23行、87行、176行。</li>
 </ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$t = strtolower($src);</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$html = htmlspecialchars_decode($_GPC[<span class="string">'wapeditor'</span>][<span class="string">'html'</span>], ENT_QUOTES);</div></pre></td></tr></table></figure>
 <ol>
-<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E4%BF%AE%E5%A4%8D%E4%BD%8D%E7%BD%AE.png" alt="修复位置"></p>
+<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E5%BE%AE%E6%93%8ESQL%E6%96%B0%E7%89%88%E6%9C%AC%E6%BC%8F%E6%B4%9E.png" alt="修复位置"></p>
 </li>
-<li><p>将如下代码进行修改</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (strexists($t, <span class="string">'http://'</span>) || strexists($t, <span class="string">'https://'</span>) || substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>) &#123;</div><div class="line"><span class="keyword">return</span> $src;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>改成</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>((substr($t, <span class="number">0</span>, <span class="number">7</span>) == <span class="string">'http://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">8</span>) == <span class="string">'https://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>))&#123;</div><div class="line"><span class="keyword">return</span> $src; </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<li><p>在三处此语句后面添加如下内容：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$html = str_replace(<span class="keyword">array</span>(<span class="string">'&lt;?'</span>, <span class="string">'&lt;%'</span>, <span class="string">'&lt;?php'</span>, <span class="string">'&#123;php'</span>), <span class="string">'_'</span>, $html); $html = preg_replace(<span class="string">'/&lt;s*?script.*(src)+/i'</span>, <span class="string">'_'</span>, $html);</div></pre></td></tr></table></figure>
 </li>
-<li><p>​完成后保存，再使用阿里云云盾进行检测即可。</p>
+<li><p>完成后保存，再使用阿里云云盾进行检测即可。</p>
 </li>
 </ol>
 <h2 id="相关漏洞修复方法"><a href="#相关漏洞修复方法" class="headerlink" title="相关漏洞修复方法"></a>相关漏洞修复方法</h2><ol>
 <li><a href="https://alaxn.tk/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8F%90%E7%A4%BA%E5%BE%AE%E6%93%8E%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91SQL%E6%B3%A8%E5%85%A5article.ctrl.php%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8F%90%E7%A4%BA%E5%BE%AE%E6%93%8E%E6%9C%80%E6%96%B0%E7%89%88SQL%E6%B3%A8%E5%85%A5%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/">微擎最新版SQL注入(editor.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8F%90%E7%A4%BA%E5%BE%AE%E6%93%8E%E4%BB%BB%E6%84%8F%E6%96%87%E4%BB%B6%E4%B8%8B%E8%BD%BD%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/">阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法</a></li>
 <li><a href="https://alaxn.tk/%E9%98%BF%E9%87%8C%E4%BA%91%E6%8F%90%E7%A4%BA%E5%BE%AE%E6%93%8E%E6%96%87%E4%BB%B6%E7%BC%96%E8%BE%91SQL%E6%B3%A8%E5%85%A5wxmicro.ctrl.php%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95/">阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法</a></li>
 </ol>
 ]]></content>
@@ -732,39 +732,27 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
-      <url>/18f91d43/</url>
-      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
-<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
-</ol>
+      <title><![CDATA[Hexo设置Disqus评论]]></title>
+      <url>/a55c64ff/</url>
+      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
+<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
 <blockquote>
-<p>algolia可以使用github和谷歌账号直接登录。</p>
+<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
 </blockquote>
-<ol>
-<li>点击Indices，新建Index</li>
-<li>点击API Keys，记录下以下三个值：</li>
-</ol>
-<pre><code>Application ID
-Search-Only API Key
-Admin API Key
-</code></pre><ol>
-<li>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。<blockquote>
-<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
-</blockquote>
+<a id="more"></a>
+<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
+<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
+</li>
+<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
+</li>
+<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
+</li>
+<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
+</li>
+<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
 </li>
 </ol>
-<p><img src="http://orp61qolg.bkt.clouddn.com/images/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/Create%20a%20new%20API%20Key%20for%20search.png" alt="设置页面"></p>
-<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2><p>待续……</p>
-<h2 id="更新搜索内容"><a href="#更新搜索内容" class="headerlink" title="更新搜索内容"></a>更新搜索内容</h2><p>当配置完成后，输入如下指令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=…</div></pre></td></tr></table></figure>
-<p>“=”后面填入新建的API，完成后在站点根目录下执行 <code>hexo algolia</code> 来更新 Index。请注意观察命令的输出。</p>
-<p><img src="http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png" alt="img"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://theme-next.iissnan.com/third-party-services.html#search-system" target="_blank" rel="external">NexT 第三方服务集成</a></p>
-<p><a href="https://github.com/oncletom/hexo-algolia/tree/20f6ecfde2b3348c2fba5ffc3963cc1ba7d2e3cb#api-key" target="_blank" rel="external">hexo-algolia</a></p>
-]]></content>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
       
         <categories>
             
@@ -779,7 +767,7 @@ Admin API Key
             
             <tag> Hexo </tag>
             
-            <tag> Algolia </tag>
+            <tag> Disqus </tag>
             
         </tags>
         
@@ -850,27 +838,39 @@ H2
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo设置Disqus评论]]></title>
-      <url>/a55c64ff/</url>
-      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
-<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
-<blockquote>
-<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
-</blockquote>
+      <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
+      <url>/18f91d43/</url>
+      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
-<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
-</li>
-<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
-</li>
-<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
-</li>
-<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
-</li>
-<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
+<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
+<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
+</ol>
+<blockquote>
+<p>algolia可以使用github和谷歌账号直接登录。</p>
+</blockquote>
+<ol>
+<li>点击Indices，新建Index</li>
+<li>点击API Keys，记录下以下三个值：</li>
+</ol>
+<pre><code>Application ID
+Search-Only API Key
+Admin API Key
+</code></pre><ol>
+<li>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。<blockquote>
+<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
+</blockquote>
 </li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
+<p><img src="http://orp61qolg.bkt.clouddn.com/images/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/Create%20a%20new%20API%20Key%20for%20search.png" alt="设置页面"></p>
+<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2><p>待续……</p>
+<h2 id="更新搜索内容"><a href="#更新搜索内容" class="headerlink" title="更新搜索内容"></a>更新搜索内容</h2><p>当配置完成后，输入如下指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=…</div></pre></td></tr></table></figure>
+<p>“=”后面填入新建的API，完成后在站点根目录下执行 <code>hexo algolia</code> 来更新 Index。请注意观察命令的输出。</p>
+<p><img src="http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png" alt="img"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://theme-next.iissnan.com/third-party-services.html#search-system" target="_blank" rel="external">NexT 第三方服务集成</a></p>
+<p><a href="https://github.com/oncletom/hexo-algolia/tree/20f6ecfde2b3348c2fba5ffc3963cc1ba7d2e3cb#api-key" target="_blank" rel="external">hexo-algolia</a></p>
+]]></content>
       
         <categories>
             
@@ -885,7 +885,7 @@ H2
             
             <tag> Hexo </tag>
             
-            <tag> Disqus </tag>
+            <tag> Algolia </tag>
             
         </tags>
         
@@ -998,6 +998,42 @@ H2
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo文章地址唯一化]]></title>
+      <url>/1473c882/</url>
+      <content type="html"><![CDATA[<h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><p>使用的插件是hexo-abbrlink。</p>
+<p>打开git安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-abbrlink --save</div></pre></td></tr></table></figure>
+<p>安装后打开根目录的package.json，检查是否”hexo-abbrlink”: “^2.0.4”类似字样，如果有，则已经安装成功；没有则重复安装或查看返回的错误信息。</p>
+<a id="more"></a>
+<h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>打开根目录的站点配置文件_config.yml</p>
+<p>查找permalink，将其改为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">permalink: :abbrlink/  如果想将所有文章存储在某一文件夹中，则可改为某一文件夹/:abbrlink/，</div></pre></td></tr></table></figure>
+<p>在其下方添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"># abbrlink config</div><div class="line">abbrlink:</div><div class="line">  alg: crc32</div><div class="line">  rep: hex</div></pre></td></tr></table></figure>
+<p>算法alg的可选模式有：crc16和crc32</p>
+<p>进制rep的可选模式有：hex和dec</p>
+<p>两者可以随意搭配。</p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>使用此插件后，不能在<code>hexo s</code>模式下更改文章文件名，否则文章会打不开。</p>
 ]]></content>
       
         <categories>
