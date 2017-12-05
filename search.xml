@@ -3,14 +3,6 @@
   
     
     <entry>
-      <title><![CDATA[Windows 网络修复工具 Complete Internet Repair]]></title>
-      <url>/799eb0a0/</url>
-      <content type="html"></content>
-      
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[活用 MKLINK 命令保护、节省你的硬盘]]></title>
       <url>/fcf00b4a/</url>
       <content type="html"><![CDATA[<blockquote>
@@ -1125,42 +1117,64 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo设置Disqus评论]]></title>
-      <url>/a55c64ff/</url>
-      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
-<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
+      <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
+      <url>/2620121e/</url>
+      <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
 <blockquote>
-<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
+<p>转载来自<a href="http://itmyhome.com/markdown/" target="_blank" rel="external">http://itmyhome.com/markdown/</a></p>
 </blockquote>
 <a id="more"></a>
-<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
-<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
-</li>
-<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
-</li>
-<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
-</li>
-<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
-</li>
-<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
-</li>
+<p>这部分内容列出了 John Gruber 定义的 Markdown 语法，包括：</p>
+<ol>
+<li>段落与换行</li>
+<li>标题</li>
+<li>引用</li>
+<li>列表</li>
+<li>代码</li>
+<li>分隔线</li>
+<li>超链接</li>
+<li>图像</li>
+<li>强调</li>
+<li>字符转义</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
+<!-- more -->
+<h2 id="段落与换行"><a href="#段落与换行" class="headerlink" title="段落与换行"></a>段落与换行</h2><pre><code>1. 段落的前后必须是空行：
+</code></pre><p>  空行指的是行内什么都没有，或者只有空白符（空格或制表符）</p>
+<p>  相邻两行文本，如果中间没有空行 会显示在一行中（换行符被转换为空格）、</p>
+<pre><code>2. 如果需要在段落内加入换行（&lt;br&gt;）：
+</code></pre><p>  可以在前一行的末尾加入至少两个空格<br>  然后换行写其它的文字</p>
+<pre><code>3. Markdown 中的多数区块都需要在两个空行之间.
+</code></pre><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h2 id="1-Setext-形式"><a href="#1-Setext-形式" class="headerlink" title="1. Setext 形式"></a>1. Setext 形式</h2><pre><code>H1
+====
+H2
+----
+</code></pre><h2 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h2><hr>
+<h4 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h4><hr>
+<blockquote>
+<p>= 和 - 的数量是没有限制的。通常的做法是使其和标题文本的长度相同，这样看起来比较舒服。或者可以像我一样，用四个 - 或 =。<br>Setext 形式只支持 h1 和 h2 两种标题。</p>
+</blockquote>
+<h2 id="2-atx-形式"><a href="#2-atx-形式" class="headerlink" title="2. atx 形式"></a><strong>2. atx 形式</strong></h2><p>① 可以用对称的 # 包括文本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#### H4 ####</div><div class="line"></div><div class="line">##### H5 #####</div></pre></td></tr></table></figure></p>
+<h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><p>② 也可以只在左边使用 #：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#### H4</div><div class="line"></div><div class="line">##### H5</div></pre></td></tr></table></figure></p>
+<p>H4</p>
+<p>H5</p>
+<p>③ 成对的 # 左侧和只在左边使用的 # 左侧都不可以有任何空白，但其内侧可以使用空白。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> ###左侧使用了空格###</div><div class="line"></div><div class="line">#### 内侧使用了空格</div></pre></td></tr></table></figure>
+<h4 id="左侧使用了空格"><a href="#左侧使用了空格" class="headerlink" title="左侧使用了空格"></a>左侧使用了空格</h4><p>内侧使用了空格</p>
+<blockquote>
+<p>在这一点上，可能各种 Markdown 的实现会有不同的结果，不过仍然需要我们遵守语法规则。</p>
+</blockquote>
+]]></content>
       
         <categories>
             
-            <category> MachineWorld </category>
-            
-            <category> Hexo </category>
+            <category> Markdown </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> Hexo </tag>
-            
-            <tag> Disqus </tag>
+            <tag> Markdown </tag>
             
         </tags>
         
@@ -1221,64 +1235,42 @@ Admin API Key
     </entry>
     
     <entry>
-      <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
-      <url>/2620121e/</url>
-      <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
+      <title><![CDATA[Hexo设置Disqus评论]]></title>
+      <url>/a55c64ff/</url>
+      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
+<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
 <blockquote>
-<p>转载来自<a href="http://itmyhome.com/markdown/" target="_blank" rel="external">http://itmyhome.com/markdown/</a></p>
+<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
 </blockquote>
 <a id="more"></a>
-<p>这部分内容列出了 John Gruber 定义的 Markdown 语法，包括：</p>
-<ol>
-<li>段落与换行</li>
-<li>标题</li>
-<li>引用</li>
-<li>列表</li>
-<li>代码</li>
-<li>分隔线</li>
-<li>超链接</li>
-<li>图像</li>
-<li>强调</li>
-<li>字符转义</li>
+<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
+<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
+</li>
+<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
+</li>
+<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
+</li>
+<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
+</li>
+<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
+</li>
 </ol>
-<!-- more -->
-<h2 id="段落与换行"><a href="#段落与换行" class="headerlink" title="段落与换行"></a>段落与换行</h2><pre><code>1. 段落的前后必须是空行：
-</code></pre><p>  空行指的是行内什么都没有，或者只有空白符（空格或制表符）</p>
-<p>  相邻两行文本，如果中间没有空行 会显示在一行中（换行符被转换为空格）、</p>
-<pre><code>2. 如果需要在段落内加入换行（&lt;br&gt;）：
-</code></pre><p>  可以在前一行的末尾加入至少两个空格<br>  然后换行写其它的文字</p>
-<pre><code>3. Markdown 中的多数区块都需要在两个空行之间.
-</code></pre><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h2 id="1-Setext-形式"><a href="#1-Setext-形式" class="headerlink" title="1. Setext 形式"></a>1. Setext 形式</h2><pre><code>H1
-====
-H2
-----
-</code></pre><h2 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h2><hr>
-<h4 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h4><hr>
-<blockquote>
-<p>= 和 - 的数量是没有限制的。通常的做法是使其和标题文本的长度相同，这样看起来比较舒服。或者可以像我一样，用四个 - 或 =。<br>Setext 形式只支持 h1 和 h2 两种标题。</p>
-</blockquote>
-<h2 id="2-atx-形式"><a href="#2-atx-形式" class="headerlink" title="2. atx 形式"></a><strong>2. atx 形式</strong></h2><p>① 可以用对称的 # 包括文本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#### H4 ####</div><div class="line"></div><div class="line">##### H5 #####</div></pre></td></tr></table></figure></p>
-<h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><p>② 也可以只在左边使用 #：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#### H4</div><div class="line"></div><div class="line">##### H5</div></pre></td></tr></table></figure></p>
-<p>H4</p>
-<p>H5</p>
-<p>③ 成对的 # 左侧和只在左边使用的 # 左侧都不可以有任何空白，但其内侧可以使用空白。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> ###左侧使用了空格###</div><div class="line"></div><div class="line">#### 内侧使用了空格</div></pre></td></tr></table></figure>
-<h4 id="左侧使用了空格"><a href="#左侧使用了空格" class="headerlink" title="左侧使用了空格"></a>左侧使用了空格</h4><p>内侧使用了空格</p>
-<blockquote>
-<p>在这一点上，可能各种 Markdown 的实现会有不同的结果，不过仍然需要我们遵守语法规则。</p>
-</blockquote>
-]]></content>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
       
         <categories>
             
-            <category> Markdown </category>
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
             
         </categories>
         
         
         <tags>
             
-            <tag> Markdown </tag>
+            <tag> Hexo </tag>
+            
+            <tag> Disqus </tag>
             
         </tags>
         
@@ -1826,11 +1818,11 @@ H2
         
         <tags>
             
-            <tag> Wordpress </tag>
-            
             <tag> Lnmp </tag>
             
             <tag> VPS </tag>
+            
+            <tag> Wordpress </tag>
             
         </tags>
         
