@@ -3,6 +3,71 @@
   
     
     <entry>
+      <title><![CDATA[Windows 网络修复工具 Complete Internet Repair]]></title>
+      <url>/799eb0a0/</url>
+      <content type="html"></content>
+      
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[活用 MKLINK 命令保护、节省你的硬盘]]></title>
+      <url>/fcf00b4a/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>用过 Linux 的人应该都熟悉软硬链接，但某些人可能还不知道 Windows 中也包含了这项功能。前几天在知乎专栏看到有人利用类似原理转移iTunes的备份文件夹节省C盘空间，索性也汇编篇文章介绍这个功能。</p>
+<p>个人目前使用它转移C盘<code>Users</code>文件夹、  Outlook产生的本地邮箱缓存以及OneNote的本地缓存</p>
+</blockquote>
+<p>###MKLINE简介</p>
+<p><code>MKLINK</code>包含符号链接、硬链接和软链接，具体啥差别我也没研究。简单讲，可以用<code>MKLINK</code>为<strong>文件</strong>和<strong>文件夹</strong>建立“高级”的快捷方式。 </p>
+<p><code>MKLINK</code> 的基础命令如下：</p>
+<ul>
+<li>不加参数使用表示链接源、目标都是<strong>单个文件</strong>。这个命令会让 D 盘多出 <code>BOOTMGR</code> 文件，大小为 0 字节，但编辑时确是 <code>C:\BOOTGR</code> 的内容。（系统启动文件，不要真编辑里面的内容了……）</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mklink <span class="string">"D:\BOOTMGR C:\BOOTMGR"</span></div></pre></td></tr></table></figure>
+<ul>
+<li><code>/j</code> 参数表示链接源、目标都是文件夹。这样做可以在你的 D 盘创建一个 <code>Windows</code> 文件夹，里面的内容与 <code>C:\Windows</code> 一模一样，不占空间（显示为与 <code>C:\Windows</code> 一样大）且修改也会及时同步到 C 盘。如果能把 C 盘隐藏的话，你完全可以说 Windows 安装在 D 盘。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mklink /j <span class="string">"D:\Windows C:\Windows"</span></div></pre></td></tr></table></figure>
+<p>日常操作知道这两个命令就够了，<code>/d</code>和<code>/j</code>的区别未知，个人测试日常使用似乎没啥本质差别。</p>
+<p><code>MKLINK</code>创建的“高级”快捷方式和“普通”快捷方式的比较如下：</p>
+<ol>
+<li>快捷方式无论目标是文件还是目录，生成的都是新的有内容的 <code>.lnk</code> 文件，打开时是打开的源路径，直接编辑则是编辑 <code>.lnk</code> 文件的内容，源文件/目录不受影响。<code>MKLINK</code> 生成的文件和目录都是 0 字节，但访问时仍然是新文件/目录的路径，且编辑操作编辑的是源文件/目录；原理相当于网盘的同步，只不过不通过网络、不占用空间。</li>
+<li>删除两者生成的目标文件/目录都不会对源文件/目录产生影响。但删除源文件/目录后，新路径都不再可用。</li>
+</ol>
+<p>###实例 1：给 C 盘减负</p>
+<p>不少驱动程序都会自动在 <code>C:\Program Files\InstallShield Installation Information</code> 目录中留下安装程序备份用于卸载，其实有谁没事卸载驱动玩？但这却是 C 盘主要的空间杀手，也是 InstallShield 通常被人们诟病的地方。</p>
+<p>于是，为了节省系统盘空间，可以在安全模式中 <code>C:\Program Files\InstallShield Installation Information</code> 剪切到 E 盘（需要先显示系统隐藏文件夹），利用 <code>MKLINK</code> 让系统误以为没有移动（注意别清理优化时手快删了就行）。</p>
+<p>剪切完之后，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mklink /j <span class="string">"E:\InstallShield Installation Information"</span> <span class="string">"C:\Program Files\InstallShield Installation Information"</span></div></pre></td></tr></table></figure>
+<p>大功告成！</p>
+<p>这个方法同时适用于许多已安装的 Windows 程序（例如 Office 等），这些程序在注册表中留有许多信息，不能随意移动原来路径下的文件。但等到 C 盘空间不足时，可以考虑把他们剪切出来，再用 <code>MKLINK</code> 链回去。</p>
+<p>###实例 2：整合游戏客户端</p>
+<p>《魔兽世界》是个很流行的网络游戏，不少玩家却因为不同地区游戏版本不同饱受折磨。其实客户端中大部分文件都可以通用，只有几个目录需要根据连接的服务器做调整，但是客户端只会死板的访问自己路径下的文件。于是把这些特殊目录、文件单列出来，需要连接哪个服务器就把目录链回去。</p>
+<p>这是一个脚本的部分命令，大量用到了 <code>MKLINK</code>，用于在不同服务器之前切换，却不需要重复下载、来回复制文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">:TW</div><div class="line">ECHO.</div><div class="line">copy /y /v <span class="string">".\@TW@\.agent.db"</span></div><div class="line">mklink <span class="string">"Battle.net.dll"</span> <span class="string">".\@TW@\TW@Battle.net.dll"</span></div><div class="line">mklink <span class="string">"Battle.net-64.dll"</span> <span class="string">".\@TW@\TW@Battle.net-64.dll"</span></div><div class="line">&gt;Launcher.db <span class="built_in">set</span> /p=zhTWLauncher.db <span class="built_in">set</span> /p=zhCNLauncher.db <span class="built_in">set</span> /p=enUS</div></pre></td></tr></table></figure>
+<h3 id="实例-3-隐藏私密文件"><a href="#实例-3-隐藏私密文件" class="headerlink" title="实例 3: 隐藏私密文件"></a><strong>实例 3: 隐藏私密文件</strong></h3><p>利用 <code>MKLINK</code> 生成的文件/目录并不继承源文件/目录的属性，这个特点可以用来直接访问隐藏文件。</p>
+<p>例如在 <code>C:\Windows</code> 中新建 <code>Photos</code> 目录，把个人照片拷进去，执行命令<code>attrib +s +h +r C:\Windows\Photos\*.* /s /d</code>就可以让 <code>Photos</code> 目录进行系统级隐藏，即使打开普通的 <code>显示隐藏文件和文件夹</code> 开关也看不到。</p>
+<p>然后插入自己的 U 盘，执行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mklink /j <span class="string">"U:\我的照片"</span> <span class="string">"C:\Windows\Photos"</span></div></pre></td></tr></table></figure>
+<p>以后就可以通过 U 盘直接访问 Photos 中的照片，路径仍然显示为 <code>U:\我的照片</code> 而不至于暴露。除非有人花时间在 <code>C:\Windows</code> 中隐藏文件中仔细查找，否则绝大多数情况下，照片都是安全的。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MachineWorld </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[微擎最新版SQL注入(editor.ctrl.php)修复方法]]></title>
       <url>/5e006aac/</url>
       <content type="html"><![CDATA[<h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
@@ -136,6 +201,65 @@
     <entry>
       <title><![CDATA[Linux文件解压乱码]]></title>
       <url>/71031f1a/</url>
+      <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>相信不少Linux小白都会遇到这样一种情况：在服务器（Linux英文）上下载带有中文字符的文件会出现乱码。</p>
+<p>本文将介绍几种解决此问题的方法，多数从网站摘抄或汇编而来，但亲测有效。</p>
+<a id="more"></a>
+<h2 id="原因探讨"><a href="#原因探讨" class="headerlink" title="原因探讨"></a>原因探讨</h2><p>出现乱码主要是因为系统之间编码方式不同。中文版windows文件名编码方式一般是gbk，而Linux默认是utf-8。当在Linux中下载编码是gbk的文件时，就会导致显示乱码。</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><h3 id="系统完全不支持中文，文件名显示错误"><a href="#系统完全不支持中文，文件名显示错误" class="headerlink" title="系统完全不支持中文，文件名显示错误"></a>系统完全不支持中文，文件名显示错误</h3><p><strong>方法：安装中文支持</strong></p>
+<ol>
+<li><p>安装中文包</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install language-pack-zh-hant language-pack-zh-hans</div></pre></td></tr></table></figure>
+</li>
+<li><p>设置环境变量，在LANG这一栏中增加语言和编码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo vim /etc/environment</div></pre></td></tr></table></figure>
+<p>修改如下两行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">LANG=&quot;zh_CN.UTF-8&quot;</div><div class="line">LANGUAGE=&quot;zh_CN:zh:en_US:en&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>使配置生效</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo dpkg-reconfigure locales</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="RAR文件"><a href="#RAR文件" class="headerlink" title="RAR文件"></a>RAR文件</h3><ol>
+<li><p>安装unar</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install unar</div></pre></td></tr></table></figure>
+<p>unar常见参数：</p>
+<p><strong>-o：指定解压结果保存的位置</strong> </p>
+<p>如：unar test.zip -o /home/<br><strong>-e：指定编码</strong> </p>
+<p>如：unar -e GBK test.zip<br><strong>-p：指定解压密码</strong><br>如：unar -p 123456 test.zip</p>
+</li>
+<li><p>依次尝试几种编码解压：GBK、GB2312、GB18030</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unar -e GB2312 test.zip</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+<h3 id="ZIP文件"><a href="#ZIP文件" class="headerlink" title="ZIP文件"></a>ZIP文件</h3><p><strong>该方法并未测试</strong>，转载来自<a href="https://www.findhao.net/easycoding/1605" target="_blank" rel="external">FindHao-Linux文件乱码</a></p>
+<p>如果系统自带的unzip支持<code>-O</code>选项，则直接使用以下命令即可，这样最方便简单，然而debian stable版本自带的就不支持。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">unzip -O GBK you_zip_file.zip</div></pre></td></tr></table></figure>
+<h3 id="7z文件"><a href="#7z文件" class="headerlink" title="7z文件"></a>7z文件</h3><p><strong>该方法本人测试用于解压RAR文件无效</strong>，转载来自<a href="https://www.findhao.net/easycoding/1605" target="_blank" rel="external">FindHao-Linux文件乱码</a></p>
+<p>先设置bash的lang，用7z解压出文件，然后再用convmv转换文件格式是这个方法的主要内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install p7zip-full convmv</div><div class="line">LANG=C</div><div class="line">7z x zip_file.zip</div><div class="line">convmv -f gbk -t utf8 --notest -r your_unzipped_file_floder/</div><div class="line">或者先cd到解压好的地方</div><div class="line">convmv -f gbk -t utf8 --notest  ./*</div></pre></td></tr></table></figure>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="https://www.zhihu.com/question/20523036" target="_blank" rel="external">Linux 下 zip 文件解压乱码如何解决？</a></p>
+<p><a href="https://www.findhao.net/easycoding/1605" target="_blank" rel="external">Linux文件乱码</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Linux下乱码文件如何重命名]]></title>
+      <url>/2a352fd8/</url>
       <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>相信不少刚刚使用VPS的人，都会遇到下载中文文件出现乱码的情况，而且更要命的是，那个文件（夹）无法删除，只能待在那里占空间。</p>
 <a id="more"></a>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>获取文件索引号进行删除或重命名操作。</p>
@@ -342,11 +466,11 @@
         
         <tags>
             
+            <tag> MachineWorld </tag>
+            
             <tag> OSX </tag>
             
             <tag> 黑苹果 </tag>
-            
-            <tag> MachineWorld </tag>
             
         </tags>
         
@@ -488,6 +612,65 @@
             <tag> MachineWorld </tag>
             
             <tag> Hosts </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法]]></title>
+      <url>/70221081/</url>
+      <content type="html"><![CDATA[<a id="more"></a>
+<h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
+<li><p>漏洞名称：微擎任意文件下载</p>
+</li>
+<li><p>存在漏洞文件：/framework/function/global.func.php</p>
+</li>
+<li><p>漏洞描述：任意文件下载，补丁绕过。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了改漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</p>
+</li>
+</ul>
+<h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
+<li>找到/framework/function/global.func.php这个文件</li>
+<li>搜素如下代码，约在440-450行之间</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$t = strtolower($src);</div></pre></td></tr></table></figure>
+<ol>
+<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E4%BF%AE%E5%A4%8D%E4%BD%8D%E7%BD%AE.png" alt="修复位置"></p>
+</li>
+<li><p>将如下代码进行修改</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (strexists($t, <span class="string">'http://'</span>) || strexists($t, <span class="string">'https://'</span>) || substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>) &#123;</div><div class="line"><span class="keyword">return</span> $src;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>改成</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>((substr($t, <span class="number">0</span>, <span class="number">7</span>) == <span class="string">'http://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">8</span>) == <span class="string">'https://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>))&#123;</div><div class="line"><span class="keyword">return</span> $src; </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>​完成后保存，再使用阿里云云盾进行检测即可。</p>
+</li>
+</ol>
+<h2 id="相关漏洞修复方法"><a href="#相关漏洞修复方法" class="headerlink" title="相关漏洞修复方法"></a>相关漏洞修复方法</h2><ol>
+<li>[<a href="https://alaxn.tk/4618109c/">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/70221081/">阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法</a></li>
+<li><a href="https://alaxn.tk/5d7bb850/">阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/5e006aac/">阿里云提示微擎最新版SQL注入(editor.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/c8a40f/">阿里云提示微擎前台任意文件删除漏洞(category.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/5d7bb850/">微擎最新版SQL注入(wxmicro.ctrl.php)修复方法</a></li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Websites </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MachineWorld </tag>
+            
+            <tag> Websites </tag>
+            
+            <tag> 微擎 </tag>
             
         </tags>
         
@@ -656,65 +839,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法]]></title>
-      <url>/70221081/</url>
-      <content type="html"><![CDATA[<a id="more"></a>
-<h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
-<li><p>漏洞名称：微擎任意文件下载</p>
-</li>
-<li><p>存在漏洞文件：/framework/function/global.func.php</p>
-</li>
-<li><p>漏洞描述：任意文件下载，补丁绕过。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了改漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</p>
-</li>
-</ul>
-<h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
-<li>找到/framework/function/global.func.php这个文件</li>
-<li>搜素如下代码，约在440-450行之间</li>
-</ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$t = strtolower($src);</div></pre></td></tr></table></figure>
-<ol>
-<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E4%BF%AE%E5%A4%8D%E4%BD%8D%E7%BD%AE.png" alt="修复位置"></p>
-</li>
-<li><p>将如下代码进行修改</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (strexists($t, <span class="string">'http://'</span>) || strexists($t, <span class="string">'https://'</span>) || substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>) &#123;</div><div class="line"><span class="keyword">return</span> $src;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>改成</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>((substr($t, <span class="number">0</span>, <span class="number">7</span>) == <span class="string">'http://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">8</span>) == <span class="string">'https://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>))&#123;</div><div class="line"><span class="keyword">return</span> $src; </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>​完成后保存，再使用阿里云云盾进行检测即可。</p>
-</li>
-</ol>
-<h2 id="相关漏洞修复方法"><a href="#相关漏洞修复方法" class="headerlink" title="相关漏洞修复方法"></a>相关漏洞修复方法</h2><ol>
-<li>[<a href="https://alaxn.tk/4618109c/">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/70221081/">阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法</a></li>
-<li><a href="https://alaxn.tk/5d7bb850/">阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/5e006aac/">阿里云提示微擎最新版SQL注入(editor.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/c8a40f/">阿里云提示微擎前台任意文件删除漏洞(category.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/5d7bb850/">微擎最新版SQL注入(wxmicro.ctrl.php)修复方法</a></li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-            <category> Websites </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> MachineWorld </tag>
-            
-            <tag> Websites </tag>
-            
-            <tag> 微擎 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Hexo 部署中的文件大小写问题]]></title>
       <url>/e37a3bda/</url>
       <content type="html"><![CDATA[<h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>修改文件或文件夹名称后无法成功部署，例如原来的文章名称是Hexo.md，后来改为hexo.md，但上传到github并不会生效新的名称。</p>
@@ -764,9 +888,10 @@
 <p>​</p>
 <h2 id="安装过程"><a href="#安装过程" class="headerlink" title="安装过程"></a>安装过程</h2><h3 id="Node-js安装"><a href="#Node-js安装" class="headerlink" title="Node.js安装"></a>Node.js安装</h3></li>
 </ol>
-<h3 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git安装</h3><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><pre><code>1. 在想要安装的文件夹空白处按住Shift+鼠标右键，打开命令行窗口
+<h3 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a>Git安装</h3><h3 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h3><pre><code>1. 在想要安装的文件夹空白处按住Shift+鼠标右键，打开命令行窗口（Win10需注意权限，权限不足需使用管理员模式运行）
 2. 输入：
 `npm install hexo-cli -g`
+完成后弹出WARRING不要紧
 3. 接着输入：
 `npm install hexo --save`
 4. 检查是否安装成功：
@@ -970,124 +1095,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
-      <url>/2620121e/</url>
-      <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
-<blockquote>
-<p>转载来自<a href="http://itmyhome.com/markdown/" target="_blank" rel="external">http://itmyhome.com/markdown/</a></p>
-</blockquote>
-<a id="more"></a>
-<p>这部分内容列出了 John Gruber 定义的 Markdown 语法，包括：</p>
-<ol>
-<li>段落与换行</li>
-<li>标题</li>
-<li>引用</li>
-<li>列表</li>
-<li>代码</li>
-<li>分隔线</li>
-<li>超链接</li>
-<li>图像</li>
-<li>强调</li>
-<li>字符转义</li>
-</ol>
-<!-- more -->
-<h2 id="段落与换行"><a href="#段落与换行" class="headerlink" title="段落与换行"></a>段落与换行</h2><pre><code>1. 段落的前后必须是空行：
-</code></pre><p>  空行指的是行内什么都没有，或者只有空白符（空格或制表符）</p>
-<p>  相邻两行文本，如果中间没有空行 会显示在一行中（换行符被转换为空格）、</p>
-<pre><code>2. 如果需要在段落内加入换行（&lt;br&gt;）：
-</code></pre><p>  可以在前一行的末尾加入至少两个空格<br>  然后换行写其它的文字</p>
-<pre><code>3. Markdown 中的多数区块都需要在两个空行之间.
-</code></pre><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h2 id="1-Setext-形式"><a href="#1-Setext-形式" class="headerlink" title="1. Setext 形式"></a>1. Setext 形式</h2><pre><code>H1
-====
-H2
-----
-</code></pre><h2 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h2><hr>
-<h4 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h4><hr>
-<blockquote>
-<p>= 和 - 的数量是没有限制的。通常的做法是使其和标题文本的长度相同，这样看起来比较舒服。或者可以像我一样，用四个 - 或 =。<br>Setext 形式只支持 h1 和 h2 两种标题。</p>
-</blockquote>
-<h2 id="2-atx-形式"><a href="#2-atx-形式" class="headerlink" title="2. atx 形式"></a><strong>2. atx 形式</strong></h2><p>① 可以用对称的 # 包括文本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#### H4 ####</div><div class="line"></div><div class="line">##### H5 #####</div></pre></td></tr></table></figure></p>
-<h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><p>② 也可以只在左边使用 #：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#### H4</div><div class="line"></div><div class="line">##### H5</div></pre></td></tr></table></figure></p>
-<p>H4</p>
-<p>H5</p>
-<p>③ 成对的 # 左侧和只在左边使用的 # 左侧都不可以有任何空白，但其内侧可以使用空白。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> ###左侧使用了空格###</div><div class="line"></div><div class="line">#### 内侧使用了空格</div></pre></td></tr></table></figure>
-<h4 id="左侧使用了空格"><a href="#左侧使用了空格" class="headerlink" title="左侧使用了空格"></a>左侧使用了空格</h4><p>内侧使用了空格</p>
-<blockquote>
-<p>在这一点上，可能各种 Markdown 的实现会有不同的结果，不过仍然需要我们遵守语法规则。</p>
-</blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> Markdown </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Markdown </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
-      <url>/18f91d43/</url>
-      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
-<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
-</ol>
-<blockquote>
-<p>algolia可以使用github和谷歌账号直接登录。</p>
-</blockquote>
-<ol>
-<li>点击Indices，新建Index</li>
-<li>点击API Keys，记录下以下三个值：</li>
-</ol>
-<pre><code>Application ID
-Search-Only API Key
-Admin API Key
-</code></pre><ol>
-<li>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。<blockquote>
-<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="http://orp61qolg.bkt.clouddn.com/images/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/Create%20a%20new%20API%20Key%20for%20search.png" alt="设置页面"></p>
-<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2><p>待续……</p>
-<h2 id="更新搜索内容"><a href="#更新搜索内容" class="headerlink" title="更新搜索内容"></a>更新搜索内容</h2><p>当配置完成后，输入如下指令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=…</div></pre></td></tr></table></figure>
-<p>“=”后面填入新建的API，完成后在站点根目录下执行 <code>hexo algolia</code> 来更新 Index。请注意观察命令的输出。</p>
-<p><img src="http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png" alt="img"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://theme-next.iissnan.com/third-party-services.html#search-system" target="_blank" rel="external">NexT 第三方服务集成</a></p>
-<p><a href="https://github.com/oncletom/hexo-algolia/tree/20f6ecfde2b3348c2fba5ffc3963cc1ba7d2e3cb#api-key" target="_blank" rel="external">hexo-algolia</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Algolia </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[解决设置Gulp中出现的Unable to minify JavaScript错误]]></title>
       <url>/f3aadd98/</url>
       <content type="html"><![CDATA[<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><a id="more"></a>
@@ -1160,20 +1167,143 @@ Admin API Key
     </entry>
     
     <entry>
+      <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
+      <url>/18f91d43/</url>
+      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
+<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
+</ol>
+<blockquote>
+<p>algolia可以使用github和谷歌账号直接登录。</p>
+</blockquote>
+<ol>
+<li>点击Indices，新建Index</li>
+<li>点击API Keys，记录下以下三个值：</li>
+</ol>
+<pre><code>Application ID
+Search-Only API Key
+Admin API Key
+</code></pre><ol>
+<li>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。<blockquote>
+<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="http://orp61qolg.bkt.clouddn.com/images/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/Create%20a%20new%20API%20Key%20for%20search.png" alt="设置页面"></p>
+<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2><p>待续……</p>
+<h2 id="更新搜索内容"><a href="#更新搜索内容" class="headerlink" title="更新搜索内容"></a>更新搜索内容</h2><p>当配置完成后，输入如下指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=…</div></pre></td></tr></table></figure>
+<p>“=”后面填入新建的API，完成后在站点根目录下执行 <code>hexo algolia</code> 来更新 Index。请注意观察命令的输出。</p>
+<p><img src="http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png" alt="img"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://theme-next.iissnan.com/third-party-services.html#search-system" target="_blank" rel="external">NexT 第三方服务集成</a></p>
+<p><a href="https://github.com/oncletom/hexo-algolia/tree/20f6ecfde2b3348c2fba5ffc3963cc1ba7d2e3cb#api-key" target="_blank" rel="external">hexo-algolia</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Algolia </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
+      <url>/2620121e/</url>
+      <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
+<blockquote>
+<p>转载来自<a href="http://itmyhome.com/markdown/" target="_blank" rel="external">http://itmyhome.com/markdown/</a></p>
+</blockquote>
+<a id="more"></a>
+<p>这部分内容列出了 John Gruber 定义的 Markdown 语法，包括：</p>
+<ol>
+<li>段落与换行</li>
+<li>标题</li>
+<li>引用</li>
+<li>列表</li>
+<li>代码</li>
+<li>分隔线</li>
+<li>超链接</li>
+<li>图像</li>
+<li>强调</li>
+<li>字符转义</li>
+</ol>
+<!-- more -->
+<h2 id="段落与换行"><a href="#段落与换行" class="headerlink" title="段落与换行"></a>段落与换行</h2><pre><code>1. 段落的前后必须是空行：
+</code></pre><p>  空行指的是行内什么都没有，或者只有空白符（空格或制表符）</p>
+<p>  相邻两行文本，如果中间没有空行 会显示在一行中（换行符被转换为空格）、</p>
+<pre><code>2. 如果需要在段落内加入换行（&lt;br&gt;）：
+</code></pre><p>  可以在前一行的末尾加入至少两个空格<br>  然后换行写其它的文字</p>
+<pre><code>3. Markdown 中的多数区块都需要在两个空行之间.
+</code></pre><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h2 id="1-Setext-形式"><a href="#1-Setext-形式" class="headerlink" title="1. Setext 形式"></a>1. Setext 形式</h2><pre><code>H1
+====
+H2
+----
+</code></pre><h2 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h2><hr>
+<h4 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h4><hr>
+<blockquote>
+<p>= 和 - 的数量是没有限制的。通常的做法是使其和标题文本的长度相同，这样看起来比较舒服。或者可以像我一样，用四个 - 或 =。<br>Setext 形式只支持 h1 和 h2 两种标题。</p>
+</blockquote>
+<h2 id="2-atx-形式"><a href="#2-atx-形式" class="headerlink" title="2. atx 形式"></a><strong>2. atx 形式</strong></h2><p>① 可以用对称的 # 包括文本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#### H4 ####</div><div class="line"></div><div class="line">##### H5 #####</div></pre></td></tr></table></figure></p>
+<h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><p>② 也可以只在左边使用 #：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#### H4</div><div class="line"></div><div class="line">##### H5</div></pre></td></tr></table></figure></p>
+<p>H4</p>
+<p>H5</p>
+<p>③ 成对的 # 左侧和只在左边使用的 # 左侧都不可以有任何空白，但其内侧可以使用空白。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> ###左侧使用了空格###</div><div class="line"></div><div class="line">#### 内侧使用了空格</div></pre></td></tr></table></figure>
+<h4 id="左侧使用了空格"><a href="#左侧使用了空格" class="headerlink" title="左侧使用了空格"></a>左侧使用了空格</h4><p>内侧使用了空格</p>
+<blockquote>
+<p>在这一点上，可能各种 Markdown 的实现会有不同的结果，不过仍然需要我们遵守语法规则。</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> Markdown </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Markdown </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[个人推荐的Win应用]]></title>
       <url>/92b5cf79/</url>
-      <content type="html"><![CDATA[<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><ul>
-<li><a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank" rel="external">Mozilla Firefox</a></li>
-<li><a href="https://www.chromium.org/getting-involved/download-chromium" target="_blank" rel="external">Google Chromium</a></li>
-<li><a href="https://www.google.com/chrome/browser/desktop/" target="_blank" rel="external">Chrome</a></li>
-<li>Edge</li>
-<li><a href="https://ie.sogou.com/" target="_blank" rel="external">搜狗浏览器</a></li>
+      <content type="html"><![CDATA[<h2 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h2><blockquote>
+<p>浏览器看个人喜好，但建议不使用国产浏览器，尤其是360和猎豹，原因是隐私安全</p>
+</blockquote>
+<ul>
+<li><a href="https://www.mozilla.org/en-US/firefox/new/" target="_blank" rel="external">Mozilla Firefox</a>：安全性高，速度快，拓展性好</li>
+<li><a href="https://www.google.com/chrome/browser/desktop/" target="_blank" rel="external">Chrome</a>：理由同上</li>
+<li>Edge：微软新浏览器，速度挺快</li>
+<li><a href="https://www.chromium.org/getting-involved/download-chromium" target="_blank" rel="external">Google Chromium</a>：Beta版的Chrome，有时有些新功能，不过偶尔不稳定</li>
 </ul>
-<h2 id="视频播放器"><a href="#视频播放器" class="headerlink" title="视频播放器"></a>视频播放器</h2><ul>
-<li><a href="http://daumpotplayer.com/download/" target="_blank" rel="external">Daum Potplayer</a></li>
-<li><a href="https://www.videolan.org/vlc/index.html" target="_blank" rel="external">VLC media player</a></li>
-<li>KMP Player</li>
-<li><a href="http://player.qq.com/" target="_blank" rel="external">QQ影音</a></li>
+<h2 id="视频播放器"><a href="#视频播放器" class="headerlink" title="视频播放器"></a>视频播放器</h2><blockquote>
+<p>个人只是一般视频爱好者，一般使用，勿喷：）</p>
+</blockquote>
+<ul>
+<li><a href="http://daumpotplayer.com/download/" target="_blank" rel="external">Daum Potplayer</a>：个人最喜爱的播放器，简洁无广告，可播放大多数格式</li>
+<li><a href="https://www.videolan.org/vlc/index.html" target="_blank" rel="external">VLC media player</a>：开源软件，自带功能较少，需调教</li>
+<li>KMP Player：和字符串匹配算法KMP同名，也挺喜欢的，但后来似乎越更新越差了？</li>
+<li><a href="http://player.qq.com/" target="_blank" rel="external">QQ影音</a>：轻便，也支持主流格式，已经很久未更新了</li>
 </ul>
 <h2 id="音乐播放器"><a href="#音乐播放器" class="headerlink" title="音乐播放器"></a>音乐播放器</h2><ul>
 <li><a href="https://www.foobar2000.org/download" target="_blank" rel="external">Foobar2000</a></li>
@@ -1181,29 +1311,30 @@ Admin API Key
 </ul>
 <h2 id="PDF阅读器"><a href="#PDF阅读器" class="headerlink" title="PDF阅读器"></a>PDF阅读器</h2><ul>
 <li><a href="http://www.foxitsoftware.cn/downloads/" target="_blank" rel="external">福昕阅读器Foxit Reader</a></li>
-<li>Adobe Acrobat Pro</li>
+<li>Adobe Acrobat Pro：主打OCR识别</li>
+<li>ABBYY FineReader：同样主打OCR识别</li>
 </ul>
 <h2 id="下载类"><a href="#下载类" class="headerlink" title="下载类"></a>下载类</h2><ul>
-<li>IDM</li>
+<li>IDM：多线程下载软件，不支持bt，配合猴油可满载or高速下载百度云资源</li>
 <li>Free Download Manager</li>
-<li>百度云管家4.6版本</li>
 <li>迅雷精简版</li>
 <li><a href="http://www.flvcd.com/" target="_blank" rel="external">硕鼠</a></li>
 </ul>
 <h2 id="格式转换"><a href="#格式转换" class="headerlink" title="格式转换"></a>格式转换</h2><ul>
-<li><a href="https://format-factory.en.softonic.com/" target="_blank" rel="external">FormatFactory</a></li>
+<li><a href="https://format-factory.en.softonic.com/" target="_blank" rel="external">FormatFactory</a>：转换神器之一，绿色版即可</li>
 <li>Caesium</li>
 </ul>
 <h2 id="编辑器"><a href="#编辑器" class="headerlink" title="编辑器"></a>编辑器</h2><ul>
 <li><a href="https://notepad-plus-plus.org/download" target="_blank" rel="external">Notepad++</a></li>
 <li>Sublime Text</li>
-<li><a href="https://typora.io/" target="_blank" rel="external">typora</a></li>
+<li><a href="https://typora.io/" target="_blank" rel="external">typora</a>：个人最爱的Markdown编辑器</li>
 </ul>
 <h2 id="辅助软件"><a href="#辅助软件" class="headerlink" title="辅助软件"></a>辅助软件</h2><ul>
-<li><a href="https://justgetflux.com/" target="_blank" rel="external">flux</a></li>
-<li>Unlocker</li>
-<li><a href="http://ditto-cp.sourceforge.net/" target="_blank" rel="external">Ditto</a></li>
-<li><a href="https://www.voidtools.com/downloads/" target="_blank" rel="external">Everthing</a></li>
+<li><a href="https://justgetflux.com/" target="_blank" rel="external">f.lux</a>：f.lux能随着时间变化，自动调整屏幕的色温，减少屏幕对眼睛所带来的疲劳感。注Win10有自带功能</li>
+<li>Unlocker：可解除文件锁定或占用情况</li>
+<li><a href="http://ditto-cp.sourceforge.net/" target="_blank" rel="external">Ditto</a>：保存剪辑版，方便多次重复使用某些内容</li>
+<li><a href="https://www.voidtools.com/downloads/" target="_blank" rel="external">Everthing</a>：搜索神器</li>
+<li>PrimoCache：利用内存及内存卡作为高速缓存，提高硬盘读写速度，减少SSD碎片化写入</li>
 </ul>
 ]]></content>
       
@@ -1410,6 +1541,47 @@ Admin API Key
         <tags>
             
             <tag> Hexo </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[LayerSlider插件去掉谷歌字]]></title>
+      <url>/5c24b9f7/</url>
+      <content type="html"><![CDATA[<blockquote>
+<p>优化主题时找到的文章，转载备份以便以后使用。</p>
+<p><a href="http://bbs.weixiaoduo.com/topic/17147" target="_blank" rel="external">文章来源</a></p>
+</blockquote>
+<h3 id="第一处"><a href="#第一处" class="headerlink" title="第一处"></a>第一处</h3><p>文件：/LayerSlider/templates/tmpl-share-sheet.php</p>
+<p>位置：大致在33~35行</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class="ls-overlay" data-manualclose="true"&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'&gt;</div><div class="line">  </div><div class="line">&lt;div id="ls-share-template" class="ls-modal ls-box"&gt;</div></pre></td></tr></table></figure>
+<p>修改为：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class="ls-overlay" data-manualclose="true"&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;link href='#' rel='stylesheet' type='text/css'&gt;</div><div class="line"></div><div class="line">&lt;div id="ls-share-template" class="ls-modal ls-box"&gt;</div></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div class="ls-overlay" data-manualclose="true"&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">&lt;link href='http://fonts.其他来源.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'&gt;</div><div class="line"></div><div class="line">&lt;div id="ls-share-template" class="ls-modal ls-box"&gt;</div></pre></td></tr></table></figure>
+<p>推荐直接用 # 替换，第二种方法“其他来源填”写镜像网址。</p>
+<h3 id="第二处"><a href="#第二处" class="headerlink" title="第二处"></a>第二处</h3><p>文件：/LayerSlider/views/slider_list.php</p>
+<p>位置：大致960行</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;&lt;iframe src=<span class="string">"http://news.kreaturamedia.com/layerslider/"</span>&gt;&lt;/iframe&gt;&lt;/div&gt;</div></pre></td></tr></table></figure>
+<p>修改为</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div&gt;<span class="comment">#&lt;/div&gt;</span></div></pre></td></tr></table></figure>
+<p>或者直接删掉，这个是 LayerSlider 的新闻框架，基本上就是推送更新通知的，无用。</p>
+<h3 id="特别注意"><a href="#特别注意" class="headerlink" title="特别注意"></a>特别注意</h3><p>初次安装启用时就会自动默认加载Google字体，这个可以在后台设置取消保存就行。</p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Wordpress </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Wordpress </tag>
             
         </tags>
         
@@ -1654,11 +1826,11 @@ Admin API Key
         
         <tags>
             
+            <tag> Wordpress </tag>
+            
             <tag> Lnmp </tag>
             
             <tag> VPS </tag>
-            
-            <tag> Wordpress </tag>
             
         </tags>
         
@@ -2794,11 +2966,11 @@ Admin API Key
         
         <tags>
             
+            <tag> MachineWorld </tag>
+            
             <tag> OD </tag>
             
             <tag> 木马 </tag>
-            
-            <tag> MachineWorld </tag>
             
         </tags>
         
