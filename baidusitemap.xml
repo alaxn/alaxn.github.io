@@ -33,9 +33,9 @@
         <title>Linux重启网络服务方法</title>
         <pubTime>2017-11-01T09:03:56.000Z</pubTime>
         
-        <tag>Ubuntu</tag>
-         
         <tag>Linux</tag>
+         
+        <tag>Ubuntu</tag>
          
         <tag>Centos</tag>
          
@@ -495,9 +495,9 @@
         <title>透过Propagandizing 看朝鲜纪录片</title>
         <pubTime>2014-10-30T08:15:02.000Z</pubTime>
         
-        <tag>价值观</tag>
-         
         <tag>NewFreedom</tag>
+         
+        <tag>价值观</tag>
          
          
            
@@ -651,9 +651,9 @@
         
         <tag>Singapore</tag>
          
-        <tag>价值观</tag>
-         
         <tag>NewFreedom</tag>
+         
+        <tag>价值观</tag>
          
          
            
@@ -944,28 +944,6 @@
 
     
   <url>
-    <loc>https://alaxn.tk/25d0a21c/</loc>
-    <lastmod>2017-07-22T15:13:33.427Z</lastmod>
-    <data>
-        <display>
-        <title>Memory of Hongkong</title>
-        <pubTime>2015-02-18T09:10:36.000Z</pubTime>
-        
-        <tag>Hongkong</tag>
-         
-        <tag>香港</tag>
-         
-         
-           
-             
-              <breadCrumb title="PhotoSlide" url="https://alaxn.tk/categories/PhotoSlide/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://alaxn.tk/1094fd3e/</loc>
     <lastmod>2017-07-22T15:13:33.427Z</lastmod>
     <data>
@@ -994,6 +972,28 @@
         <pubTime>2015-05-02T11:44:37.000Z</pubTime>
         
         <tag>Singapore</tag>
+         
+         
+           
+             
+              <breadCrumb title="PhotoSlide" url="https://alaxn.tk/categories/PhotoSlide/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://alaxn.tk/25d0a21c/</loc>
+    <lastmod>2017-07-22T15:13:33.427Z</lastmod>
+    <data>
+        <display>
+        <title>Memory of Hongkong</title>
+        <pubTime>2015-02-18T09:10:36.000Z</pubTime>
+        
+        <tag>Hongkong</tag>
+         
+        <tag>香港</tag>
          
          
            
@@ -1096,6 +1096,29 @@
 
     
   <url>
+    <loc>https://alaxn.tk/5e021da6/</loc>
+    <lastmod>2017-07-22T15:13:33.423Z</lastmod>
+    <data>
+        <display>
+        <title>Hello-NewWorld-Hexo新建文章指南</title>
+        <pubTime>2017-06-07T00:55:29.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="https://alaxn.tk/categories/MachineWorld/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://alaxn.tk/193c906c/</loc>
     <lastmod>2017-07-22T15:13:33.423Z</lastmod>
     <data>
@@ -1113,29 +1136,6 @@
            
              
               <breadCrumb title="NewFreedom" url="https://alaxn.tk/categories/NewFreedom/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://alaxn.tk/5e021da6/</loc>
-    <lastmod>2017-07-22T15:13:33.423Z</lastmod>
-    <data>
-        <display>
-        <title>Hello-NewWorld-Hexo新建文章指南</title>
-        <pubTime>2017-06-07T00:55:29.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
-          
-             
-              <breadCrumb title="Hexo" url="https://alaxn.tk/categories/MachineWorld/Hexo/"/>
           
         </display>
     </data>
@@ -1328,11 +1328,11 @@
         <title>LNMP环境下WordPress程序伪静态解决方案</title>
         <pubTime>2015-10-03T12:51:00.000Z</pubTime>
         
-        <tag>Wordpress</tag>
-         
         <tag>Lnmp</tag>
          
         <tag>VPS</tag>
+         
+        <tag>Wordpress</tag>
          
          
            
@@ -1511,16 +1511,16 @@
 
     
   <url>
-    <loc>https://alaxn.tk/18f91d43/</loc>
+    <loc>https://alaxn.tk/27623ab4/</loc>
     <lastmod>2017-07-22T15:13:33.396Z</lastmod>
     <data>
         <display>
-        <title>Hexo-Algolia搜索安装及设置</title>
-        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
+        <title>使用不蒜子为Hexo添加访客统计</title>
+        <pubTime>2017-06-21T09:30:10.000Z</pubTime>
         
         <tag>Hexo</tag>
          
-        <tag>Algolia</tag>
+        <tag>不蒜子</tag>
          
          
            
@@ -1536,16 +1536,16 @@
 
     
   <url>
-    <loc>https://alaxn.tk/27623ab4/</loc>
+    <loc>https://alaxn.tk/18f91d43/</loc>
     <lastmod>2017-07-22T15:13:33.396Z</lastmod>
     <data>
         <display>
-        <title>使用不蒜子为Hexo添加访客统计</title>
-        <pubTime>2017-06-21T09:30:10.000Z</pubTime>
+        <title>Hexo-Algolia搜索安装及设置</title>
+        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
         
         <tag>Hexo</tag>
          
-        <tag>不蒜子</tag>
+        <tag>Algolia</tag>
          
          
            
