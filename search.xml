@@ -9,6 +9,7 @@
 <p>相信不少使用Chrome或Firefox浏览器的网友都听说过猴油，作为浏览器拓展中的神器，对于优化浏览体验，提升工作休闲效率起到了不小的作用。</p>
 <p>本文将介绍我自己所使用的一些猴油脚本。这些脚本的介绍来自<a href="http://www.runningcheese.com" target="_blank" rel="external">奔跑中的奶酪</a>的<a href="http://www.runningcheese.com/userscripts" target="_blank" rel="external">有哪些值得推荐的油猴脚本?</a>一文，介绍模板也参考了，不过部分插件略有删减，判断依据是我自己的使用体验。</p>
 </blockquote>
+<a id="more"></a>
 <h2 id="猴油插件介绍"><a href="#猴油插件介绍" class="headerlink" title="猴油插件介绍"></a>猴油插件介绍</h2><p>目前常见的猴油插件有三个，分别是<a href="https://tampermonkey.net/" target="_blank" rel="external">Tampermonkey</a>、<a href="https://www.greasespot.net/" target="_blank" rel="external">Greasemonkey</a>、<a href="https://violentmonkey.github.io/" target="_blank" rel="external">Violentmonkey</a>，它们对各大浏览器的支持情况如下：</p>
 <p><img src="http://orp61qolg.bkt.clouddn.com/image/extension%20comparison.jpg" alt="extension comparison"></p>
 <blockquote>
@@ -684,7 +685,7 @@
     <entry>
       <title><![CDATA[推荐几个打破学术障碍的网站]]></title>
       <url>/a732f839/</url>
-      <content type="html"><![CDATA[<p><a href="https://sci-hub.cc/" target="_blank" rel="external">SCI-HUB</a>：下载数据库论文利器。将要下载的论文网址贴上即可使用。</p>
+      <content type="html"><![CDATA[<p><a href="https://sci-hub.tw/" target="_blank" rel="external">SCI-HUB</a>：下载数据库论文利器。将要下载的论文网址贴上即可使用。</p>
 <p><a href="http://gen.lib.rus.ec/" target="_blank" rel="external">Library Genesis</a>: 下载学术类书籍的好去处。个人感觉书籍质量蛮好的。</p>
 <p><a href="https://www.researchgate.net/" target="_blank" rel="external">Research Gate</a>：学术类社交媒体，有部分作者会把论文放在上面，可以直接下载或请求下载。</p>
 <p><a href="https://www.academia.edu/" target="_blank" rel="external">Academia</a>:与上一个类似，学术类社交媒体，有部分作者会把论文放在上面，可以直接下载或请求下。</p>
