@@ -276,15 +276,35 @@
 <p>这是自己曾经遇到过的问题，分享给大家，也方便自己下次查找</p>
 </blockquote>
 <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>在github上创建项目，在本地运行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line">git add.</div><div class="line">git commit -m <span class="string">"init"</span></div><div class="line">git push -u origin master</div></pre></td></tr></table></figure></p>
-<p>而忘记<figure class="highlight plain"><figcaption><span>pull -f --all```导致github上的版本里有readme文件和本地版本冲突，git弹出以下错误：</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">```bash</div><div class="line">Username for &apos;https://github.com&apos;: XXXX</div><div class="line">Password for &apos;https://XXXX@github.com&apos;: </div><div class="line">To https://github.com/XXXX/test.git</div><div class="line"> ! [rejected]        master -&gt; master (non-fast-forward)</div><div class="line">error: failed to push some refs to &apos;https://github.com/XXXX/test.git&apos;</div><div class="line">hint: Updates were rejected because the tip of your current branch is behind</div><div class="line">hint: its remote counterpart. Merge the remote changes (e.g. &apos;git pull&apos;)</div><div class="line">hint: before pushing again.</div><div class="line">hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</div></pre></td></tr></table></figure></p>
+<p>而忘记<code>git pull -f --all</code>导致github上的版本里有readme文件和本地版本冲突，git弹出以下错误：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">Username <span class="keyword">for</span> <span class="string">'https://github.com'</span>: XXXX</div><div class="line">Password <span class="keyword">for</span> <span class="string">'https://XXXX@github.com'</span>: </div><div class="line">To https://github.com/XXXX/test.git</div><div class="line"> ! [rejected]        master -&gt; master (non-fast-forward)</div><div class="line">error: failed to push some refs to <span class="string">'https://github.com/XXXX/test.git'</span></div><div class="line">hint: Updates were rejected because the tip of your current branch is behind</div><div class="line">hint: its remote counterpart. Merge the remote changes (e.g. <span class="string">'git pull'</span>)</div><div class="line">hint: before pushing again.</div><div class="line">hint: See the <span class="string">'Note about fast-forwards'</span> <span class="keyword">in</span> <span class="string">'git push --help'</span> <span class="keyword">for</span> details.</div></pre></td></tr></table></figure>
 <a id="more"></a>
 <h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>参考了<a href="http://www.cnblogs.com/xwdreamer/archive/2012/05/29/2523958.html" target="_blank" rel="external">xwdreamer</a>以及他文章中提及的文章（详见参考文献2、3），其实最简单的解决方法就是一句话：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git push -u origin master -f</div></pre></td></tr></table></figure>
 <p>意思是：使用本地的文件强制覆盖已有的分支，因此可能会造成git上文件的修改丢失。使用强制覆盖前记得检查本地和git上文件的修改进度和情况。</p>
-<h2 id="终极解决方法"><a href="#终极解决方法" class="headerlink" title="终极解决方法"></a>终极解决方法</h2><p>删除项目内的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">以下内容也适合第一次提交到GitHub</div><div class="line"></div><div class="line">### 准备工作</div><div class="line"></div><div class="line">1. 你要有个GitHub账号和仓库（废话）</div><div class="line">2. 电脑安装了Git或类似的软件（也算是废话）：[Git for Windows](https://git-for-windows.github.io/) or [其它](https://git-scm.com/)</div><div class="line">3. 进入你的本地仓库（就是需要上传的项目文件夹内）</div><div class="line"></div><div class="line">### 开始工作</div><div class="line"></div><div class="line">```shell</div><div class="line">git init</div><div class="line">ssh-keygen -t rsa -C &quot;你的GitHub注册邮箱&quot; # 已经生成添加过了就不用了</div></pre></td></tr></table></figure></p>
+<h2 id="终极解决方法"><a href="#终极解决方法" class="headerlink" title="终极解决方法"></a>终极解决方法</h2><p>删除项目内的<code>.git</code>文件夹，一切重新来过。哈哈。<strong>注意，GitHub上的版本记录可能会全部丢失。</strong></p>
+<p>以下内容也适合第一次提交到GitHub</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><ol>
+<li>你要有个GitHub账号和仓库（废话）</li>
+<li>电脑安装了Git或类似的软件（也算是废话）：<a href="https://git-for-windows.github.io/" target="_blank" rel="external">Git for Windows</a> or <a href="https://git-scm.com/" target="_blank" rel="external">其它</a></li>
+<li>进入你的本地仓库（就是需要上传的项目文件夹内）</li>
+</ol>
+<h3 id="开始工作"><a href="#开始工作" class="headerlink" title="开始工作"></a>开始工作</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line">ssh-keygen -t rsa -C "你的GitHub注册邮箱" # 已经生成添加过了就不用了</div></pre></td></tr></table></figure>
 <p>仓库有两种操作方式，一种是使用https，另一种是SSH，这里仅介绍SSH的方式。<br>两者的区别主要有：</p>
 <p>（1）使用Https可以克隆任意GitHub上的项目；而用SSH的话，必须是项目的拥有者或管理员，或使用SSH Key，否则会无法克隆。</p>
-<p>（2）Https每次push都需要输入用户名和密码，而使用SSH则可以不需要，使用密匙匹配，直接<figure class="highlight plain"><figcaption><span>push```。</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">（3）SSH传输的数据是经过压缩的，可以加快传输的速度，安全性与速度都更优。</div><div class="line"></div><div class="line">### 添加SSH Key操作</div><div class="line"></div><div class="line">上述第二步执行后，默认会在```C:\Users\用户名\.ssh```中的文件中生成SSK Key（如果没有输入，一路回车的话，生成的文件是```id_rsa.pub``` ，以及默认无密码）</div><div class="line"></div><div class="line">完成后会提示已经生成成功了。</div><div class="line"></div><div class="line">![img](http://upload-images.jianshu.io/upload_images/28402-40f7f8a8458cb569.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700)</div><div class="line"></div><div class="line">#### 上传Key到Github</div><div class="line"></div><div class="line">1. 打开 id_rsa.pub 文件，复制文件中的 key，粘贴到 GitHub 网站 Account Settings 中的 SSH keys，Add SSH key 中。如图：</div><div class="line"></div><div class="line">![git img](http://upload-images.jianshu.io/upload_images/28402-47ffd65d0cb1748e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700)</div><div class="line"></div><div class="line">2. 验证配置是否成功，在git中输入</div><div class="line"></div><div class="line">``` bash</div><div class="line">ssh -T git@github.com</div><div class="line"></div><div class="line">#以下是返回的信息</div><div class="line"></div><div class="line">#成功的情况</div><div class="line">The authenticity of host &apos;github.com (IP ADDRESS)&apos; can&apos;t be established.</div><div class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</div><div class="line">Are you sure you want to continue connecting (yes/no)?</div><div class="line">#键入yes</div><div class="line">yes</div><div class="line">#配置成功</div><div class="line">Hi username! You&apos;ve successfully authenticated, but GitHub does not</div><div class="line">provide shell access.</div><div class="line"></div><div class="line">#失败的情况</div><div class="line">The authenticity of host &apos;github.com (IP ADDRESS)&apos; can&apos;t be established.</div><div class="line">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</div><div class="line">Are you sure you want to continue connecting (yes/no)?</div><div class="line">#这种情况需回去检查密匙是否复制错了，不匹配，或检查GitHub上是否成功上传。重新操作一遍试试</div></pre></td></tr></table></figure></p>
+<p>（2）Https每次push都需要输入用户名和密码，而使用SSH则可以不需要，使用密匙匹配，直接<code>git push</code>。</p>
+<p>（3）SSH传输的数据是经过压缩的，可以加快传输的速度，安全性与速度都更优。</p>
+<h3 id="添加SSH-Key操作"><a href="#添加SSH-Key操作" class="headerlink" title="添加SSH Key操作"></a>添加SSH Key操作</h3><p>上述第二步执行后，默认会在<code>C:\Users\用户名\.ssh</code>中的文件中生成SSK Key（如果没有输入，一路回车的话，生成的文件是<code>id_rsa.pub</code> ，以及默认无密码）</p>
+<p>完成后会提示已经生成成功了。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/28402-40f7f8a8458cb569.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="img"></p>
+<h4 id="上传Key到Github"><a href="#上传Key到Github" class="headerlink" title="上传Key到Github"></a>上传Key到Github</h4><ol>
+<li>打开 id_rsa.pub 文件，复制文件中的 key，粘贴到 GitHub 网站 Account Settings 中的 SSH keys，Add SSH key 中。如图：</li>
+</ol>
+<p><img src="http://upload-images.jianshu.io/upload_images/28402-47ffd65d0cb1748e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="git img"></p>
+<ol>
+<li>验证配置是否成功，在git中输入</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div><div class="line"></div><div class="line"><span class="comment">#以下是返回的信息</span></div><div class="line"></div><div class="line"><span class="comment">#成功的情况</span></div><div class="line">The authenticity of host <span class="string">'github.com (IP ADDRESS)'</span> can<span class="string">'t be established.</span></div><div class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</div><div class="line">Are you sure you want to continue connecting (yes/no)?</div><div class="line">#键入yes</div><div class="line">yes</div><div class="line">#配置成功</div><div class="line">Hi username! You've successfully authenticated, but GitHub does not</div><div class="line">provide shell access.</div><div class="line"></div><div class="line"><span class="comment">#失败的情况</span></div><div class="line">The authenticity of host <span class="string">'github.com (IP ADDRESS)'</span> can<span class="string">'t be established.</span></div><div class="line">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</div><div class="line">Are you sure you want to continue connecting (yes/no)?</div><div class="line">#这种情况需回去检查密匙是否复制错了，不匹配，或检查GitHub上是否成功上传。重新操作一遍试试</div></pre></td></tr></table></figure>
 <ol>
 <li>设置用户名和email</li>
 </ol>
@@ -467,9 +487,9 @@
         
         <tags>
             
-            <tag> Ubuntu </tag>
-            
             <tag> Linux </tag>
+            
+            <tag> Ubuntu </tag>
             
             <tag> Centos </tag>
             
@@ -1028,6 +1048,114 @@
     </entry>
     
     <entry>
+      <title><![CDATA[阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法]]></title>
+      <url>/5d7bb850/</url>
+      <content type="html"><![CDATA[<a id="more"></a>
+<h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
+<li>漏洞名称：微擎文件编辑SQL注入</li>
+<li>存在漏洞文件：/web/source/paycenter/wxmicro.ctrl.php文件中</li>
+<li>漏洞描述：微擎CMS的/web/source/paycenter/wxmicro.ctrl.php中，对\$post[‘member’][‘uid’]输入参数未进行严格类型转义，导致SQL注入的发生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
+</ul>
+<h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
+<li>找到/web/source/paycenter/wxmicro.ctrl.php这个文件</li>
+<li>搜素如下代码，约在29行之间</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$user = pdo_get(<span class="string">'mc_members'</span>, <span class="keyword">array</span>(<span class="string">'uniacid'</span> =&gt; $_W[<span class="string">'uniacid'</span>], <span class="string">'uid'</span> =&gt; $post[<span class="string">'member'</span>][<span class="string">'uid'</span>]));</div></pre></td></tr></table></figure>
+<ol>
+<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/%E5%BE%AE%E6%93%8ESQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D2.png" alt="修复位置"></p>
+</li>
+<li><p>将搜索到的这句话改成：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$user = pdo_get(<span class="string">'mc_members'</span>, <span class="keyword">array</span>(<span class="string">'uniacid'</span> =&gt; $_W[<span class="string">'uniacid'</span>], <span class="string">'uid'</span> =&gt; intval($post[<span class="string">'member'</span>][<span class="string">'uid'</span>]) ));;</div></pre></td></tr></table></figure>
+</li>
+<li><p>完成后保存，再使用阿里云云盾进行检测即可。</p>
+</li>
+</ol>
+<h2 id="相关漏洞修复方法"><a href="#相关漏洞修复方法" class="headerlink" title="相关漏洞修复方法"></a>相关漏洞修复方法</h2><ol>
+<li><a href="https://alaxn.tk/4618109c/">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/70221081/">阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法</a></li>
+<li><a href="https://alaxn.tk/5d7bb850/">阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/5e006aac/">阿里云提示微擎最新版SQL注入(editor.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/c8a40f/">阿里云提示微擎前台任意文件删除漏洞(category.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/5d7bb850/">微擎最新版SQL注入(wxmicro.ctrl.php)修复方法</a></li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Websites </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MachineWorld </tag>
+            
+            <tag> Websites </tag>
+            
+            <tag> 微擎 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[微擎最新版SQL注入(wxmicro.ctrl.php)修复方法]]></title>
+      <url>/a47989f9/</url>
+      <content type="html"><![CDATA[<a id="more"></a>
+<h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
+<li>漏洞名称：微擎最新版SQL注入</li>
+<li>存在漏洞文件：/web/source/paycenter/wxmicro.ctrl.php文件中</li>
+<li>漏洞描述：微擎CMS的/web/source/paycenter/wxmicro.ctrl.php中，对\$post[‘member’][‘uid’]输入参数未进行严格类型转义，导致SQL注入的发生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
+</ul>
+<h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
+<li>找到/web/source/paycenter/wxmicro.ctrl.php这个文件</li>
+<li>搜素如下代码，共有三处，约在23行、87行、176行。</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$html = htmlspecialchars_decode($_GPC[<span class="string">'wapeditor'</span>][<span class="string">'html'</span>], ENT_QUOTES);</div></pre></td></tr></table></figure>
+<ol>
+<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E5%BE%AE%E6%93%8ESQL%E6%96%B0%E7%89%88%E6%9C%AC%E6%BC%8F%E6%B4%9E.png" alt="修复位置"></p>
+</li>
+<li><p>在三处此语句后面添加如下内容：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$html = str_replace(<span class="keyword">array</span>(<span class="string">'&lt;?'</span>, <span class="string">'&lt;%'</span>, <span class="string">'&lt;?php'</span>, <span class="string">'&#123;php'</span>), <span class="string">'_'</span>, $html); $html = preg_replace(<span class="string">'/&lt;s*?script.*(src)+/i'</span>, <span class="string">'_'</span>, $html);</div></pre></td></tr></table></figure>
+</li>
+<li><p>完成后保存，再使用阿里云云盾进行检测即可。</p>
+</li>
+</ol>
+<h2 id="相关漏洞修复方法"><a href="#相关漏洞修复方法" class="headerlink" title="相关漏洞修复方法"></a>相关漏洞修复方法</h2><ol>
+<li><a href="https://alaxn.tk/4618109c/">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/70221081/">阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法</a></li>
+<li><a href="https://alaxn.tk/5d7bb850/">阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/5e006aac/">阿里云提示微擎最新版SQL注入(editor.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/c8a40f/">阿里云提示微擎前台任意文件删除漏洞(category.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/5d7bb850/">微擎最新版SQL注入(wxmicro.ctrl.php)修复方法</a></li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Websites </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MachineWorld </tag>
+            
+            <tag> Websites </tag>
+            
+            <tag> 微擎 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法]]></title>
       <url>/4618109c/</url>
       <content type="html"><![CDATA[<a id="more"></a>
@@ -1111,114 +1239,6 @@
 </ol>
 <h2 id="相关漏洞修复方法"><a href="#相关漏洞修复方法" class="headerlink" title="相关漏洞修复方法"></a>相关漏洞修复方法</h2><ol>
 <li>[<a href="https://alaxn.tk/4618109c/">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/70221081/">阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法</a></li>
-<li><a href="https://alaxn.tk/5d7bb850/">阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/5e006aac/">阿里云提示微擎最新版SQL注入(editor.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/c8a40f/">阿里云提示微擎前台任意文件删除漏洞(category.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/5d7bb850/">微擎最新版SQL注入(wxmicro.ctrl.php)修复方法</a></li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-            <category> Websites </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> MachineWorld </tag>
-            
-            <tag> Websites </tag>
-            
-            <tag> 微擎 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法]]></title>
-      <url>/5d7bb850/</url>
-      <content type="html"><![CDATA[<a id="more"></a>
-<h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
-<li>漏洞名称：微擎文件编辑SQL注入</li>
-<li>存在漏洞文件：/web/source/paycenter/wxmicro.ctrl.php文件中</li>
-<li>漏洞描述：微擎CMS的/web/source/paycenter/wxmicro.ctrl.php中，对\$post[‘member’][‘uid’]输入参数未进行严格类型转义，导致SQL注入的发生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
-</ul>
-<h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
-<li>找到/web/source/paycenter/wxmicro.ctrl.php这个文件</li>
-<li>搜素如下代码，约在29行之间</li>
-</ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$user = pdo_get(<span class="string">'mc_members'</span>, <span class="keyword">array</span>(<span class="string">'uniacid'</span> =&gt; $_W[<span class="string">'uniacid'</span>], <span class="string">'uid'</span> =&gt; $post[<span class="string">'member'</span>][<span class="string">'uid'</span>]));</div></pre></td></tr></table></figure>
-<ol>
-<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/%E5%BE%AE%E6%93%8ESQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D2.png" alt="修复位置"></p>
-</li>
-<li><p>将搜索到的这句话改成：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$user = pdo_get(<span class="string">'mc_members'</span>, <span class="keyword">array</span>(<span class="string">'uniacid'</span> =&gt; $_W[<span class="string">'uniacid'</span>], <span class="string">'uid'</span> =&gt; intval($post[<span class="string">'member'</span>][<span class="string">'uid'</span>]) ));;</div></pre></td></tr></table></figure>
-</li>
-<li><p>完成后保存，再使用阿里云云盾进行检测即可。</p>
-</li>
-</ol>
-<h2 id="相关漏洞修复方法"><a href="#相关漏洞修复方法" class="headerlink" title="相关漏洞修复方法"></a>相关漏洞修复方法</h2><ol>
-<li><a href="https://alaxn.tk/4618109c/">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/70221081/">阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法</a></li>
-<li><a href="https://alaxn.tk/5d7bb850/">阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/5e006aac/">阿里云提示微擎最新版SQL注入(editor.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/c8a40f/">阿里云提示微擎前台任意文件删除漏洞(category.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/5d7bb850/">微擎最新版SQL注入(wxmicro.ctrl.php)修复方法</a></li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-            <category> Websites </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> MachineWorld </tag>
-            
-            <tag> Websites </tag>
-            
-            <tag> 微擎 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[微擎最新版SQL注入(wxmicro.ctrl.php)修复方法]]></title>
-      <url>/a47989f9/</url>
-      <content type="html"><![CDATA[<a id="more"></a>
-<h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
-<li>漏洞名称：微擎最新版SQL注入</li>
-<li>存在漏洞文件：/web/source/paycenter/wxmicro.ctrl.php文件中</li>
-<li>漏洞描述：微擎CMS的/web/source/paycenter/wxmicro.ctrl.php中，对\$post[‘member’][‘uid’]输入参数未进行严格类型转义，导致SQL注入的发生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
-</ul>
-<h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
-<li>找到/web/source/paycenter/wxmicro.ctrl.php这个文件</li>
-<li>搜素如下代码，共有三处，约在23行、87行、176行。</li>
-</ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$html = htmlspecialchars_decode($_GPC[<span class="string">'wapeditor'</span>][<span class="string">'html'</span>], ENT_QUOTES);</div></pre></td></tr></table></figure>
-<ol>
-<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E5%BE%AE%E6%93%8ESQL%E6%96%B0%E7%89%88%E6%9C%AC%E6%BC%8F%E6%B4%9E.png" alt="修复位置"></p>
-</li>
-<li><p>在三处此语句后面添加如下内容：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$html = str_replace(<span class="keyword">array</span>(<span class="string">'&lt;?'</span>, <span class="string">'&lt;%'</span>, <span class="string">'&lt;?php'</span>, <span class="string">'&#123;php'</span>), <span class="string">'_'</span>, $html); $html = preg_replace(<span class="string">'/&lt;s*?script.*(src)+/i'</span>, <span class="string">'_'</span>, $html);</div></pre></td></tr></table></figure>
-</li>
-<li><p>完成后保存，再使用阿里云云盾进行检测即可。</p>
-</li>
-</ol>
-<h2 id="相关漏洞修复方法"><a href="#相关漏洞修复方法" class="headerlink" title="相关漏洞修复方法"></a>相关漏洞修复方法</h2><ol>
-<li><a href="https://alaxn.tk/4618109c/">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
 <li><a href="https://alaxn.tk/70221081/">阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法</a></li>
 <li><a href="https://alaxn.tk/5d7bb850/">阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法</a></li>
 <li><a href="https://alaxn.tk/5e006aac/">阿里云提示微擎最新版SQL注入(editor.ctrl.php)修复方法</a></li>
@@ -1505,6 +1525,102 @@
     </entry>
     
     <entry>
+      <title><![CDATA[Hexo设置Disqus评论]]></title>
+      <url>/a55c64ff/</url>
+      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
+<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
+<blockquote>
+<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
+<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
+</li>
+<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
+</li>
+<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
+</li>
+<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
+</li>
+<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Disqus </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
+      <url>/18f91d43/</url>
+      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
+<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
+</ol>
+<blockquote>
+<p>algolia可以使用github和谷歌账号直接登录。</p>
+</blockquote>
+<ol>
+<li>点击Indices，新建Index</li>
+<li>点击API Keys，记录下以下三个值：</li>
+</ol>
+<pre><code>Application ID
+Search-Only API Key
+Admin API Key
+</code></pre><ol>
+<li>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。<blockquote>
+<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="http://orp61qolg.bkt.clouddn.com/images/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/Create%20a%20new%20API%20Key%20for%20search.png" alt="设置页面"></p>
+<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2><p>待续……</p>
+<h2 id="更新搜索内容"><a href="#更新搜索内容" class="headerlink" title="更新搜索内容"></a>更新搜索内容</h2><p>当配置完成后，输入如下指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=…</div></pre></td></tr></table></figure>
+<p>“=”后面填入新建的API，完成后在站点根目录下执行 <code>hexo algolia</code> 来更新 Index。请注意观察命令的输出。</p>
+<p><img src="http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png" alt="img"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://theme-next.iissnan.com/third-party-services.html#search-system" target="_blank" rel="external">NexT 第三方服务集成</a></p>
+<p><a href="https://github.com/oncletom/hexo-algolia/tree/20f6ecfde2b3348c2fba5ffc3963cc1ba7d2e3cb#api-key" target="_blank" rel="external">hexo-algolia</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Algolia </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
       <url>/2620121e/</url>
       <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
@@ -1569,60 +1685,6 @@ H2
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
-      <url>/18f91d43/</url>
-      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
-<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
-</ol>
-<blockquote>
-<p>algolia可以使用github和谷歌账号直接登录。</p>
-</blockquote>
-<ol>
-<li>点击Indices，新建Index</li>
-<li>点击API Keys，记录下以下三个值：</li>
-</ol>
-<pre><code>Application ID
-Search-Only API Key
-Admin API Key
-</code></pre><ol>
-<li>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。<blockquote>
-<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="http://orp61qolg.bkt.clouddn.com/images/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/Create%20a%20new%20API%20Key%20for%20search.png" alt="设置页面"></p>
-<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2><p>待续……</p>
-<h2 id="更新搜索内容"><a href="#更新搜索内容" class="headerlink" title="更新搜索内容"></a>更新搜索内容</h2><p>当配置完成后，输入如下指令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=…</div></pre></td></tr></table></figure>
-<p>“=”后面填入新建的API，完成后在站点根目录下执行 <code>hexo algolia</code> 来更新 Index。请注意观察命令的输出。</p>
-<p><img src="http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png" alt="img"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://theme-next.iissnan.com/third-party-services.html#search-system" target="_blank" rel="external">NexT 第三方服务集成</a></p>
-<p><a href="https://github.com/oncletom/hexo-algolia/tree/20f6ecfde2b3348c2fba5ffc3963cc1ba7d2e3cb#api-key" target="_blank" rel="external">hexo-algolia</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Algolia </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[解决设置Gulp中出现的Unable to minify JavaScript错误]]></title>
       <url>/f3aadd98/</url>
       <content type="html"><![CDATA[<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><a id="more"></a>
@@ -1647,48 +1709,6 @@ Admin API Key
             <tag> Hexo </tag>
             
             <tag> Gulp </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hexo设置Disqus评论]]></title>
-      <url>/a55c64ff/</url>
-      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
-<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
-<blockquote>
-<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
-<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
-</li>
-<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
-</li>
-<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
-</li>
-<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
-</li>
-<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
-</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Disqus </tag>
             
         </tags>
         
