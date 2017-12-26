@@ -467,9 +467,9 @@
         
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> Ubuntu </tag>
+            
+            <tag> Linux </tag>
             
             <tag> Centos </tag>
             
@@ -1505,60 +1505,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
-      <url>/18f91d43/</url>
-      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
-<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
-</ol>
-<blockquote>
-<p>algolia可以使用github和谷歌账号直接登录。</p>
-</blockquote>
-<ol>
-<li>点击Indices，新建Index</li>
-<li>点击API Keys，记录下以下三个值：</li>
-</ol>
-<pre><code>Application ID
-Search-Only API Key
-Admin API Key
-</code></pre><ol>
-<li>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。<blockquote>
-<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
-</blockquote>
-</li>
-</ol>
-<p><img src="http://orp61qolg.bkt.clouddn.com/images/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/Create%20a%20new%20API%20Key%20for%20search.png" alt="设置页面"></p>
-<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2><p>待续……</p>
-<h2 id="更新搜索内容"><a href="#更新搜索内容" class="headerlink" title="更新搜索内容"></a>更新搜索内容</h2><p>当配置完成后，输入如下指令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=…</div></pre></td></tr></table></figure>
-<p>“=”后面填入新建的API，完成后在站点根目录下执行 <code>hexo algolia</code> 来更新 Index。请注意观察命令的输出。</p>
-<p><img src="http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png" alt="img"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://theme-next.iissnan.com/third-party-services.html#search-system" target="_blank" rel="external">NexT 第三方服务集成</a></p>
-<p><a href="https://github.com/oncletom/hexo-algolia/tree/20f6ecfde2b3348c2fba5ffc3963cc1ba7d2e3cb#api-key" target="_blank" rel="external">hexo-algolia</a></p>
-]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Algolia </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[解决设置Gulp中出现的Unable to minify JavaScript错误]]></title>
       <url>/f3aadd98/</url>
       <content type="html"><![CDATA[<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><a id="more"></a>
@@ -1689,6 +1635,60 @@ H2
         <tags>
             
             <tag> Markdown </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
+      <url>/18f91d43/</url>
+      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
+<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
+</ol>
+<blockquote>
+<p>algolia可以使用github和谷歌账号直接登录。</p>
+</blockquote>
+<ol>
+<li>点击Indices，新建Index</li>
+<li>点击API Keys，记录下以下三个值：</li>
+</ol>
+<pre><code>Application ID
+Search-Only API Key
+Admin API Key
+</code></pre><ol>
+<li>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。<blockquote>
+<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
+</blockquote>
+</li>
+</ol>
+<p><img src="http://orp61qolg.bkt.clouddn.com/images/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/Create%20a%20new%20API%20Key%20for%20search.png" alt="设置页面"></p>
+<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2><p>待续……</p>
+<h2 id="更新搜索内容"><a href="#更新搜索内容" class="headerlink" title="更新搜索内容"></a>更新搜索内容</h2><p>当配置完成后，输入如下指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=…</div></pre></td></tr></table></figure>
+<p>“=”后面填入新建的API，完成后在站点根目录下执行 <code>hexo algolia</code> 来更新 Index。请注意观察命令的输出。</p>
+<p><img src="http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png" alt="img"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://theme-next.iissnan.com/third-party-services.html#search-system" target="_blank" rel="external">NexT 第三方服务集成</a></p>
+<p><a href="https://github.com/oncletom/hexo-algolia/tree/20f6ecfde2b3348c2fba5ffc3963cc1ba7d2e3cb#api-key" target="_blank" rel="external">hexo-algolia</a></p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Algolia </tag>
             
         </tags>
         
@@ -2248,11 +2248,11 @@ H2
         
         <tags>
             
-            <tag> Wordpress </tag>
-            
             <tag> Lnmp </tag>
             
             <tag> VPS </tag>
+            
+            <tag> Wordpress </tag>
             
         </tags>
         
