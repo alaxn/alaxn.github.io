@@ -175,9 +175,9 @@
         <title>Linux重启网络服务方法</title>
         <pubTime>2017-11-01T09:03:56.000Z</pubTime>
         
-        <tag>Linux</tag>
-         
         <tag>Ubuntu</tag>
+         
+        <tag>Linux</tag>
          
         <tag>Centos</tag>
          
@@ -651,16 +651,16 @@
 
     
   <url>
-    <loc>https://alaxn.tk/d013c9e9/</loc>
+    <loc>https://alaxn.tk/6028720b/</loc>
     <lastmod>2017-07-22T15:13:33.437Z</lastmod>
     <data>
         <display>
-        <title>国内成人礼习俗研究——以潮汕地区“出花园”为例</title>
-        <pubTime>2017-07-21T06:49:25.000Z</pubTime>
+        <title>浅议 “文明”的界定——“文明冲突论”观点的几点思考</title>
+        <pubTime>2015-11-03T08:42:05.000Z</pubTime>
         
-        <tag>出花园</tag>
+        <tag>亨廷顿</tag>
          
-        <tag>成人礼</tag>
+        <tag>文明冲突论</tag>
          
          
            
@@ -673,16 +673,16 @@
 
     
   <url>
-    <loc>https://alaxn.tk/6028720b/</loc>
+    <loc>https://alaxn.tk/d013c9e9/</loc>
     <lastmod>2017-07-22T15:13:33.437Z</lastmod>
     <data>
         <display>
-        <title>浅议 “文明”的界定——“文明冲突论”观点的几点思考</title>
-        <pubTime>2015-11-03T08:42:05.000Z</pubTime>
+        <title>国内成人礼习俗研究——以潮汕地区“出花园”为例</title>
+        <pubTime>2017-07-21T06:49:25.000Z</pubTime>
         
-        <tag>亨廷顿</tag>
+        <tag>出花园</tag>
          
-        <tag>文明冲突论</tag>
+        <tag>成人礼</tag>
          
          
            
@@ -860,28 +860,6 @@
 
     
   <url>
-    <loc>https://alaxn.tk/3fa0d39e/</loc>
-    <lastmod>2017-07-22T15:13:33.431Z</lastmod>
-    <data>
-        <display>
-        <title>Hosts文件小科普</title>
-        <pubTime>2017-07-17T09:52:53.000Z</pubTime>
-        
-        <tag>MachineWorld</tag>
-         
-        <tag>Hosts</tag>
-         
-         
-           
-             
-              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://alaxn.tk/67713938/</loc>
     <lastmod>2017-07-22T15:13:33.431Z</lastmod>
     <data>
@@ -901,6 +879,28 @@
            
              
               <breadCrumb title="流年淡思" url="https://alaxn.tk/categories/%E6%B5%81%E5%B9%B4%E6%B7%A1%E6%80%9D/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://alaxn.tk/3fa0d39e/</loc>
+    <lastmod>2017-07-22T15:13:33.431Z</lastmod>
+    <data>
+        <display>
+        <title>Hosts文件小科普</title>
+        <pubTime>2017-07-17T09:52:53.000Z</pubTime>
+        
+        <tag>MachineWorld</tag>
+         
+        <tag>Hosts</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
           
         </display>
     </data>
@@ -1017,14 +1017,16 @@
 
     
   <url>
-    <loc>https://alaxn.tk/2332bb63/</loc>
+    <loc>https://alaxn.tk/25d0a21c/</loc>
     <lastmod>2017-07-22T15:13:33.427Z</lastmod>
     <data>
         <display>
-        <title>Marina Bay</title>
-        <pubTime>2015-05-02T11:44:37.000Z</pubTime>
+        <title>Memory of Hongkong</title>
+        <pubTime>2015-02-18T09:10:36.000Z</pubTime>
         
-        <tag>Singapore</tag>
+        <tag>Hongkong</tag>
+         
+        <tag>香港</tag>
          
          
            
@@ -1037,16 +1039,14 @@
 
     
   <url>
-    <loc>https://alaxn.tk/25d0a21c/</loc>
+    <loc>https://alaxn.tk/2332bb63/</loc>
     <lastmod>2017-07-22T15:13:33.427Z</lastmod>
     <data>
         <display>
-        <title>Memory of Hongkong</title>
-        <pubTime>2015-02-18T09:10:36.000Z</pubTime>
+        <title>Marina Bay</title>
+        <pubTime>2015-05-02T11:44:37.000Z</pubTime>
         
-        <tag>Hongkong</tag>
-         
-        <tag>香港</tag>
+        <tag>Singapore</tag>
          
          
            
@@ -1149,29 +1149,6 @@
 
     
   <url>
-    <loc>https://alaxn.tk/5e021da6/</loc>
-    <lastmod>2017-07-22T15:13:33.423Z</lastmod>
-    <data>
-        <display>
-        <title>Hello-NewWorld-Hexo新建文章指南</title>
-        <pubTime>2017-06-07T00:55:29.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
-          
-             
-              <breadCrumb title="Hexo" url="https://alaxn.tk/categories/MachineWorld/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://alaxn.tk/193c906c/</loc>
     <lastmod>2017-07-22T15:13:33.423Z</lastmod>
     <data>
@@ -1189,6 +1166,29 @@
            
              
               <breadCrumb title="NewFreedom" url="https://alaxn.tk/categories/NewFreedom/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://alaxn.tk/5e021da6/</loc>
+    <lastmod>2017-07-22T15:13:33.423Z</lastmod>
+    <data>
+        <display>
+        <title>Hello-NewWorld-Hexo新建文章指南</title>
+        <pubTime>2017-06-07T00:55:29.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="https://alaxn.tk/categories/MachineWorld/Hexo/"/>
           
         </display>
     </data>
@@ -1334,26 +1334,6 @@
 
     
   <url>
-    <loc>https://alaxn.tk/2620121e/</loc>
-    <lastmod>2017-07-22T15:13:33.403Z</lastmod>
-    <data>
-        <display>
-        <title>Markdown语法规则（个人备忘录）</title>
-        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
-        
-        <tag>Markdown</tag>
-         
-         
-           
-             
-              <breadCrumb title="Markdown" url="https://alaxn.tk/categories/Markdown/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://alaxn.tk/fb78cd4a/</loc>
     <lastmod>2017-07-22T15:13:33.403Z</lastmod>
     <data>
@@ -1367,6 +1347,26 @@
            
              
               <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://alaxn.tk/2620121e/</loc>
+    <lastmod>2017-07-22T15:13:33.403Z</lastmod>
+    <data>
+        <display>
+        <title>Markdown语法规则（个人备忘录）</title>
+        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
+        
+        <tag>Markdown</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="https://alaxn.tk/categories/Markdown/"/>
           
         </display>
     </data>
@@ -1423,29 +1423,6 @@
 
     
   <url>
-    <loc>https://alaxn.tk/c451e7ab/</loc>
-    <lastmod>2017-07-22T15:13:33.399Z</lastmod>
-    <data>
-        <display>
-        <title>Hexo搭建教程</title>
-        <pubTime>2017-06-21T10:13:39.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
-          
-             
-              <breadCrumb title="Hexo" url="https://alaxn.tk/categories/MachineWorld/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://alaxn.tk/a55c64ff/</loc>
     <lastmod>2017-07-22T15:13:33.399Z</lastmod>
     <data>
@@ -1471,16 +1448,14 @@
 
     
   <url>
-    <loc>https://alaxn.tk/e5ac3b51/</loc>
-    <lastmod>2017-07-22T15:13:33.398Z</lastmod>
+    <loc>https://alaxn.tk/c451e7ab/</loc>
+    <lastmod>2017-07-22T15:13:33.399Z</lastmod>
     <data>
         <display>
-        <title>使用Gulp压缩Hexo</title>
-        <pubTime>2017-05-02T11:44:37.000Z</pubTime>
+        <title>Hexo搭建教程</title>
+        <pubTime>2017-06-21T10:13:39.000Z</pubTime>
         
         <tag>Hexo</tag>
-         
-        <tag>Gulp</tag>
          
          
            
@@ -1502,6 +1477,31 @@
         <display>
         <title>解决设置Gulp中出现的Unable to minify JavaScript错误</title>
         <pubTime>2017-06-20T07:07:53.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+        <tag>Gulp</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="https://alaxn.tk/categories/MachineWorld/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://alaxn.tk/e5ac3b51/</loc>
+    <lastmod>2017-07-22T15:13:33.398Z</lastmod>
+    <data>
+        <display>
+        <title>使用Gulp压缩Hexo</title>
+        <pubTime>2017-05-02T11:44:37.000Z</pubTime>
         
         <tag>Hexo</tag>
          
