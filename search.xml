@@ -302,41 +302,38 @@
 </ol>
 <p><img src="http://upload-images.jianshu.io/upload_images/28402-47ffd65d0cb1748e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700" alt="git img"></p>
 <ol>
-<li>验证配置是否成功，在git中输入</li>
-</ol>
+<li><p>验证配置是否成功，在git中输入</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">ssh -T git@github.com</div><div class="line"></div><div class="line"><span class="comment">#以下是返回的信息</span></div><div class="line"></div><div class="line"><span class="comment">#成功的情况</span></div><div class="line">The authenticity of host <span class="string">'github.com (IP ADDRESS)'</span> can<span class="string">'t be established.</span></div><div class="line">RSA key fingerprint is 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48.</div><div class="line">Are you sure you want to continue connecting (yes/no)?</div><div class="line">#键入yes</div><div class="line">yes</div><div class="line">#配置成功</div><div class="line">Hi username! You've successfully authenticated, but GitHub does not</div><div class="line">provide shell access.</div><div class="line"></div><div class="line"><span class="comment">#失败的情况</span></div><div class="line">The authenticity of host <span class="string">'github.com (IP ADDRESS)'</span> can<span class="string">'t be established.</span></div><div class="line">RSA key fingerprint is SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8.</div><div class="line">Are you sure you want to continue connecting (yes/no)?</div><div class="line">#这种情况需回去检查密匙是否复制错了，不匹配，或检查GitHub上是否成功上传。重新操作一遍试试</div></pre></td></tr></table></figure>
-<ol>
-<li>设置用户名和email</li>
-</ol>
+</li>
+<li><p>设置用户名和email</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git config --global user.name <span class="string">"your username"</span></div><div class="line">git config --global user.email <span class="string">"your email@youremail.com"</span></div></pre></td></tr></table></figure>
-<ol>
-<li>添加项目</li>
-</ol>
+</li>
+<li><p>添加项目</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git remote add origin git@github.com:XXX/XXX.git #可以直接复制项目页面“Clone or download”中的地址</div><div class="line">git config branch.master.remote origin #设置分支为origin</div><div class="line">git config branch.master.merge refs/heads/master</div></pre></td></tr></table></figure>
-<ol>
-<li>提交文件</li>
-</ol>
+</li>
+<li><p>提交文件</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git add -A #添加文件夹内所有文件</div><div class="line">git commit -m "填写注释"</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
 <h2 id="其他git命令备忘"><a href="#其他git命令备忘" class="headerlink" title="其他git命令备忘"></a>其他git命令备忘</h2><ol>
-<li>新建目录，将其初始化成Git代码库</li>
-</ol>
+<li><p>新建目录，将其初始化成Git代码库</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git init "newfolder"</div></pre></td></tr></table></figure>
-<ol>
-<li>下载某个项目及其历史</li>
-</ol>
+</li>
+<li><p>下载某个项目及其历史</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone url</div></pre></td></tr></table></figure>
-<ol>
-<li>分支操作</li>
-</ol>
+</li>
+<li><p>分支操作</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git branch</div><div class="line">git branch -r</div><div class="line">git branch new_branch # 创建本地分支，注意新分支创建后不会自动切换为当前分支</div><div class="line">git checkout new_branch # 切换分支</div><div class="line">git checkout new_branch # 创建新分支并立即切换到新分支</div><div class="line">git push origin master:newmaster # origin是远程主机，master是当前分支，newmaster是新分支</div></pre></td></tr></table></figure>
-<ol>
-<li>修改配置</li>
-</ol>
+</li>
+<li><p>修改配置</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git config --list</div><div class="line">git git config -e --global</div><div class="line">git config --global user.name "username"</div><div class="line">git config --global user.email "email address"</div></pre></td></tr></table></figure>
-<ol>
-<li>删除文件</li>
-</ol>
+</li>
+<li><p>删除文件</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git rm file1 # 删除file1，并将删除记录放入暂存区</div><div class="line">git rm --cached file1 # 停止追踪file1，该文件会保留在工作区</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
 <h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
 <li><a href="http://www.cnblogs.com/xwdreamer/archive/2012/05/29/2523958.html" target="_blank" rel="external">github中non-fast-forward错误的解决</a></li>
 <li><a href="http://www.linuxidc.com/Linux/2012-04/58985.htm" target="_blank" rel="external">Git错误non-fast-forward后的冲突解决</a></li>
@@ -487,9 +484,9 @@
         
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> Ubuntu </tag>
+            
+            <tag> Linux </tag>
             
             <tag> Centos </tag>
             
@@ -1525,39 +1522,27 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
-      <url>/18f91d43/</url>
-      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
-<a id="more"></a>
-<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
-<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
-</ol>
+      <title><![CDATA[Hexo设置Disqus评论]]></title>
+      <url>/a55c64ff/</url>
+      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
+<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
 <blockquote>
-<p>algolia可以使用github和谷歌账号直接登录。</p>
+<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
 </blockquote>
-<ol>
-<li>点击Indices，新建Index</li>
-<li>点击API Keys，记录下以下三个值：</li>
-</ol>
-<pre><code>Application ID
-Search-Only API Key
-Admin API Key
-</code></pre><ol>
-<li>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。<blockquote>
-<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
-</blockquote>
+<a id="more"></a>
+<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
+<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
+</li>
+<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
+</li>
+<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
+</li>
+<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
+</li>
+<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
 </li>
 </ol>
-<p><img src="http://orp61qolg.bkt.clouddn.com/images/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/Create%20a%20new%20API%20Key%20for%20search.png" alt="设置页面"></p>
-<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2><p>待续……</p>
-<h2 id="更新搜索内容"><a href="#更新搜索内容" class="headerlink" title="更新搜索内容"></a>更新搜索内容</h2><p>当配置完成后，输入如下指令：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=…</div></pre></td></tr></table></figure>
-<p>“=”后面填入新建的API，完成后在站点根目录下执行 <code>hexo algolia</code> 来更新 Index。请注意观察命令的输出。</p>
-<p><img src="http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png" alt="img"></p>
-<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://theme-next.iissnan.com/third-party-services.html#search-system" target="_blank" rel="external">NexT 第三方服务集成</a></p>
-<p><a href="https://github.com/oncletom/hexo-algolia/tree/20f6ecfde2b3348c2fba5ffc3963cc1ba7d2e3cb#api-key" target="_blank" rel="external">hexo-algolia</a></p>
-]]></content>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
       
         <categories>
             
@@ -1572,7 +1557,7 @@ Admin API Key
             
             <tag> Hexo </tag>
             
-            <tag> Algolia </tag>
+            <tag> Disqus </tag>
             
         </tags>
         
@@ -1673,27 +1658,39 @@ H2
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo设置Disqus评论]]></title>
-      <url>/a55c64ff/</url>
-      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
-<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
-<blockquote>
-<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
-</blockquote>
+      <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
+      <url>/18f91d43/</url>
+      <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install --save hexo-algolia</div></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
-<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
-</li>
-<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
-</li>
-<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
-</li>
-<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
-</li>
-<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
+<h2 id="设置algolia服务"><a href="#设置algolia服务" class="headerlink" title="设置algolia服务"></a>设置<a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">algolia</a>服务</h2><ol>
+<li><a href="https://www.algolia.com/users/sign_in" target="_blank" rel="external">注册algolia</a></li>
+</ol>
+<blockquote>
+<p>algolia可以使用github和谷歌账号直接登录。</p>
+</blockquote>
+<ol>
+<li>点击Indices，新建Index</li>
+<li>点击API Keys，记录下以下三个值：</li>
+</ol>
+<pre><code>Application ID
+Search-Only API Key
+Admin API Key
+</code></pre><ol>
+<li>在API Keys页面切换“All API Keys”，新建一个Key，勾选下图所示的权限，并记录下API key的值。<blockquote>
+<p>由于更新后的algolia为了安全原因，需要新建一个专用的Key提交搜索数据库的，否则会出现提交失败的情况。</p>
+</blockquote>
 </li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
+<p><img src="http://orp61qolg.bkt.clouddn.com/images/Hexo-algolia%E6%90%9C%E7%B4%A2%E5%AE%89%E8%A3%85%E5%8F%8A%E8%AE%BE%E7%BD%AE/Create%20a%20new%20API%20Key%20for%20search.png" alt="设置页面"></p>
+<h2 id="配置站点设置"><a href="#配置站点设置" class="headerlink" title="配置站点设置"></a>配置站点设置</h2><p>待续……</p>
+<h2 id="更新搜索内容"><a href="#更新搜索内容" class="headerlink" title="更新搜索内容"></a>更新搜索内容</h2><p>当配置完成后，输入如下指令：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ <span class="built_in">export</span> HEXO_ALGOLIA_INDEXING_KEY=…</div></pre></td></tr></table></figure>
+<p>“=”后面填入新建的API，完成后在站点根目录下执行 <code>hexo algolia</code> 来更新 Index。请注意观察命令的输出。</p>
+<p><img src="http://theme-next.iissnan.com/uploads/algolia/algolia-step-4.png" alt="img"></p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="http://theme-next.iissnan.com/third-party-services.html#search-system" target="_blank" rel="external">NexT 第三方服务集成</a></p>
+<p><a href="https://github.com/oncletom/hexo-algolia/tree/20f6ecfde2b3348c2fba5ffc3963cc1ba7d2e3cb#api-key" target="_blank" rel="external">hexo-algolia</a></p>
+]]></content>
       
         <categories>
             
@@ -1708,7 +1705,7 @@ H2
             
             <tag> Hexo </tag>
             
-            <tag> Disqus </tag>
+            <tag> Algolia </tag>
             
         </tags>
         
@@ -2268,11 +2265,11 @@ H2
         
         <tags>
             
-            <tag> Wordpress </tag>
-            
             <tag> Lnmp </tag>
             
             <tag> VPS </tag>
+            
+            <tag> Wordpress </tag>
             
         </tags>
         
