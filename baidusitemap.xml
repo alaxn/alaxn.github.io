@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://alaxn.tk/92b5cf79/</loc>
+    <lastmod>2018-04-04T11:20:00.022Z</lastmod>
+    <data>
+        <display>
+        <title>个人推荐的Win应用</title>
+        <pubTime>2017-06-19T09:59:08.071Z</pubTime>
+        
+        <tag>MachineWorld</tag>
+         
+        <tag>Tools</tag>
+         
+        <tag>Windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://alaxn.tk/36caebac/</loc>
     <lastmod>2018-01-04T02:01:54.600Z</lastmod>
     <data>
@@ -56,9 +80,9 @@
         <title>Hexo 部署中的文件大小写问题</title>
         <pubTime>2017-07-03T02:09:17.000Z</pubTime>
         
-        <tag>Hexo</tag>
-         
         <tag>GitHub</tag>
+         
+        <tag>Hexo</tag>
          
          
            
@@ -148,37 +172,13 @@
         <title>亲测好用的猴油脚本</title>
         <pubTime>2017-12-20T10:27:01.000Z</pubTime>
         
+        <tag>MachineWorld</tag>
+         
         <tag>Chrome</tag>
          
         <tag>Tools</tag>
          
-        <tag>MachineWorld</tag>
-         
         <tag>Extension</tag>
-         
-         
-           
-             
-              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://alaxn.tk/92b5cf79/</loc>
-    <lastmod>2017-12-20T17:29:12.042Z</lastmod>
-    <data>
-        <display>
-        <title>个人推荐的Win应用</title>
-        <pubTime>2017-06-19T09:59:08.071Z</pubTime>
-        
-        <tag>Tools</tag>
-         
-        <tag>MachineWorld</tag>
-         
-        <tag>Windows</tag>
          
          
            
@@ -220,9 +220,9 @@
         <title>Linux重启网络服务方法</title>
         <pubTime>2017-11-01T09:03:56.000Z</pubTime>
         
-        <tag>Linux</tag>
-         
         <tag>Ubuntu</tag>
+         
+        <tag>Linux</tag>
          
         <tag>Centos</tag>
          
@@ -247,9 +247,9 @@
         <title>Windows网络修复工具 Complete Internet Repair</title>
         <pubTime>2017-12-05T10:00:19.000Z</pubTime>
         
-        <tag>Tools</tag>
-         
         <tag>MachineWorld</tag>
+         
+        <tag>Tools</tag>
          
          
            
@@ -1174,6 +1174,29 @@
 
     
   <url>
+    <loc>https://alaxn.tk/5e021da6/</loc>
+    <lastmod>2017-07-22T15:13:33.423Z</lastmod>
+    <data>
+        <display>
+        <title>Hello-NewWorld-Hexo新建文章指南</title>
+        <pubTime>2017-06-07T00:55:29.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="https://alaxn.tk/categories/MachineWorld/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://alaxn.tk/193c906c/</loc>
     <lastmod>2017-07-22T15:13:33.423Z</lastmod>
     <data>
@@ -1191,29 +1214,6 @@
            
              
               <breadCrumb title="NewFreedom" url="https://alaxn.tk/categories/NewFreedom/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://alaxn.tk/5e021da6/</loc>
-    <lastmod>2017-07-22T15:13:33.423Z</lastmod>
-    <data>
-        <display>
-        <title>Hello-NewWorld-Hexo新建文章指南</title>
-        <pubTime>2017-06-07T00:55:29.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-         
-           
-             
-              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
-          
-             
-              <breadCrumb title="Hexo" url="https://alaxn.tk/categories/MachineWorld/Hexo/"/>
           
         </display>
     </data>
@@ -1247,28 +1247,6 @@
 
     
   <url>
-    <loc>https://alaxn.tk/cb253133/</loc>
-    <lastmod>2017-07-22T15:13:33.421Z</lastmod>
-    <data>
-        <display>
-        <title>大数据带来了什么？——分析方式的革新</title>
-        <pubTime>2015-05-13T05:46:03.000Z</pubTime>
-        
-        <tag>big data</tag>
-         
-        <tag>大数据</tag>
-         
-         
-           
-             
-              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://alaxn.tk/cc3003f5/</loc>
     <lastmod>2017-07-22T15:13:33.421Z</lastmod>
     <data>
@@ -1281,6 +1259,28 @@
         <tag>win10</tag>
          
         <tag>声卡</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://alaxn.tk/cb253133/</loc>
+    <lastmod>2017-07-22T15:13:33.421Z</lastmod>
+    <data>
+        <display>
+        <title>大数据带来了什么？——分析方式的革新</title>
+        <pubTime>2015-05-13T05:46:03.000Z</pubTime>
+        
+        <tag>big data</tag>
+         
+        <tag>大数据</tag>
          
          
            
@@ -1448,6 +1448,29 @@
 
     
   <url>
+    <loc>https://alaxn.tk/c451e7ab/</loc>
+    <lastmod>2017-07-22T15:13:33.399Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo搭建教程</title>
+        <pubTime>2017-06-21T10:13:39.000Z</pubTime>
+        
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="https://alaxn.tk/categories/MachineWorld/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://alaxn.tk/a55c64ff/</loc>
     <lastmod>2017-07-22T15:13:33.399Z</lastmod>
     <data>
@@ -1473,14 +1496,16 @@
 
     
   <url>
-    <loc>https://alaxn.tk/c451e7ab/</loc>
-    <lastmod>2017-07-22T15:13:33.399Z</lastmod>
+    <loc>https://alaxn.tk/e5ac3b51/</loc>
+    <lastmod>2017-07-22T15:13:33.398Z</lastmod>
     <data>
         <display>
-        <title>Hexo搭建教程</title>
-        <pubTime>2017-06-21T10:13:39.000Z</pubTime>
+        <title>使用Gulp压缩Hexo</title>
+        <pubTime>2017-05-02T11:44:37.000Z</pubTime>
         
         <tag>Hexo</tag>
+         
+        <tag>Gulp</tag>
          
          
            
@@ -1502,31 +1527,6 @@
         <display>
         <title>解决设置Gulp中出现的Unable to minify JavaScript错误</title>
         <pubTime>2017-06-20T07:07:53.000Z</pubTime>
-        
-        <tag>Hexo</tag>
-         
-        <tag>Gulp</tag>
-         
-         
-           
-             
-              <breadCrumb title="MachineWorld" url="https://alaxn.tk/categories/MachineWorld/"/>
-          
-             
-              <breadCrumb title="Hexo" url="https://alaxn.tk/categories/MachineWorld/Hexo/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://alaxn.tk/e5ac3b51/</loc>
-    <lastmod>2017-07-22T15:13:33.398Z</lastmod>
-    <data>
-        <display>
-        <title>使用Gulp压缩Hexo</title>
-        <pubTime>2017-05-02T11:44:37.000Z</pubTime>
         
         <tag>Hexo</tag>
          
@@ -1569,16 +1569,16 @@
 
     
   <url>
-    <loc>https://alaxn.tk/27623ab4/</loc>
+    <loc>https://alaxn.tk/18f91d43/</loc>
     <lastmod>2017-07-22T15:13:33.396Z</lastmod>
     <data>
         <display>
-        <title>使用不蒜子为Hexo添加访客统计</title>
-        <pubTime>2017-06-21T09:30:10.000Z</pubTime>
+        <title>Hexo-Algolia搜索安装及设置</title>
+        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
         
         <tag>Hexo</tag>
          
-        <tag>不蒜子</tag>
+        <tag>Algolia</tag>
          
          
            
@@ -1594,16 +1594,16 @@
 
     
   <url>
-    <loc>https://alaxn.tk/18f91d43/</loc>
+    <loc>https://alaxn.tk/27623ab4/</loc>
     <lastmod>2017-07-22T15:13:33.396Z</lastmod>
     <data>
         <display>
-        <title>Hexo-Algolia搜索安装及设置</title>
-        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
+        <title>使用不蒜子为Hexo添加访客统计</title>
+        <pubTime>2017-06-21T09:30:10.000Z</pubTime>
         
         <tag>Hexo</tag>
          
-        <tag>Algolia</tag>
+        <tag>不蒜子</tag>
          
          
            
