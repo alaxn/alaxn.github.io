@@ -463,14 +463,18 @@
 </blockquote>
 <h2 id="安装方法"><a href="#安装方法" class="headerlink" title="安装方法"></a>安装方法</h2><ol>
 <li>先安装PIP</li>
-<li><p>CMD命令进入C:\Python34\Scripts里面后再执行PIP命令安装<figure class="highlight plain"><figcaption><span>install wheel```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">3. 最好把文件放在\Script文件夹里面，再执行```pip install xxxx.whl</div></pre></td></tr></table></figure></p>
-</li>
-<li><p>注意whl文件名不能改，必须原名保持一致</p>
-</li>
+<li>CMD命令进入C:\Python34\Scripts里面后再执行PIP命令安装</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install wheel</div></pre></td></tr></table></figure>
+<ol>
+<li>最好把文件放在\Script文件夹里面，再执行</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip install xxxx.whl</div></pre></td></tr></table></figure>
+<ol>
+<li>注意whl文件名不能改，必须原名保持一致</li>
 </ol>
 <h2 id="其他Python常见问题"><a href="#其他Python常见问题" class="headerlink" title="其他Python常见问题"></a>其他Python常见问题</h2><ol>
 <li><a href="https://alaxn.tk/6bace738">Python如何读取某一文件夹中的所有文件</a></li>
-<li>​</li>
 </ol>
 ]]></content>
       
@@ -1113,24 +1117,83 @@
     </entry>
     
     <entry>
-      <title><![CDATA[阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法]]></title>
-      <url>/4618109c/</url>
+      <title><![CDATA[阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法]]></title>
+      <url>/70221081/</url>
+      <content type="html"><![CDATA[<a id="more"></a>
+<h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
+<li><p>漏洞名称：微擎任意文件下载</p>
+</li>
+<li><p>存在漏洞文件：/framework/function/global.func.php</p>
+</li>
+<li><p>漏洞描述：任意文件下载，补丁绕过。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了改漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</p>
+</li>
+</ul>
+<h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
+<li>找到/framework/function/global.func.php这个文件</li>
+<li>搜素如下代码，约在440-450行之间</li>
+</ol>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$t = strtolower($src);</div></pre></td></tr></table></figure>
+<ol>
+<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E4%BF%AE%E5%A4%8D%E4%BD%8D%E7%BD%AE.png" alt="修复位置"></p>
+</li>
+<li><p>将如下代码进行修改</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (strexists($t, <span class="string">'http://'</span>) || strexists($t, <span class="string">'https://'</span>) || substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>) &#123;</div><div class="line"><span class="keyword">return</span> $src;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>改成</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>((substr($t, <span class="number">0</span>, <span class="number">7</span>) == <span class="string">'http://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">8</span>) == <span class="string">'https://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>))&#123;</div><div class="line"><span class="keyword">return</span> $src; </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>​完成后保存，再使用阿里云云盾进行检测即可。</p>
+</li>
+</ol>
+<h2 id="相关漏洞修复方法"><a href="#相关漏洞修复方法" class="headerlink" title="相关漏洞修复方法"></a>相关漏洞修复方法</h2><ol>
+<li>[<a href="https://alaxn.tk/4618109c/">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/70221081/">阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法</a></li>
+<li><a href="https://alaxn.tk/5d7bb850/">阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/5e006aac/">阿里云提示微擎最新版SQL注入(editor.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/c8a40f/">阿里云提示微擎前台任意文件删除漏洞(category.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/5d7bb850/">微擎最新版SQL注入(wxmicro.ctrl.php)修复方法</a></li>
+</ol>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Websites </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> MachineWorld </tag>
+            
+            <tag> Websites </tag>
+            
+            <tag> 微擎 </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法]]></title>
+      <url>/5d7bb850/</url>
       <content type="html"><![CDATA[<a id="more"></a>
 <h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
 <li>漏洞名称：微擎文件编辑SQL注入</li>
-<li>存在漏洞文件：/web/source/site/article.ctrl.php中</li>
-<li>漏洞描述：微擎的/web/source/site/article.ctrl.php中对\$_GPC[‘template’]、\$_GPC[‘title’]、\$_GPC[‘description’]、\$_GPC[‘source’]、\$_GPC[‘author’]参数未进行正确转义过滤，导致SQL注入的产生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
+<li>存在漏洞文件：/web/source/paycenter/wxmicro.ctrl.php文件中</li>
+<li>漏洞描述：微擎CMS的/web/source/paycenter/wxmicro.ctrl.php中，对\$post[‘member’][‘uid’]输入参数未进行严格类型转义，导致SQL注入的发生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
 </ul>
 <h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
-<li>找到/web/source/site/article.ctrl.php这个文件</li>
-<li>搜素如下代码，约在75-85行之间</li>
+<li>找到/web/source/paycenter/wxmicro.ctrl.php这个文件</li>
+<li>搜素如下代码，约在29行之间</li>
 </ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">message(<span class="string">'标题不能为空，请输入标题！'</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$user = pdo_get(<span class="string">'mc_members'</span>, <span class="keyword">array</span>(<span class="string">'uniacid'</span> =&gt; $_W[<span class="string">'uniacid'</span>], <span class="string">'uid'</span> =&gt; $post[<span class="string">'member'</span>][<span class="string">'uid'</span>]));</div></pre></td></tr></table></figure>
 <ol>
-<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E5%BE%AE%E6%93%8ESQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D.png" alt="修复位置"></p>
+<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/%E5%BE%AE%E6%93%8ESQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D2.png" alt="修复位置"></p>
 </li>
-<li><p>在83行后添加如下代码</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_set_charset(<span class="string">"gbk"</span>);  $_GPC[<span class="string">'template'</span>] = mysql_real_escape_string($_GPC[<span class="string">'template'</span>]);  $_GPC[<span class="string">'title'</span>] = mysql_real_escape_string($_GPC[<span class="string">'title'</span>]);  $_GPC[<span class="string">'description'</span>] = mysql_real_escape_string($_GPC[<span class="string">'description'</span>]);  $_GPC[<span class="string">'source'</span>] = mysql_real_escape_string($_GPC[<span class="string">'source'</span>]);  $_GPC[<span class="string">'author'</span>] = mysql_real_escape_string($_GPC[<span class="string">'author'</span>]);</div></pre></td></tr></table></figure>
+<li><p>将搜索到的这句话改成：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$user = pdo_get(<span class="string">'mc_members'</span>, <span class="keyword">array</span>(<span class="string">'uniacid'</span> =&gt; $_W[<span class="string">'uniacid'</span>], <span class="string">'uid'</span> =&gt; intval($post[<span class="string">'member'</span>][<span class="string">'uid'</span>]) ));;</div></pre></td></tr></table></figure>
 </li>
 <li><p>完成后保存，再使用阿里云云盾进行检测即可。</p>
 </li>
@@ -1221,83 +1284,24 @@
     </entry>
     
     <entry>
-      <title><![CDATA[阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法]]></title>
-      <url>/70221081/</url>
-      <content type="html"><![CDATA[<a id="more"></a>
-<h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
-<li><p>漏洞名称：微擎任意文件下载</p>
-</li>
-<li><p>存在漏洞文件：/framework/function/global.func.php</p>
-</li>
-<li><p>漏洞描述：任意文件下载，补丁绕过。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了改漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</p>
-</li>
-</ul>
-<h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
-<li>找到/framework/function/global.func.php这个文件</li>
-<li>搜素如下代码，约在440-450行之间</li>
-</ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$t = strtolower($src);</div></pre></td></tr></table></figure>
-<ol>
-<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E4%BF%AE%E5%A4%8D%E4%BD%8D%E7%BD%AE.png" alt="修复位置"></p>
-</li>
-<li><p>将如下代码进行修改</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (strexists($t, <span class="string">'http://'</span>) || strexists($t, <span class="string">'https://'</span>) || substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>) &#123;</div><div class="line"><span class="keyword">return</span> $src;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>改成</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>((substr($t, <span class="number">0</span>, <span class="number">7</span>) == <span class="string">'http://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">8</span>) == <span class="string">'https://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>))&#123;</div><div class="line"><span class="keyword">return</span> $src; </div><div class="line"> &#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>​完成后保存，再使用阿里云云盾进行检测即可。</p>
-</li>
-</ol>
-<h2 id="相关漏洞修复方法"><a href="#相关漏洞修复方法" class="headerlink" title="相关漏洞修复方法"></a>相关漏洞修复方法</h2><ol>
-<li>[<a href="https://alaxn.tk/4618109c/">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/70221081/">阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法</a></li>
-<li><a href="https://alaxn.tk/5d7bb850/">阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/5e006aac/">阿里云提示微擎最新版SQL注入(editor.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/c8a40f/">阿里云提示微擎前台任意文件删除漏洞(category.ctrl.php)修复方法</a></li>
-<li><a href="https://alaxn.tk/5d7bb850/">微擎最新版SQL注入(wxmicro.ctrl.php)修复方法</a></li>
-</ol>
-]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-            <category> Websites </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> MachineWorld </tag>
-            
-            <tag> Websites </tag>
-            
-            <tag> 微擎 </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法]]></title>
-      <url>/5d7bb850/</url>
+      <title><![CDATA[阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法]]></title>
+      <url>/4618109c/</url>
       <content type="html"><![CDATA[<a id="more"></a>
 <h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
 <li>漏洞名称：微擎文件编辑SQL注入</li>
-<li>存在漏洞文件：/web/source/paycenter/wxmicro.ctrl.php文件中</li>
-<li>漏洞描述：微擎CMS的/web/source/paycenter/wxmicro.ctrl.php中，对\$post[‘member’][‘uid’]输入参数未进行严格类型转义，导致SQL注入的发生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
+<li>存在漏洞文件：/web/source/site/article.ctrl.php中</li>
+<li>漏洞描述：微擎的/web/source/site/article.ctrl.php中对\$_GPC[‘template’]、\$_GPC[‘title’]、\$_GPC[‘description’]、\$_GPC[‘source’]、\$_GPC[‘author’]参数未进行正确转义过滤，导致SQL注入的产生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
 </ul>
 <h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
-<li>找到/web/source/paycenter/wxmicro.ctrl.php这个文件</li>
-<li>搜素如下代码，约在29行之间</li>
+<li>找到/web/source/site/article.ctrl.php这个文件</li>
+<li>搜素如下代码，约在75-85行之间</li>
 </ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$user = pdo_get(<span class="string">'mc_members'</span>, <span class="keyword">array</span>(<span class="string">'uniacid'</span> =&gt; $_W[<span class="string">'uniacid'</span>], <span class="string">'uid'</span> =&gt; $post[<span class="string">'member'</span>][<span class="string">'uid'</span>]));</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">message(<span class="string">'标题不能为空，请输入标题！'</span>);</div></pre></td></tr></table></figure>
 <ol>
-<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/%E5%BE%AE%E6%93%8ESQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D2.png" alt="修复位置"></p>
+<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E5%BE%AE%E6%93%8ESQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D.png" alt="修复位置"></p>
 </li>
-<li><p>将搜索到的这句话改成：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$user = pdo_get(<span class="string">'mc_members'</span>, <span class="keyword">array</span>(<span class="string">'uniacid'</span> =&gt; $_W[<span class="string">'uniacid'</span>], <span class="string">'uid'</span> =&gt; intval($post[<span class="string">'member'</span>][<span class="string">'uid'</span>]) ));;</div></pre></td></tr></table></figure>
+<li><p>在83行后添加如下代码</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mysql_set_charset(<span class="string">"gbk"</span>);  $_GPC[<span class="string">'template'</span>] = mysql_real_escape_string($_GPC[<span class="string">'template'</span>]);  $_GPC[<span class="string">'title'</span>] = mysql_real_escape_string($_GPC[<span class="string">'title'</span>]);  $_GPC[<span class="string">'description'</span>] = mysql_real_escape_string($_GPC[<span class="string">'description'</span>]);  $_GPC[<span class="string">'source'</span>] = mysql_real_escape_string($_GPC[<span class="string">'source'</span>]);  $_GPC[<span class="string">'author'</span>] = mysql_real_escape_string($_GPC[<span class="string">'author'</span>]);</div></pre></td></tr></table></figure>
 </li>
 <li><p>完成后保存，再使用阿里云云盾进行检测即可。</p>
 </li>
@@ -1590,6 +1594,36 @@
     </entry>
     
     <entry>
+      <title><![CDATA[解决设置Gulp中出现的Unable to minify JavaScript错误]]></title>
+      <url>/f3aadd98/</url>
+      <content type="html"><![CDATA[<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><a id="more"></a>
+<p>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</p>
+<p>events.js:160<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">throw</span> er; <span class="comment">// Unhandled 'error' event</span></div><div class="line">^</div></pre></td></tr></table></figure></p>
+<p>GulpUglifyError: unable to minify JavaScript<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)</div><div class="line">at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash\_createHybrid.js:87:15)</div><div class="line">at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)</div><div class="line">at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)</div><div class="line">at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:172:10)</div><div class="line">at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:160:12)</div><div class="line">at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:335:12)</div><div class="line">at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:321:5)</div><div class="line">at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:248:11)</div><div class="line">at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib\_stream_readable.js:623:24)</div></pre></td></tr></table></figure></p>
+<p>PS C:\Users\alex\apflora&gt;</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>如遇到这个问题，可以检查gulpfile.js中调用的插件是否都成功安装，是否需要升级。特别留意安装后提示的警告（WARNING）</p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Gulp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
       <url>/2620121e/</url>
       <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
@@ -1654,15 +1688,27 @@ H2
     </entry>
     
     <entry>
-      <title><![CDATA[解决设置Gulp中出现的Unable to minify JavaScript错误]]></title>
-      <url>/f3aadd98/</url>
-      <content type="html"><![CDATA[<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><a id="more"></a>
-<p>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</p>
-<p>events.js:160<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">throw</span> er; <span class="comment">// Unhandled 'error' event</span></div><div class="line">^</div></pre></td></tr></table></figure></p>
-<p>GulpUglifyError: unable to minify JavaScript<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)</div><div class="line">at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash\_createHybrid.js:87:15)</div><div class="line">at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)</div><div class="line">at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)</div><div class="line">at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:172:10)</div><div class="line">at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:160:12)</div><div class="line">at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:335:12)</div><div class="line">at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:321:5)</div><div class="line">at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:248:11)</div><div class="line">at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib\_stream_readable.js:623:24)</div></pre></td></tr></table></figure></p>
-<p>PS C:\Users\alex\apflora&gt;</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>如遇到这个问题，可以检查gulpfile.js中调用的插件是否都成功安装，是否需要升级。特别留意安装后提示的警告（WARNING）</p>
-]]></content>
+      <title><![CDATA[Hexo设置Disqus评论]]></title>
+      <url>/a55c64ff/</url>
+      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
+<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
+<blockquote>
+<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
+<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
+</li>
+<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
+</li>
+<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
+</li>
+<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
+</li>
+<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
       
         <categories>
             
@@ -1677,7 +1723,7 @@ H2
             
             <tag> Hexo </tag>
             
-            <tag> Gulp </tag>
+            <tag> Disqus </tag>
             
         </tags>
         
@@ -1732,48 +1778,6 @@ Admin API Key
             <tag> Hexo </tag>
             
             <tag> Algolia </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
-      <title><![CDATA[Hexo设置Disqus评论]]></title>
-      <url>/a55c64ff/</url>
-      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
-<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
-<blockquote>
-<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
-<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
-</li>
-<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
-</li>
-<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
-</li>
-<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
-</li>
-<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
-</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Disqus </tag>
             
         </tags>
         
@@ -2179,7 +2183,7 @@ Admin API Key
       <content type="html"><![CDATA[<blockquote>
 <p>点击插件名即可进入chrome商城下载，如无法下载，可在此处寻找<a href="http://yurl.sinaapp.com/crx2.php" target="_blank" rel="external">国内加速，常用扩展一键秒下</a>。</p>
 </blockquote>
-<h3 id="Adblock"><a href="#Adblock" class="headerlink" title="Adblock"></a><a href="https://chrome.google.com/webstore/detail/adblock/gighmmpiobklfepjocnamgkkbiglidom" target="_blank" rel="external">Adblock</a></h3><p>屏蔽互联网上各种恼人的广告。对于自己喜欢的网站，可以设置白名单。对于强迫症患者，只要稍懂html，就可以自定义规则，屏蔽掉网页上任何自己不想看到的东西。</p>
+<h3 id="uBlock-Origin"><a href="#uBlock-Origin" class="headerlink" title="uBlock Origin"></a><a href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm?hl=en" target="_blank" rel="external">uBlock Origin</a></h3><p>屏蔽互联网上各种恼人的广告，相对Adblock更加节省内存和CPU资源。对于自己喜欢的网站，可以设置白名单。对于强迫症患者，只要稍懂html，就可以自定义规则，屏蔽掉网页上任何自己不想看到的东西。</p>
 <h3 id="chrome下载管理器"><a href="#chrome下载管理器" class="headerlink" title="chrome下载管理器"></a><a href="https://chrome.google.com/webstore/detail/chrono-download-manager/mciiogijehkdemklbdcbfkefimifhecn" target="_blank" rel="external">chrome下载管理器</a></h3><p>替代chrome原生的下载界面，并增强了相关功能。此外，还可以探测所访问页面的所有资源，包括图片、文档、css文件、js文件。提供一键下载。特别是当需要在下载某页面的多个文档时，一键下载特别方便。</p>
 <h3 id="Nimbus-Screenshot-and-Screencast"><a href="#Nimbus-Screenshot-and-Screencast" class="headerlink" title="Nimbus Screenshot and Screencast"></a><a href="https://chrome.google.com/webstore/detail/nimbus-screenshot-and-scr/bpconcjcammlapcogcnnelfmaeghhagj" target="_blank" rel="external">Nimbus Screenshot and Screencast</a></h3><p>优秀的网页截图工具。支持多种截图方式，特别是能够支持在页面中进行自定义的滚动截屏。截图后可对图片进行编辑，并以png和jpeg格式输出。</p>
 <h3 id="Neater-Bookmarks"><a href="#Neater-Bookmarks" class="headerlink" title="Neater Bookmarks"></a><a href="https://chrome.google.com/webstore/detail/neater-bookmarks/ofgjggbjanlhbgaemjbkiegeebmccifi" target="_blank" rel="external">Neater Bookmarks</a></h3><p>弹出式书签。chrome自带的书签有个缺点，就是如果设置了多个层级，选取起来会比较困难，手抖一下就失焦。「Neater Bookmarks」可以解决这个问题。</p>
@@ -2336,11 +2340,11 @@ Admin API Key
         
         <tags>
             
+            <tag> Wordpress </tag>
+            
             <tag> Lnmp </tag>
             
             <tag> VPS </tag>
-            
-            <tag> Wordpress </tag>
             
         </tags>
         
