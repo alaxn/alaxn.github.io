@@ -109,8 +109,7 @@
 <td>★★★★★</td>
 </tr>
 <tr>
-<td>[Anti-Adblock Killer \</td>
-<td>Reek](<a href="https://greasyfork.org/zh-CN/scripts/735-anti-adblock-killer-reek" target="_blank" rel="external">https://greasyfork.org/zh-CN/scripts/735-anti-adblock-killer-reek</a>)</td>
+<td><a href="https://greasyfork.org/zh-CN/scripts/735-anti-adblock-killer-reek" target="_blank" rel="external">Anti-Adblock Killer </a></td>
 <td>去除部分网站反Adblock的保护。配合Adblock插件使用，需订阅列表</td>
 <td>★★★</td>
 </tr>
@@ -225,11 +224,11 @@
         
         <tags>
             
-            <tag> MachineWorld </tag>
+            <tag> Chrome </tag>
             
             <tag> Tools </tag>
             
-            <tag> Chrome </tag>
+            <tag> MachineWorld </tag>
             
             <tag> Extension </tag>
             
@@ -261,9 +260,9 @@
         
         <tags>
             
-            <tag> MachineWorld </tag>
-            
             <tag> Tools </tag>
+            
+            <tag> MachineWorld </tag>
             
         </tags>
         
@@ -1365,9 +1364,9 @@
         
         <tags>
             
-            <tag> Hexo </tag>
-            
             <tag> GitHub </tag>
+            
+            <tag> Hexo </tag>
             
         </tags>
         
@@ -1594,27 +1593,15 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Hexo设置Disqus评论]]></title>
-      <url>/a55c64ff/</url>
-      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
-<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
-<blockquote>
-<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
-</blockquote>
-<a id="more"></a>
-<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
-<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
-</li>
-<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
-</li>
-<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
-</li>
-<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
-</li>
-<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
-</li>
-</ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
+      <title><![CDATA[解决设置Gulp中出现的Unable to minify JavaScript错误]]></title>
+      <url>/f3aadd98/</url>
+      <content type="html"><![CDATA[<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><a id="more"></a>
+<p>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</p>
+<p>events.js:160<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">throw</span> er; <span class="comment">// Unhandled 'error' event</span></div><div class="line">^</div></pre></td></tr></table></figure></p>
+<p>GulpUglifyError: unable to minify JavaScript<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)</div><div class="line">at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash\_createHybrid.js:87:15)</div><div class="line">at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)</div><div class="line">at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)</div><div class="line">at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:172:10)</div><div class="line">at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:160:12)</div><div class="line">at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:335:12)</div><div class="line">at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:321:5)</div><div class="line">at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:248:11)</div><div class="line">at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib\_stream_readable.js:623:24)</div></pre></td></tr></table></figure></p>
+<p>PS C:\Users\alex\apflora&gt;</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>如遇到这个问题，可以检查gulpfile.js中调用的插件是否都成功安装，是否需要升级。特别留意安装后提示的警告（WARNING）</p>
+]]></content>
       
         <categories>
             
@@ -1629,7 +1616,7 @@
             
             <tag> Hexo </tag>
             
-            <tag> Disqus </tag>
+            <tag> Gulp </tag>
             
         </tags>
         
@@ -1754,15 +1741,27 @@ Admin API Key
     </entry>
     
     <entry>
-      <title><![CDATA[解决设置Gulp中出现的Unable to minify JavaScript错误]]></title>
-      <url>/f3aadd98/</url>
-      <content type="html"><![CDATA[<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><a id="more"></a>
-<p>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</p>
-<p>events.js:160<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">throw</span> er; <span class="comment">// Unhandled 'error' event</span></div><div class="line">^</div></pre></td></tr></table></figure></p>
-<p>GulpUglifyError: unable to minify JavaScript<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)</div><div class="line">at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash\_createHybrid.js:87:15)</div><div class="line">at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)</div><div class="line">at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)</div><div class="line">at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:172:10)</div><div class="line">at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:160:12)</div><div class="line">at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:335:12)</div><div class="line">at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:321:5)</div><div class="line">at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:248:11)</div><div class="line">at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib\_stream_readable.js:623:24)</div></pre></td></tr></table></figure></p>
-<p>PS C:\Users\alex\apflora&gt;</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>如遇到这个问题，可以检查gulpfile.js中调用的插件是否都成功安装，是否需要升级。特别留意安装后提示的警告（WARNING）</p>
-]]></content>
+      <title><![CDATA[Hexo设置Disqus评论]]></title>
+      <url>/a55c64ff/</url>
+      <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
+<p><strong>重要通知: 多说即将关闭</strong><br>发表于 2017年3月21日 <a href="http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241" target="_blank" rel="external">http://dev.duoshuo.com/threads/58d1169ae293b89a20c57241</a></p>
+<blockquote>
+<p>因公司业务调整，非常遗憾的向大家宣布多说项目即将关闭。 我们将于2017年6月1日正式关停服务，在此之前您可以通过后台的数据导出功能导出自己站点的评论数据。 对此给您造成的不便，我们深表歉意，感谢您的一路相伴。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="Disqus使用说明"><a href="#Disqus使用说明" class="headerlink" title="Disqus使用说明"></a>Disqus使用说明</h2><ol>
+<li><p>注册<a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>账号</p>
+</li>
+<li><p>点击<strong>“Get Started”</strong><br><img src="http://orp61qolg.bkt.clouddn.com/images/hexo-setting-disqus-step2.png" alt="Get Started"></p>
+</li>
+<li><p>选择<strong>“I want to comment sites”</strong>，并设置Shortname。</p>
+</li>
+<li><p>编辑<strong>站点配置文件</strong> _config.yml ，添加 disqus_shortname 字段（先搜索，如果有就不用），设置如下<br><pre><code>disqus_shortname: your-disqus-shortname</code></pre><br>如果需取消某个页面的评论，在md文件v的front-matter中增加<br><pre><code>disqus_shortname: your-disqus-shortname</code>&lt;/ pre&gt; </pre></p>
+</li>
+<li><p>编辑<strong>主题配置文件</strong> _config.yml </p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">disqus:</div><div class="line">  <span class="built_in">enable</span>: ture        <span class="comment"># 开启disqus </span></div><div class="line">  shortname: your shortname <span class="comment"># 用户名</span></div><div class="line">  count: <span class="literal">false</span>        <span class="comment"># 开启评论数量显示</span></div></pre></td></tr></table></figure>]]></content>
       
         <categories>
             
@@ -1777,7 +1776,7 @@ Admin API Key
             
             <tag> Hexo </tag>
             
-            <tag> Gulp </tag>
+            <tag> Disqus </tag>
             
         </tags>
         
@@ -1853,9 +1852,9 @@ Admin API Key
         
         <tags>
             
-            <tag> MachineWorld </tag>
-            
             <tag> Tools </tag>
+            
+            <tag> MachineWorld </tag>
             
             <tag> Windows </tag>
             
@@ -2209,9 +2208,9 @@ Admin API Key
         
         <tags>
             
-            <tag> Tools </tag>
-            
             <tag> Chrome </tag>
+            
+            <tag> Tools </tag>
             
         </tags>
         
