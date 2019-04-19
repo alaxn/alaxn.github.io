@@ -1297,24 +1297,24 @@
     </entry>
     
     <entry>
-      <title><![CDATA[微擎最新版SQL注入(wxmicro.ctrl.php)修复方法]]></title>
-      <url>/a47989f9/</url>
+      <title><![CDATA[阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法]]></title>
+      <url>/5d7bb850/</url>
       <content type="html"><![CDATA[<a id="more"></a>
 <h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
-<li>漏洞名称：微擎最新版SQL注入</li>
+<li>漏洞名称：微擎文件编辑SQL注入</li>
 <li>存在漏洞文件：/web/source/paycenter/wxmicro.ctrl.php文件中</li>
 <li>漏洞描述：微擎CMS的/web/source/paycenter/wxmicro.ctrl.php中，对\$post[‘member’][‘uid’]输入参数未进行严格类型转义，导致SQL注入的发生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
 </ul>
 <h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
 <li>找到/web/source/paycenter/wxmicro.ctrl.php这个文件</li>
-<li>搜素如下代码，共有三处，约在23行、87行、176行。</li>
+<li>搜素如下代码，约在29行之间</li>
 </ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$html = htmlspecialchars_decode($_GPC[<span class="string">'wapeditor'</span>][<span class="string">'html'</span>], ENT_QUOTES);</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$user = pdo_get(<span class="string">'mc_members'</span>, <span class="keyword">array</span>(<span class="string">'uniacid'</span> =&gt; $_W[<span class="string">'uniacid'</span>], <span class="string">'uid'</span> =&gt; $post[<span class="string">'member'</span>][<span class="string">'uid'</span>]));</div></pre></td></tr></table></figure>
 <ol>
-<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E5%BE%AE%E6%93%8ESQL%E6%96%B0%E7%89%88%E6%9C%AC%E6%BC%8F%E6%B4%9E.png" alt="修复位置"></p>
+<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/%E5%BE%AE%E6%93%8ESQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D2.png" alt="修复位置"></p>
 </li>
-<li><p>在三处此语句后面添加如下内容：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$html = str_replace(<span class="keyword">array</span>(<span class="string">'&lt;?'</span>, <span class="string">'&lt;%'</span>, <span class="string">'&lt;?php'</span>, <span class="string">'&#123;php'</span>), <span class="string">'_'</span>, $html); $html = preg_replace(<span class="string">'/&lt;s*?script.*(src)+/i'</span>, <span class="string">'_'</span>, $html);</div></pre></td></tr></table></figure>
+<li><p>将搜索到的这句话改成：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$user = pdo_get(<span class="string">'mc_members'</span>, <span class="keyword">array</span>(<span class="string">'uniacid'</span> =&gt; $_W[<span class="string">'uniacid'</span>], <span class="string">'uid'</span> =&gt; intval($post[<span class="string">'member'</span>][<span class="string">'uid'</span>]) ));;</div></pre></td></tr></table></figure>
 </li>
 <li><p>完成后保存，再使用阿里云云盾进行检测即可。</p>
 </li>
@@ -1410,24 +1410,24 @@
     </entry>
     
     <entry>
-      <title><![CDATA[阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法]]></title>
-      <url>/5d7bb850/</url>
+      <title><![CDATA[微擎最新版SQL注入(wxmicro.ctrl.php)修复方法]]></title>
+      <url>/a47989f9/</url>
       <content type="html"><![CDATA[<a id="more"></a>
 <h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
-<li>漏洞名称：微擎文件编辑SQL注入</li>
+<li>漏洞名称：微擎最新版SQL注入</li>
 <li>存在漏洞文件：/web/source/paycenter/wxmicro.ctrl.php文件中</li>
 <li>漏洞描述：微擎CMS的/web/source/paycenter/wxmicro.ctrl.php中，对\$post[‘member’][‘uid’]输入参数未进行严格类型转义，导致SQL注入的发生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
 </ul>
 <h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
 <li>找到/web/source/paycenter/wxmicro.ctrl.php这个文件</li>
-<li>搜素如下代码，约在29行之间</li>
+<li>搜素如下代码，共有三处，约在23行、87行、176行。</li>
 </ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$user = pdo_get(<span class="string">'mc_members'</span>, <span class="keyword">array</span>(<span class="string">'uniacid'</span> =&gt; $_W[<span class="string">'uniacid'</span>], <span class="string">'uid'</span> =&gt; $post[<span class="string">'member'</span>][<span class="string">'uid'</span>]));</div></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$html = htmlspecialchars_decode($_GPC[<span class="string">'wapeditor'</span>][<span class="string">'html'</span>], ENT_QUOTES);</div></pre></td></tr></table></figure>
 <ol>
-<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/%E5%BE%AE%E6%93%8ESQL%E6%B3%A8%E5%85%A5%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D2.png" alt="修复位置"></p>
+<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E5%BE%AE%E6%93%8ESQL%E6%96%B0%E7%89%88%E6%9C%AC%E6%BC%8F%E6%B4%9E.png" alt="修复位置"></p>
 </li>
-<li><p>将搜索到的这句话改成：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$user = pdo_get(<span class="string">'mc_members'</span>, <span class="keyword">array</span>(<span class="string">'uniacid'</span> =&gt; $_W[<span class="string">'uniacid'</span>], <span class="string">'uid'</span> =&gt; intval($post[<span class="string">'member'</span>][<span class="string">'uid'</span>]) ));;</div></pre></td></tr></table></figure>
+<li><p>在三处此语句后面添加如下内容：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$html = str_replace(<span class="keyword">array</span>(<span class="string">'&lt;?'</span>, <span class="string">'&lt;%'</span>, <span class="string">'&lt;?php'</span>, <span class="string">'&#123;php'</span>), <span class="string">'_'</span>, $html); $html = preg_replace(<span class="string">'/&lt;s*?script.*(src)+/i'</span>, <span class="string">'_'</span>, $html);</div></pre></td></tr></table></figure>
 </li>
 <li><p>完成后保存，再使用阿里云云盾进行检测即可。</p>
 </li>
@@ -1774,70 +1774,6 @@
     </entry>
     
     <entry>
-      <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
-      <url>/2620121e/</url>
-      <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
-<blockquote>
-<p>转载来自<a href="http://itmyhome.com/markdown/" target="_blank" rel="external">http://itmyhome.com/markdown/</a></p>
-</blockquote>
-<a id="more"></a>
-<p>这部分内容列出了 John Gruber 定义的 Markdown 语法，包括：</p>
-<ol>
-<li>段落与换行</li>
-<li>标题</li>
-<li>引用</li>
-<li>列表</li>
-<li>代码</li>
-<li>分隔线</li>
-<li>超链接</li>
-<li>图像</li>
-<li>强调</li>
-<li>字符转义</li>
-</ol>
-<!-- more -->
-<h2 id="段落与换行"><a href="#段落与换行" class="headerlink" title="段落与换行"></a>段落与换行</h2><pre><code>1. 段落的前后必须是空行：
-</code></pre><p>  空行指的是行内什么都没有，或者只有空白符（空格或制表符）</p>
-<p>  相邻两行文本，如果中间没有空行 会显示在一行中（换行符被转换为空格）、</p>
-<pre><code>2. 如果需要在段落内加入换行（&lt;br&gt;）：
-</code></pre><p>  可以在前一行的末尾加入至少两个空格<br>  然后换行写其它的文字</p>
-<pre><code>3. Markdown 中的多数区块都需要在两个空行之间.
-</code></pre><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h2 id="1-Setext-形式"><a href="#1-Setext-形式" class="headerlink" title="1. Setext 形式"></a>1. Setext 形式</h2><pre><code>H1
-====
-H2
-----
-</code></pre><h2 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h2><hr>
-<h4 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h4><hr>
-<blockquote>
-<p>= 和 - 的数量是没有限制的。通常的做法是使其和标题文本的长度相同，这样看起来比较舒服。或者可以像我一样，用四个 - 或 =。<br>Setext 形式只支持 h1 和 h2 两种标题。</p>
-</blockquote>
-<h2 id="2-atx-形式"><a href="#2-atx-形式" class="headerlink" title="2. atx 形式"></a><strong>2. atx 形式</strong></h2><p>① 可以用对称的 # 包括文本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#### H4 ####</div><div class="line"></div><div class="line">##### H5 #####</div></pre></td></tr></table></figure></p>
-<h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><p>② 也可以只在左边使用 #：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#### H4</div><div class="line"></div><div class="line">##### H5</div></pre></td></tr></table></figure></p>
-<p>H4</p>
-<p>H5</p>
-<p>③ 成对的 # 左侧和只在左边使用的 # 左侧都不可以有任何空白，但其内侧可以使用空白。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> ###左侧使用了空格###</div><div class="line"></div><div class="line">#### 内侧使用了空格</div></pre></td></tr></table></figure>
-<h4 id="左侧使用了空格"><a href="#左侧使用了空格" class="headerlink" title="左侧使用了空格"></a>左侧使用了空格</h4><p>内侧使用了空格</p>
-<blockquote>
-<p>在这一点上，可能各种 Markdown 的实现会有不同的结果，不过仍然需要我们遵守语法规则。</p>
-</blockquote>
-]]></content>
-      
-        <categories>
-            
-            <category> Markdown </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Markdown </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Hexo-Algolia搜索安装及设置]]></title>
       <url>/18f91d43/</url>
       <content type="html"><![CDATA[<h2 id="前提"><a href="#前提" class="headerlink" title="前提"></a>前提</h2><p>已经安装好Hexo并顺利编译及发布。</p>
@@ -1958,6 +1894,70 @@ Admin API Key
             <tag> Hexo </tag>
             
             <tag> Disqus </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Markdown语法规则（个人备忘录）]]></title>
+      <url>/2620121e/</url>
+      <content type="html"><![CDATA[<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
+<blockquote>
+<p>转载来自<a href="http://itmyhome.com/markdown/" target="_blank" rel="external">http://itmyhome.com/markdown/</a></p>
+</blockquote>
+<a id="more"></a>
+<p>这部分内容列出了 John Gruber 定义的 Markdown 语法，包括：</p>
+<ol>
+<li>段落与换行</li>
+<li>标题</li>
+<li>引用</li>
+<li>列表</li>
+<li>代码</li>
+<li>分隔线</li>
+<li>超链接</li>
+<li>图像</li>
+<li>强调</li>
+<li>字符转义</li>
+</ol>
+<!-- more -->
+<h2 id="段落与换行"><a href="#段落与换行" class="headerlink" title="段落与换行"></a>段落与换行</h2><pre><code>1. 段落的前后必须是空行：
+</code></pre><p>  空行指的是行内什么都没有，或者只有空白符（空格或制表符）</p>
+<p>  相邻两行文本，如果中间没有空行 会显示在一行中（换行符被转换为空格）、</p>
+<pre><code>2. 如果需要在段落内加入换行（&lt;br&gt;）：
+</code></pre><p>  可以在前一行的末尾加入至少两个空格<br>  然后换行写其它的文字</p>
+<pre><code>3. Markdown 中的多数区块都需要在两个空行之间.
+</code></pre><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><h2 id="1-Setext-形式"><a href="#1-Setext-形式" class="headerlink" title="1. Setext 形式"></a>1. Setext 形式</h2><pre><code>H1
+====
+H2
+----
+</code></pre><h2 id="H1"><a href="#H1" class="headerlink" title="H1"></a>H1</h2><hr>
+<h4 id="H2"><a href="#H2" class="headerlink" title="H2"></a>H2</h4><hr>
+<blockquote>
+<p>= 和 - 的数量是没有限制的。通常的做法是使其和标题文本的长度相同，这样看起来比较舒服。或者可以像我一样，用四个 - 或 =。<br>Setext 形式只支持 h1 和 h2 两种标题。</p>
+</blockquote>
+<h2 id="2-atx-形式"><a href="#2-atx-形式" class="headerlink" title="2. atx 形式"></a><strong>2. atx 形式</strong></h2><p>① 可以用对称的 # 包括文本：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#### H4 ####</div><div class="line"></div><div class="line">##### H5 #####</div></pre></td></tr></table></figure></p>
+<h4 id="H4"><a href="#H4" class="headerlink" title="H4"></a>H4</h4><h5 id="H5"><a href="#H5" class="headerlink" title="H5"></a>H5</h5><p>② 也可以只在左边使用 #：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#### H4</div><div class="line"></div><div class="line">##### H5</div></pre></td></tr></table></figure></p>
+<p>H4</p>
+<p>H5</p>
+<p>③ 成对的 # 左侧和只在左边使用的 # 左侧都不可以有任何空白，但其内侧可以使用空白。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"> ###左侧使用了空格###</div><div class="line"></div><div class="line">#### 内侧使用了空格</div></pre></td></tr></table></figure>
+<h4 id="左侧使用了空格"><a href="#左侧使用了空格" class="headerlink" title="左侧使用了空格"></a>左侧使用了空格</h4><p>内侧使用了空格</p>
+<blockquote>
+<p>在这一点上，可能各种 Markdown 的实现会有不同的结果，不过仍然需要我们遵守语法规则。</p>
+</blockquote>
+]]></content>
+      
+        <categories>
+            
+            <category> Markdown </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Markdown </tag>
             
         </tags>
         
@@ -2469,11 +2469,11 @@ Admin API Key
         
         <tags>
             
+            <tag> Wordpress </tag>
+            
             <tag> Lnmp </tag>
             
             <tag> VPS </tag>
-            
-            <tag> Wordpress </tag>
             
         </tags>
         

@@ -1,4 +1,921 @@
-<!DOCTYPE html><html class="theme-next gemini use-motion" lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#222"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet"><link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet"><link href="//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet"><link href="/css/main.css?v=5.1.4" rel="stylesheet"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=5.1.4"><link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=5.1.4"><link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222"><meta name="keywords" content="big data,大数据,"><meta name="description" content="这个时代，互联网与大数据、云计算被频繁地搬上台面，越来越多人熟悉并且开始着手应用这些词汇背后的科技。 这让我想起了前些天探索的谷歌图书（Google Books）以及旗下的Google Ngram Viewer。 我想，这可能是一个与我们学生群体非常相关的大数据项目。谷歌图书是当下收录海量书籍、报刊等文字讯息最大型的全球虚拟电子图书馆了。通过Google Scholar，我们可以捕捉到各类数据库公"><meta name="keywords" content="big data,大数据"><meta property="og:type" content="article"><meta property="og:title" content="大数据带来了什么？——分析方式的革新"><meta property="og:url" content="https://alaxn.github.io/cb253133/index.html"><meta property="og:site_name" content="It&#39;s a blog"><meta property="og:description" content="这个时代，互联网与大数据、云计算被频繁地搬上台面，越来越多人熟悉并且开始着手应用这些词汇背后的科技。 这让我想起了前些天探索的谷歌图书（Google Books）以及旗下的Google Ngram Viewer。 我想，这可能是一个与我们学生群体非常相关的大数据项目。谷歌图书是当下收录海量书籍、报刊等文字讯息最大型的全球虚拟电子图书馆了。通过Google Scholar，我们可以捕捉到各类数据库公"><meta property="og:updated_time" content="2017-07-22T15:13:33.421Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="大数据带来了什么？——分析方式的革新"><meta name="twitter:description" content="这个时代，互联网与大数据、云计算被频繁地搬上台面，越来越多人熟悉并且开始着手应用这些词汇背后的科技。 这让我想起了前些天探索的谷歌图书（Google Books）以及旗下的Google Ngram Viewer。 我想，这可能是一个与我们学生群体非常相关的大数据项目。谷歌图书是当下收录海量书籍、报刊等文字讯息最大型的全球虚拟电子图书馆了。通过Google Scholar，我们可以捕捉到各类数据库公"><script id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Gemini",version:"5.1.4",sidebar:{position:"right",display:"post",offset:12,b2t:!0,scrollpercent:!0,onmobile:!1},fancybox:!0,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},duoshuo:{userId:"0",author:"博主"},algolia:{applicationID:"O49H6RAI92",apiKey:"07469e583c4ec55326ac84f3f9f311be",indexName:"Newgithub",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><link rel="canonical" href="https://alaxn.github.io/cb253133/"><title>大数据带来了什么？——分析方式的革新 | It's a blog</title></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container sidebar-position-right page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta custom-logo"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">It's a blog</span><span class="logo-line-after"><i></i></span></a></div><h1 class="site-subtitle" itemprop="description">Alaxn's Blog</h1></div><div class="site-nav-toggle"><button><span class="btn-bar"></span><span class="btn-bar"></span><span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class="menu-item menu-item-appinventor"><a href="/appinventor/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i><br>appinventor</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="menu-item-icon fa fa-fw fa-sitemap"></i><br>站点地图</a></li><li class="menu-item menu-item-search"><a href="javascript:;" class="popup-trigger"><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class="site-search"><div class="algolia-popup popup search-popup"><div class="algolia-search"><div class="algolia-search-input-icon"><i class="fa fa-search"></i></div><div class="algolia-search-input" id="algolia-search-input"></div></div><div class="algolia-results"><div id="algolia-stats"></div><div id="algolia-hits"></div><div id="algolia-pagination" class="algolia-pagination"></div></div><span class="popup-btn-close"><i class="fa fa-times-circle"></i></span></div></div></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="https://alaxn.github.io/cb253133/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="Alaxn"><meta itemprop="description" content=""><meta itemprop="image" content="http://orp61qolg.bkt.clouddn.com/0a2f3224fd3d2d00eb1f33c7d1790ab2.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="It's a blog"></span><header class="post-header"><h2 class="post-title" itemprop="name headline">大数据带来了什么？——分析方式的革新</h2><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i></span> <span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-05-13T13:46:03+08:00">2015-05-13</time></span> <span class="post-category"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-folder-o"></i></span> <span class="post-meta-item-text">分类于</span> <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/MachineWorld/" itemprop="url" rel="index"><span itemprop="name">MachineWorld</span></a></span></span> <span class="post-comments-count"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-comment-o"></i></span><a href="/cb253133/#comments" itemprop="discussionUrl"><span class="post-comments-count valine-comment-count" data-xid="/cb253133/" itemprop="commentCount"></span></a></span> <span id="/cb253133/" class="leancloud_visitors" data-flag-title="大数据带来了什么？——分析方式的革新"><span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-eye"></i></span> <span class="post-meta-item-text">阅读次数&#58;</span><span class="leancloud-visitors-count"></span></span><div class="post-wordcount"><span class="post-meta-item-icon"><i class="fa fa-file-word-o"></i></span> <span class="post-meta-item-text">字数统计&#58;</span> <span title="字数统计">2,235</span> <span class="post-meta-divider">|</span><span class="post-meta-item-icon"><i class="fa fa-clock-o"></i></span> <span class="post-meta-item-text">阅读时长 &asymp;</span> <span title="阅读时长">8</span></div></div></header><div class="post-body" itemprop="articleBody"><p>这个时代，互联网与大数据、云计算被频繁地搬上台面，越来越多人熟悉并且开始着手应用这些词汇背后的科技。</p><p>这让我想起了前些天探索的谷歌图书（Google Books）以及旗下的Google Ngram Viewer。</p><p>我想，这可能是一个与我们学生群体非常相关的大数据项目。谷歌图书是当下收录海量书籍、报刊等文字讯息最大型的全球虚拟电子图书馆了。通过Google Scholar，我们可以捕捉到各类数据库公开信息及谷歌录入的电子图书，而Ngram Viewer更提供了查询特定词汇，在某个年份区间的频率。这个功能其实看似无用，但背后却蕴含着不少的玄机。</p><p>下面，就用一些简单的例子来说明文本世界大数据的简单应用。</p><p>比如我们想要研究全球变暖在世界范围的关注度变化，我们可以运用以下方法。</p><p>运用Google Ngram Viewer对Sea levels、Atmospheric CO2、Global Temperature进行检索，可以找下如下截图：</p><p>&nbsp;</p><p>从三个词的变化可以看到侧面印证全球气候变化在文字世界中（也就是互联网电子媒介及书本报纸媒介中）的关注度变化。</p><p>再以“Influenza”作为检索关键词进行测试，可以看到以下截图：</p><p>对比历史可以发现在1920年、1930年和1960年出现了峰值与“1918年大流感”、“亚洲流感”等时间相吻合。</p><p>虽然，Ngram Viewer开放给用户使用查询的年份是从1800年-2008年，时效性很差，无法通过它结合当下的时事去做一些预测。但这并不意味着，谷歌及与其合作的公司无法达到这种效果，毕竟，仅仅谷歌每天各个地区的热门搜索就为谷歌产生了几T以上的数据了。</p><p>舍恩伯格在《大数据时代》中提到了不是因果关系，而是相关性。其实就是上面这个例子所能够印证的。在大数据时代，由于数据收集量非常巨大，在分析问题，迅速做出决策的时候，可以仅仅使用海量数据的相关性分析，用数据说话，而不需要研究背后的因果。Google Translate不懂得英语语法，却能够按照一定基础语法将中文翻译成英文。机器人不懂得语言的本质，却懂得用适当的语言回复你。你可以不懂得1+1=2背后的逻辑，你只要知道绝大数人得出的答案等于2。只要大多数结果是这样，我们几乎就可以判定结果就是这样（数学上的不完全归纳推理的延伸，暂不考虑是否一定正确）。</p><p>相关性的分析可以让我们轻易得出“啤酒和尿布”放在一起的结论，也能够轻易得出用户购物倾向，从而推荐给用户合适的商品，但是，这并不是说我们能够抛弃背后的因果。就如译者周涛所说:“我本人对于大数据时代“相关关系比因果关系更重要”这个观点就不认同。相关重于因果，是某些有代表性的大数据分析手段（譬如机器学习）里面内禀的实用主义的魅影，绝非大数据自身的诉求。从小处讲，作者试图避免的“数据的独裁”和“错误的前提导致错误的结论”，其解决之道恰在于挖掘因果逻辑而非相关性；从大处讲，放弃对因果性的追求，就是放弃了人类凌驾于计算机之上的智力优势，是人类自身的放纵和堕落。如果未来某一天机器和计算完全接管了这个世界，那么这种放弃就是末日之始。”</p><p>无论如何，做出决策的最终把关者都是人，具有理性和逻辑才能称之为人，我们看到现象，我们需要应用现象，更需要预测现象，对因果的分析才能够让我们看清在n个变量条件下，彼此之间相关性的强弱从而去击中最关键的x-y对应关系。在《大数据时代》中，作者还提到了混杂性这一说法，他认为，海量数据的导入会使得一些不精确的数据也导入其中，使得结果不精确。在大数据面前，混杂是不可避免的，且其在论述过程将其作为大数据的一个趋势，认为大数据未来就应当是这样。而我认为，恰恰是因为混杂性的存在，才使得考究因果尤为重要。在利用大数据的同时，更加需要使用大数据去考究因果，传统分析中会把精确作为考究分析结果好坏和分析方法是否有效的衡量标准，在大数据面前，也应当是如此。我们不能因为数据的庞大，因而存在太多不相关变量，便认为这是大数据必然的缺陷。</p><p>大数据给了我们更加全面的来自各方面的信息去分析。就以互联网搜索为例，无论是百度还是谷歌，作为PC网络的入口，掌握着每个用户的搜索习惯和上网时间、甚至是网页停留时长等信息，网站的后台每天都记录着每一位匿名用户（仍然存在cookie）搜索者iP、搜索时间，搜索关键词，浏览网页地址，甚至是网页跳转记录，而注册用户则更为全面，谷歌所涉及服务囊括了普通用户的音乐、视频、邮箱、新闻、安卓系统；专业人士的站长服务工具Webmaster、开发人员的AppEngine、广告投放商的Adword等等。数据来源之多和数据本身带有不确定性必然带来混杂性。就如同我们都明白一个常识：心理学研究针对的只能是一个群体，而不可能到某个个体，因为个体在思考和行动中存在着主观能动性，个体行为本身便不具有完全的理性。用户每天的上网行为带有某种喜好和规律，但同时也携带者太多的不确定因素。这些不确定性才真正是大数据的用武之地。大数据不是不需要算法，而是需要更多更加高效精确的算法。而算法的设计者便是人，大量重复和有序的工作可以交由计算机去计算，最终设计和主导挖掘数据价值的主体是人的智慧。未来，大数据的发展可能会分化出三类方向，一是数据收集方向，研究如何高效准确收集信息及储存；二是数据分析方向，海量数据如何使用有效方式分析其中的相关程度和因果关系，大数据分析方式已经慢慢颠覆传统概率论的核心，如何抽样；三是数据的应用，将各类数据通过某一方式结合起来，进行学术研究及商业应用。</p><p>大数据用量的变化开始改变了我们的思维方式，部分理性可以被归纳法所替代。数据的量变带来了我们传统未考虑到的混杂性问题，也带来了不究因果的经验判断方式。应该说，在某些领域我们需要也值得如此应用，但应该警醒，这并不是探索人类真理的未来。技术已经决定了生产力和生活水平，不能再让它决定了人性的发展。</p><p>若是，科技黑箱的存在令我们少了很多功夫去探索其中的运作过程，码农只需要知道调用某个库能够使用什么算法而不需要了解原理；大法官可以是个机器，因为大法官只需要根据历史案例和受审者的各类数据，便能够判定是否定罪；甚至于在出生前便收录DNA讯息便分析得出你的未来，活生生的个体不过是一堆存放在冷冰冰硬盘中的数据；那么，这将是人性面对技术的一次彻底的溃败。</p><p>大数据来临，我们已经在路上，晃晃悠悠。未来，自由意志是否异化，我们不得而知；当请记住，拥抱未来，拥抱大数据，我们别无选择。</p></div><div><div id="wechat_subscriber" style="display:block;padding:10px 0;margin:20px auto;width:100%;text-align:center"><img id="wechat_subscriber_qcode" src="http://orp61qolg.bkt.clouddn.com/alaxn%E5%85%AC%E4%BC%97%E5%8F%B72.jpg" alt="Alaxn wechat" style="width:200px;max-width:100%"><div>随便看看，万一有你感兴趣的呢？</div></div></div><div><div style="padding:10px 0;margin:20px auto;width:90%;text-align:center"><div>我知道是不会有人点的，但万一有人想不开呢？</div><button id="rewardButton" disable="enable" onclick='var qr=document.getElementById("QR");"none"===qr.style.display?qr.style.display="block":qr.style.display="none"'><span>打赏</span></button><div id="QR" style="display:none"><div id="wechat" style="display:inline-block"><img id="wechat_qr" src="http://orp61qolg.bkt.clouddn.com/Wechatsmall.jpg" alt="Alaxn 微信支付"><p>微信支付</p></div><div id="alipay" style="display:inline-block"><img id="alipay_qr" src="http://orp61qolg.bkt.clouddn.com/Alipaysmall.jpg" alt="Alaxn 支付宝"><p>支付宝</p></div></div></div></div><footer class="post-footer"><div class="post-tags"><a href="/tags/big-data/" rel="tag"># big data</a> <a href="/tags/大数据/" rel="tag"># 大数据</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/3c9f49dc/" rel="next" title="漫谈亚洲价值观"><i class="fa fa-chevron-left"></i> 漫谈亚洲价值观</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/ab633f74/" rel="prev" title="浅析妒忌心理">浅析妒忌心理<i class="fa fa-chevron-right"></i></a></div></div></footer></div></article><div class="post-spread"></div></div></div><div class="comments" id="comments"></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><section class="site-overview-wrap sidebar-panel sidebar-panel-active"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" src="http://orp61qolg.bkt.clouddn.com/0a2f3224fd3d2d00eb1f33c7d1790ab2.jpg" alt="Alaxn"><p class="site-author-name" itemprop="name">Alaxn</p><p class="site-description motion-element" itemprop="description"></p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives"><span class="site-state-item-count">77</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-categories"><a href="/categories/index.html"><span class="site-state-item-count">18</span> <span class="site-state-item-name">分类</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/index.html"><span class="site-state-item-count">95</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="mailto:alaxnmay@gmail.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i> E-Mail</a></span></div><div class="cc-license motion-element" itemprop="license"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></a></div></div></section><div class="back-to-top"><i class="fa fa-arrow-up"></i> <span id="scrollpercent"><span>0</span>%</span></div></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2018</span><span class="with-love"><i class="fa fa-user"></i></span> <span class="author" itemprop="copyrightHolder">Alaxn</span></div><div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div><span class="post-meta-divider">|</span><div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div><div class="busuanzi-count"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script><span class="site-uv"><i class="fa fa-user"></i><span class="busuanzi-value" id="busuanzi_value_site_uv"></span></span><span class="site-pv"><i class="fa fa-eye"></i><span class="busuanzi-value" id="busuanzi_value_site_pv"></span></span></div></div></footer></div><script>"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script><script src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script><script src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script><script src="//cdn.bootcss.com/velocity/1.3.1/velocity.min.js"></script><script src="//cdn.bootcss.com/velocity/1.3.1/velocity.ui.min.js"></script><script src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script src="/js/src/utils.js?v=5.1.4"></script><script src="/js/src/motion.js?v=5.1.4"></script><script src="/js/src/affix.js?v=5.1.4"></script><script src="/js/src/schemes/pisces.js?v=5.1.4"></script><script src="/js/src/scrollspy.js?v=5.1.4"></script><script src="/js/src/post-details.js?v=5.1.4"></script><script src="/js/src/bootstrap.js?v=5.1.4"></script><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>var GUEST = ['nick','mail','link'];
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="big data,大数据," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="这个时代，互联网与大数据、云计算被频繁地搬上台面，越来越多人熟悉并且开始着手应用这些词汇背后的科技。 这让我想起了前些天探索的谷歌图书（Google Books）以及旗下的Google Ngram Viewer。 我想，这可能是一个与我们学生群体非常相关的大数据项目。谷歌图书是当下收录海量书籍、报刊等文字讯息最大型的全球虚拟电子图书馆了。通过Google Scholar，我们可以捕捉到各类数据库公">
+<meta name="keywords" content="big data,大数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="大数据带来了什么？——分析方式的革新">
+<meta property="og:url" content="https://alaxn.github.io/cb253133/index.html">
+<meta property="og:site_name" content="It&#39;s a blog">
+<meta property="og:description" content="这个时代，互联网与大数据、云计算被频繁地搬上台面，越来越多人熟悉并且开始着手应用这些词汇背后的科技。 这让我想起了前些天探索的谷歌图书（Google Books）以及旗下的Google Ngram Viewer。 我想，这可能是一个与我们学生群体非常相关的大数据项目。谷歌图书是当下收录海量书籍、报刊等文字讯息最大型的全球虚拟电子图书馆了。通过Google Scholar，我们可以捕捉到各类数据库公">
+<meta property="og:updated_time" content="2017-07-22T15:13:33.421Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="大数据带来了什么？——分析方式的革新">
+<meta name="twitter:description" content="这个时代，互联网与大数据、云计算被频繁地搬上台面，越来越多人熟悉并且开始着手应用这些词汇背后的科技。 这让我想起了前些天探索的谷歌图书（Google Books）以及旗下的Google Ngram Viewer。 我想，这可能是一个与我们学生群体非常相关的大数据项目。谷歌图书是当下收录海量书籍、报刊等文字讯息最大型的全球虚拟电子图书馆了。通过Google Scholar，我们可以捕捉到各类数据库公">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: 'O49H6RAI92',
+      apiKey: '07469e583c4ec55326ac84f3f9f311be',
+      indexName: 'Newgithub',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://alaxn.github.io/cb253133/"/>
+
+
+
+
+
+  <title>大数据带来了什么？——分析方式的革新 | It's a blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta custom-logo">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">It's a blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Alaxn's Blog</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-appinventor">
+          <a href="/appinventor/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            appinventor
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://alaxn.github.io/cb253133/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Alaxn">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://orp61qolg.bkt.clouddn.com/0a2f3224fd3d2d00eb1f33c7d1790ab2.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="It's a blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">大数据带来了什么？——分析方式的革新</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2015-05-13T13:46:03+08:00">
+                2015-05-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MachineWorld/" itemprop="url" rel="index">
+                    <span itemprop="name">MachineWorld</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/cb253133/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/cb253133/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/cb253133/" class="leancloud_visitors" data-flag-title="大数据带来了什么？——分析方式的革新">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>这个时代，互联网与大数据、云计算被频繁地搬上台面，越来越多人熟悉并且开始着手应用这些词汇背后的科技。</p>
+<p>这让我想起了前些天探索的谷歌图书（Google Books）以及旗下的Google Ngram Viewer。</p>
+<p>我想，这可能是一个与我们学生群体非常相关的大数据项目。谷歌图书是当下收录海量书籍、报刊等文字讯息最大型的全球虚拟电子图书馆了。通过Google Scholar，我们可以捕捉到各类数据库公开信息及谷歌录入的电子图书，而Ngram Viewer更提供了查询特定词汇，在某个年份区间的频率。这个功能其实看似无用，但背后却蕴含着不少的玄机。</p>
+<p>下面，就用一些简单的例子来说明文本世界大数据的简单应用。</p>
+<p>比如我们想要研究全球变暖在世界范围的关注度变化，我们可以运用以下方法。</p>
+<p>运用Google Ngram Viewer对Sea levels、Atmospheric CO2、Global Temperature进行检索，可以找下如下截图：</p>
+<p>&nbsp;</p>
+<p>从三个词的变化可以看到侧面印证全球气候变化在文字世界中（也就是互联网电子媒介及书本报纸媒介中）的关注度变化。</p>
+<p>再以“Influenza”作为检索关键词进行测试，可以看到以下截图：</p>
+<p>对比历史可以发现在1920年、1930年和1960年出现了峰值与“1918年大流感”、“亚洲流感”等时间相吻合。</p>
+<p>虽然，Ngram Viewer开放给用户使用查询的年份是从1800年-2008年，时效性很差，无法通过它结合当下的时事去做一些预测。但这并不意味着，谷歌及与其合作的公司无法达到这种效果，毕竟，仅仅谷歌每天各个地区的热门搜索就为谷歌产生了几T以上的数据了。</p>
+<p>舍恩伯格在《大数据时代》中提到了不是因果关系，而是相关性。其实就是上面这个例子所能够印证的。在大数据时代，由于数据收集量非常巨大，在分析问题，迅速做出决策的时候，可以仅仅使用海量数据的相关性分析，用数据说话，而不需要研究背后的因果。Google Translate不懂得英语语法，却能够按照一定基础语法将中文翻译成英文。机器人不懂得语言的本质，却懂得用适当的语言回复你。你可以不懂得1+1=2背后的逻辑，你只要知道绝大数人得出的答案等于2。只要大多数结果是这样，我们几乎就可以判定结果就是这样（数学上的不完全归纳推理的延伸，暂不考虑是否一定正确）。</p>
+<p>相关性的分析可以让我们轻易得出“啤酒和尿布”放在一起的结论，也能够轻易得出用户购物倾向，从而推荐给用户合适的商品，但是，这并不是说我们能够抛弃背后的因果。就如译者周涛所说:“我本人对于大数据时代“相关关系比因果关系更重要”这个观点就不认同。相关重于因果，是某些有代表性的大数据分析手段（譬如机器学习）里面内禀的实用主义的魅影，绝非大数据自身的诉求。从小处讲，作者试图避免的“数据的独裁”和“错误的前提导致错误的结论”，其解决之道恰在于挖掘因果逻辑而非相关性；从大处讲，放弃对因果性的追求，就是放弃了人类凌驾于计算机之上的智力优势，是人类自身的放纵和堕落。如果未来某一天机器和计算完全接管了这个世界，那么这种放弃就是末日之始。”</p>
+<p>无论如何，做出决策的最终把关者都是人，具有理性和逻辑才能称之为人，我们看到现象，我们需要应用现象，更需要预测现象，对因果的分析才能够让我们看清在n个变量条件下，彼此之间相关性的强弱从而去击中最关键的x-y对应关系。在《大数据时代》中，作者还提到了混杂性这一说法，他认为，海量数据的导入会使得一些不精确的数据也导入其中，使得结果不精确。在大数据面前，混杂是不可避免的，且其在论述过程将其作为大数据的一个趋势，认为大数据未来就应当是这样。而我认为，恰恰是因为混杂性的存在，才使得考究因果尤为重要。在利用大数据的同时，更加需要使用大数据去考究因果，传统分析中会把精确作为考究分析结果好坏和分析方法是否有效的衡量标准，在大数据面前，也应当是如此。我们不能因为数据的庞大，因而存在太多不相关变量，便认为这是大数据必然的缺陷。</p>
+<p>大数据给了我们更加全面的来自各方面的信息去分析。就以互联网搜索为例，无论是百度还是谷歌，作为PC网络的入口，掌握着每个用户的搜索习惯和上网时间、甚至是网页停留时长等信息，网站的后台每天都记录着每一位匿名用户（仍然存在cookie）搜索者iP、搜索时间，搜索关键词，浏览网页地址，甚至是网页跳转记录，而注册用户则更为全面，谷歌所涉及服务囊括了普通用户的音乐、视频、邮箱、新闻、安卓系统；专业人士的站长服务工具Webmaster、开发人员的AppEngine、广告投放商的Adword等等。数据来源之多和数据本身带有不确定性必然带来混杂性。就如同我们都明白一个常识：心理学研究针对的只能是一个群体，而不可能到某个个体，因为个体在思考和行动中存在着主观能动性，个体行为本身便不具有完全的理性。用户每天的上网行为带有某种喜好和规律，但同时也携带者太多的不确定因素。这些不确定性才真正是大数据的用武之地。大数据不是不需要算法，而是需要更多更加高效精确的算法。而算法的设计者便是人，大量重复和有序的工作可以交由计算机去计算，最终设计和主导挖掘数据价值的主体是人的智慧。未来，大数据的发展可能会分化出三类方向，一是数据收集方向，研究如何高效准确收集信息及储存；二是数据分析方向，海量数据如何使用有效方式分析其中的相关程度和因果关系，大数据分析方式已经慢慢颠覆传统概率论的核心，如何抽样；三是数据的应用，将各类数据通过某一方式结合起来，进行学术研究及商业应用。</p>
+<p>大数据用量的变化开始改变了我们的思维方式，部分理性可以被归纳法所替代。数据的量变带来了我们传统未考虑到的混杂性问题，也带来了不究因果的经验判断方式。应该说，在某些领域我们需要也值得如此应用，但应该警醒，这并不是探索人类真理的未来。技术已经决定了生产力和生活水平，不能再让它决定了人性的发展。</p>
+<p>若是，科技黑箱的存在令我们少了很多功夫去探索其中的运作过程，码农只需要知道调用某个库能够使用什么算法而不需要了解原理；大法官可以是个机器，因为大法官只需要根据历史案例和受审者的各类数据，便能够判定是否定罪；甚至于在出生前便收录DNA讯息便分析得出你的未来，活生生的个体不过是一堆存放在冷冰冰硬盘中的数据；那么，这将是人性面对技术的一次彻底的溃败。</p>
+<p>大数据来临，我们已经在路上，晃晃悠悠。未来，自由意志是否异化，我们不得而知；当请记住，拥抱未来，拥抱大数据，我们别无选择。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="http://orp61qolg.bkt.clouddn.com/alaxn%E5%85%AC%E4%BC%97%E5%8F%B72.jpg" alt="Alaxn wechat" style="width: 200px; max-width: 100%;"/>
+    <div>随便看看，万一有你感兴趣的呢？</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>我知道是不会有人点的，但万一有人想不开呢？</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="http://orp61qolg.bkt.clouddn.com/Wechatsmall.jpg" alt="Alaxn 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="http://orp61qolg.bkt.clouddn.com/Alipaysmall.jpg" alt="Alaxn 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/big-data/" rel="tag"># big data</a>
+          
+            <a href="/tags/大数据/" rel="tag"># 大数据</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/3c9f49dc/" rel="next" title="漫谈亚洲价值观">
+                <i class="fa fa-chevron-left"></i> 漫谈亚洲价值观
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/ab633f74/" rel="prev" title="浅析妒忌心理">
+                浅析妒忌心理 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://orp61qolg.bkt.clouddn.com/0a2f3224fd3d2d00eb1f33c7d1790ab2.jpg"
+                alt="Alaxn" />
+            
+              <p class="site-author-name" itemprop="name">Alaxn</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">95</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:alaxnmay@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2013 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alaxn</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.3.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.3.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
     var guest = 'nick,mail,link';
     guest = guest.split(',').filter(item=>{
       return GUEST.indexOf(item)>-1;
@@ -13,4 +930,166 @@
         avatar:'mm',
         guest_info:guest,
         pageSize:'10' || 10,
-    });</script><link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css"><script src="/lib/algolia-instant-search/instantsearch.min.js"></script><script src="/js/src/algolia-search.js?v=5.1.4"></script><script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script><script>AV.initialize("1osYglps4ELvQBxuQay9rp2a-gzGzoHsz","83UTg7m0g1jzmBBH2m0ANXht")</script><script>function showTime(e){var t=new AV.Query(e),c=[],u=$(".leancloud_visitors");u.each(function(){c.push($(this).attr("id").trim())}),t.containedIn("url",c),t.find().done(function(e){var t=".leancloud-visitors-count";if(0!==e.length){for(var n=0;n<e.length;n++){var o=e[n],i=o.get("url"),s=o.get("time"),r=document.getElementById(i);$(r).find(t).text(s)}for(n=0;n<c.length;n++){i=c[n],r=document.getElementById(i);var l=$(r).find(t);""==l.text()&&l.text(0)}}else u.find(t).text(0)}).fail(function(e,t){console.log("Error: "+t.code+" "+t.message)})}function addCount(i){var e=$(".leancloud_visitors"),s=e.attr("id").trim(),r=e.attr("data-flag-title").trim(),t=new AV.Query(i);t.equalTo("url",s),t.find({success:function(e){if(0<e.length){var t=e[0];t.fetchWhenSave(!0),t.increment("time"),t.save(null,{success:function(e){$(document.getElementById(s)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to save Visitor num, with error message: "+t.message)}})}else{var n=new i,o=new AV.ACL;o.setPublicReadAccess(!0),o.setPublicWriteAccess(!0),n.setACL(o),n.set("title",r),n.set("url",s),n.set("time",1),n.save(null,{success:function(e){$(document.getElementById(s)).find(".leancloud-visitors-count").text(e.get("time"))},error:function(e,t){console.log("Failed to create")}})}},error:function(e){console.log("Error:"+e.code+" "+e.message)}})}$(function(){var e=AV.Object.extend("Counter");1==$(".leancloud_visitors").length?addCount(e):1<$(".post-title-link").length&&showTime(e)})</script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script></body></html>
+    });
+  </script>
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("1osYglps4ELvQBxuQay9rp2a-gzGzoHsz", "83UTg7m0g1jzmBBH2m0ANXht");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
