@@ -164,9 +164,9 @@
         
         <tags>
             
-            <tag> MachineWorld </tag>
-            
             <tag> Tools </tag>
+            
+            <tag> MachineWorld </tag>
             
             <tag> Windows </tag>
             
@@ -397,11 +397,11 @@
         
         <tags>
             
-            <tag> MachineWorld </tag>
+            <tag> Chrome </tag>
             
             <tag> Tools </tag>
             
-            <tag> Chrome </tag>
+            <tag> MachineWorld </tag>
             
             <tag> Extension </tag>
             
@@ -433,9 +433,9 @@
         
         <tags>
             
-            <tag> MachineWorld </tag>
-            
             <tag> Tools </tag>
+            
+            <tag> MachineWorld </tag>
             
         </tags>
         
@@ -524,9 +524,9 @@
         
         <tags>
             
-            <tag> MachineWorld </tag>
-            
             <tag> GitHub </tag>
+            
+            <tag> MachineWorld </tag>
             
         </tags>
         
@@ -716,9 +716,9 @@
         
         <tags>
             
-            <tag> Linux </tag>
-            
             <tag> Ubuntu </tag>
+            
+            <tag> Linux </tag>
             
             <tag> Centos </tag>
             
@@ -1337,35 +1337,30 @@
     </entry>
     
     <entry>
-      <title><![CDATA[阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法]]></title>
-      <url>/70221081/</url>
+      <title><![CDATA[微擎最新版SQL注入(wxmicro.ctrl.php)修复方法]]></title>
+      <url>/a47989f9/</url>
       <content type="html"><![CDATA[<a id="more"></a>
 <h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
-<li><p>漏洞名称：微擎任意文件下载</p>
-</li>
-<li><p>存在漏洞文件：/framework/function/global.func.php</p>
-</li>
-<li><p>漏洞描述：任意文件下载，补丁绕过。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了改漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</p>
-</li>
+<li>漏洞名称：微擎最新版SQL注入</li>
+<li>存在漏洞文件：/web/source/paycenter/wxmicro.ctrl.php文件中</li>
+<li>漏洞描述：微擎CMS的/web/source/paycenter/wxmicro.ctrl.php中，对\$post[‘member’][‘uid’]输入参数未进行严格类型转义，导致SQL注入的发生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
 </ul>
 <h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
-<li>找到/framework/function/global.func.php这个文件</li>
-<li>搜素如下代码，约在440-450行之间</li>
+<li>找到/web/source/paycenter/wxmicro.ctrl.php这个文件</li>
+<li>搜素如下代码，共有三处，约在23行、87行、176行。</li>
 </ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$t = strtolower($src);</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$html = htmlspecialchars_decode($_GPC[<span class="string">'wapeditor'</span>][<span class="string">'html'</span>], ENT_QUOTES);</span><br></pre></td></tr></table></figure>
 <ol>
-<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E4%BF%AE%E5%A4%8D%E4%BD%8D%E7%BD%AE.png" alt="修复位置"></p>
+<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E5%BE%AE%E6%93%8ESQL%E6%96%B0%E7%89%88%E6%9C%AC%E6%BC%8F%E6%B4%9E.png" alt="修复位置"></p>
 </li>
-<li><p>将如下代码进行修改</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (strexists($t, <span class="string">'http://'</span>) || strexists($t, <span class="string">'https://'</span>) || substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> $src;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>改成</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>((substr($t, <span class="number">0</span>, <span class="number">7</span>) == <span class="string">'http://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">8</span>) == <span class="string">'https://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>))&#123;</span><br><span class="line"><span class="keyword">return</span> $src; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<li><p>在三处此语句后面添加如下内容：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$html = str_replace(<span class="keyword">array</span>(<span class="string">'&lt;?'</span>, <span class="string">'&lt;%'</span>, <span class="string">'&lt;?php'</span>, <span class="string">'&#123;php'</span>), <span class="string">'_'</span>, $html); $html = preg_replace(<span class="string">'/&lt;s*?script.*(src)+/i'</span>, <span class="string">'_'</span>, $html);</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>​完成后保存，再使用阿里云云盾进行检测即可。</p>
+<li><p>完成后保存，再使用阿里云云盾进行检测即可。</p>
 </li>
 </ol>
 <h2 id="相关漏洞修复方法"><a href="#相关漏洞修复方法" class="headerlink" title="相关漏洞修复方法"></a>相关漏洞修复方法</h2><ol>
-<li>[<a href="https://alaxn.tk/4618109c/" target="_blank" rel="noopener">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
+<li><a href="https://alaxn.tk/4618109c/" target="_blank" rel="noopener">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
 <li><a href="https://alaxn.tk/70221081/" target="_blank" rel="noopener">阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法</a></li>
 <li><a href="https://alaxn.tk/5d7bb850/" target="_blank" rel="noopener">阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法</a></li>
 <li><a href="https://alaxn.tk/5e006aac/" target="_blank" rel="noopener">阿里云提示微擎最新版SQL注入(editor.ctrl.php)修复方法</a></li>
@@ -1450,30 +1445,35 @@
     </entry>
     
     <entry>
-      <title><![CDATA[微擎最新版SQL注入(wxmicro.ctrl.php)修复方法]]></title>
-      <url>/a47989f9/</url>
+      <title><![CDATA[阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法]]></title>
+      <url>/70221081/</url>
       <content type="html"><![CDATA[<a id="more"></a>
 <h2 id="漏洞介绍"><a href="#漏洞介绍" class="headerlink" title="漏洞介绍"></a>漏洞介绍</h2><ul>
-<li>漏洞名称：微擎最新版SQL注入</li>
-<li>存在漏洞文件：/web/source/paycenter/wxmicro.ctrl.php文件中</li>
-<li>漏洞描述：微擎CMS的/web/source/paycenter/wxmicro.ctrl.php中，对\$post[‘member’][‘uid’]输入参数未进行严格类型转义，导致SQL注入的发生。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了该漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</li>
+<li><p>漏洞名称：微擎任意文件下载</p>
+</li>
+<li><p>存在漏洞文件：/framework/function/global.func.php</p>
+</li>
+<li><p>漏洞描述：任意文件下载，补丁绕过。【注意：该补丁为云盾自研代码修复方案，云盾会根据您当前代码是否符合云盾自研的修复模式进行检测，如果您自行采取了底层/框架统一修复、或者使用了其他的修复方案，可能会导致您虽然已经修复了改漏洞，云盾依然报告存在漏洞，遇到该情况可选择忽略该漏洞提示】</p>
+</li>
 </ul>
 <h2 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h2><ol>
-<li>找到/web/source/paycenter/wxmicro.ctrl.php这个文件</li>
-<li>搜素如下代码，共有三处，约在23行、87行、176行。</li>
+<li>找到/framework/function/global.func.php这个文件</li>
+<li>搜素如下代码，约在440-450行之间</li>
 </ol>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$html = htmlspecialchars_decode($_GPC[<span class="string">'wapeditor'</span>][<span class="string">'html'</span>], ENT_QUOTES);</span><br></pre></td></tr></table></figure>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$t = strtolower($src);</span><br></pre></td></tr></table></figure>
 <ol>
-<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E5%BE%AE%E6%93%8ESQL%E6%96%B0%E7%89%88%E6%9C%AC%E6%BC%8F%E6%B4%9E.png" alt="修复位置"></p>
+<li><p>如图所示<img src="http://orp61qolg.bkt.clouddn.com/image/%E4%BF%AE%E5%A4%8D%E4%BD%8D%E7%BD%AE.png" alt="修复位置"></p>
 </li>
-<li><p>在三处此语句后面添加如下内容：</p>
-<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$html = str_replace(<span class="keyword">array</span>(<span class="string">'&lt;?'</span>, <span class="string">'&lt;%'</span>, <span class="string">'&lt;?php'</span>, <span class="string">'&#123;php'</span>), <span class="string">'_'</span>, $html); $html = preg_replace(<span class="string">'/&lt;s*?script.*(src)+/i'</span>, <span class="string">'_'</span>, $html);</span><br></pre></td></tr></table></figure>
+<li><p>将如下代码进行修改</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (strexists($t, <span class="string">'http://'</span>) || strexists($t, <span class="string">'https://'</span>) || substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>) &#123;</span><br><span class="line"><span class="keyword">return</span> $src;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>改成</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>((substr($t, <span class="number">0</span>, <span class="number">7</span>) == <span class="string">'http://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">8</span>) == <span class="string">'https://'</span>)||(substr($t, <span class="number">0</span>, <span class="number">2</span>) == <span class="string">'//'</span>))&#123;</span><br><span class="line"><span class="keyword">return</span> $src; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>完成后保存，再使用阿里云云盾进行检测即可。</p>
+<li><p>​完成后保存，再使用阿里云云盾进行检测即可。</p>
 </li>
 </ol>
 <h2 id="相关漏洞修复方法"><a href="#相关漏洞修复方法" class="headerlink" title="相关漏洞修复方法"></a>相关漏洞修复方法</h2><ol>
-<li><a href="https://alaxn.tk/4618109c/" target="_blank" rel="noopener">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
+<li>[<a href="https://alaxn.tk/4618109c/" target="_blank" rel="noopener">阿里云提示微擎文件编辑SQL注入(article.ctrl.php)修复方法</a></li>
 <li><a href="https://alaxn.tk/70221081/" target="_blank" rel="noopener">阿里云提示微擎任意文件(global.func.php)下载漏洞修复方法</a></li>
 <li><a href="https://alaxn.tk/5d7bb850/" target="_blank" rel="noopener">阿里云提示微擎文件编辑SQL注入(wxmicro.ctrl.php)修复方法</a></li>
 <li><a href="https://alaxn.tk/5e006aac/" target="_blank" rel="noopener">阿里云提示微擎最新版SQL注入(editor.ctrl.php)修复方法</a></li>
@@ -1878,6 +1878,36 @@ H2
     </entry>
     
     <entry>
+      <title><![CDATA[解决设置Gulp中出现的Unable to minify JavaScript错误]]></title>
+      <url>/f3aadd98/</url>
+      <content type="html"><![CDATA[<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><a id="more"></a>
+<p>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</p>
+<p>events.js:160<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">throw</span> er; <span class="comment">// Unhandled 'error' event</span></span><br><span class="line">^</span><br></pre></td></tr></table></figure></p>
+<p>GulpUglifyError: unable to minify JavaScript<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)</span><br><span class="line">at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash\_createHybrid.js:87:15)</span><br><span class="line">at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)</span><br><span class="line">at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)</span><br><span class="line">at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:172:10)</span><br><span class="line">at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:160:12)</span><br><span class="line">at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:335:12)</span><br><span class="line">at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:321:5)</span><br><span class="line">at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:248:11)</span><br><span class="line">at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib\_stream_readable.js:623:24)</span><br></pre></td></tr></table></figure></p>
+<p>PS C:\Users\alex\apflora&gt;</p>
+<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>如遇到这个问题，可以检查gulpfile.js中调用的插件是否都成功安装，是否需要升级。特别留意安装后提示的警告（WARNING）</p>
+]]></content>
+      
+        <categories>
+            
+            <category> MachineWorld </category>
+            
+            <category> Hexo </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> Hexo </tag>
+            
+            <tag> Gulp </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA[Hexo设置Disqus评论]]></title>
       <url>/a55c64ff/</url>
       <content type="html"><![CDATA[<p>因多说评论系统关闭，现在有网易和Disqus可供选择。</p>
@@ -1974,46 +2004,18 @@ Admin API Key
     </entry>
     
     <entry>
-      <title><![CDATA[解决设置Gulp中出现的Unable to minify JavaScript错误]]></title>
-      <url>/f3aadd98/</url>
-      <content type="html"><![CDATA[<h2 id="Unable-to-minify-JavaScript"><a href="#Unable-to-minify-JavaScript" class="headerlink" title="Unable to minify JavaScript"></a>Unable to minify JavaScript</h2><a id="more"></a>
-<p>PS C:\Users\alex\apflora&gt; gulp prod_build_src<br>(node:1144) fs: re-evaluating native module sources is not supported. If you are using the graceful-fs module, please update it to a more recent version.<br>[15:28:13] Using gulpfile ~\apflora\gulpfile.js<br>[15:28:13] Starting ‘prod_build_src’…</p>
-<p>events.js:160<br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">throw</span> er; <span class="comment">// Unhandled 'error' event</span></span><br><span class="line">^</span><br></pre></td></tr></table></figure></p>
-<p>GulpUglifyError: unable to minify JavaScript<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">at createError (C:\Users\alex\apflora\node_modules\gulp-uglify\lib\create-error.js:6:14)</span><br><span class="line">at wrapper (C:\Users\alex\apflora\node_modules\gulp-uglify\node_modules\lodash\_createHybrid.js:87:15)</span><br><span class="line">at trycatch (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:26:12)</span><br><span class="line">at DestroyableTransform.minify [as _transform] (C:\Users\alex\apflora\node_modules\gulp-uglify\minifier.js:76:19)</span><br><span class="line">at DestroyableTransform.Transform._read (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:172:10)</span><br><span class="line">at DestroyableTransform.Transform._write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_transform.js:160:12)</span><br><span class="line">at doWrite (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:335:12)</span><br><span class="line">at writeOrBuffer (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:321:5)</span><br><span class="line">at DestroyableTransform.Writable.write (C:\Users\alex\apflora\node_modules\through2\node_modules\readable-stream\lib\_stream_writable.js:248:11)</span><br><span class="line">at write (C:\Users\alex\apflora\node_modules\gulp-concat\node_modules\readable-stream\lib\_stream_readable.js:623:24)</span><br></pre></td></tr></table></figure></p>
-<p>PS C:\Users\alex\apflora&gt;</p>
-<h2 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h2><p>如遇到这个问题，可以检查gulpfile.js中调用的插件是否都成功安装，是否需要升级。特别留意安装后提示的警告（WARNING）</p>
-]]></content>
-      
-        <categories>
-            
-            <category> MachineWorld </category>
-            
-            <category> Hexo </category>
-            
-        </categories>
-        
-        
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-            <tag> Gulp </tag>
-            
-        </tags>
-        
-    </entry>
-    
-    <entry>
       <title><![CDATA[Hello-NewWorld-Hexo新建文章指南]]></title>
       <url>/5e021da6/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>or<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure></p>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
 <h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>or<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure></p>
 <p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
       
@@ -2349,9 +2351,9 @@ Admin API Key
         
         <tags>
             
-            <tag> Tools </tag>
-            
             <tag> Chrome </tag>
+            
+            <tag> Tools </tag>
             
         </tags>
         
@@ -2509,11 +2511,11 @@ Admin API Key
         
         <tags>
             
-            <tag> Wordpress </tag>
-            
             <tag> Lnmp </tag>
             
             <tag> VPS </tag>
+            
+            <tag> Wordpress </tag>
             
         </tags>
         
@@ -3463,7 +3465,7 @@ Admin API Key
     <entry>
       <title><![CDATA[拼将玉骨委黄沙]]></title>
       <url>/583e1f49/</url>
-      <content type="html"><![CDATA[<p><img src="http://orp61qolg.bkt.clouddn.com/images/ChenYinke.jpg" alt="陈寅恪"></p>
+      <content type="html"><![CDATA[<p><img src="https://s1.ax2x.com/2019/04/21/5GbyNq.jpg" alt="陈寅恪"></p>
 <p>古来，文人与政治的关系就比较暧昧。多少读书人十年寒窗苦读为的不是金榜题名？诸葛孔明的“不求问达于诸侯”，像是姜太公钓鱼，愿者上钩，实则是以退为进，钓“明君”， “遂许先帝以驱驰”。厌倦官场是是非非的人，也不过是因官场的失败，壮志难酬才逼不得已退出，并非是真正的远离政治，一旦统治者赏识，又春风得意，走马上任。纵观历史，难见真正为读书而读书，为学术而学术之人，实为可悲。</p>
 <p>当然，历史还是会为后人留下珍贵的几只标杆。陈寅恪就是其中一只。</p>
 <a id="more"></a>
@@ -3471,10 +3473,13 @@ Admin API Key
 <p>典型事例还有康生被陈拒之不见，但是，为人之孤傲与不懂人情世故也会给他带来极大的伤害。</p>
 <p>陈的最后二十年，是在一个特殊的政治背景中，努力着追求着其所谓的纯粹的学术中度过的。他花费极大的心血精力专攻于文史研究，闭口不谈政治，无论其行径还是思想，都与政治不相干。但是，对于他这样的人，政治怎么会放过他呢？</p>
 <p>在一个唯马列主义为真理，资本主义为腐朽的疯狂年代，在一个只要声称自己是马列主义拥护者即可大肆批判老教授、知识分子的扭曲年代，学术只能为意识形态服务，不能独立于“俗谛”，凡非社会主义的，就一定是资本主义的，在这种非黑即白，不是你死就是我活的斗争中，陈寅恪所秉持的独立自由学术立场必定会与之冲突，而他也必定成为被批驳的对象。</p>
-<p>于是，无法置身事外的他，被迫地应战了。结局可想而知，特立独行，坚持己见，弱不禁风的文人，在与时代的潮流死磕烂打中，注定要头破血流，无奈痛苦地死去。可是，预料到结局的他，却没有放弃这场场必输无疑的抗争，在精神和病痛的双重折磨中，毅然地活着。多次的检查反思仍不改其追求学术独立之作风，继而又多次遭到批判。但也正是这种行为，恰恰成就了他，使他成为文人的标杆，那个时代璀璨的明星，照亮着我们这些后来者前进的道路。<br>历史总会给我们一些事件的对比，也只有从这些事件的对比中，我们才能够发现到某些人的难能可贵之处。<br>恰如其时代的文化巨匠郭沫若，他选择了与陈寅恪不一样的道路，于是走出了属于他自己的光辉人生，在将近三十年间，担任中央人民政府等国家一级机构及各类协会团体中任职兼职数十个，不可不谓之官职显赫。还有新文化运动的代表人，胡适，选择了漂泊异乡一途，隔岸观火，免受迫害。</p>
+<p>于是，无法置身事外的他，被迫地应战了。结局可想而知，特立独行，坚持己见，弱不禁风的文人，在与时代的潮流死磕烂打中，注定要头破血流，无奈痛苦地死去。可是，预料到结局的他，却没有放弃这场场必输无疑的抗争，在精神和病痛的双重折磨中，毅然地活着。多次的检查反思仍不改其追求学术独立之作风，继而又多次遭到批判。但也正是这种行为，恰恰成就了他，使他成为文人的标杆，那个时代璀璨的明星，照亮着我们这些后来者前进的道路。</p>
+<p>历史总会给我们一些事件的对比，也只有从这些事件的对比中，我们才能够发现到某些人的难能可贵之处。</p>
+<p>恰如其时代的文化巨匠郭沫若，他选择了与陈寅恪不一样的道路，于是走出了属于他自己的光辉人生，在将近三十年间，担任中央人民政府等国家一级机构及各类协会团体中任职兼职数十个，不可不谓之官职显赫。还有新文化运动的代表人，胡适，选择了漂泊异乡一途，隔岸观火，免受迫害。</p>
 <p>此二人的遭遇，不知好过陈多少倍。但对比之下，陈之行为才更为珍贵。也许可以说陈寅恪就是屈原口中“举世皆浊我独清，众人皆醉我独醒”的代表，在亿万人俯首称臣的大殿中，傲然冷眼对视统治者，不卑不亢，神色如故。虽必死无疑，却勇气可嘉。陈的遭遇无疑是悲惨的，结局无疑是不美满的，但其精神与思想无疑是珍贵的。</p>
 <p>用陈在《王观堂先生挽词并序》所写的一段话：“凡一种文化值衰落之时，为此文化所化之人，必感苦痛，其表现此文化之程量愈宏，则其受之苦痛愈甚。”陈对对王国维的看法，也恰恰是其自身的写照。凡在历史动荡变换过程中，一种文化衰落，另一种文化兴起中，必有贤者拙者坚守本心，不随波逐流，趋炎附势，在动荡中坚守操守痛苦地死去；也必有顺应潮流，见风使舵之人，游刃于新旧之间，适时改变，最终飞黄腾达，但此类人却丧失人格，被后人所唾弃。</p>
 <p>当下如往昔，我辈之抉择如何，个中取舍，个人自知。</p>
+<h4 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h4><p>陈寅恪图片来自维基共享资源（<a href="https://zh.wikipedia.org/wiki/File:Chen_Yinke.jpg" target="_blank" rel="noopener">图片链接</a>）。</p>
 ]]></content>
       
         <categories>
@@ -3569,8 +3574,7 @@ Admin API Key
       <url>/1a981af2/</url>
       <content type="html"><![CDATA[<p>这篇文章其实一个多月前就想写了，只不过因为各种事情而耽搁了。</p>
 <p>近代历史中，一位被一笔带过的汉奸，汪精卫，一位被大陆和台湾所渐渐遗忘的政治人物……</p>
-<p><a href="http://www.alaxn.ml/wp-content/uploads/2015/04/13.jpg" target="_blank" rel="noopener"><img src="http://www.alaxn.ml/wp-content/uploads/2015/04/13.jpg" alt="Wang_jingwei.jpg"></a></p>
-<p>&nbsp;</p>
+<p>[<img src="https://s1.ax2x.com/2019/04/21/5GbvhO.jpg" alt="汪精卫">]</p>
 <p>“吾侪同志，结义于港，誓与满酋拼一死，以事实示革命党之决心，使灰心者复归于热，怀疑者复归于信。今者北上赴京，若能唤醒中华睡狮，引导反满革命火种，则吾侪成仁之志已竟。”</p>
 <p>这是汪精卫在刺杀摄政王之前所写下的一段话。我不知道这是不是出自肺腑之言，也不是很能确信他写此段话的目的，唯一可以确定的就是历史上真实地流传下来这段话了。</p>
 <a id="more"></a>
@@ -3590,7 +3594,6 @@ Admin API Key
 <p>最后，我只想听听逍遥游这首歌。任逍遥，管什么历史的评价，活在当下才是真实的自己，才是应该去体验去经历的历史，尔后，那历史不是你的历史了，历史中的那个你，只是他们时代的产物，他们的教案。你已经故去。</p>
 <hr>
 <p><strong>汪精卫曾作诗词</strong></p>
-<p>&nbsp;</p>
 <p>《被逮口占》（又名《慷慨篇》）。</p>
 <p>街石成痴绝，沧波万里愁；</p>
 <p>孤飞终不倦，羞逐海浪浮。</p>
@@ -3600,17 +3603,10 @@ Admin API Key
 <p>引刀成一快，不负少年头。</p>
 <p>留得心魂在，残躯付劫灰；</p>
 <p>青磷光不灭，夜夜照燕台。</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
 <p>《金缕曲》送给陈璧君。</p>
-<p>别后平安否？便相逢凄凉万事，不堪回首。国破家亡无穷恨，禁得此生消受，又添了离愁</p>
-<p>万斗。眼底心头如昨日，诉心期夜夜常携手。一腔血，为君剖。泪痕料渍云笺透，倚寒衾</p>
-<p>循环细读，残灯如豆。留此余生成底事，空令故人潺愁，愧戴却头颅如旧。跋涉关河知不</p>
-<p>易，愿孤魂缭护车前后。肠已断，歌难又。</p>
-<p>&nbsp;</p>
+<p>别后平安否？便相逢凄凉万事，不堪回首。国破家亡无穷恨，禁得此生消受，又添了离愁万斗。眼底心头如昨日，诉心期夜夜常携手。一腔血，为君剖。泪痕料渍云笺透，倚寒衾循环细读，残灯如豆。留此余生成底事，空令故人潺愁，愧戴却头颅如旧。跋涉关河知不易，愿孤魂缭护车前后。肠已断，歌难又。</p>
 <p>汪精卫在《金缕曲》后面，又用血写了五个字“勿留京贾祸”。</p>
 <p>背后是否是真实的情感的存在，我们不得而知，但我知道当时的他确确实实的在狱中，确确实实写过这个东西给陈璧君。莫非他知道他可以出去？莫非他认为这样写才能使陈璧君更加激动，想方设法帮他出狱？也许不是真心就是心机吧。</p>
-<p>&nbsp;</p>
 ]]></content>
       
         <categories>
@@ -3770,7 +3766,7 @@ Admin API Key
 <p>唤醒的是对昔日时光的回忆，对昔日社会的遐想。对八部天龙的禅理的自我陶醉。</p>
 <p>贪嗔痴。在天龙中演绎，游戏中灵动。</p>
 <p>安安静静的听着歌。不想打字了。</p>
-<p>[embed]<a href="http://7xitqm.com1.z0.glb.clouddn.com/music贾爱国、顾盼盼-英雄梦《天龙八部》主题歌.mp3[/embed" target="_blank" rel="noopener">http://7xitqm.com1.z0.glb.clouddn.com/music贾爱国、顾盼盼-英雄梦《天龙八部》主题歌.mp3[/embed</a>]</p>
+<p>[embed]<a href="http://fs.open.kugou.com/6842cb8ee9ba25fc0a36e702b75630e6/5cbdf8d3/G012/M02/1B/00/TA0DAFUKlaqAGFHaACSOVnlAjF8475.mp3[/embed" target="_blank" rel="noopener">http://fs.open.kugou.com/6842cb8ee9ba25fc0a36e702b75630e6/5cbdf8d3/G012/M02/1B/00/TA0DAFUKlaqAGFHaACSOVnlAjF8475.mp3[/embed</a>]</p>
 ]]></content>
       
         <categories>
