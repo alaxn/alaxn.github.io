@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://alaxn.github.io/a819c9cf/</loc>
-    <lastmod>2019-04-22T18:23:04.976Z</lastmod>
+    <lastmod>2019-04-22T18:26:26.697Z</lastmod>
     <data>
         <display>
         <title>Hexo设置跳过渲染某个文件或文件夹</title>
@@ -938,6 +938,28 @@
 
     
   <url>
+    <loc>https://alaxn.github.io/6028720b/</loc>
+    <lastmod>2017-07-22T15:13:33.437Z</lastmod>
+    <data>
+        <display>
+        <title>浅议 “文明”的界定——“文明冲突论”观点的几点思考</title>
+        <pubTime>2015-11-03T08:42:05.000Z</pubTime>
+        
+        <tag>亨廷顿</tag>
+         
+        <tag>文明冲突论</tag>
+         
+         
+           
+             
+              <breadCrumb title="流年淡思" url="https://alaxn.github.io/categories/%E6%B5%81%E5%B9%B4%E6%B7%A1%E6%80%9D/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://alaxn.github.io/d013c9e9/</loc>
     <lastmod>2017-07-22T15:13:33.437Z</lastmod>
     <data>
@@ -960,21 +982,21 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/6028720b/</loc>
-    <lastmod>2017-07-22T15:13:33.437Z</lastmod>
+    <loc>https://alaxn.github.io/62f1ed55/</loc>
+    <lastmod>2017-07-22T15:13:33.436Z</lastmod>
     <data>
         <display>
-        <title>浅议 “文明”的界定——“文明冲突论”观点的几点思考</title>
-        <pubTime>2015-11-03T08:42:05.000Z</pubTime>
+        <title>理性人，未必理性至上</title>
+        <pubTime>2015-04-28T07:38:24.000Z</pubTime>
         
-        <tag>亨廷顿</tag>
+        <tag>Mind</tag>
          
-        <tag>文明冲突论</tag>
+        <tag>Psychology</tag>
          
          
            
              
-              <breadCrumb title="流年淡思" url="https://alaxn.github.io/categories/%E6%B5%81%E5%B9%B4%E6%B7%A1%E6%80%9D/"/>
+              <breadCrumb title="Psychology" url="https://alaxn.github.io/categories/Psychology/"/>
           
         </display>
     </data>
@@ -999,28 +1021,6 @@
            
              
               <breadCrumb title="NewFreedom" url="https://alaxn.github.io/categories/NewFreedom/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://alaxn.github.io/62f1ed55/</loc>
-    <lastmod>2017-07-22T15:13:33.436Z</lastmod>
-    <data>
-        <display>
-        <title>理性人，未必理性至上</title>
-        <pubTime>2015-04-28T07:38:24.000Z</pubTime>
-        
-        <tag>Mind</tag>
-         
-        <tag>Psychology</tag>
-         
-         
-           
-             
-              <breadCrumb title="Psychology" url="https://alaxn.github.io/categories/Psychology/"/>
           
         </display>
     </data>
@@ -1072,30 +1072,6 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/955ef9f6/</loc>
-    <lastmod>2017-07-22T15:13:33.432Z</lastmod>
-    <data>
-        <display>
-        <title>徐宝璜与梁启超新闻思想之比较</title>
-        <pubTime>2016-07-17T08:52:15.000Z</pubTime>
-        
-        <tag>名记者</tag>
-         
-        <tag>新闻史</tag>
-         
-        <tag>新闻思想</tag>
-         
-         
-           
-             
-              <breadCrumb title="NewFreedom" url="https://alaxn.github.io/categories/NewFreedom/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://alaxn.github.io/a0cfba06/</loc>
     <lastmod>2017-07-22T15:13:33.432Z</lastmod>
     <data>
@@ -1123,21 +1099,23 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/3fa0d39e/</loc>
-    <lastmod>2017-07-22T15:13:33.431Z</lastmod>
+    <loc>https://alaxn.github.io/955ef9f6/</loc>
+    <lastmod>2017-07-22T15:13:33.432Z</lastmod>
     <data>
         <display>
-        <title>Hosts文件小科普</title>
-        <pubTime>2017-07-17T09:52:53.000Z</pubTime>
+        <title>徐宝璜与梁启超新闻思想之比较</title>
+        <pubTime>2016-07-17T08:52:15.000Z</pubTime>
         
-        <tag>MachineWorld</tag>
+        <tag>名记者</tag>
          
-        <tag>Hosts</tag>
+        <tag>新闻史</tag>
+         
+        <tag>新闻思想</tag>
          
          
            
              
-              <breadCrumb title="MachineWorld" url="https://alaxn.github.io/categories/MachineWorld/"/>
+              <breadCrumb title="NewFreedom" url="https://alaxn.github.io/categories/NewFreedom/"/>
           
         </display>
     </data>
@@ -1164,6 +1142,28 @@
            
              
               <breadCrumb title="流年淡思" url="https://alaxn.github.io/categories/%E6%B5%81%E5%B9%B4%E6%B7%A1%E6%80%9D/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://alaxn.github.io/3fa0d39e/</loc>
+    <lastmod>2017-07-22T15:13:33.431Z</lastmod>
+    <data>
+        <display>
+        <title>Hosts文件小科普</title>
+        <pubTime>2017-07-17T09:52:53.000Z</pubTime>
+        
+        <tag>MachineWorld</tag>
+         
+        <tag>Hosts</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="https://alaxn.github.io/categories/MachineWorld/"/>
           
         </display>
     </data>
@@ -1260,28 +1260,6 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/25d0a21c/</loc>
-    <lastmod>2017-07-22T15:13:33.427Z</lastmod>
-    <data>
-        <display>
-        <title>Memory of Hongkong</title>
-        <pubTime>2015-02-18T09:10:36.000Z</pubTime>
-        
-        <tag>Hongkong</tag>
-         
-        <tag>香港</tag>
-         
-         
-           
-             
-              <breadCrumb title="PhotoSlide" url="https://alaxn.github.io/categories/PhotoSlide/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://alaxn.github.io/2332bb63/</loc>
     <lastmod>2017-07-22T15:13:33.427Z</lastmod>
     <data>
@@ -1302,21 +1280,21 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/ba043ac8/</loc>
-    <lastmod>2017-07-22T15:13:33.426Z</lastmod>
+    <loc>https://alaxn.github.io/25d0a21c/</loc>
+    <lastmod>2017-07-22T15:13:33.427Z</lastmod>
     <data>
         <display>
-        <title>光耀百年，新加坡何以光耀</title>
-        <pubTime>2015-03-03T10:00:25.000Z</pubTime>
+        <title>Memory of Hongkong</title>
+        <pubTime>2015-02-18T09:10:36.000Z</pubTime>
         
-        <tag>Singapore</tag>
+        <tag>Hongkong</tag>
          
-        <tag>Lee Kuan Yew</tag>
+        <tag>香港</tag>
          
          
            
              
-              <breadCrumb title="NewFreedom" url="https://alaxn.github.io/categories/NewFreedom/"/>
+              <breadCrumb title="PhotoSlide" url="https://alaxn.github.io/categories/PhotoSlide/"/>
           
         </display>
     </data>
@@ -1341,6 +1319,28 @@
            
              
               <breadCrumb title="MachineWorld" url="https://alaxn.github.io/categories/MachineWorld/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://alaxn.github.io/ba043ac8/</loc>
+    <lastmod>2017-07-22T15:13:33.426Z</lastmod>
+    <data>
+        <display>
+        <title>光耀百年，新加坡何以光耀</title>
+        <pubTime>2015-03-03T10:00:25.000Z</pubTime>
+        
+        <tag>Singapore</tag>
+         
+        <tag>Lee Kuan Yew</tag>
+         
+         
+           
+             
+              <breadCrumb title="NewFreedom" url="https://alaxn.github.io/categories/NewFreedom/"/>
           
         </display>
     </data>
@@ -1442,28 +1442,6 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/cb253133/</loc>
-    <lastmod>2017-07-22T15:13:33.421Z</lastmod>
-    <data>
-        <display>
-        <title>大数据带来了什么？——分析方式的革新</title>
-        <pubTime>2015-05-13T05:46:03.000Z</pubTime>
-        
-        <tag>big data</tag>
-         
-        <tag>大数据</tag>
-         
-         
-           
-             
-              <breadCrumb title="MachineWorld" url="https://alaxn.github.io/categories/MachineWorld/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://alaxn.github.io/cc3003f5/</loc>
     <lastmod>2017-07-22T15:13:33.421Z</lastmod>
     <data>
@@ -1476,6 +1454,28 @@
         <tag>win10</tag>
          
         <tag>声卡</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="https://alaxn.github.io/categories/MachineWorld/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://alaxn.github.io/cb253133/</loc>
+    <lastmod>2017-07-22T15:13:33.421Z</lastmod>
+    <data>
+        <display>
+        <title>大数据带来了什么？——分析方式的革新</title>
+        <pubTime>2015-05-13T05:46:03.000Z</pubTime>
+        
+        <tag>big data</tag>
+         
+        <tag>大数据</tag>
          
          
            
@@ -1530,26 +1530,6 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/2620121e/</loc>
-    <lastmod>2017-07-22T15:13:33.403Z</lastmod>
-    <data>
-        <display>
-        <title>Markdown语法规则（个人备忘录）</title>
-        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
-        
-        <tag>Markdown</tag>
-         
-         
-           
-             
-              <breadCrumb title="Markdown" url="https://alaxn.github.io/categories/Markdown/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://alaxn.github.io/fb78cd4a/</loc>
     <lastmod>2017-07-22T15:13:33.403Z</lastmod>
     <data>
@@ -1563,6 +1543,26 @@
            
              
               <breadCrumb title="MachineWorld" url="https://alaxn.github.io/categories/MachineWorld/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://alaxn.github.io/2620121e/</loc>
+    <lastmod>2017-07-22T15:13:33.403Z</lastmod>
+    <data>
+        <display>
+        <title>Markdown语法规则（个人备忘录）</title>
+        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
+        
+        <tag>Markdown</tag>
+         
+         
+           
+             
+              <breadCrumb title="Markdown" url="https://alaxn.github.io/categories/Markdown/"/>
           
         </display>
     </data>
@@ -1667,12 +1667,12 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/e5ac3b51/</loc>
+    <loc>https://alaxn.github.io/f3aadd98/</loc>
     <lastmod>2017-07-22T15:13:33.398Z</lastmod>
     <data>
         <display>
-        <title>使用Gulp压缩Hexo</title>
-        <pubTime>2017-05-02T11:44:37.000Z</pubTime>
+        <title>解决设置Gulp中出现的Unable to minify JavaScript错误</title>
+        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
         
         <tag>Hexo</tag>
          
@@ -1692,12 +1692,12 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/f3aadd98/</loc>
+    <loc>https://alaxn.github.io/e5ac3b51/</loc>
     <lastmod>2017-07-22T15:13:33.398Z</lastmod>
     <data>
         <display>
-        <title>解决设置Gulp中出现的Unable to minify JavaScript错误</title>
-        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
+        <title>使用Gulp压缩Hexo</title>
+        <pubTime>2017-05-02T11:44:37.000Z</pubTime>
         
         <tag>Hexo</tag>
          
@@ -1740,16 +1740,16 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/18f91d43/</loc>
+    <loc>https://alaxn.github.io/27623ab4/</loc>
     <lastmod>2017-07-22T15:13:33.396Z</lastmod>
     <data>
         <display>
-        <title>Hexo-Algolia搜索安装及设置</title>
-        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
+        <title>使用不蒜子为Hexo添加访客统计</title>
+        <pubTime>2017-06-21T09:30:10.000Z</pubTime>
         
         <tag>Hexo</tag>
          
-        <tag>Algolia</tag>
+        <tag>不蒜子</tag>
          
          
            
@@ -1765,16 +1765,16 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/27623ab4/</loc>
+    <loc>https://alaxn.github.io/18f91d43/</loc>
     <lastmod>2017-07-22T15:13:33.396Z</lastmod>
     <data>
         <display>
-        <title>使用不蒜子为Hexo添加访客统计</title>
-        <pubTime>2017-06-21T09:30:10.000Z</pubTime>
+        <title>Hexo-Algolia搜索安装及设置</title>
+        <pubTime>2017-06-20T07:07:53.000Z</pubTime>
         
         <tag>Hexo</tag>
          
-        <tag>不蒜子</tag>
+        <tag>Algolia</tag>
          
          
            
