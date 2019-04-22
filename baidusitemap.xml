@@ -3,10 +3,58 @@
 
 
     
+  <url>
+    <loc>https://alaxn.github.io/a819c9cf/</loc>
+    <lastmod>2019-04-22T18:23:04.976Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo设置跳过渲染某个文件或文件夹</title>
+        <pubTime>2019-04-22T18:20:34.000Z</pubTime>
+        
+        <tag>MachineWorld</tag>
+         
+        <tag>Hexo</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="https://alaxn.github.io/categories/MachineWorld/"/>
+          
+             
+              <breadCrumb title="Hexo" url="https://alaxn.github.io/categories/MachineWorld/Hexo/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://alaxn.github.io/e5eb10ce/</loc>
+    <lastmod>2019-04-22T18:17:31.640Z</lastmod>
+    <data>
+        <display>
+        <title>QQ木马札记</title>
+        <pubTime>2013-09-28T15:30:37.000Z</pubTime>
+        
+        <tag>MachineWorld</tag>
+         
+        <tag>OD</tag>
+         
+        <tag>木马</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="https://alaxn.github.io/categories/MachineWorld/"/>
+          
+        </display>
+    </data>
+    </url>
+
     
   <url>
     <loc>https://alaxn.github.io/1094fd3e/</loc>
-    <lastmod>2019-04-22T17:25:42.094Z</lastmod>
+    <lastmod>2019-04-22T18:12:56.115Z</lastmod>
     <data>
         <display>
         <title>通关天龙单机游戏后。。。</title>
@@ -23,6 +71,7 @@
     </data>
     </url>
 
+    
     
   <url>
     <loc>https://alaxn.github.io/5e021da6/</loc>
@@ -889,16 +938,16 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/6028720b/</loc>
+    <loc>https://alaxn.github.io/d013c9e9/</loc>
     <lastmod>2017-07-22T15:13:33.437Z</lastmod>
     <data>
         <display>
-        <title>浅议 “文明”的界定——“文明冲突论”观点的几点思考</title>
-        <pubTime>2015-11-03T08:42:05.000Z</pubTime>
+        <title>国内成人礼习俗研究——以潮汕地区“出花园”为例</title>
+        <pubTime>2017-07-21T06:49:25.000Z</pubTime>
         
-        <tag>亨廷顿</tag>
+        <tag>出花园</tag>
          
-        <tag>文明冲突论</tag>
+        <tag>成人礼</tag>
          
          
            
@@ -911,16 +960,16 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/d013c9e9/</loc>
+    <loc>https://alaxn.github.io/6028720b/</loc>
     <lastmod>2017-07-22T15:13:33.437Z</lastmod>
     <data>
         <display>
-        <title>国内成人礼习俗研究——以潮汕地区“出花园”为例</title>
-        <pubTime>2017-07-21T06:49:25.000Z</pubTime>
+        <title>浅议 “文明”的界定——“文明冲突论”观点的几点思考</title>
+        <pubTime>2015-11-03T08:42:05.000Z</pubTime>
         
-        <tag>出花园</tag>
+        <tag>亨廷顿</tag>
          
-        <tag>成人礼</tag>
+        <tag>文明冲突论</tag>
          
          
            
@@ -1074,6 +1123,28 @@
 
     
   <url>
+    <loc>https://alaxn.github.io/3fa0d39e/</loc>
+    <lastmod>2017-07-22T15:13:33.431Z</lastmod>
+    <data>
+        <display>
+        <title>Hosts文件小科普</title>
+        <pubTime>2017-07-17T09:52:53.000Z</pubTime>
+        
+        <tag>MachineWorld</tag>
+         
+        <tag>Hosts</tag>
+         
+         
+           
+             
+              <breadCrumb title="MachineWorld" url="https://alaxn.github.io/categories/MachineWorld/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://alaxn.github.io/67713938/</loc>
     <lastmod>2017-07-22T15:13:33.431Z</lastmod>
     <data>
@@ -1093,28 +1164,6 @@
            
              
               <breadCrumb title="流年淡思" url="https://alaxn.github.io/categories/%E6%B5%81%E5%B9%B4%E6%B7%A1%E6%80%9D/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://alaxn.github.io/3fa0d39e/</loc>
-    <lastmod>2017-07-22T15:13:33.431Z</lastmod>
-    <data>
-        <display>
-        <title>Hosts文件小科普</title>
-        <pubTime>2017-07-17T09:52:53.000Z</pubTime>
-        
-        <tag>MachineWorld</tag>
-         
-        <tag>Hosts</tag>
-         
-         
-           
-             
-              <breadCrumb title="MachineWorld" url="https://alaxn.github.io/categories/MachineWorld/"/>
           
         </display>
     </data>
@@ -1393,18 +1442,16 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/cc3003f5/</loc>
+    <loc>https://alaxn.github.io/cb253133/</loc>
     <lastmod>2017-07-22T15:13:33.421Z</lastmod>
     <data>
         <display>
-        <title>VIA声卡在Win10下外放及耳机无法自动切换</title>
-        <pubTime>2015-10-05T07:54:25.000Z</pubTime>
+        <title>大数据带来了什么？——分析方式的革新</title>
+        <pubTime>2015-05-13T05:46:03.000Z</pubTime>
         
-        <tag>VIA</tag>
+        <tag>big data</tag>
          
-        <tag>win10</tag>
-         
-        <tag>声卡</tag>
+        <tag>大数据</tag>
          
          
            
@@ -1417,16 +1464,18 @@
 
     
   <url>
-    <loc>https://alaxn.github.io/cb253133/</loc>
+    <loc>https://alaxn.github.io/cc3003f5/</loc>
     <lastmod>2017-07-22T15:13:33.421Z</lastmod>
     <data>
         <display>
-        <title>大数据带来了什么？——分析方式的革新</title>
-        <pubTime>2015-05-13T05:46:03.000Z</pubTime>
+        <title>VIA声卡在Win10下外放及耳机无法自动切换</title>
+        <pubTime>2015-10-05T07:54:25.000Z</pubTime>
         
-        <tag>big data</tag>
+        <tag>VIA</tag>
          
-        <tag>大数据</tag>
+        <tag>win10</tag>
+         
+        <tag>声卡</tag>
          
          
            
@@ -1452,30 +1501,6 @@
            
              
               <breadCrumb title="PhotoSlide" url="https://alaxn.github.io/categories/PhotoSlide/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://alaxn.github.io/e5eb10ce/</loc>
-    <lastmod>2017-07-22T15:13:33.419Z</lastmod>
-    <data>
-        <display>
-        <title>QQ木马札记</title>
-        <pubTime>2013-09-28T15:30:37.000Z</pubTime>
-        
-        <tag>MachineWorld</tag>
-         
-        <tag>OD</tag>
-         
-        <tag>木马</tag>
-         
-         
-           
-             
-              <breadCrumb title="MachineWorld" url="https://alaxn.github.io/categories/MachineWorld/"/>
           
         </display>
     </data>
